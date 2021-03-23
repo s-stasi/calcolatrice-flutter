@@ -40,9 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: MyAppBar().build(context),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -73,6 +71,19 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+class MyAppBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Center(
+        child: Text(
+          'cancro',
+        ),
       ),
     );
   }
