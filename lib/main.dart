@@ -19,71 +19,60 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar().build(context),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'sdtrhdrthd',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            TextField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(), hintText: 'Inserisci la gs'),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(), hintText: 'Inserisci la tas'),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(), hintText: 'Inserisci la th'),
-            ),
-          ],
-        ),
+      drawer: SideDrawer(),
+      appBar: AppBar(
+        title: Text('SideBar menu - FlutterCorner'),
+        backgroundColor: Colors.black,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      body: Center(
+        child: Text('Side Menu Tutorial'),
       ),
     );
   }
 }
-
-class MyAppBar extends StatelessWidget {
+class SideDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: Center(
-        child: Text(
-          'cancro',
-        ),
+    return Drawer(
+      child: Column(
+        children: <Widget>[
+          DrawerHeader(
+            child: Center(
+              child: Text(
+                'Side menu  FlutterCorner',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+            decoration: BoxDecoration(
+              color: Colors.black,
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.home),
+            title: Text('Home'),
+            onTap: () => {},
+          ),
+          ListTile(
+            leading: Icon(Icons.shopping_cart),
+            title: Text('Cart'),
+            onTap: () => {Navigator.of(context).pop()},
+          ),
+          ListTile(
+            leading: Icon(Icons.border_color),
+            title: Text('Feedback'),
+            onTap: () => {Navigator.of(context).pop()},
+          ),
+          ListTile(
+            leading: Icon(Icons.exit_to_app),
+            title: Text('Logout'),
+            onTap: () => {Navigator.of(context).pop()},
+          ),
+        ],
       ),
     );
   }

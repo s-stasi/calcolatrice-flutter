@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\android",
+    "\\ios",
+    "\\lib",
+    "\\test",
+    "\\web",
+    "\\web\\icons",
+    "\\windows",
+    "\\windows\\flutter",
+    "\\windows\\runner"
+  ],
+  "SelectedNode": "\\lib\\widget.dart",
+  "PreviewInSolutionExplorer": false
+}
