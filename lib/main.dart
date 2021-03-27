@@ -10,11 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'NAVTOOL',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
@@ -25,11 +25,11 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
-        title: Text('SideBar menu - FlutterCorner'),
+        title: Text('NAVIGATION TOOL'),
         backgroundColor: Colors.black,
       ),
       body: Center(
-        child: Text('Side Menu Tutorial'),
+        child: Text('in arrivo...'),
       ),
     );
   }
@@ -43,9 +43,9 @@ class SideDrawer extends StatelessWidget {
           DrawerHeader(
             child: Center(
               child: Text(
-                'Side menu  FlutterCorner',
+                'MENU PROBLEMI',
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 25),
+                style: TextStyle(color: Colors.white, fontSize: 30),
               ),
             ),
             decoration: BoxDecoration(
@@ -53,23 +53,23 @@ class SideDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text('Home'),
+            leading: Icon(Icons.local_airport),
+            title: Text('1° problema del vento'),
             onTap: () => {},
           ),
           ListTile(
-            leading: Icon(Icons.shopping_cart),
-            title: Text('Cart'),
+            leading: Icon(Icons.local_airport),
+            title: Text('2° problema del vento'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
-            leading: Icon(Icons.border_color),
-            title: Text('Feedback'),
+            leading: Icon(Icons.local_airport),
+            title: Text('3° problema del vento'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text('Logout'),
+            leading: Icon(Icons.local_airport),
+            title: Text('4° problema del vento'),
             onTap: () => {Navigator.of(context).pop()},
           ),
         ],

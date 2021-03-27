@@ -2,15 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\android",
-    "\\ios",
     "\\lib",
-    "\\test",
     "\\web",
     "\\web\\icons",
-    "\\windows",
-    "\\windows\\flutter",
-    "\\windows\\runner"
+    "\\windows\\flutter"
   ],
-  "SelectedNode": "\\lib\\widget.dart",
+  "SelectedNode": "\\android",
   "PreviewInSolutionExplorer": false
 }
