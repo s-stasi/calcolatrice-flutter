@@ -4,9 +4,8 @@
     "\\android",
     "\\lib",
     "\\web",
-    "\\web\\icons",
-    "\\windows\\flutter"
+    "\\web\\icons"
   ],
-  "SelectedNode": "\\android",
+  "SelectedNode": "\\pubspec.yaml",
   "PreviewInSolutionExplorer": false
 }

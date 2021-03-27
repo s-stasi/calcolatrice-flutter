@@ -1,3 +1,4 @@
+import 'package:charcode/charcode.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +6,7 @@ void main() {
   debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
   runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,7 +16,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      routes: {
+      '/':(context) => MyHomePage(),
+      '/SecondaPagina':(context) => SecondaPagina(),
+      },
     );
   }
 }
@@ -35,7 +40,9 @@ class MyHomePage extends StatelessWidget {
   }
 }
 class SideDrawer extends StatelessWidget {
-  @override
+ 
+ Iterable<int> a=[0x00B0];
+ @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
@@ -49,30 +56,50 @@ class SideDrawer extends StatelessWidget {
               ),
             ),
             decoration: BoxDecoration(
-              color: Colors.black,
+              color: Colors.blue,
             ),
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text('1° problema del vento'),
-            onTap: () => {},
+            title: Text('1' + String.fromCharCodes(a) + ' problema del vento'),
+            onTap: () => {Navigator.pushNamed(context,'/SecondaPagina',),},
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text('2° problema del vento'),
+            title: Text('2' + String.fromCharCodes(a) + ' problema del vento'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text('3° problema del vento'),
+            title: Text('3' + String.fromCharCodes(a) + ' problema del vento'),
             onTap: () => {Navigator.of(context).pop()},
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text('4° problema del vento'),
+            title: Text('4' + String.fromCharCodes(a) + ' problema del vento'),
+            onTap: () => {Navigator.of(context).pop()},
+          ),
+          ListTile(
+            leading: Icon(Icons.exit_to_app),
+            title: Text('torna menu principale'),
             onTap: () => {Navigator.of(context).pop()},
           ),
         ],
+      ),
+    );
+  }
+}
+class SecondaPagina extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: SideDrawer(),
+      appBar: AppBar(
+        title: Text('PRIMO BROBLEMA'),
+        backgroundColor: Colors.black,
+      ),
+      body: Center(
+        child: Text('seconda pagina...'),
       ),
     );
   }
