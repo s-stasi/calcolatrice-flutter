@@ -18,7 +18,10 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
       '/':(context) => MyHomePage(),
-      '/SecondaPagina':(context) => SecondaPagina(),
+      '/PriPag':(context) => PrimoProblema(),
+      '/SecPag':(context) => SecondoProblema(),
+      '/TerPag':(context) => TerzoProblema(),
+      '/QuaPag':(context) => QuartoProblema(),
       },
     );
   }
@@ -39,8 +42,8 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
 class SideDrawer extends StatelessWidget {
- 
  Iterable<int> a=[0x00B0];
  @override
   Widget build(BuildContext context) {
@@ -56,50 +59,95 @@ class SideDrawer extends StatelessWidget {
               ),
             ),
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.black,
             ),
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
             title: Text('1' + String.fromCharCodes(a) + ' problema del vento'),
-            onTap: () => {Navigator.pushNamed(context,'/SecondaPagina',),},
+            onTap: () => {Navigator.pushNamed(context,'/PriPag',),},
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
             title: Text('2' + String.fromCharCodes(a) + ' problema del vento'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {Navigator.pushNamed(context,'/SecPag',),},
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
             title: Text('3' + String.fromCharCodes(a) + ' problema del vento'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {Navigator.pushNamed(context,'/TerPag',),},
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
             title: Text('4' + String.fromCharCodes(a) + ' problema del vento'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {Navigator.pushNamed(context,'/QuaPag',),},
           ),
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('torna menu principale'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {Navigator.pushNamed(context,'/',),},
           ),
         ],
       ),
     );
   }
 }
-class SecondaPagina extends StatelessWidget {
+class PrimoProblema extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
-        title: Text('PRIMO BROBLEMA'),
+        title: Text('PRIMO PROBLEMA'),
+        backgroundColor: Colors.black,
+      ),
+      body: Center(
+        child: Text('prima pagina...'),
+      ),
+    );
+  }
+}
+class SecondoProblema extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: SideDrawer(),
+      appBar: AppBar(
+        title: Text('SECONDO PROBLEMA'),
         backgroundColor: Colors.black,
       ),
       body: Center(
         child: Text('seconda pagina...'),
+      ),
+    );
+  }
+}
+class TerzoProblema extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: SideDrawer(),
+      appBar: AppBar(
+        title: Text('TERZO PROBLEMA'),
+        backgroundColor: Colors.black,
+      ),
+      body: Center(
+        child: Text('terza pagina...'),
+      ),
+    );
+  }
+}
+class QuartoProblema extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: SideDrawer(),
+      appBar: AppBar(
+        title: Text('QUARTO PROBLEMA'),
+        backgroundColor: Colors.black,
+      ),
+      body: Center(
+        child: Text('quarta pagina...'),
       ),
     );
   }
