@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
+
   runApp(MyApp());
 }
 
@@ -61,6 +62,7 @@ class SideDrawer extends StatelessWidget {
             ),
             decoration: BoxDecoration(
               color: Colors.blue[900],
+              
             ),
           ),
           ListTile(
