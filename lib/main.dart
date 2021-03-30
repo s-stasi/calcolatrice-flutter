@@ -61,7 +61,11 @@ class SideDrawer extends StatelessWidget {
               ),
             ),
             decoration: BoxDecoration(
-              color: Colors.blue[900],
+              gradient: LinearGradient(colors: [
+                  Colors.black,
+                  Colors.blue,
+                  Colors.white,
+              ]),
               
             ),
           ),
@@ -120,6 +124,7 @@ class PrimoProblema extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: Center(
+        
       ),
     );
   }
