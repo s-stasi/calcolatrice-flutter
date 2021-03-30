@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       '/SecPag':(context) => SecondoProblema(),
       '/TerPag':(context) => TerzoProblema(),
       '/QuaPag':(context) => QuartoProblema(),
+      '/ImpPag':(context) => Impostazioni(),
       },
     );
   }
@@ -59,33 +60,48 @@ class SideDrawer extends StatelessWidget {
               ),
             ),
             decoration: BoxDecoration(
-              color: Colors.black,
+              color: Colors.blue[900],
             ),
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text('1' + String.fromCharCodes(a) + ' problema del vento'),
+            title: Text('1' + String.fromCharCodes(a) + ' problema del vento',
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600),),
             onTap: () => {Navigator.pushNamed(context,'/PriPag',),},
+            
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text('2' + String.fromCharCodes(a) + ' problema del vento'),
+            title: Text('2' + String.fromCharCodes(a) + ' problema del vento',
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600),),
             onTap: () => {Navigator.pushNamed(context,'/SecPag',),},
+            
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text('3' + String.fromCharCodes(a) + ' problema del vento'),
+            title: Text('3' + String.fromCharCodes(a) + ' problema del vento',
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600),),
             onTap: () => {Navigator.pushNamed(context,'/TerPag',),},
+            
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text('4' + String.fromCharCodes(a) + ' problema del vento'),
+            title: Text('4' + String.fromCharCodes(a) + ' problema del vento',
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600),),
             onTap: () => {Navigator.pushNamed(context,'/QuaPag',),},
+            
           ),
           ListTile(
-            leading: Icon(Icons.exit_to_app),
-            title: Text('torna menu principale'),
+            leading: Icon(Icons.calculate),
+            title: Text('calcolatrice principale',
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600),),
             onTap: () => {Navigator.pushNamed(context,'/',),},
+          ),
+           ListTile(
+            leading: Icon(Icons.settings_outlined),
+            title: Text('impostazioni',
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.w600),),
+            onTap: () => {Navigator.pushNamed(context,'/ImpPag',),},
           ),
         ],
       ),
@@ -102,7 +118,6 @@ class PrimoProblema extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: Center(
-        child: Text('prima pagina...'),
       ),
     );
   }
@@ -116,9 +131,9 @@ class SecondoProblema extends StatelessWidget {
         title: Text('SECONDO PROBLEMA'),
         backgroundColor: Colors.black,
       ),
-      body: Center(
-        child: Text('seconda pagina...'),
-      ),
+     body: Center(
+       child: Text('seconda pagina...'),
+     ), 
     );
   }
 }
@@ -148,6 +163,22 @@ class QuartoProblema extends StatelessWidget {
       ),
       body: Center(
         child: Text('quarta pagina...'),
+      ),
+    );
+  }
+}
+class Impostazioni extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      drawer: SideDrawer(),
+      appBar: AppBar(
+        title: Text('IMPOSTAZIONI'),
+        backgroundColor: Colors.black,
+      ),
+      body: Center(
+        child: Text('impostazioni pagina...'),
       ),
     );
   }
