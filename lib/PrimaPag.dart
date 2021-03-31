@@ -75,12 +75,12 @@ class _PPState extends State<PrimoProblema> {
           ),
           Expanded(
             child: TextField(
-              controller: windVel,
+              controller: windAngle,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderSide:
                     BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'WIND VELOCITY',
+                labelText: 'WIND ANGLE',
               ),
             )
           ),
@@ -90,12 +90,12 @@ class _PPState extends State<PrimoProblema> {
           ),
           Expanded(
               child: TextField(
-              controller: windAngle,
+              controller: windVel,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                   borderSide:
                       BorderSide(color: Colors.blue.shade900, width: 3.0)),
-              labelText: 'WIND ANGLE',
+              labelText: 'WIND VELOCITY',
             ),
           )),
           Container(

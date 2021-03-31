@@ -1,9 +1,30 @@
+import 'dart:html';
+
 import 'package:charcode/charcode.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 
-class SecondoProblema extends StatelessWidget {
+class SecondoProblema extends StatefulWidget {
+     @override
+    _SPState createState() => _SPState(); 
+}
+
+class _SPState extends State<SecondoProblema> {
+   final th = TextEditingController();
+   final tas = TextEditingController();
+   final windAngle  = TextEditingController();
+   final windVel = TextEditingController();
+
+   @override 
+   void dispose() {
+     th.dispose();
+     tas.dispose();
+     windAngle.dispose();
+     windVel.dispose();
+     super.dispose();
+   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,28 +42,62 @@ class SecondoProblema extends StatelessWidget {
           ),
         ), 
       ),
-      body: Row(
-        children: <Widget>[
-          Expanded(
-            child: TextField(
-              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'TH',),
-             )
-           ),
-          Expanded(
-            child: TextField(
-              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'TAS',),
-             )
-           ),
-          Expanded(
-            child: TextField(
-              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'WIND VELOCITY',),
-             )
-           ),
-          Expanded(
-            child: TextField(
-              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'WIND ANGLE',),
-             )
-           ),
+      body: Row(children: <Widget>[
+          Container(
+            width: MediaQuery.of(context).size.width * 0.04,
+            height: MediaQuery.of(context).size.height * 0.20
+          ),
+           Expanded(
+              child: TextField(
+                controller: th,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),
+                    labelText: 'TH',
+                    ),
+               )
+             ),
+         Container(
+            width: MediaQuery.of(context).size.width * 0.04,
+            height: MediaQuery.of(context).size.height * 0.20
+          ),
+           Expanded(
+              child: TextField(
+                controller: tas,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),
+                    labelText: 'TAS',
+                    ),
+               )
+             ),
+         Container(
+            width: MediaQuery.of(context).size.width * 0.04,
+            height: MediaQuery.of(context).size.height * 0.20
+          ),
+           Expanded(
+              child: TextField(
+                controller: windAngle,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),
+                    labelText: 'WIND ANGLE',
+                    ),
+               )
+             ),
+         Container(
+            width: MediaQuery.of(context).size.width * 0.04,
+            height: MediaQuery.of(context).size.height * 0.20
+          ),
+           Expanded(
+              child: TextField(
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),
+                    labelText: 'WIND WELOCITY',
+                    ),
+               )
+             ),
         ]
       )
     );

@@ -28,8 +28,7 @@ class SideDrawer extends StatelessWidget {
             leading: Icon(Icons.local_airport),
             title: Text('1' + String.fromCharCodes(a) + ' problema del vento',
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
-            onTap: () => { Navigator.pushNamed(context,'/PriPag',),},
-            
+            onTap: () => { Navigator.pushNamed(context,'/PriPag',),},   
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
@@ -46,9 +45,8 @@ class SideDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.local_airport),
             title: Text('4' + String.fromCharCodes(a) + ' problema del vento',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {Navigator.pushNamed(context,'/QuaPag',),},
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+              onTap: () => {Navigator.pushNamed(context,'/QuaPag',),},
           ),
           ListTile(
             leading: Icon(Icons.calculate),
