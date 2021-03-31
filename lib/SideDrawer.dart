@@ -21,88 +21,48 @@ class SideDrawer extends StatelessWidget {
               gradient: LinearGradient(colors: [
                 Colors.black,
                 Colors.blue,
-                Colors.white,
               ]),
             ),
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text(
-              '1' + String.fromCharCodes(a) + ' problema del vento',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/PriPag',
-              ),
-            },
+            title: Text('1' + String.fromCharCodes(a) + ' problema del vento',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+            onTap: () => { Navigator.pushNamed(context,'/PriPag',),},
+            
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text(
-              '2' + String.fromCharCodes(a) + ' problema del vento',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/SecPag',
-              ),
-            },
+            title: Text('2' + String.fromCharCodes(a) + ' problema del vento',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+            onTap: () => {Navigator.pushNamed(context,'/SecPag',),},
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text(
-              '3' + String.fromCharCodes(a) + ' problema del vento',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/TerPag',
-              ),
-            },
+            title: Text('3' + String.fromCharCodes(a) + ' problema del vento',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+            onTap: () => {Navigator.pushNamed(context,'/TerPag',),},
           ),
           ListTile(
             leading: Icon(Icons.local_airport),
-            title: Text(
-              '4' + String.fromCharCodes(a) + ' problema del vento',
+            title: Text('4' + String.fromCharCodes(a) + ' problema del vento',
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/QuaPag',
-              ),
-            },
+            onTap: () => {Navigator.pushNamed(context,'/QuaPag',),},
           ),
           ListTile(
             leading: Icon(Icons.calculate),
-            title: Text(
-              'calcolatrice principale',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/',
-              ),
-            },
+            title: Text('calcolatrice principale',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+            onTap: () => {Navigator.pushNamed(context,'/',),},
           ),
           ListTile(
             leading: Icon(Icons.settings_outlined),
-            title: Text(
-              'impostazioni',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/ImpPag',
-              ),
-            },
+            title: Text('impostazioni',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+            onTap: () => {Navigator.pushNamed(context,'/ImpPag',),},
           ),
+
         ],
       ),
     );

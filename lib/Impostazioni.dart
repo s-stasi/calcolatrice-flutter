@@ -7,11 +7,20 @@ class Impostazioni extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.blue[900],
       drawer: SideDrawer(),
       appBar: AppBar(
         title: Text('IMPOSTAZIONI'),
-        backgroundColor: Colors.black,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.black,
+                Colors.grey,
+              ]
+            )
+          ),
+        ), 
       ),
       body: Center(
         child: Text('impostazioni pagina...'),

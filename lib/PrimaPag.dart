@@ -10,9 +10,41 @@ class PrimoProblema extends StatelessWidget {
       drawer: SideDrawer(),
       appBar: AppBar(
         title: Text('PRIMO PROBLEMA'),
-        backgroundColor: Colors.black,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.black,
+                Colors.blue,
+              ]
+            )
+          ), 
+        ), 
       ),
-      body: Center(),
+      body: Row(
+        children: <Widget>[
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'TC',),
+             )
+           ),
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'TAS',),
+             )
+           ),
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'WIND VELOCITY',),
+             )
+           ),
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'WIND ANGLE',),
+             )
+           ),
+        ]
+      )
     );
   }
 }

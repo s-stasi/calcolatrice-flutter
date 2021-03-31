@@ -10,8 +10,18 @@ class MyHomePage extends StatelessWidget {
       drawer: SideDrawer(),
       appBar: AppBar(
         title: Text('NAVIGATION TOOL'),
-        backgroundColor: Colors.black,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.blue.shade900,
+                Colors.blue.shade100,
+              ]
+            )
+          ),
+        ),  
       ),
+      
       body: Center(
         child: Text('in arrivo...'),
       ),

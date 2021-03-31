@@ -10,11 +10,41 @@ class SecondoProblema extends StatelessWidget {
       drawer: SideDrawer(),
       appBar: AppBar(
         title: Text('SECONDO PROBLEMA'),
-        backgroundColor: Colors.black,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.black,
+                Colors.blue,
+              ]
+            )
+          ),
+        ), 
       ),
-      body: Center(
-        child: Text('seconda pagina...'),
-      ),
+      body: Row(
+        children: <Widget>[
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'TH',),
+             )
+           ),
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'TAS',),
+             )
+           ),
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'WIND VELOCITY',),
+             )
+           ),
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'WIND ANGLE',),
+             )
+           ),
+        ]
+      )
     );
   }
 }

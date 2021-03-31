@@ -10,11 +10,41 @@ class QuartoProblema extends StatelessWidget {
       drawer: SideDrawer(),
       appBar: AppBar(
         title: Text('QUARTO PROBLEMA'),
-        backgroundColor: Colors.black,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.black,
+                Colors.blue,
+              ]
+            )
+          ),
+        ), 
       ),
-      body: Center(
-        child: Text('quarta pagina...'),
-      ),
+      body: Row(
+        children: <Widget>[
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'TH',),
+             )
+           ),
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'TAS',),
+             )
+           ),
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'TC',),
+             )
+           ),
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),labelText: 'GS',),
+             )
+           ),
+        ]
+      )
     );
   }
 }
