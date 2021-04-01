@@ -48,6 +48,8 @@ secondoProblema(num th, num tas, num windAngle, num windVel) {
 num originWInd;
 num gamma;
 num gs;
+num wca;
+num tc;
 
 //salvo la variabile vento originario 
 originWInd = windAngle;
@@ -64,7 +66,13 @@ if(gamma > 180) gamma = 360 - gamma;
 //trovo gs
 gs = Math.sqrt(Math.pow(windVel,2)+Math.pow(tas, 2)-(2*windVel*tas*Math.cos(toRad(gamma))));
 
+//trovo wca
+wca = toDeg(Math.asin((windVel*Math.sin(toRad(gamma)))/gs));
 
+//trovo tc
+if(windAngle < th) tc = th + wca;
+else tc = th - wca;
 
-
+var arr = [tc, gs];
+return arr;
 }

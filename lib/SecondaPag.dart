@@ -1,9 +1,9 @@
-import 'dart:html';
 
 import 'package:charcode/charcode.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
+import 'problemiDelVento/problems.dart';
 
 class SecondoProblema extends StatefulWidget {
      @override
@@ -98,6 +98,19 @@ class _SPState extends State<SecondoProblema> {
                     ),
                )
              ),
+          FloatingActionButton(
+            onPressed: () => showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  content: Text(
+                    'tc: ' + secondoProblema(int.parse(th.text), int.parse(tas.text), int.parse(windAngle.text), int.parse(windVel.text))[0].toString() + ' gs: ' + secondoProblema(int.parse(th.text), int.parse(tas.text), int.parse(windAngle.text), int.parse(windVel.text))[1].toString()
+                  )
+                );
+              }
+            ),
+            child: Text('='),
+          )
         ]
       )
     );
