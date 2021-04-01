@@ -91,6 +91,7 @@ class _SPState extends State<SecondoProblema> {
           ),
            Expanded(
               child: TextField(
+                controller: windVel,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.blue.shade900,width: 3.0)),
