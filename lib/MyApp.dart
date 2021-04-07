@@ -11,11 +11,19 @@ import 'MyHomePage.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'NAVTOOL',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+        var themeData = null;
+        var themeData1 = ThemeData(
+                     brightness: Brightness.dark
+                      );
+        var themeData2 = ThemeData(
+                     brightness: Brightness.dark
+                      );
+                return MaterialApp(
+                  title: 'NAVTOOL',
+                  theme: ThemeData(
+                    if(value = true)brightness: Brightness.light 
+                    else 
+                  ),
       routes: {
         '/': (context) => MyHomePage(),
         '/PriPag': (context) => PrimoProblema(),
@@ -27,3 +35,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
