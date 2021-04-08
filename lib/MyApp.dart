@@ -8,20 +8,22 @@ import 'QuartaPag.dart';
 import 'Impostazioni.dart';
 import 'MyHomePage.dart';
 
+impostazioni(var value){
+  
+}
+
 class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-                
- //              var tipe;
- //               if(value == true)tipe = Brightness.light;
- //               else tipe = Brightness.dark;
-
+    
+   /*         if(value == true)tipe = Brightness.light;
+              else tipe = Brightness.dark;
+   */
                 return MaterialApp(
                   title: 'NAVTOOL',
                   theme: ThemeData(
-                    brightness: Brightness.dark 
-                     
+                    brightness: Brightness.dark   
                   ),
       routes: {
         '/': (context) => MyHomePage(),

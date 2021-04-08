@@ -38,7 +38,8 @@ class _PPState extends State<PrimoProblema> {
           ])),
         ),
       ),
-      body: Row(children: <Widget>[
+      body: Row(
+         children: <Widget>[
         Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
@@ -92,11 +93,13 @@ class _PPState extends State<PrimoProblema> {
                     BorderSide(color: Colors.blue.shade900, width: 3.0)),
             labelText: 'WIND VELOCITY',
           ),
-        )),
+        )
+      ),
         Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
-      ]),
+       ]
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(
             context: context,
@@ -116,7 +119,8 @@ class _PPState extends State<PrimoProblema> {
                               int.parse(windAngle.text),
                               int.parse(windVel.text))[1]
                           .toString()));
-            }),
+            }
+            ),
         child: Text('   =   '),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),

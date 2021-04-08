@@ -1,3 +1,5 @@
+import 'package:NAVTOOL/QuartaPag.dart';
+import 'package:NAVTOOL/TerzaPag.dart';
 import 'package:flutter/foundation.dart';
 import 'dart:math' as Math;
 
@@ -87,4 +89,18 @@ else tc = th - wca;
 
 var arr = [tc, gs];
 return arr;
+}
+
+terzoProblema(num tc, num gs, num windAngle, num windVel){
+
+//sfalzo il vento
+if(windAngle < 180) windAngle +=180;
+else windAngle -=180;
+
+
+}
+
+quartoProblema(num th, num tas, num tc, num gs){
+
+  tc = 1;
 }

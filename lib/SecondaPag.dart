@@ -99,30 +99,35 @@ class _SPState extends State<SecondoProblema> {
                     ),
                )
              ),
-          FloatingActionButton(
-            onPressed: () => showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  content: Text(
-                    'tc: ' + secondoProblema(
-                      int.parse(th.text),
-                      int.parse(tas.text), 
-                      int.parse(windAngle.text), 
-                      int.parse(windVel.text))[0].toString() +
-                   ' gs: ' + secondoProblema(
-                      int.parse(th.text), 
-                      int.parse(tas.text), 
-                      int.parse(windAngle.text), 
-                      int.parse(windVel.text))[1].toString()
-                  )
-                );
-              }
-            ),
-            child: Text('='),
-          )
         ]
-      )
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                  content: Text('gs: ' +
+                      secondoProblema(
+                              int.parse(th.text),
+                              int.parse(tas.text),
+                              int.parse(windAngle.text),
+                              int.parse(windVel.text))[0]
+                          .toString() +
+                      ' th: ' +
+                      secondoProblema(                                       
+                              int.parse(th.text),
+                              int.parse(tas.text),
+                              int.parse(windAngle.text),
+                              int.parse(windVel.text))[1]
+                          .toString()));
+            }
+            ),
+        child: Text('   =   '),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(5),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
