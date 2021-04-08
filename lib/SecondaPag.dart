@@ -105,7 +105,16 @@ class _SPState extends State<SecondoProblema> {
               builder: (context) {
                 return AlertDialog(
                   content: Text(
-                    'tc: ' + secondoProblema(int.parse(th.text), int.parse(tas.text), int.parse(windAngle.text), int.parse(windVel.text))[0].toString() + ' gs: ' + secondoProblema(int.parse(th.text), int.parse(tas.text), int.parse(windAngle.text), int.parse(windVel.text))[1].toString()
+                    'tc: ' + secondoProblema(
+                      int.parse(th.text),
+                      int.parse(tas.text), 
+                      int.parse(windAngle.text), 
+                      int.parse(windVel.text))[0].toString() +
+                   ' gs: ' + secondoProblema(
+                      int.parse(th.text), 
+                      int.parse(tas.text), 
+                      int.parse(windAngle.text), 
+                      int.parse(windVel.text))[1].toString()
                   )
                 );
               }

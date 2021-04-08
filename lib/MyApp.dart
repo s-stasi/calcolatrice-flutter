@@ -9,20 +9,19 @@ import 'Impostazioni.dart';
 import 'MyHomePage.dart';
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
-        var themeData = null;
-        var themeData1 = ThemeData(
-                     brightness: Brightness.dark
-                      );
-        var themeData2 = ThemeData(
-                     brightness: Brightness.dark
-                      );
+                
+ //              var tipe;
+ //               if(value == true)tipe = Brightness.light;
+ //               else tipe = Brightness.dark;
+
                 return MaterialApp(
                   title: 'NAVTOOL',
                   theme: ThemeData(
-                    if(value = true)brightness: Brightness.light 
-                    else 
+                    brightness: Brightness.dark 
+                     
                   ),
       routes: {
         '/': (context) => MyHomePage(),

@@ -110,7 +110,7 @@ class _PPState extends State<PrimoProblema> {
                               int.parse(windVel.text))[0]
                           .toString() +
                       ' th: ' +
-                      primoProblema(
+                      primoProblema(                                       
                               int.parse(tc.text),
                               int.parse(tas.text),
                               int.parse(windAngle.text),
