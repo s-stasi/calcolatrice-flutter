@@ -99,6 +99,9 @@ class _SPState extends State<SecondoProblema> {
                     ),
                )
              ),
+             Container(
+            width: MediaQuery.of(context).size.width * 0.04,
+            height: MediaQuery.of(context).size.height * 0.20),
         ]
       ),
       floatingActionButton: FloatingActionButton(

@@ -101,6 +101,9 @@ class _QPState extends State<QuartoProblema> {
             ),
           ),
         ),
+        Container(
+            width: MediaQuery.of(context).size.width * 0.04,
+            height: MediaQuery.of(context).size.height * 0.20),
         ]
       ),
       floatingActionButton: FloatingActionButton(
@@ -108,14 +111,14 @@ class _QPState extends State<QuartoProblema> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                  content: Text('gs: ' +
+                  content: Text('Wind Angle: ' +
                       quartoProblema(
                               int.parse(th.text),
                               int.parse(tas.text),
                               int.parse(tc.text),
                               int.parse(gs.text))[0]
                           .toString() +
-                      ' th: ' +
+                      ' Wind Vel: ' +
                       quartoProblema(                                       
                               int.parse(th.text),
                               int.parse(tas.text),
@@ -129,7 +132,7 @@ class _QPState extends State<QuartoProblema> {
           borderRadius: BorderRadius.circular(5),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
     );
   }
 }

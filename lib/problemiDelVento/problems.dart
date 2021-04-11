@@ -101,6 +101,29 @@ else windAngle -=180;
 }
 
 quartoProblema(num th, num tas, num tc, num gs){
+ num windVel;
+ num windAngle;
+ num wca;
+ num alpha;
+ num gamma;
 
-  tc = 1;
+ //trovo wca
+ if(th > tc) wca = th - tc;
+ else wca = tc - th;
+
+//trovo windVel
+windVel = Math.sqrt(Math.pow(tas,2)+Math.pow(gs, 2)-(2*tas*gs*Math.cos(toRad(wca))));
+
+//trovo alpha
+alpha = toDeg(Math.asin((tas*Math.sin(toRad(wca)))/windVel));
+
+//trovo gamma
+gamma = 180 - alpha - wca;
+
+//trovo wind angle
+if(th > tc) windAngle = th - wca - alpha;
+else windAngle = tc - wca - alpha;
+
+var arr =  [windAngle, windVel];
+return arr;
 }

@@ -1,3 +1,5 @@
+/*
+import 'dart:async';
 import 'package:charcode/charcode.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +15,8 @@ class Impostazioni extends StatefulWidget {
 class ImpostazioniState extends State<Impostazioni> {
 
   bool status = false;
-  var modalita;
-  
+  var modalita ;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,4 +61,4 @@ class ImpostazioniState extends State<Impostazioni> {
       )
     );
   }
-}
+}*/
