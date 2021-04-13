@@ -100,7 +100,7 @@ class _PPState extends State<PrimoProblema> {
           ]),
           CustomPaint(
             size: Size(400, 400),
-            painter: PianoCartesianoPainter(),
+            painter: PianoCartesianoPainter(0, 10,123, 0, 0, 0),
           )
         ],
       ),
