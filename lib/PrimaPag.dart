@@ -100,7 +100,7 @@ class _PPState extends State<PrimoProblema> {
           ]),
           CustomPaint(
             size: Size(400, 400),
-            painter: PianoCartesianoPainter(0, 10,123, 0, 0, 0),
+            painter: PianoCartesianoPainter(0, 20, 123, 0, 0, 0),
           )
         ],
       ),
@@ -109,20 +109,12 @@ class _PPState extends State<PrimoProblema> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                  content: Text('gs: ' +
-                      primoProblema(
-                              int.parse(tc.text),
-                              int.parse(tas.text),
-                              int.parse(windAngle.text),
-                              int.parse(windVel.text))[0]
-                          .toString() +
-                      ' th: ' +
-                      primoProblema(
-                              int.parse(tc.text),
-                              int.parse(tas.text),
-                              int.parse(windAngle.text),
-                              int.parse(windVel.text))[1]
-                          .toString()));
+                  content: Problems(
+                      tc: int.tryParse(tc.text) ?? 0,
+                      tas: int.tryParse(tas.text) ?? 0,
+                      windAngle: int.tryParse(windAngle.text) ?? 0,
+                      windVel: int.tryParse(windVel.text) ?? 0,
+                      problemsNumber: "primo"));
             }),
         child: Text('   =   '),
         shape: RoundedRectangleBorder(

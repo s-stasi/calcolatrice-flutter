@@ -11,8 +11,8 @@ toDeg(num rad) {
 
 class PianoCartesianoPainter extends CustomPainter {
   double th;
-  double tc = 45;
-  double gs = 500;
+  double tc;
+  double gs;
   double tas;
   double windVel;
   double windAngle;
@@ -88,10 +88,11 @@ class PianoCartesianoPainter extends CustomPainter {
 
     var gsCoordinates = [Offset(0, 0), Offset(0, 0)];
 
-      gsCoordinates = [
-        Offset(200 + gs * math.cos(toRad(tc)), 200 -1 *gs * math.sin(toRad(tc))),
-        Offset(200, 200)
-      ];
+    gsCoordinates = [
+      Offset(
+          200 + gs * math.cos(toRad(tc)), 200 - 1 * gs * math.sin(toRad(tc))),
+      Offset(200, 200)
+    ];
 
     var tcPaint = Paint()
       ..color = Colors.red
