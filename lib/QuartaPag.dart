@@ -116,7 +116,7 @@ class _QPState extends State<QuartoProblema> {
           borderRadius: BorderRadius.circular(5),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

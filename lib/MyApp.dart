@@ -9,6 +9,7 @@ import 'QuartaPag.dart';
 import 'SideDrawer.dart';
 import 'MyHomePage.dart';
 
+
 var modalita;
 
 class MyApp extends StatefulWidget {
@@ -47,15 +48,14 @@ class ImpostazioniState extends State<Impostazioni> {
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
       builder: (context, theme, child) => Scaffold(
-          backgroundColor: Colors.blue[900],
           drawer: SideDrawer(),
           appBar: AppBar(
-            title: Text('IMPOSTAZIONI'),
+            title: Text('IMPOSTAZIONI',style: TextStyle(color: Colors.black),),
             flexibleSpace: Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
-                Colors.black,
                 Colors.grey,
+                Colors.white,
               ])),
             ),
           ),
@@ -68,13 +68,25 @@ class ImpostazioniState extends State<Impostazioni> {
                           print('set light theme'),
                           theme.setLightMode(),
                         },
-                    child: Text('set light theme')),
+                    child: Text('set light theme',
+                    style: TextStyle(
+                    fontSize: 30,
+                    backgroundColor: Colors.grey,
+                    color: Colors.black )
+                    )
+                    ),
                 TextButton(
                     onPressed: () => {
                           print('set dark theme'),
                           theme.setDarkMode(),
                         },
-                    child: Text('set dark theme')),
+                    child: Text('set dark theme',
+                    style: TextStyle(
+                    fontSize: 30,
+                    backgroundColor: Colors.grey,
+                    color: Colors.black )
+                    )
+                    ),
               ],
             ),
           )),
