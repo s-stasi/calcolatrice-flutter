@@ -10,21 +10,19 @@ class QuartoProblema extends StatefulWidget {
 }
 
 class _QPState extends State<QuartoProblema> {
+  final th = TextEditingController();
+  final tas = TextEditingController();
+  final tc = TextEditingController();
+  final gs = TextEditingController();
 
-   final th = TextEditingController();
-   final tas = TextEditingController();
-   final tc  = TextEditingController();
-   final gs = TextEditingController();
-
-   @override 
-   void dispose() {
-     th.dispose();
-     tas.dispose();
-     tc.dispose();
-     gs.dispose();
-     super.dispose();
-   }
-
+  @override
+  void dispose() {
+    th.dispose();
+    tas.dispose();
+    tc.dispose();
+    gs.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,18 +32,14 @@ class _QPState extends State<QuartoProblema> {
         title: Text('QUARTO PROBLEMA'),
         flexibleSpace: Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Colors.black,
-                Colors.blue,
-              ]
-            )
-          ),
-        ), 
+              gradient: LinearGradient(colors: [
+            Colors.black,
+            Colors.blue,
+          ])),
+        ),
       ),
-      body: Row(
-        children: <Widget>[
-          Container(
+      body: Row(children: <Widget>[
+        Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
@@ -59,7 +53,7 @@ class _QPState extends State<QuartoProblema> {
             ),
           ),
         ),
-          Container(
+        Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
@@ -73,7 +67,7 @@ class _QPState extends State<QuartoProblema> {
             ),
           ),
         ),
-          Container(
+        Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
@@ -87,7 +81,7 @@ class _QPState extends State<QuartoProblema> {
             ),
           ),
         ),
-          Container(
+        Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
@@ -104,29 +98,19 @@ class _QPState extends State<QuartoProblema> {
         Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
-        ]
-      ),
+      ]),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(
             context: context,
             builder: (context) {
               return AlertDialog(
-                  content: Text('Wind Angle: ' +
-                      quartoProblema(
-                              int.parse(th.text),
-                              int.parse(tas.text),
-                              int.parse(tc.text),
-                              int.parse(gs.text))[0]
-                          .toString() +
-                      ' Wind Vel: ' +
-                      quartoProblema(                                       
-                              int.parse(th.text),
-                              int.parse(tas.text),
-                              int.parse(tc.text),
-                              int.parse(gs.text))[1]
-                          .toString()));
-            }
-            ),
+                  content: Problems(
+                      tc: int.tryParse(tc.text) ?? 0,
+                      tas: int.tryParse(tas.text) ?? 0,
+                      windAngle: int.tryParse(th.text) ?? 0,
+                      windVel: int.tryParse(gs.text) ?? 0,
+                      problemsNumber: "primo"));
+            }),
         child: Text('   =   '),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),

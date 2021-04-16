@@ -32,18 +32,11 @@ class _PTState extends State<TerzoProblema> {
         title: Text('TERZO PROBLEMA'),
         flexibleSpace: Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Colors.black,
-                Colors.blue
-              ]
-            )
-          ),
-        ), 
+              gradient: LinearGradient(colors: [Colors.black, Colors.blue])),
+        ),
       ),
-      body: Row(
-        children: <Widget>[
-       Container(
+      body: Row(children: <Widget>[
+        Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
@@ -57,7 +50,7 @@ class _PTState extends State<TerzoProblema> {
             ),
           ),
         ),
-         Container(
+        Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
@@ -71,7 +64,7 @@ class _PTState extends State<TerzoProblema> {
             ),
           ),
         ),
-          Container(
+        Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
@@ -85,7 +78,7 @@ class _PTState extends State<TerzoProblema> {
             ),
           ),
         ),
-          Container(
+        Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
@@ -102,29 +95,19 @@ class _PTState extends State<TerzoProblema> {
         Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
-        ]
-      ),
+      ]),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(
             context: context,
             builder: (context) {
               return AlertDialog(
-                  content: Text('gs: ' +
-                      terzoProblema(
-                              int.parse(tc.text),
-                              int.parse(gs.text),
-                              int.parse(windAngle.text),
-                              int.parse(windVel.text))[0]
-                          .toString() +
-                      ' th: ' +
-                      terzoProblema(                                       
-                              int.parse(tc.text),
-                              int.parse(gs.text),
-                              int.parse(windAngle.text),
-                              int.parse(windVel.text))[1]
-                          .toString()));
-              }
-            ),
+                  content: Problems(
+                      tc: int.tryParse(tc.text) ?? 0,
+                      tas: int.tryParse(gs.text) ?? 0,
+                      windAngle: int.tryParse(windAngle.text) ?? 0,
+                      windVel: int.tryParse(windVel.text) ?? 0,
+                      problemsNumber: "primo"));
+            }),
         child: Text('   =   '),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
