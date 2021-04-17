@@ -14,6 +14,7 @@ var modalita;
 
 class MyApp extends StatefulWidget {
   @override
+  
   _MAState createState() => _MAState();
 }
 
@@ -21,6 +22,7 @@ class _MAState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
+      
         builder: (context, theme, child) => MaterialApp(
               title: 'NAVTOOL',
               theme: theme.getTheme(),

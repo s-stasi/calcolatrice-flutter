@@ -29,7 +29,7 @@ class _PTState extends State<TerzoProblema> {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
-        title: Text('TERZO PROBLEMA'),
+        title: Text('TERZO PROBLEMA',style: TextStyle(color: Colors.white),),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [Colors.black, Colors.blue])),

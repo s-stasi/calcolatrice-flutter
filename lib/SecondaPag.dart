@@ -29,7 +29,7 @@ class _SPState extends State<SecondoProblema> {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
-        title: Text('SECONDO PROBLEMA'),
+        title: Text('SECONDO PROBLEMA',style: TextStyle(color: Colors.white),),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [

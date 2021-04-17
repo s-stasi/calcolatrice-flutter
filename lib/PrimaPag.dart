@@ -28,7 +28,7 @@ class _PPState extends State<PrimoProblema> {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
-        title: Text('PRIMO PROBLEMA'),
+        title: Text('PRIMO PROBLEMA',style: TextStyle(color: Colors.white),),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [

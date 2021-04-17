@@ -29,7 +29,7 @@ class _QPState extends State<QuartoProblema> {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
-        title: Text('QUARTO PROBLEMA'),
+        title: Text('QUARTO PROBLEMA',style: TextStyle(color: Colors.white),),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
