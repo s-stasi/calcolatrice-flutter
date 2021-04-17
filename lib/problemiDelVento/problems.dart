@@ -17,14 +17,20 @@ class Problems extends StatefulWidget {
   var windVel;
   var th;
   var gs;
-  String problemsNumber;
+  String problemNumber;
 
   @override
   _ProblemsState createState() => _ProblemsState(
-      tc: tc, tas: tas, windAngle: windAngle, windVel: windVel, th: th, gs: gs);
+      tc: tc,
+      tas: tas,
+      windAngle: windAngle,
+      windVel: windVel,
+      th: th,
+      gs: gs,
+      problemNumber: problemNumber);
 
   Problems(
-      {this.problemsNumber: "null",
+      {this.problemNumber: "null",
       var this.tc,
       var this.tas,
       var this.windAngle,

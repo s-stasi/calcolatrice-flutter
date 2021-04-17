@@ -105,7 +105,7 @@ class _SPState extends State<SecondoProblema> {
                       tas: int.tryParse(tas.text) ?? 0,
                       windAngle: int.tryParse(windAngle.text) ?? 0,
                       windVel: int.tryParse(windVel.text) ?? 0,
-                      problemsNumber: "primo"));
+                      problemNumber: "primo"));
             }),
         child: Text('   =   '),
         shape: RoundedRectangleBorder(
