@@ -48,6 +48,71 @@ class _ProblemsState extends State<Problems> {
   var tc;
   late String problemNumber;
 
+  // TODO: refactor 1 problema del vento
+
+  // var e = k(document.datapdv1)
+  //             , n = e.v
+  //             , t = e.w
+  //             , a = e.tc
+  //             , o = e.tas
+  //             , r = I(n * Math.sin((t - a) * Math.PI / 180))
+  //             , l = I(-n * Math.cos((a - t) * Math.PI / 180))
+  //             , i = 180 * Math.asin(r / o) / Math.PI
+  //             , c = I(o * Math.cos(i * Math.PI / 180))
+  //             , s = I(a + i)
+  //             , u = I(c + l)
+  //             , d = S({
+  //               xc: r,
+  //               lc: l,
+  //               wca: i,
+  //               etas: c,
+  //               th: s,
+  //               gs: u
+  //           });
+
+  // TODO: refactor 3 problema del vento
+
+  // var e = k(document.datapdv3)
+  //                 , n = e.tgs
+  //                 , t = e.th
+  //                 , a = e.tc
+  //                 , o = e.tas
+  //                 , r = t - a
+  //                 , l = I(o * Math.sin(r * Math.PI / 180))
+  //                 , i = I(o * Math.cos(r * Math.PI / 180))
+  //                 , c = I(n - i)
+  //                 , s = I(Math.sqrt(Math.pow(l, 2) + Math.pow(c, 2)))
+  //                 , u = l > 0 ? a + (90 + 180 * Math.asin(c / s) / Math.PI) : a + -(90 + 180 * Math.asin(c / s) / Math.PI)
+  //                 , d = S({
+  //                   xc: l,
+  //                   lc: c,
+  //                   wca: r,
+  //                   v: s,
+  //                   w: u
+  //               });
+
+  // TODO: refactor 4 problema del vento
+
+  // var e = k(document.datapdv4)
+  //                 , n = e.v
+  //                 , t = e.w
+  //                 , a = e.tc
+  //                 , o = e.ngs
+  //                 , r = I(n * Math.sin((t - a) * Math.PI / 180))
+  //                 , l = I(-n * Math.cos((a - t) * Math.PI / 180))
+  //                 , i = o - l
+  //                 , c = 180 * Math.atan(r / i) / Math.PI
+  //                 , s = a + c
+  //                 , u = I(i / Math.cos(c * Math.PI / 180))
+  //                 , d = S({
+  //                   xc: r,
+  //                   lc: l,
+  //                   wca: c,
+  //                   th: s,
+  //                   etas: i,
+  //                   tas: u
+  //               });
+
   _ProblemsState(
       {this.problemNumber: "null",
       var this.tc,

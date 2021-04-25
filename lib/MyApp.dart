@@ -8,13 +8,12 @@ import 'TerzaPag.dart';
 import 'QuartaPag.dart';
 import 'SideDrawer.dart';
 import 'MyHomePage.dart';
-
+import 'PrimoLossodromia.dart';
 
 var modalita;
 
 class MyApp extends StatefulWidget {
   @override
-  
   _MAState createState() => _MAState();
 }
 
@@ -22,7 +21,6 @@ class _MAState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
-      
         builder: (context, theme, child) => MaterialApp(
               title: 'NAVTOOL',
               theme: theme.getTheme(),
@@ -32,6 +30,7 @@ class _MAState extends State<MyApp> {
                 '/SecPag': (context) => SecondoProblema(),
                 '/TerPag': (context) => TerzoProblema(),
                 '/QuaPag': (context) => QuartoProblema(),
+                '/priLos': (context) => PrimoLossodromia(),
                 '/ImpPag': (context) => Impostazioni(),
               },
             ));
@@ -52,7 +51,10 @@ class ImpostazioniState extends State<Impostazioni> {
       builder: (context, theme, child) => Scaffold(
           drawer: SideDrawer(),
           appBar: AppBar(
-            title: Text('IMPOSTAZIONI',style: TextStyle(color: Colors.black),),
+            title: Text(
+              'IMPOSTAZIONI',
+              style: TextStyle(color: Colors.black),
+            ),
             flexibleSpace: Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
@@ -71,24 +73,20 @@ class ImpostazioniState extends State<Impostazioni> {
                           theme.setLightMode(),
                         },
                     child: Text('set light theme',
-                    style: TextStyle(
-                    fontSize: 30,
-                    backgroundColor: Colors.grey,
-                    color: Colors.black )
-                    )
-                    ),
+                        style: TextStyle(
+                            fontSize: 30,
+                            backgroundColor: Colors.grey,
+                            color: Colors.black))),
                 TextButton(
                     onPressed: () => {
                           print('set dark theme'),
                           theme.setDarkMode(),
                         },
                     child: Text('set dark theme',
-                    style: TextStyle(
-                    fontSize: 30,
-                    backgroundColor: Colors.grey,
-                    color: Colors.black )
-                    )
-                    ),
+                        style: TextStyle(
+                            fontSize: 30,
+                            backgroundColor: Colors.grey,
+                            color: Colors.black))),
               ],
             ),
           )),
