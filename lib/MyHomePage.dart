@@ -49,7 +49,7 @@ class MyHomePage extends StatelessWidget {
         ),  
       ),  
       body: 
-       Column(children: [
+      Column(children: [
          Expanded(child: Container(child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
              children: <Widget>[
@@ -162,9 +162,7 @@ class MyHomePage extends StatelessWidget {
                       );
                     }
                   })
-           
-         ),
-         
+           ), 
          )
        ],
        )
@@ -180,6 +178,7 @@ class MyButton extends StatelessWidget {
   final String buttonText;
   final buttontapped;
   
+  button text
   //Constructor
   MyButton({this.color, this.textColor, this.buttonText, this.buttontapped});
   
