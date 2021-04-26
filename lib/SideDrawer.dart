@@ -22,6 +22,52 @@ class SideDrawer extends StatelessWidget {
               ]),
             ),
           ),
+            ListTile(
+            leading: Icon(Icons.local_airport),
+            title: Text(
+              'lossodromia',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            ),
+            onTap: () => {
+             Navigator.pop(context,
+             Drawer(
+               child:Column(
+                 children:<Widget>[
+                     ListTile(
+                     leading: Icon(Icons.local_airport),
+                     title: Text(
+                     '1' + String.fromCharCodes(a) + ' problema della lossodromia',
+                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                     ),
+                     onTap: () => {
+                     Navigator.pushNamed(
+                     context,
+                    '/PriLos',
+                     ),
+                     },
+                     ),
+                     Divider(color: Colors.grey[900],),
+                     ListTile(
+                     leading: Icon(Icons.local_airport),
+                     title: Text(
+                    '2' + String.fromCharCodes(a) + ' problema della lossodromia',
+                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                     ),
+                     onTap: () => {
+                     Navigator.pushNamed(
+                     context,
+                    '/PriLos',
+                    ),
+                    },
+                    ),
+                    Divider(color: Colors.grey[900],),
+               ],
+              )
+             )
+            )
+            },
+          ),
+          Divider(color: Colors.grey[900],),
           ListTile(
             leading: Icon(Icons.local_airport),
             title: Text(
@@ -35,6 +81,7 @@ class SideDrawer extends StatelessWidget {
               ),
             },
           ),
+          Divider(color: Colors.grey[900],),
           ListTile(
             leading: Icon(Icons.local_airport),
             title: Text(
@@ -48,6 +95,7 @@ class SideDrawer extends StatelessWidget {
               ),
             },
           ),
+          Divider(color: Colors.grey[900],),
           ListTile(
             leading: Icon(Icons.local_airport),
             title: Text(
@@ -61,6 +109,7 @@ class SideDrawer extends StatelessWidget {
               ),
             },
           ),
+          Divider(color: Colors.grey[900],),
           ListTile(
             leading: Icon(Icons.local_airport),
             title: Text(
@@ -74,6 +123,7 @@ class SideDrawer extends StatelessWidget {
               ),
             },
           ),
+          Divider(color: Colors.grey[900],),
           ListTile(
             leading: Icon(Icons.calculate),
             title: Text(
@@ -87,6 +137,7 @@ class SideDrawer extends StatelessWidget {
               ),
             },
           ),
+          Divider(color: Colors.grey[900],),
           ListTile(
             leading: Icon(Icons.local_airport),
             title: Text(
@@ -100,6 +151,7 @@ class SideDrawer extends StatelessWidget {
               ),
             },
           ),
+          Divider(color: Colors.grey[900],),
           ListTile(
             leading: Icon(Icons.settings_outlined),
             title: Text(
@@ -113,6 +165,7 @@ class SideDrawer extends StatelessWidget {
               ),
             },
           ),
+          Divider(color: Colors.grey[900],),
         ],
       ),
     );
