@@ -88,6 +88,19 @@ class SideDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: Icon(Icons.local_airport),
+            title: Text(
+              '1' + String.fromCharCodes(a) + ' problema della lossodromia',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            ),
+            onTap: () => {
+              Navigator.pushNamed(
+                context,
+                '/TerPag',
+              ),
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.settings_outlined),
             title: Text(
               'impostazioni',
