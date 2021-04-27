@@ -1,7 +1,11 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class SideDrawer extends StatelessWidget {
   Iterable<int> a = [0x00B0];
+
+  
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -29,41 +33,44 @@ class SideDrawer extends StatelessWidget {
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             ),
             onTap: () => {
-             Navigator.pop(context,
-             Drawer(
-               child:Column(
-                 children:<Widget>[
-                     ListTile(
-                     leading: Icon(Icons.local_airport),
-                     title: Text(
-                     '1' + String.fromCharCodes(a) + ' problema della lossodromia',
-                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-                     ),
-                     onTap: () => {
-                     Navigator.pushNamed(
-                     context,
-                    '/PriLos',
-                     ),
-                     },
-                     ),
-                     Divider(color: Colors.grey[900],),
-                     ListTile(
-                     leading: Icon(Icons.local_airport),
-                     title: Text(
-                    '2' + String.fromCharCodes(a) + ' problema della lossodromia',
-                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-                     ),
-                     onTap: () => {
-                     Navigator.pushNamed(
-                     context,
-                    '/PriLos',
-                    ),
-                    },
-                    ),
-                    Divider(color: Colors.grey[900],),
-               ],
+            showMenu(context: context, position: 'cosa p0rc0d10 d3v0 m3tt3r3 ?', items: [
+              PopupMenuItem<int>(
+                child: 
+                  Column(
+                    children: [
+                      ListTile(
+                        leading: Icon(Icons.local_airport),
+                        title: Text(
+                        '1' + String.fromCharCodes(a) + 'problema del vento',
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                        ),
+                        onTap: () => {
+                        Navigator.pushNamed(
+                        context,
+                        '/PriLoss',
+                        ),
+                        },
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.local_airport),
+                        title: Text(
+                        '2' + String.fromCharCodes(a) + 'problema del vento',
+                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                        ),
+                        onTap: () => {
+                        Navigator.pushNamed(
+                        context,
+                        '/SecLoss',
+                        ),
+                        },
+                      )
+                    ],
+                  ),
+                ],
+                   
               )
-             )
+            ]
+            
             )
             },
           ),
@@ -71,7 +78,7 @@ class SideDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.local_airport),
             title: Text(
-              '1' + String.fromCharCodes(a) + ' problema del vento',
+              '1' + String.fromCharCodes(a) + 'problema del vento',
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             ),
             onTap: () => {
@@ -139,20 +146,6 @@ class SideDrawer extends StatelessWidget {
           ),
           Divider(color: Colors.grey[900],),
           ListTile(
-            leading: Icon(Icons.local_airport),
-            title: Text(
-              '1' + String.fromCharCodes(a) + ' problema della lossodromia',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/TerPag',
-              ),
-            },
-          ),
-          Divider(color: Colors.grey[900],),
-          ListTile(
             leading: Icon(Icons.settings_outlined),
             title: Text(
               'impostazioni',
@@ -171,3 +164,4 @@ class SideDrawer extends StatelessWidget {
     );
   }
 }
+
