@@ -1,11 +1,9 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class SideDrawer extends StatelessWidget {
   Iterable<int> a = [0x00B0];
+  final double sumMenuItemSmall = 12;
 
-  
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -26,111 +24,94 @@ class SideDrawer extends StatelessWidget {
               ]),
             ),
           ),
-            ListTile(
-            leading: Icon(Icons.local_airport),
+          ExpansionTile(
             title: Text(
-              'lossodromia',
+              "Problemi del vento",
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             ),
-            onTap: () => {
-            showMenu(context: context, position: 'cosa p0rc0d10 d3v0 m3tt3r3 ?', items: [
-              PopupMenuItem<int>(
-                child: 
-                  Column(
-                    children: [
-                      ListTile(
-                        leading: Icon(Icons.local_airport),
-                        title: Text(
-                        '1' + String.fromCharCodes(a) + 'problema del vento',
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-                        ),
-                        onTap: () => {
-                        Navigator.pushNamed(
-                        context,
-                        '/PriLoss',
-                        ),
-                        },
-                      ),
-                      ListTile(
-                        leading: Icon(Icons.local_airport),
-                        title: Text(
-                        '2' + String.fromCharCodes(a) + 'problema del vento',
-                        style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-                        ),
-                        onTap: () => {
-                        Navigator.pushNamed(
-                        context,
-                        '/SecLoss',
-                        ),
-                        },
-                      )
-                    ],
+            children: <Widget>[
+              ListTile(
+                leading: Icon(
+                  Icons.local_airport,
+                  size: 18,
+                ),
+                title: Text(
+                  '1' + String.fromCharCodes(a) + 'problema del vento',
+                  style: TextStyle(
+                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
+                ),
+                onTap: () => {
+                  Navigator.pushNamed(
+                    context,
+                    '/PriPag',
                   ),
-                ],
-                   
-              )
-            ]
-            
-            )
-            },
-          ),
-          Divider(color: Colors.grey[900],),
-          ListTile(
-            leading: Icon(Icons.local_airport),
-            title: Text(
-              '1' + String.fromCharCodes(a) + 'problema del vento',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/PriPag',
+                },
               ),
-            },
-          ),
-          Divider(color: Colors.grey[900],),
-          ListTile(
-            leading: Icon(Icons.local_airport),
-            title: Text(
-              '2' + String.fromCharCodes(a) + ' problema del vento',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/SecPag',
+              Divider(
+                color: Colors.grey[900],
               ),
-            },
-          ),
-          Divider(color: Colors.grey[900],),
-          ListTile(
-            leading: Icon(Icons.local_airport),
-            title: Text(
-              '3' + String.fromCharCodes(a) + ' problema del vento',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/TerPag',
+              ListTile(
+                leading: Icon(
+                  Icons.local_airport,
+                  size: 18,
+                ),
+                title: Text(
+                  '2' + String.fromCharCodes(a) + ' problema del vento',
+                  style: TextStyle(
+                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
+                ),
+                onTap: () => {
+                  Navigator.pushNamed(
+                    context,
+                    '/SecPag',
+                  ),
+                },
               ),
-            },
-          ),
-          Divider(color: Colors.grey[900],),
-          ListTile(
-            leading: Icon(Icons.local_airport),
-            title: Text(
-              '4' + String.fromCharCodes(a) + ' problema del vento',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/QuaPag',
+              Divider(
+                color: Colors.grey[900],
               ),
-            },
+              ListTile(
+                leading: Icon(
+                  Icons.local_airport,
+                  size: 18,
+                ),
+                title: Text(
+                  '3' + String.fromCharCodes(a) + ' problema del vento',
+                  style: TextStyle(
+                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
+                ),
+                onTap: () => {
+                  Navigator.pushNamed(
+                    context,
+                    '/TerPag',
+                  ),
+                },
+              ),
+              Divider(
+                color: Colors.grey[900],
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.local_airport,
+                  size: 18,
+                ),
+                title: Text(
+                  '4' + String.fromCharCodes(a) + ' problema del vento',
+                  style: TextStyle(
+                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
+                ),
+                onTap: () => {
+                  Navigator.pushNamed(
+                    context,
+                    '/QuaPag',
+                  ),
+                },
+              ),
+            ],
           ),
-          Divider(color: Colors.grey[900],),
+          Divider(
+            color: Colors.grey[900],
+          ),
           ListTile(
             leading: Icon(Icons.calculate),
             title: Text(
@@ -144,7 +125,9 @@ class SideDrawer extends StatelessWidget {
               ),
             },
           ),
-          Divider(color: Colors.grey[900],),
+          Divider(
+            color: Colors.grey[900],
+          ),
           ListTile(
             leading: Icon(Icons.settings_outlined),
             title: Text(
@@ -158,10 +141,11 @@ class SideDrawer extends StatelessWidget {
               ),
             },
           ),
-          Divider(color: Colors.grey[900],),
+          Divider(
+            color: Colors.grey[900],
+          ),
         ],
       ),
     );
   }
 }
-
