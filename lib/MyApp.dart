@@ -9,6 +9,7 @@ import 'QuartaPag.dart';
 import 'SideDrawer.dart';
 import 'MyHomePage.dart';
 import 'PrimoLossodromia.dart';
+import 'SecondoLossodromia.dart';
 
 var modalita;
 
@@ -31,6 +32,7 @@ class _MAState extends State<MyApp> {
                 '/TerPag': (context) => TerzoProblema(),
                 '/QuaPag': (context) => QuartoProblema(),
                 '/priLos': (context) => PrimoLossodromia(),
+                '/secLos': (context) => SecondoLossodromia(),
                 '/ImpPag': (context) => Impostazioni(),
               },
             ));

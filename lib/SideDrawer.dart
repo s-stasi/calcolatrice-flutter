@@ -109,6 +109,50 @@ class SideDrawer extends StatelessWidget {
               ),
             ],
           ),
+          ExpansionTile(title: Text(
+              "Problemi del vento",
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            ),
+            children: <Widget>[
+              ListTile(
+                leading: Icon(
+                  Icons.local_airport_sharp,
+                  size: 18,
+                ),
+                title: Text(
+                  '1' + String.fromCharCodes(a) + 'problema della lossodromia',
+                  style: TextStyle(
+                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
+                ),
+                onTap: () => {
+                  Navigator.pushNamed(
+                    context,
+                    '/priLos',
+                  ),
+                },
+              ),
+              Divider(
+                color: Colors.grey[900],
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.local_airport_outlined,
+                  size: 18,
+                ),
+                title: Text(
+                  '2' + String.fromCharCodes(a) + ' problema della lossoderomia',
+                  style: TextStyle(
+                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
+                ),
+                onTap: () => {
+                  Navigator.pushNamed(
+                    context,
+                    '/secLos',
+                  ),
+                },
+              ),
+              
+
           Divider(
             color: Colors.grey[900],
           ),
@@ -146,6 +190,6 @@ class SideDrawer extends StatelessWidget {
           ),
         ],
       ),
-    );
+      );
   }
 }
