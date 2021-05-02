@@ -1,5 +1,3 @@
-import 'package:charcode/charcode.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problemiDelVento/problems.dart';
@@ -29,7 +27,10 @@ class _PTState extends State<TerzoProblema> {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
-        title: Text('TERZO PROBLEMA',style: TextStyle(color: Colors.white),),
+        title: Text(
+          'TERZO PROBLEMA',
+          style: TextStyle(color: Colors.white),
+        ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [Colors.black, Colors.blue])),

@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 class SideDrawer extends StatelessWidget {
   Iterable<int> a = [0x00B0];
   final double sumMenuItemSmall = 12;
+  final double expTitleSmall = 18;
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
+        child: SingleChildScrollView(
+      scrollDirection: Axis.vertical,
       child: Column(
         children: <Widget>[
           DrawerHeader(
@@ -27,7 +30,8 @@ class SideDrawer extends StatelessWidget {
           ExpansionTile(
             title: Text(
               "Problemi del vento",
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+              style: TextStyle(
+                  fontSize: expTitleSmall, fontWeight: FontWeight.w600),
             ),
             children: <Widget>[
               ListTile(
@@ -109,9 +113,11 @@ class SideDrawer extends StatelessWidget {
               ),
             ],
           ),
-          ExpansionTile(title: Text(
-              "Problemi del vento",
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+          ExpansionTile(
+            title: Text(
+              "Problemi della lossodromia",
+              style: TextStyle(
+                  fontSize: expTitleSmall, fontWeight: FontWeight.w600),
             ),
             children: <Widget>[
               ListTile(
@@ -140,7 +146,9 @@ class SideDrawer extends StatelessWidget {
                   size: 18,
                 ),
                 title: Text(
-                  '2' + String.fromCharCodes(a) + ' problema della lossoderomia',
+                  '2' +
+                      String.fromCharCodes(a) +
+                      ' problema della lossoderomia',
                   style: TextStyle(
                       fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
                 ),
@@ -151,10 +159,10 @@ class SideDrawer extends StatelessWidget {
                   ),
                 },
               ),
-              
-
-          Divider(
-            color: Colors.grey[900],
+              Divider(
+                color: Colors.grey[900],
+              ),
+            ],
           ),
           ListTile(
             leading: Icon(Icons.calculate),
@@ -190,6 +198,6 @@ class SideDrawer extends StatelessWidget {
           ),
         ],
       ),
-      );
+    ));
   }
 }
