@@ -164,6 +164,8 @@ class _ProblemsState extends State<Problems> {
       return quartoProblema();
     } else if (this.problemNumber == "primoLoss") {
       return primoLossodromia();
+    } else if (this.problemNumber == "secondoLoss") {
+      return secondoLossodromia();
     } else {
       throw Exception('You have to choose the problem');
     }
@@ -313,4 +315,6 @@ class _ProblemsState extends State<Problems> {
     else
       delF = bF - aF;
   }
+
+  secondoLossodromia() {}
 }
