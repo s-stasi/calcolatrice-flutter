@@ -29,7 +29,10 @@ class _QPState extends State<QuartoProblema> {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
-        title: Text('QUARTO PROBLEMA',style: TextStyle(color: Colors.white),),
+        title: Text(
+          'QUARTO PROBLEMA',
+          style: TextStyle(color: Colors.white),
+        ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
@@ -50,6 +53,7 @@ class _QPState extends State<QuartoProblema> {
                   borderSide:
                       BorderSide(color: Colors.blue.shade900, width: 3.0)),
               labelText: 'TH',
+              helperText: 'true heading',
             ),
           ),
         ),
@@ -64,6 +68,7 @@ class _QPState extends State<QuartoProblema> {
                   borderSide:
                       BorderSide(color: Colors.blue.shade900, width: 3.0)),
               labelText: 'TAS',
+              helperText: 'true air speed',
             ),
           ),
         ),
@@ -78,6 +83,7 @@ class _QPState extends State<QuartoProblema> {
                   borderSide:
                       BorderSide(color: Colors.blue.shade900, width: 3.0)),
               labelText: 'TC',
+              helperText: 'true course',
             ),
           ),
         ),
@@ -92,6 +98,7 @@ class _QPState extends State<QuartoProblema> {
                   borderSide:
                       BorderSide(color: Colors.blue.shade900, width: 3.0)),
               labelText: 'GS',
+              helperText: 'ground speed',
             ),
           ),
         ),

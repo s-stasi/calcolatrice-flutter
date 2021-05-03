@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         drawer: SideDrawer(),
         appBar: AppBar(
           title: Text('NAVIGATION TOOL'),
+          iconTheme: IconThemeData(color: Colors.white),
           flexibleSpace: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
@@ -194,7 +195,7 @@ class MyButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(0.2),
         child: ClipRRect(
-         borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(25),
           child: Container(
             color: color,
             child: Center(

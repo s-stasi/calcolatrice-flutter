@@ -17,6 +17,11 @@ class Problems extends StatefulWidget {
   var windVel;
   var th;
   var gs;
+  var aF;
+  var aL;
+  var bF;
+  var bL;
+  var d;
   String problemNumber;
 
   @override
@@ -27,6 +32,11 @@ class Problems extends StatefulWidget {
       windVel: windVel,
       th: th,
       gs: gs,
+      aF: aF,
+      aL: aL,
+      bF: bF,
+      bL: bL,
+      d: d,
       problemNumber: problemNumber);
 
   Problems(
@@ -36,7 +46,12 @@ class Problems extends StatefulWidget {
       var this.windAngle,
       var this.windVel,
       var this.th,
-      var this.gs});
+      var this.gs,
+      var this.aF,
+      var this.aL,
+      var this.bF,
+      var this.bL,
+      var this.d});
 }
 
 class _ProblemsState extends State<Problems> {
@@ -46,6 +61,11 @@ class _ProblemsState extends State<Problems> {
   var th;
   var gs;
   var tc;
+  var aF;
+  var aL;
+  var bF;
+  var bL;
+  var d;
   late String problemNumber;
 
   // TODO: refactor 1 problema del vento
@@ -120,7 +140,12 @@ class _ProblemsState extends State<Problems> {
       var this.windAngle,
       var this.windVel,
       var this.th,
-      var this.gs});
+      var this.gs,
+      var this.aF,
+      var this.aL,
+      var this.bF,
+      var this.bL,
+      var this.d});
 
   @override
   Widget build(BuildContext context) {
@@ -136,6 +161,8 @@ class _ProblemsState extends State<Problems> {
       return terzoProblema();
     } else if (this.problemNumber == "quarto") {
       return quartoProblema();
+    } else if (this.problemNumber == "primoLoss") {
+      return primoLossodromia();
     } else {
       throw Exception('You have to choose the problem');
     }
@@ -278,3 +305,5 @@ class _ProblemsState extends State<Problems> {
     return arr;
   }
 }
+
+primoLossodromia() {}

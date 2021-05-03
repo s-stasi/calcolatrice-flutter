@@ -57,6 +57,7 @@ class ImpostazioniState extends State<Impostazioni> {
               'IMPOSTAZIONI',
               style: TextStyle(color: Colors.black),
             ),
+            iconTheme: IconThemeData(color: Colors.black),
             flexibleSpace: Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [

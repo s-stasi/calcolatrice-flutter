@@ -7,7 +7,7 @@ class ThemeNotifier with ChangeNotifier {
       primaryColor: Colors.black,
       brightness: Brightness.dark,
       backgroundColor: const Color(0xFF212121),
-      accentColor: Colors.white,
+      accentColor: Colors.lightBlueAccent,
       accentIconTheme: IconThemeData(color: Colors.black),
       dividerColor: Colors.black12);
 
@@ -16,7 +16,7 @@ class ThemeNotifier with ChangeNotifier {
       primaryColor: Colors.white,
       brightness: Brightness.light,
       backgroundColor: const Color(0xFFE5E5E5),
-      accentColor: Colors.white,
+      accentColor: Colors.blue,
       accentIconTheme: IconThemeData(color: Colors.white),
       dividerColor: Colors.white54);
 

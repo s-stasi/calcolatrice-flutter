@@ -28,7 +28,11 @@ class _PPState extends State<PrimoProblema> {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
-        title: Text('PRIMO PROBLEMA',style: TextStyle(color: Colors.white),),
+        title: Text(
+          'PRIMO PROBLEMA',
+          style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: IconThemeData(color: Colors.white),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
@@ -51,6 +55,7 @@ class _PPState extends State<PrimoProblema> {
                       borderSide:
                           BorderSide(color: Colors.blue.shade900, width: 3.0)),
                   labelText: 'TC',
+                  helperText: 'true course',
                 ),
               ),
             ),
@@ -65,6 +70,7 @@ class _PPState extends State<PrimoProblema> {
                       borderSide:
                           BorderSide(color: Colors.blue.shade900, width: 3.0)),
                   labelText: 'TAS',
+                  helperText: 'true air speed',
                 ),
               ),
             ),
@@ -79,6 +85,7 @@ class _PPState extends State<PrimoProblema> {
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
                 labelText: 'WIND ANGLE',
+                helperText: 'WInd angle',
               ),
             )),
             Container(
@@ -91,7 +98,8 @@ class _PPState extends State<PrimoProblema> {
                 enabledBorder: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'WIND VELOCITY',
+                labelText: 'WIND SPEED',
+                helperText: 'wind speed',
               ),
             )),
             Container(

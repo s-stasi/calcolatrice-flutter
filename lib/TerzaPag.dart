@@ -31,6 +31,7 @@ class _PTState extends State<TerzoProblema> {
           'TERZO PROBLEMA',
           style: TextStyle(color: Colors.white),
         ),
+        iconTheme: IconThemeData(color: Colors.white),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [Colors.black, Colors.blue])),
@@ -48,6 +49,7 @@ class _PTState extends State<TerzoProblema> {
                   borderSide:
                       BorderSide(color: Colors.blue.shade900, width: 3.0)),
               labelText: 'TC',
+              helperText: 'true course',
             ),
           ),
         ),
@@ -62,6 +64,7 @@ class _PTState extends State<TerzoProblema> {
                   borderSide:
                       BorderSide(color: Colors.blue.shade900, width: 3.0)),
               labelText: 'GS',
+              helperText: 'ground speed',
             ),
           ),
         ),
@@ -76,6 +79,7 @@ class _PTState extends State<TerzoProblema> {
                   borderSide:
                       BorderSide(color: Colors.blue.shade900, width: 3.0)),
               labelText: 'WIND ANGLE',
+              helperText: 'wind angle',
             ),
           ),
         ),
@@ -89,7 +93,8 @@ class _PTState extends State<TerzoProblema> {
               enabledBorder: OutlineInputBorder(
                   borderSide:
                       BorderSide(color: Colors.blue.shade900, width: 3.0)),
-              labelText: 'WIND VELOCITY',
+              labelText: 'WIND SPEED',
+              helperText: 'wind speed',
             ),
           ),
         ),

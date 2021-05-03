@@ -12,7 +12,22 @@ class SecondoLossodromia extends StatefulWidget {
 class _SLState extends State<SecondoLossodromia> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Scaffold(
+      drawer: SideDrawer(),
+      appBar: AppBar(
+        title: Text(
+          'SECONDO PROBLEMA LOSSODROMIA',
+          style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: IconThemeData(color: Colors.white),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Colors.black,
+            Colors.blue,
+          ])),
+        ),
+      ),
+    );
   }
 }

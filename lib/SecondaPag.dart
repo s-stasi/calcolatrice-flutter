@@ -29,7 +29,11 @@ class _SPState extends State<SecondoProblema> {
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
-        title: Text('SECONDO PROBLEMA',style: TextStyle(color: Colors.white),),
+        title: Text(
+          'SECONDO PROBLEMA',
+          style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: IconThemeData(color: Colors.white),
         flexibleSpace: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
@@ -50,6 +54,7 @@ class _SPState extends State<SecondoProblema> {
                 borderSide:
                     BorderSide(color: Colors.blue.shade900, width: 3.0)),
             labelText: 'TH',
+            helperText: 'true heading',
           ),
         )),
         Container(
@@ -63,6 +68,7 @@ class _SPState extends State<SecondoProblema> {
                 borderSide:
                     BorderSide(color: Colors.blue.shade900, width: 3.0)),
             labelText: 'TAS',
+            helperText: 'true air speed',
           ),
         )),
         Container(
@@ -76,6 +82,7 @@ class _SPState extends State<SecondoProblema> {
                 borderSide:
                     BorderSide(color: Colors.blue.shade900, width: 3.0)),
             labelText: 'WIND ANGLE',
+            helperText: 'wind angle',
           ),
         )),
         Container(
@@ -88,7 +95,8 @@ class _SPState extends State<SecondoProblema> {
             enabledBorder: OutlineInputBorder(
                 borderSide:
                     BorderSide(color: Colors.blue.shade900, width: 3.0)),
-            labelText: 'WIND WELOCITY',
+            labelText: 'WIND SPEED',
+            helperText: 'wind speed',
           ),
         )),
         Container(
