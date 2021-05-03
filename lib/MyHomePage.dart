@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         drawer: SideDrawer(),
         appBar: AppBar(
           title: Text('NAVIGATION TOOL'),
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: IconThemeData(color: Colors.black),
           flexibleSpace: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [

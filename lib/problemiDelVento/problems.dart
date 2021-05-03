@@ -1,3 +1,4 @@
+import 'package:NAVTOOL/PrimoLossodromia.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
@@ -304,6 +305,12 @@ class _ProblemsState extends State<Problems> {
     var arr = [windAngle, windVel];
     return arr;
   }
-}
 
-primoLossodromia() {}
+  primoLossodromia() {
+    var delF;
+    if (aF > bF)
+      delF = aF - bF;
+    else
+      delF = bF - aF;
+  }
+}

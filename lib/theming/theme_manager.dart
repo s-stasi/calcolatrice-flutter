@@ -13,10 +13,10 @@ class ThemeNotifier with ChangeNotifier {
 
   final lightTheme = ThemeData(
       primarySwatch: Colors.grey,
-      primaryColor: Colors.white,
+      primaryColor: Colors.blue,
       brightness: Brightness.light,
       backgroundColor: const Color(0xFFE5E5E5),
-      accentColor: Colors.blue,
+      accentColor: Colors.lightBlue,
       accentIconTheme: IconThemeData(color: Colors.white),
       dividerColor: Colors.white54);
 
