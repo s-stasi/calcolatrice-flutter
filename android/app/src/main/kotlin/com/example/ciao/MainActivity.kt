@@ -1,4 +1,4 @@
-package com.example.ciao
+package com.example.navtool
 
 import io.flutter.embedding.android.FlutterActivity
 

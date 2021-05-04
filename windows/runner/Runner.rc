@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "Google LLC" "\0"
-            VALUE "FileDescription", "A testbed for flutter-desktop-embedding development." "\0"
+            VALUE "FileDescription", "A navtool for flutter-desktop-embedding development." "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "testbed" "\0"
+            VALUE "InternalName", "navtool" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2018 Google LLC. All rights reserved." "\0"
-            VALUE "OriginalFilename", "testbed.exe" "\0"
-            VALUE "ProductName", "testbed" "\0"
+            VALUE "OriginalFilename", "navtool.exe" "\0"
+            VALUE "ProductName", "navtool" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

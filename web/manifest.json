@@ -1,6 +1,6 @@
 {
-    "name": "ciao",
-    "short_name": "ciao",
+    "name": "navtool",
+    "short_name": "navtool",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

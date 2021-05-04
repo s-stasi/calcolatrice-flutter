@@ -107,7 +107,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=testbed
+CMAKE_PROJECT_NAME:STATIC=navtool
 
 //Path to a program.
 CMAKE_READELF:FILEPATH=CMAKE_READELF-NOTFOUND
@@ -169,10 +169,10 @@ CMAKE_STRIP:FILEPATH=CMAKE_STRIP-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-testbed_BINARY_DIR:STATIC=C:/Users/Utente/Desktop/calcolatrice-flutter/windows/out/build/x64-Debug
+navtool_BINARY_DIR:STATIC=C:/Users/Utente/Desktop/calcolatrice-flutter/windows/out/build/x64-Debug
 
 //Value Computed by CMake
-testbed_SOURCE_DIR:STATIC=C:/Users/Utente/Desktop/calcolatrice-flutter/windows
+navtool_SOURCE_DIR:STATIC=C:/Users/Utente/Desktop/calcolatrice-flutter/windows
 
 
 ########################

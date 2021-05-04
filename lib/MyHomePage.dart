@@ -40,7 +40,10 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         drawer: SideDrawer(),
         appBar: AppBar(
-          title: Text('NAVIGATION TOOL'),
+          title: Text(
+            'NAVIGATION TOOL',
+            style: TextStyle(color: Colors.black),
+          ),
           iconTheme: IconThemeData(color: Colors.black),
           flexibleSpace: Container(
             decoration: BoxDecoration(
