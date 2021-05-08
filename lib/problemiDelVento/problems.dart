@@ -1,4 +1,3 @@
-import 'package:NAVTOOL/PrimoLossodromia.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as Math;
@@ -172,56 +171,28 @@ class _ProblemsState extends State<Problems> {
   }
 
   String primoProblema() {
-    num alpha;
 
-    num wao = windAngle;
-    //sfalzo il vento
-    if (windAngle < 180)
-      windAngle += 180;
-    else
-      windAngle -= 180;
-    debugPrint('windAngle: $windAngle');
+  	num n = windVel;
+  	num t = windAngle;
+  	num a = tc;
+  	num o = tas;
+  	num r = n * Math.sin(toRad(t-a));
+  	num l = -n * Math.cos(toRad(a-t));
+  	num i = toDeg(Math.asin(r/o));
+  	num c = o * Math.cos(toRad(i));
+  	num s = a + i;
+  	num u = c + l;
+  	num d = [
+  		gs = u;
+  		th = s:
+  		tas = c;
+  		wca = i;
+  		lc = l;
+  		xc = r;
+  	]
 
-    // troviamo alpha
-    if (windAngle < widget.tc)
-      alpha = widget.tc - windAngle;
-    else
-      alpha = windAngle - widget.tc;
-    if (alpha > 180) alpha = 360 - alpha;
-    debugPrint('alpha: $alpha');
 
-    // troviamo wca
-    num wca = toDeg(Math.asin((windVel * Math.sin(toRad(alpha))) / tas));
-    debugPrint('wca: $wca');
-
-    // troviamo gamma
-    num gamma = 180 - alpha - wca;
-    debugPrint('gamma: $gamma');
-
-    // troviamo gs
-    num gs = (tas * Math.sin(toRad(gamma)));
-    gs = gs / Math.sin(toRad(alpha));
-    debugPrint('gs: $gs');
-
-    num th;
-    if (windAngle > widget.tc)
-      th = widget.tc - wca;
-    else if (windAngle < widget.tc)
-      th = widget.tc + wca;
-    else
-      th = widget.tc;
-    debugPrint('th: $th');
-
-    num th1;
-    if (wao > gamma)
-      th1 = wao - gamma;
-    else
-      th1 = gamma + wao;
-    debugPrint('th1: $th1');
-
-    num th2;
-    th2 = 360 - (gamma - wca);
-    debugPrint('th2: $th2');
+    
 
     String arr = 'gs: ${gs.toString()} th: ${th.toString()}';
     return arr;
