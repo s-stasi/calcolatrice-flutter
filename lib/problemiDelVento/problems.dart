@@ -68,28 +68,6 @@ class _ProblemsState extends State<Problems> {
   var d;
   late String problemNumber;
 
-  // TODO: refactor 1 problema del vento
-
-  // var e = k(document.datapdv1)
-  //             , n = e.v
-  //             , t = e.w
-  //             , a = e.tc
-  //             , o = e.tas
-  //             , r = I(n * Math.sin((t - a) * Math.PI / 180))
-  //             , l = I(-n * Math.cos((a - t) * Math.PI / 180))
-  //             , i = 180 * Math.asin(r / o) / Math.PI
-  //             , c = I(o * Math.cos(i * Math.PI / 180))
-  //             , s = I(a + i)
-  //             , u = I(c + l)
-  //             , d = S({
-  //               xc: r,
-  //               lc: l,
-  //               wca: i,
-  //               etas: c,
-  //               th: s,
-  //               gs: u
-  //           });
-
   // TODO: refactor 3 problema del vento
 
   // var e = k(document.datapdv3)
@@ -198,7 +176,7 @@ class _ProblemsState extends State<Problems> {
   	debugPrint('${d[4]}');
   	debugPrint('${d[5]}');
 
-    String arr = 'errrrr';//'gs: ${gs.toString()} th: ${th.toString()}';
+    String arr = 'gs: ${d[0].round()} th: ${d[1].round()}';
     return arr;
   }
 
@@ -206,32 +184,25 @@ class _ProblemsState extends State<Problems> {
     num originWInd;
     num gamma;
     num wca;
-
-//salvo la variabile vento originario
     originWInd = windAngle;
 
-//sfalzo il vento
     if (windAngle < 180)
       windAngle += 180;
     else
       windAngle -= 180;
 
-//trovo gamma
     if (originWInd > th)
       gamma = originWInd - th;
     else
       gamma = th - originWInd;
     if (gamma > 180) gamma = 360 - gamma;
 
-//trovo gs
     gs = Math.sqrt(Math.pow(windVel, 2) +
         Math.pow(tas, 2) -
         (2 * windVel * tas * Math.cos(toRad(gamma))));
 
-//trovo wca
     wca = toDeg(Math.asin((windVel * Math.sin(toRad(gamma))) / gs));
 
-//trovo tc
     if (windAngle < th)
       tc = th + wca;
     else
@@ -241,12 +212,31 @@ class _ProblemsState extends State<Problems> {
     return arr;
   }
 
-  terzoProblema() {
-//sfalzo il vento
-    if (windAngle < 180)
-      windAngle += 180;
-    else
-      windAngle -= 180;
+  String terzoProblema() {
+  	num xc = windVel * Math.sin(toRad(windAngle - tc));
+  	num lc = -windVel * Math.cos(toRad(tc - windAngle));
+  	num etas = gs-lc;
+  	num wca = toDeg(Math.atan(xc/etas));
+  	num th = tc + wca;
+  	num tas = etas / Math.cos(toRad(wca));
+  	var res = [
+  		xc,
+  		lc,
+  		wca,
+  		tas,
+  		etas,
+  		th
+  	];
+
+  	debugPrint('${d[0]}');
+  	debugPrint('${d[1]}');
+  	debugPrint('${d[2]}');
+  	debugPrint('${d[3]}');
+  	debugPrint('${d[4]}');
+  	debugPrint('${d[5]}');
+
+    String arr = 'th: ${d[6].round()} tas: ${d[4].round()}';
+    return arr;
   }
 
   quartoProblema() {
@@ -256,24 +246,19 @@ class _ProblemsState extends State<Problems> {
     num alpha;
     num gamma;
 
-    //trovo wca
     if (th > widget.tc)
       wca = th - widget.tc;
     else
       wca = widget.tc - th;
 
-//trovo windVel
     windVel = Math.sqrt(Math.pow(tas, 2) +
         Math.pow(gs, 2) -
         (2 * tas * gs * Math.cos(toRad(wca))));
 
-//trovo alpha
     alpha = toDeg(Math.asin((tas * Math.sin(toRad(wca))) / windVel));
 
-//trovo gamma
     gamma = 180 - alpha - wca;
 
-//trovo wind angle
     if (th > widget.tc)
       windAngle = th - wca - alpha;
     else

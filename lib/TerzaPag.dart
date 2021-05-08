@@ -112,7 +112,7 @@ class _PTState extends State<TerzoProblema> {
                       tas: int.tryParse(gs.text) ?? 0,
                       windAngle: int.tryParse(windAngle.text) ?? 0,
                       windVel: int.tryParse(windVel.text) ?? 0,
-                      problemNumber: "primo"));
+                      problemNumber: "terzo"));
             }),
         child: Text('   =   '),
         shape: RoundedRectangleBorder(
