@@ -182,19 +182,23 @@ class _ProblemsState extends State<Problems> {
   	num c = o * Math.cos(toRad(i));
   	num s = a + i;
   	num u = c + l;
-  	num d = [
-  		gs = u;
-  		th = s:
-  		tas = c;
-  		wca = i;
-  		lc = l;
-  		xc = r;
+  	var d = [
+  		u,
+  		s,
+  		c,
+  		i,
+  		l,
+  		r
   	];
 
+  	debugPrint('${d[0]}');
+  	debugPrint('${d[1]}');
+  	debugPrint('${d[2]}');
+  	debugPrint('${d[3]}');
+  	debugPrint('${d[4]}');
+  	debugPrint('${d[5]}');
 
-    
-
-    String arr = 'gs: ${gs.toString()} th: ${th.toString()}';
+    String arr = 'errrrr';//'gs: ${gs.toString()} th: ${th.toString()}';
     return arr;
   }
 
