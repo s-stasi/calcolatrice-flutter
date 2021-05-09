@@ -213,12 +213,12 @@ class _ProblemsState extends State<Problems> {
   }
 
   String terzoProblema() {
-  	num xc = windVel * Math.sin(toRad(windAngle - tc));
-  	num lc = -windVel * Math.cos(toRad(tc - windAngle));
+  	num xc = (windVel * Math.sin(toRad(windAngle - tc))).round();
+  	num lc = (-windVel * Math.cos(toRad(tc - windAngle))).round();
   	num etas = gs-lc;
-  	num wca = toDeg(Math.atan(xc/etas));
+  	num wca = (toDeg(Math.atan(xc/etas))).round();
   	num th = tc + wca;
-  	num tas = etas / Math.cos(toRad(wca));
+  	num tas = (etas / Math.cos(toRad(wca))).round();
   	var res = [
   		xc,
   		lc,
