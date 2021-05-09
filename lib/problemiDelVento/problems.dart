@@ -68,49 +68,6 @@ class _ProblemsState extends State<Problems> {
   var d;
   late String problemNumber;
 
-  // TODO: refactor 3 problema del vento
-
-  // var e = k(document.datapdv3)
-  //                 , n = e.tgs
-  //                 , t = e.th
-  //                 , a = e.tc
-  //                 , o = e.tas
-  //                 , r = t - a
-  //                 , l = I(o * Math.sin(r * Math.PI / 180))
-  //                 , i = I(o * Math.cos(r * Math.PI / 180))
-  //                 , c = I(n - i)
-  //                 , s = I(Math.sqrt(Math.pow(l, 2) + Math.pow(c, 2)))
-  //                 , u = l > 0 ? a + (90 + 180 * Math.asin(c / s) / Math.PI) : a + -(90 + 180 * Math.asin(c / s) / Math.PI)
-  //                 , d = S({
-  //                   xc: l,
-  //                   lc: c,
-  //                   wca: r,
-  //                   v: s,
-  //                   w: u
-  //               });
-
-  // TODO: refactor 4 problema del vento
-
-  // var e = k(document.datapdv4)
-  //                 , n = e.v
-  //                 , t = e.w
-  //                 , a = e.tc
-  //                 , o = e.ngs
-  //                 , r = I(n * Math.sin((t - a) * Math.PI / 180))
-  //                 , l = I(-n * Math.cos((a - t) * Math.PI / 180))
-  //                 , i = o - l
-  //                 , c = 180 * Math.atan(r / i) / Math.PI
-  //                 , s = a + c
-  //                 , u = I(i / Math.cos(c * Math.PI / 180))
-  //                 , d = S({
-  //                   xc: r,
-  //                   lc: l,
-  //                   wca: c,
-  //                   th: s,
-  //                   etas: i,
-  //                   tas: u
-  //               });
-
   _ProblemsState(
       {this.problemNumber: "null",
       var this.tc,
@@ -149,20 +106,15 @@ class _ProblemsState extends State<Problems> {
   }
 
   String primoProblema() {
-
-  	num n = windVel;
-  	num t = windAngle;
-  	num a = tc;
-  	num o = tas;
-  	num r = n * Math.sin(toRad(t-a));
-  	num l = -n * Math.cos(toRad(a-t));
-  	num i = toDeg(Math.asin(r/o));
-  	num c = o * Math.cos(toRad(i));
-  	num s = a + i;
-  	num u = c + l;
+  	num r = (windVel * Math.sin(toRad(windAngle-tc))).round();
+  	num l = (-windVel * Math.cos(toRad(tc - windAngle))).round();
+  	num i = (toDeg(Math.asin(r / tas))).round();
+  	num c = (tas * Math.cos(toRad(i))).round();
+  	num th = tc + i;
+  	num gs = c + l;
   	var d = [
-  		u,
-  		s,
+  		gs,
+  		th,
   		c,
   		i,
   		l,
@@ -239,34 +191,35 @@ class _ProblemsState extends State<Problems> {
     return arr;
   }
 
-  quartoProblema() {
-    num windVel;
-    num windAngle;
-    num wca;
-    num alpha;
-    num gamma;
+  String quartoProblema() {
+  	num wca = th - tc;
+  	num xc = (tas * Math.sin(toRad(wca))).round();
+  	num etas = (tas * Math.cos(toRad(wca))).round();
+  	num lc = (gs - etas).round();
+  	num v = (Math.sqrt(Math.pow(xc, 2) + Math.pow(lc, 2))).round();
+  	num w = () {
+    		if(xc > 0)
+  				return tc + toDeg(90 + Math.asin(lc / v));
+    		return tc + (-toDeg(90 + Math.asin(lc / v)));
+  		} ();
+  	var res = [
+    	xc,
+    	lc,
+    	wca,
+    	v,
+    	w
+  	];
 
-    if (th > widget.tc)
-      wca = th - widget.tc;
-    else
-      wca = widget.tc - th;
 
-    windVel = Math.sqrt(Math.pow(tas, 2) +
-        Math.pow(gs, 2) -
-        (2 * tas * gs * Math.cos(toRad(wca))));
+  	debugPrint('${res[0]}');
+  	debugPrint('${res[1]}');
+  	debugPrint('${res[2]}');
+  	debugPrint('${res[3]}');
+  	debugPrint('${res[4]}');
 
-    alpha = toDeg(Math.asin((tas * Math.sin(toRad(wca))) / windVel));
-
-    gamma = 180 - alpha - wca;
-
-    if (th > widget.tc)
-      windAngle = th - wca - alpha;
-    else
-      windAngle = widget.tc - wca - alpha;
-
-    var arr = [windAngle, windVel];
+    String arr = 'v: ${res[3]} w: ${res[4]}';
     return arr;
-  }
+   }
 
   primoLossodromia() {
     var delF;
