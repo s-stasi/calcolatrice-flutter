@@ -126,7 +126,6 @@ class _PTState extends State<TerzoProblema> {
                       windAngle: double.tryParse(windAngle.text) ?? 0.0,
                       windVel: double.tryParse(windVel.text) ?? 0.0,
                       problemNumber: "terzo")),
-          
         ],
       ),
       floatingActionButton: FloatingActionButton(

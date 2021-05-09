@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problemiDelVento/problems.dart';
+import 'problemiDelVento/piano_cartesiano.dart';
 
 class QuartoProblema extends StatefulWidget {
   @override
@@ -16,12 +17,25 @@ class _QPState extends State<QuartoProblema> {
   final gs = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    tc.addListener(_UpdateGraph);
+    gs.addListener(_UpdateGraph);
+    th.addListener(_UpdateGraph);
+    tas.addListener(_UpdateGraph);
+  }
+
+  @override
   void dispose() {
     th.dispose();
     tas.dispose();
     tc.dispose();
     gs.dispose();
     super.dispose();
+  }
+
+  _UpdateGraph() {
+    setState(() {});
   }
 
   @override
@@ -41,7 +55,9 @@ class _QPState extends State<QuartoProblema> {
           ])),
         ),
       ),
-      body: Row(children: <Widget>[
+      body: Column(
+        children: <Widget>[
+          Row(children: <Widget>[
         Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
@@ -105,7 +121,17 @@ class _QPState extends State<QuartoProblema> {
         Container(
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
-      ]),
+        ]),
+          CustomPaint(
+            size: Size(400, 400),
+            painter: PianoCartesianoPainter(
+                      tc: double.tryParse(tc.text) ?? 0.0,
+                      gs: double.tryParse(gs.text) ?? 0.0,
+                      th: double.tryParse(th.text) ?? 0.0,
+                      tas: double.tryParse(tas.text) ?? 0.0,
+                      problemNumber: "quarto")),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(
             context: context,

@@ -97,10 +97,10 @@ class PianoCartesianoPainter extends CustomPainter {
       case 'primo': {
         windAngle = (windAngle <=180) ? windAngle - 180 : windAngle + 180;
         var windPaint = Paint()
-          ..color = Colors.blue
+          ..color = Colors.yellow
           ..strokeWidth = 4;
         var windCoord = [
-          Offset(200 + windVel * Math.cos(toRad(windAngle-90)), 200 + windVel * Math.sin(toRad(windAngle - 90))),
+          Offset(200 + windVel * 0.75 * Math.cos(toRad(windAngle-90)), 200 + windVel * 0.75 * Math.sin(toRad(windAngle - 90))),
           Offset(200, 200)
         ];
 
@@ -114,7 +114,7 @@ class PianoCartesianoPainter extends CustomPainter {
           ..color = Colors.red
           ..strokeWidth = 4;
         var gsCoord = [
-          Offset(200 + gs * Math.cos(toRad(tc - 90)), 200 + gs * Math.sin(toRad(tc - 90))),
+          Offset(200 + gs * 0.75 * Math.cos(toRad(tc - 90)), 200 + gs * 0.75 * Math.sin(toRad(tc - 90))),
           Offset(200, 200)
         ];
 
@@ -141,10 +141,10 @@ class PianoCartesianoPainter extends CustomPainter {
       case 'terzo': {
         windAngle = (windAngle <=180) ? windAngle - 180 : windAngle + 180;
         var windPaint = Paint()
-          ..color = Colors.blue
+          ..color = Colors.yellow
           ..strokeWidth = 4;
         var windCoord = [
-          Offset(200 + windVel * Math.cos(toRad(windAngle-90)), 200 + windVel * Math.sin(toRad(windAngle - 90))),
+          Offset(200 + windVel * 0.75 * Math.cos(toRad(windAngle-90)), 200 + windVel * 0.75 * Math.sin(toRad(windAngle - 90))),
           Offset(200, 200)
         ];
 
@@ -153,7 +153,7 @@ class PianoCartesianoPainter extends CustomPainter {
           ..color = Colors.red
           ..strokeWidth = 4;
         var gsCoord = [
-          Offset(200 + gs * Math.cos(toRad(tc - 90)), 200 + gs * Math.sin(toRad(tc - 90))),
+          Offset(200 + gs * 0.75 * Math.cos(toRad(tc - 90)), 200 + gs * 0.75 * Math.sin(toRad(tc - 90))),
           Offset(200, 200)
         ];
 
@@ -171,10 +171,41 @@ class PianoCartesianoPainter extends CustomPainter {
         canvas.drawLine(gsCoord[0], gsCoord[1], gsPaint);
         canvas.drawLine(windCoord[0], windCoord[1], windPaint);
         canvas.drawLine(tasCoord[0], tasCoord[1], tasPaint);
-        
+
         break;
       }
       case 'quarto':{
+        var gsPaint = Paint()
+          ..color = Colors.red
+          ..strokeWidth = 4;
+        var gsCoord = [
+          Offset(200 + gs * 0.75 * Math.cos(toRad(tc - 90)), 200 + gs * 0.75 * Math.sin(toRad(tc - 90))),
+          Offset(200, 200)
+        ];
+
+
+        var tasPaint = Paint()
+          ..color = Colors.black
+          ..strokeWidth = 4;
+        var tasCoord = [
+          Offset(200 + tas * 0.75 * Math.cos(toRad(th - 90)), 200 + tas * 0.75 * Math.sin(toRad(th - 90))),
+          Offset(200, 200)
+        ];
+
+        
+        var windPaint = Paint()
+          ..color = Colors.yellow
+          ..strokeWidth = 4;
+        var windCoord = [
+          tasCoord[0],
+          gsCoord[0]
+        ];
+
+
+        /// Drawing everything
+        canvas.drawLine(gsCoord[0], gsCoord[1], gsPaint);
+        canvas.drawLine(windCoord[0], windCoord[1], windPaint);
+        canvas.drawLine(tasCoord[0], tasCoord[1], tasPaint);
 
         break;
       }
