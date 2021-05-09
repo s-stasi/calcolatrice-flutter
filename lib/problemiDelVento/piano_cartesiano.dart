@@ -95,6 +95,7 @@ class PianoCartesianoPainter extends CustomPainter {
 
     switch (problemNumber) {
       case 'primo': {
+        windAngle = (windAngle <=180) ? windAngle - 180 : windAngle + 180;
         var windPaint = Paint()
           ..color = Colors.blue
           ..strokeWidth = 4;
