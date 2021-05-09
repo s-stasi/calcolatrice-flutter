@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
+import 'dart:math' as Math;
 
 toRad(num deg) {
-  return deg * math.pi / 180;
+  return deg * Math.pi / 180;
 }
 
 toDeg(num rad) {
-  return rad * 180 / math.pi;
+  return rad * 180 / Math.pi;
 }
 
 class PianoCartesianoPainter extends CustomPainter {
@@ -16,9 +16,16 @@ class PianoCartesianoPainter extends CustomPainter {
   double tas;
   double windVel;
   double windAngle;
+  String problemNumber;
 
-  PianoCartesianoPainter(
-      this.th, this.tc, this.gs, this.tas, this.windVel, this.windAngle);
+  PianoCartesianoPainter({
+      this.problemNumber: "null",
+      this.tc: 0.0,
+      this.tas: 0.0,
+      this.windAngle: 0.0,
+      this.windVel: 0.0,
+      this.th: 0.0,
+      this.gs: 0.0});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -86,19 +93,63 @@ class PianoCartesianoPainter extends CustomPainter {
       midVer,
     );
 
-    var gsCoordinates = [Offset(0, 0), Offset(0, 0)];
+    switch (problemNumber) {
+      case 'primo': {
+        var windPaint = Paint()
+          ..color = Colors.blue
+          ..strokeWidth = 4;
+        var windCoord = [
+          Offset(200 + windVel * Math.cos(toRad(windAngle-90)), 200 + windVel * Math.sin(toRad(windAngle - 90))),
+          Offset(200, 200)
+        ];
 
-    gsCoordinates = [
-      Offset(
-          200 + gs * math.cos(toRad(tc)), 200 - 1 * gs * math.sin(toRad(tc))),
-      Offset(200, 200)
-    ];
 
-    var tcPaint = Paint()
-      ..color = Colors.red
-      ..strokeWidth = 5;
+        double r = windVel * Math.sin(toRad(windAngle-tc));
+        double l = -windVel * Math.cos(toRad(tc - windAngle));
+        double i = toDeg(Math.asin(r / tas));
+        double c = tas * Math.cos(toRad(i));
+        var gs = c + l;;
+        var gsPaint = Paint()
+          ..color = Colors.red
+          ..strokeWidth = 4;
+        var gsCoord = [
+          Offset(200 + gs * Math.cos(toRad(tc - 90)), 200 + gs * Math.sin(toRad(tc - 90))),
+          Offset(200, 200)
+        ];
 
-    canvas.drawLine(gsCoordinates[0], gsCoordinates[1], tcPaint);
+
+        var tasPaint = Paint()
+          ..color = Colors.black
+          ..strokeWidth = 4;
+        var tasCoord = [
+          windCoord[0],
+          gsCoord[0]
+        ];
+
+        /// Drawing everything
+        canvas.drawLine(gsCoord[0], gsCoord[1], gsPaint);
+        canvas.drawLine(windCoord[0], windCoord[1], windPaint);
+        canvas.drawLine(tasCoord[0], tasCoord[1], tasPaint);
+
+        break;
+      }
+      case 'secondo': {
+
+        break;
+      }
+      case 'terzo': {
+
+        break;
+      }
+      case 'quarto':{
+
+        break;
+      }
+      default: {
+        throw Exception('Choose the problem number');
+      }
+    }
+
 
     /*final rect = Rect.fromLTRB(0, 0, size.width, size.height);
     final paint = Paint()..color = Colors.red;

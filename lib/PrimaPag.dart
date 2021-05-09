@@ -15,12 +15,25 @@ class _PPState extends State<PrimoProblema> {
   final windVel = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    tc.addListener(_UpdateGraph);
+    tas.addListener(_UpdateGraph);
+    windAngle.addListener(_UpdateGraph);
+    windVel.addListener(_UpdateGraph);
+  }
+
+  @override
   void dispose() {
     tc.dispose();
     tas.dispose();
     windAngle.dispose();
     windVel.dispose();
     super.dispose();
+  }
+
+  _UpdateGraph() {
+    setState(() {});
   }
 
   @override
@@ -108,8 +121,13 @@ class _PPState extends State<PrimoProblema> {
           ]),
           CustomPaint(
             size: Size(400, 400),
-            painter: PianoCartesianoPainter(0, 20, 123, 0, 0, 0),
-          )
+            painter: PianoCartesianoPainter(
+                      tc: double.tryParse(tc.text) ?? 0.0,
+                      tas: double.tryParse(tas.text) ?? 0.0,
+                      windAngle: double.tryParse(windAngle.text) ?? 0.0,
+                      windVel: double.tryParse(windVel.text) ?? 0.0,
+                      problemNumber: "primo")),
+          
         ],
       ),
       floatingActionButton: FloatingActionButton(
