@@ -139,7 +139,39 @@ class PianoCartesianoPainter extends CustomPainter {
         break;
       }
       case 'terzo': {
+        windAngle = (windAngle <=180) ? windAngle - 180 : windAngle + 180;
+        var windPaint = Paint()
+          ..color = Colors.blue
+          ..strokeWidth = 4;
+        var windCoord = [
+          Offset(200 + windVel * Math.cos(toRad(windAngle-90)), 200 + windVel * Math.sin(toRad(windAngle - 90))),
+          Offset(200, 200)
+        ];
 
+
+        var gsPaint = Paint()
+          ..color = Colors.red
+          ..strokeWidth = 4;
+        var gsCoord = [
+          Offset(200 + gs * Math.cos(toRad(tc - 90)), 200 + gs * Math.sin(toRad(tc - 90))),
+          Offset(200, 200)
+        ];
+
+
+        var tasPaint = Paint()
+          ..color = Colors.black
+          ..strokeWidth = 4;
+        var tasCoord = [
+          windCoord[0],
+          gsCoord[0]
+        ];
+
+
+        /// Drawing everything
+        canvas.drawLine(gsCoord[0], gsCoord[1], gsPaint);
+        canvas.drawLine(windCoord[0], windCoord[1], windPaint);
+        canvas.drawLine(tasCoord[0], tasCoord[1], tasPaint);
+        
         break;
       }
       case 'quarto':{
@@ -168,5 +200,5 @@ class PianoCartesianoPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
