@@ -96,30 +96,34 @@ class PianoCartesianoPainter extends CustomPainter {
     double w = windAngle + 180;
     double max = 266.66666;
     double mult = (gs >= max) ? max / (gs * 1.34) : max / (gs * 1.34);
+    if (gs == 0) {
+      mult = 1;
+    }
 
     debugPrint('mult: ${mult}');
 
     switch (problemNumber) {
       case 'primo': {
-        var windPaint = Paint()
-          ..color = Colors.yellow
-          ..strokeWidth = 4;
-        var windCoord = [
-          Offset(200 + windVel * mult * Math.cos(toRad(w-90)), 200 + windVel * mult * Math.sin(toRad(w - 90))),
-          Offset(200, 200)
-        ];
-
-
         double r = windVel * Math.sin(toRad(w-tc));
         double l = -windVel * Math.cos(toRad(tc - w));
         double i = toDeg(Math.asin(r / tas));
         double c = tas * Math.cos(toRad(i));
-        var gs = c + l;;
+        var gs = c + l;
+        mult = (gs >= max) ? max / (gs * 1.34) : max / (gs * 1.34);
         var gsPaint = Paint()
           ..color = Colors.red
           ..strokeWidth = 4;
         var gsCoord = [
           Offset(200 + gs * mult * Math.cos(toRad(tc - 90)), 200 + gs * mult * Math.sin(toRad(tc - 90))),
+          Offset(200, 200)
+        ];
+
+
+        var windPaint = Paint()
+          ..color = Colors.yellow
+          ..strokeWidth = 4;
+        var windCoord = [
+          Offset(200 + windVel * mult * Math.cos(toRad(w-90)), 200 + windVel * mult * Math.sin(toRad(w - 90))),
           Offset(200, 200)
         ];
 
