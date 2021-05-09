@@ -93,20 +93,21 @@ class PianoCartesianoPainter extends CustomPainter {
       midVer,
     );
 
+    double w = windAngle + 180;
+
     switch (problemNumber) {
       case 'primo': {
-        windAngle = (windAngle <=180) ? windAngle - 180 : windAngle + 180;
         var windPaint = Paint()
           ..color = Colors.yellow
           ..strokeWidth = 4;
         var windCoord = [
-          Offset(200 + windVel * 0.75 * Math.cos(toRad(windAngle-90)), 200 + windVel * 0.75 * Math.sin(toRad(windAngle - 90))),
+          Offset(200 + windVel * 0.75 * Math.cos(toRad(w-90)), 200 + windVel * 0.75 * Math.sin(toRad(w - 90))),
           Offset(200, 200)
         ];
 
 
-        double r = windVel * Math.sin(toRad(windAngle-tc));
-        double l = -windVel * Math.cos(toRad(tc - windAngle));
+        double r = windVel * Math.sin(toRad(w-tc));
+        double l = -windVel * Math.cos(toRad(tc - w));
         double i = toDeg(Math.asin(r / tas));
         double c = tas * Math.cos(toRad(i));
         var gs = c + l;;
@@ -139,12 +140,11 @@ class PianoCartesianoPainter extends CustomPainter {
         break;
       }
       case 'terzo': {
-        windAngle = (windAngle <=180) ? windAngle - 180 : windAngle + 180;
         var windPaint = Paint()
           ..color = Colors.yellow
           ..strokeWidth = 4;
         var windCoord = [
-          Offset(200 + windVel * 0.75 * Math.cos(toRad(windAngle-90)), 200 + windVel * 0.75 * Math.sin(toRad(windAngle - 90))),
+          Offset(200 + windVel * 0.75 * Math.cos(toRad(w-90)), 200 + windVel * 0.75 * Math.sin(toRad(w - 90))),
           Offset(200, 200)
         ];
 

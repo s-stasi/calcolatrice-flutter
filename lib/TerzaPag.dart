@@ -118,14 +118,16 @@ class _PTState extends State<TerzoProblema> {
             width: MediaQuery.of(context).size.width * 0.04,
             height: MediaQuery.of(context).size.height * 0.20),
       ]),
-          CustomPaint(
+          RepaintBoundary(
+            child: CustomPaint(
             size: Size(400, 400),
             painter: PianoCartesianoPainter(
                       tc: double.tryParse(tc.text) ?? 0.0,
                       gs: double.tryParse(gs.text) ?? 0.0,
                       windAngle: double.tryParse(windAngle.text) ?? 0.0,
                       windVel: double.tryParse(windVel.text) ?? 0.0,
-                      problemNumber: "terzo")),
+                      problemNumber: "terzo"))
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
