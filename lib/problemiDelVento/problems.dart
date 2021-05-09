@@ -228,14 +228,14 @@ class _ProblemsState extends State<Problems> {
   		th
   	];
 
-  	debugPrint('${d[0]}');
-  	debugPrint('${d[1]}');
-  	debugPrint('${d[2]}');
-  	debugPrint('${d[3]}');
-  	debugPrint('${d[4]}');
-  	debugPrint('${d[5]}');
+  	debugPrint('${res[0]}');
+  	debugPrint('${res[1]}');
+  	debugPrint('${res[2]}');
+  	debugPrint('${res[3]}');
+  	debugPrint('${res[4]}');
+  	debugPrint('${res[5]}');
 
-    String arr = 'th: ${d[6].round()} tas: ${d[4].round()}';
+    String arr = 'th: ${res[5].round()} tas: ${res[4].round()}';
     return arr;
   }
 

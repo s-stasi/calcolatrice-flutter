@@ -109,7 +109,7 @@ class _PTState extends State<TerzoProblema> {
               return AlertDialog(
                   content: Problems(
                       tc: int.tryParse(tc.text) ?? 0,
-                      tas: int.tryParse(gs.text) ?? 0,
+                      gs: int.tryParse(gs.text) ?? 0,
                       windAngle: int.tryParse(windAngle.text) ?? 0,
                       windVel: int.tryParse(windVel.text) ?? 0,
                       problemNumber: "terzo"));
