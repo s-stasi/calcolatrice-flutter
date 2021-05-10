@@ -127,13 +127,6 @@ class _PPState extends State<PrimoProblema> {
                   windAngle: double.tryParse(windAngle.text) ?? 0.0,
                   windVel: double.tryParse(windVel.text) ?? 0.0,
                   problemNumber: "primo")),
-          Row(children: <Widget>[
-            Expanded(child: Text('data')),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.04,
-              height: MediaQuery.of(context).size.height * 0.20,
-            )
-          ])
         ],
       ),
       floatingActionButton: FloatingActionButton(

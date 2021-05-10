@@ -108,11 +108,11 @@ class _ProblemsState extends State<Problems> {
   String primoProblema() {
     num r = (windVel * Math.sin(toRad(windAngle - tc))).round();
     num l = (-windVel * Math.cos(toRad(tc - windAngle))).round();
-    num i = (toDeg(Math.asin(r / tas))).round();
-    num c = (tas * Math.cos(toRad(i))).round();
-    num th = tc + i;
-    num gs = c + l;
-    var d = [gs, th, c, i, l, r];
+    num wca = (toDeg(Math.asin(r / tas)));
+    num c = (tas * Math.cos(toRad(wca))).round();
+    num th = (tc + wca).round();
+    num gs = (c + l).round();
+    var d = [gs, th, c, wca, l, r];
 
     debugPrint('${d[0]}');
     debugPrint('${d[1]}');
