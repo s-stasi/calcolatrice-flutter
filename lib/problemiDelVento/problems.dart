@@ -106,27 +106,20 @@ class _ProblemsState extends State<Problems> {
   }
 
   String primoProblema() {
-  	num r = (windVel * Math.sin(toRad(windAngle-tc))).round();
-  	num l = (-windVel * Math.cos(toRad(tc - windAngle))).round();
-  	num i = (toDeg(Math.asin(r / tas))).round();
-  	num c = (tas * Math.cos(toRad(i))).round();
-  	num th = tc + i;
-  	num gs = c + l;
-  	var d = [
-  		gs,
-  		th,
-  		c,
-  		i,
-  		l,
-  		r
-  	];
+    num r = (windVel * Math.sin(toRad(windAngle - tc))).round();
+    num l = (-windVel * Math.cos(toRad(tc - windAngle))).round();
+    num i = (toDeg(Math.asin(r / tas))).round();
+    num c = (tas * Math.cos(toRad(i))).round();
+    num th = tc + i;
+    num gs = c + l;
+    var d = [gs, th, c, i, l, r];
 
-  	debugPrint('${d[0]}');
-  	debugPrint('${d[1]}');
-  	debugPrint('${d[2]}');
-  	debugPrint('${d[3]}');
-  	debugPrint('${d[4]}');
-  	debugPrint('${d[5]}');
+    debugPrint('${d[0]}');
+    debugPrint('${d[1]}');
+    debugPrint('${d[2]}');
+    debugPrint('${d[3]}');
+    debugPrint('${d[4]}');
+    debugPrint('${d[5]}');
 
     String arr = 'gs: ${d[0].round()} th: ${d[1].round()}';
     return arr;
@@ -165,60 +158,51 @@ class _ProblemsState extends State<Problems> {
   }
 
   String terzoProblema() {
-  	num xc = (windVel * Math.sin(toRad(windAngle - tc))).round();
-  	num lc = (-windVel * Math.cos(toRad(tc - windAngle))).round();
-  	num etas = gs-lc;
-  	num wca = (toDeg(Math.atan(xc/etas))).round();
-  	num th = tc + wca;
-  	num tas = (etas / Math.cos(toRad(wca))).round();
-  	var res = [
-  		xc,
-  		lc,
-  		wca,
-  		tas,
-  		etas,
-  		th
-  	];
+    num xc = (windVel * Math.sin(toRad(windAngle - tc))).round();
+    num lc = (-windVel * Math.cos(toRad(tc - windAngle))).round();
+    num etas = gs - lc;
+    num wca = (toDeg(Math.atan(xc / etas))).round();
+    num th = tc + wca;
+    num tas = (etas / Math.cos(toRad(wca))).round();
+    var res = [xc, lc, wca, tas, etas, th];
 
-  	debugPrint('${res[0]}');
-  	debugPrint('${res[1]}');
-  	debugPrint('${res[2]}');
-  	debugPrint('${res[3]}');
-  	debugPrint('${res[4]}');
-  	debugPrint('${res[5]}');
+    debugPrint('${res[0]}');
+    debugPrint('${res[1]}');
+    debugPrint('${res[2]}');
+    debugPrint('${res[3]}');
+    debugPrint('${res[4]}');
+    debugPrint('${res[5]}');
 
     String arr = 'th: ${res[5].round()} tas: ${res[4].round()}';
     return arr;
   }
 
   String quartoProblema() {
-  	num wca = th - tc;
-  	num xc = (tas * Math.sin(toRad(wca))).round();
-  	num etas = (tas * Math.cos(toRad(wca))).round();
-  	num lc = (gs - etas).round();
-  	num v = (Math.sqrt(Math.pow(xc, 2) + Math.pow(lc, 2))).round();
-  	num w = () {
-    		if(xc > 0)
-  				return tc + toDeg(90 + Math.asin(lc / v));
-    		return tc + (-toDeg(90 + Math.asin(lc / v)));
-  		} ();
-  	var res = [
-    	xc,
-    	lc,
-    	wca,
-    	v,
-    	w
-  	];
+    num wca = th - tc;
+    if (wca < 0) wca = wca * -1;
+    num xc = (tas * Math.sin(toRad(wca))).round();
+    num etas = (tas * Math.cos(toRad(wca))).round();
+    num lc = (gs - etas).round();
+    num v = (Math.sqrt(Math.pow(xc, 2) + Math.pow(lc, 2))).round();
+    num w = () {
+      if (xc > 0) return tc + toDeg(90 + Math.asin(lc / v));
+      return tc + (-toDeg(90 + Math.asin(lc / v)));
+    }();
+    do {
+      w = w.round();
+      w = w - 360;
+    } while (w > 360);
+    var res = [xc, lc, wca, v, w];
 
-  	debugPrint('${res[0]}');
-  	debugPrint('${res[1]}');
-  	debugPrint('${res[2]}');
-  	debugPrint('${res[3]}');
-  	debugPrint('${res[4]}');
+    debugPrint('${res[0]}');
+    debugPrint('${res[1]}');
+    debugPrint('${res[2]}');
+    debugPrint('${res[3]}');
+    debugPrint('${res[4]}');
 
     String arr = 'v: ${res[3]} w: ${res[4]}';
     return arr;
-   }
+  }
 
   primoLossodromia() {
     var delF;
