@@ -28,7 +28,7 @@ abstract class Keys {
 
 class CalculatorKey extends StatelessWidget {
 
-  CalculatorKey({ this.symbol });
+  CalculatorKey({ required this.symbol });
 
   final KeySymbol symbol;
   
@@ -54,7 +54,7 @@ class CalculatorKey extends StatelessWidget {
   Widget build(BuildContext context) {
 
     double size = MediaQuery.of(context).size.width / 4;
-    TextStyle style = Theme.of(context).textTheme.display1.copyWith(color: Colors.white);
+    //TextStyle style = Theme.of(context).textTheme.display1.copyWith(color: Colors.white);
 
     return Container(
       
@@ -65,7 +65,7 @@ class CalculatorKey extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
         color: color,
         elevation: 4,
-        child: Text(symbol.value, style: style),
+        child: Text(symbol.value, style: TextStyle()),
         onPressed: () => _fire(this),
       )
     );

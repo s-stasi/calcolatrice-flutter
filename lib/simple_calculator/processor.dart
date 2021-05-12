@@ -5,10 +5,10 @@ import './key-symbol.dart';
 
 abstract class Processor {
 
-  static KeySymbol _operator;
+  static KeySymbol _operator = null;
   static String _valA = '0';
   static String _valB = '0';
-  static String _result;
+  static String _result = null;
 
   static StreamController _controller = StreamController();
   static Stream get _stream => _controller.stream;
