@@ -119,6 +119,15 @@ class _PPState extends State<PrimoProblema> {
                 width: MediaQuery.of(context).size.width * 0.04,
                 height: MediaQuery.of(context).size.height * 0.20),
           ]),
+          Problems(
+                      tc: int.tryParse(tc.text) ?? 0,
+                      tas: int.tryParse(tas.text) ?? 0,
+                      windAngle: int.tryParse(windAngle.text) ?? 0,
+                      windVel: int.tryParse(windVel.text) ?? 0,
+                      problemNumber: "primo"),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.02),
           CustomPaint(
               size: Size(400, 400),
               painter: PianoCartesianoPainter(
@@ -141,7 +150,7 @@ class _PPState extends State<PrimoProblema> {
                       windVel: int.tryParse(windVel.text) ?? 0,
                       problemNumber: "primo"));
             }),
-        child: Text('   =   '),
+        child: Text('='),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
         ),

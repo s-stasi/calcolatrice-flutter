@@ -26,7 +26,7 @@ class _MAState extends State<MyApp> {
               title: 'NAVTOOL',
               theme: theme.getTheme(),
               routes: {
-                '/': (context) => MyHomePage(),
+                '/': (context) => Calculator(),
                 '/PriPag': (context) => PrimoProblema(),
                 '/SecPag': (context) => SecondoProblema(),
                 '/TerPag': (context) => TerzoProblema(),

@@ -121,7 +121,7 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${d[4]}');
     debugPrint('${d[5]}');
 
-    String arr = 'gs: ${d[0].round()} th: ${d[1].round()}';
+    String arr = 'gs: ${d[0].round().toString()} th: ${d[1].round().toString()}';
     return arr;
   }
 
