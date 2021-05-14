@@ -12,7 +12,7 @@ abstract class Processor {
   static StreamController _controller = StreamController();
   static Stream get _stream => _controller.stream;
 
-  static StreamSubscription listen(Function handler) => _stream.listen(handler);
+  static StreamSubscription listen(Function handler) => _stream.listen(handler('0'));
   static void refresh() => _fire(_output);
 
   static void _fire(String data) => _controller.add(_output);

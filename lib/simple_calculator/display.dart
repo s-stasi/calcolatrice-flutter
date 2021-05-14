@@ -21,7 +21,8 @@ class Display extends StatelessWidget {
 		return Container(
 			padding: EdgeInsets.only(top: _margin, bottom: _margin),
 			constraints: BoxConstraints.expand(height: height),
-			child: Container(
+			child: AnimatedContainer(
+				duration: Duration(milliseconds: 10000),
 				padding: EdgeInsets.fromLTRB(32, 32, 32, 32),
 				constraints: BoxConstraints.expand(height: height - (_margin)),
 				decoration: BoxDecoration(gradient: _gradient),
