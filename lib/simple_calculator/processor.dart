@@ -4,11 +4,10 @@ import './key-controller.dart';
 import './key-symbol.dart';
 
 abstract class Processor {
-
-  static KeySymbol _operator = null;
+  static KeySymbol _operator = KeySymbol('0');
   static String _valA = '0';
   static String _valB = '0';
-  static String _result = null;
+  static String _result = '0';
 
   static StreamController _controller = StreamController();
   static Stream get _stream => _controller.stream;
@@ -20,17 +19,16 @@ abstract class Processor {
 
   static String get _output => _result == null ? _equation : _result;
 
-  static String get _equation => _valA
-    + (_operator != null ? ' ' + _operator.value : '')
-    + (_valB != '0' ? ' ' + _valB : '');
+  static String get _equation =>
+      _valA +
+      (_operator != null ? ' ' + _operator.value : '') +
+      (_valB != '0' ? ' ' + _valB : '');
 
   static dispose() => _controller.close();
 
   static process(dynamic event) {
-    
     CalculatorKey key = (event as KeyEvent).key;
-    switch(key.symbol.type) {
-
+    switch (key.symbol.type) {
       case KeyType.FUNCTION:
         return handleFunction(key);
 
@@ -43,9 +41,12 @@ abstract class Processor {
   }
 
   static void handleFunction(CalculatorKey key) {
-
-    if (_valA == '0') { return; }
-    if (_result != null) { _condense(); }
+    if (_valA == '0') {
+      return;
+    }
+    if (_result != null) {
+      _condense();
+    }
 
     Map<KeySymbol, dynamic> table = {
       Keys.clear: () => _clear(),
@@ -59,52 +60,66 @@ abstract class Processor {
   }
 
   static void handleOperator(CalculatorKey key) {
-
-    if (_valA == '0') { return; }
-    if (key.symbol == Keys.equals) { return _calculate(); }
-    if (_result != null) { _condense(); }
+    if (_valA == '0') {
+      return;
+    }
+    if (key.symbol == Keys.equals) {
+      return _calculate();
+    }
+    if (_result != null) {
+      _condense();
+    }
 
     _operator = key.symbol;
     refresh();
   }
 
   static void handleInteger(CalculatorKey key) {
-
     String val = key.symbol.value;
-    if (_operator == null) { _valA = (_valA == '0') ? val : _valA + val; }
-    else { _valB = (_valB == '0') ? val : _valB + val; }
+    if (_operator == null) {
+      _valA = (_valA == '0') ? val : _valA + val;
+    } else {
+      _valB = (_valB == '0') ? val : _valB + val;
+    }
     refresh();
   }
 
   static void _clear() {
-
-    _valA = _valB = '0'; 
-    _operator = _result = null;
+    _valA = _valB = '0';
+    _operator = KeySymbol('0');
+    _result = '';
   }
 
   static void _sign() {
-
-    if (_valB != '0') { _valB = (_valB.contains('-') ? _valB.substring(1) : '-' + _valB); }
-    else if (_valA != '0') { _valA = (_valA.contains('-') ? _valA.substring(1) : '-' + _valA); }
+    if (_valB != '0') {
+      _valB = (_valB.contains('-') ? _valB.substring(1) : '-' + _valB);
+    } else if (_valA != '0') {
+      _valA = (_valA.contains('-') ? _valA.substring(1) : '-' + _valA);
+    }
   }
 
   static String calcPercent(String x) => (double.parse(x) / 100).toString();
 
   static void _percent() {
-
-    if (_valB != '0' && !_valB.contains('.')) { _valB = calcPercent(_valB); }
-    else if (_valA != '0' && !_valA.contains('.')) { _valA = calcPercent(_valA); }
+    if (_valB != '0' && !_valB.contains('.')) {
+      _valB = calcPercent(_valB);
+    } else if (_valA != '0' && !_valA.contains('.')) {
+      _valA = calcPercent(_valA);
+    }
   }
 
   static void _decimal() {
-
-    if (_valB != '0' && !_valB.contains('.')) { _valB = _valB + '.'; }
-    else if (_valA != '0' && !_valA.contains('.')) { _valA = _valA + '.'; }
+    if (_valB != '0' && !_valB.contains('.')) {
+      _valB = _valB + '.';
+    } else if (_valA != '0' && !_valA.contains('.')) {
+      _valA = _valA + '.';
+    }
   }
 
   static void _calculate() {
-
-    if (_operator == null || _valB == '0') { return; }
+    if (_operator == null || _valB == '0') {
+      return;
+    }
 
     Map<KeySymbol, dynamic> table = {
       Keys.divide: (a, b) => (a / b),
@@ -116,8 +131,8 @@ abstract class Processor {
     double result = table[_operator](double.parse(_valA), double.parse(_valB));
     String str = result.toString();
 
-    while ((str.contains('.') && str.endsWith('0')) || str.endsWith('.')) { 
-      str = str.substring(0, str.length - 1); 
+    while ((str.contains('.') && str.endsWith('0')) || str.endsWith('.')) {
+      str = str.substring(0, str.length - 1);
     }
 
     _result = str;
@@ -125,9 +140,9 @@ abstract class Processor {
   }
 
   static void _condense() {
-
     _valA = _result;
     _valB = '0';
-    _result = _operator = null;
+    _result = '0';
+    _operator = KeySymbol('0');
   }
 }
