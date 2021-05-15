@@ -35,13 +35,9 @@ class _CalculatorState extends State<Calculator> {
     Size screen = MediaQuery.of(context).size;
 
     double buttonSize = screen.width / 4;
-    double displayHeight = -(screen.height - (buttonSize * 5) - (buttonSize));
-
-    debugPrint('${displayHeight}');
-    debugPrint('${buttonSize}');
+    double displayHeight = screen.height - (buttonSize * 5) - (buttonSize);
 
     return Scaffold(
-      drawer: SideDrawer(),
       backgroundColor: Color.fromARGB(196, 32, 64, 96),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
