@@ -35,7 +35,7 @@ class _CalculatorState extends State<Calculator> {
     Size screen = MediaQuery.of(context).size;
 
     double buttonSize = screen.width / 4;
-    double displayHeight = -(screen.height - (buttonSize * 5) - (buttonSize));
+    double displayHeight = (screen.height - (buttonSize* 1.75));
 
     debugPrint('${displayHeight}');
     debugPrint('${buttonSize}');
