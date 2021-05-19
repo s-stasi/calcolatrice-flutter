@@ -18,8 +18,8 @@ class PianoCartesianoPainter extends CustomPainter {
   double windAngle;
   String problemNumber;
 
-  PianoCartesianoPainter({
-      this.problemNumber: "null",
+  PianoCartesianoPainter(
+      {this.problemNumber: "null",
       this.tc: 0.0,
       this.tas: 0.0,
       this.windAngle: 0.0,
@@ -103,125 +103,117 @@ class PianoCartesianoPainter extends CustomPainter {
     debugPrint('mult: ${mult}');
 
     switch (problemNumber) {
-      case 'primo': {
-        double r = windVel * Math.sin(toRad(w-tc));
-        double l = -windVel * Math.cos(toRad(tc - w));
-        double i = toDeg(Math.asin(r / tas));
-        double c = tas * Math.cos(toRad(i));
-        var gs = c + l;
-        mult = (gs >= max) ? max / (gs * 1.34) : max / (gs * 1.34);
-        var gsPaint = Paint()
-          ..color = Colors.red
-          ..strokeWidth = 4;
-        var gsCoord = [
-          Offset(200 + gs * mult * Math.cos(toRad(tc - 90)), 200 + gs * mult * Math.sin(toRad(tc - 90))),
-          Offset(200, 200)
-        ];
+      case 'primo':
+        {
+          double r = windVel * Math.sin(toRad(w - tc));
+          double l = -windVel * Math.cos(toRad(tc - w));
+          double i = toDeg(Math.asin(r / tas));
+          double c = tas * Math.cos(toRad(i));
+          var gs = c + l;
+          mult = (gs >= max) ? max / (gs * 1.34) : max / (gs * 1.34);
+          var gsPaint = Paint()
+            ..color = Colors.red
+            ..strokeWidth = 4;
+          var gsCoord = [
+            Offset(200 + gs * mult * Math.cos(toRad(tc - 90)),
+                200 + gs * mult * Math.sin(toRad(tc - 90))),
+            Offset(200, 200)
+          ];
 
+          var windPaint = Paint()
+            ..color = Colors.yellow
+            ..strokeWidth = 4;
+          var windCoord = [
+            Offset(200 + windVel * mult * Math.cos(toRad(w - 90)),
+                200 + windVel * mult * Math.sin(toRad(w - 90))),
+            Offset(200, 200)
+          ];
 
-        var windPaint = Paint()
-          ..color = Colors.yellow
-          ..strokeWidth = 4;
-        var windCoord = [
-          Offset(200 + windVel * mult * Math.cos(toRad(w-90)), 200 + windVel * mult * Math.sin(toRad(w - 90))),
-          Offset(200, 200)
-        ];
+          var tasPaint = Paint()
+            ..color = Colors.black
+            ..strokeWidth = 4;
+          var tasCoord = [windCoord[0], gsCoord[0]];
 
+          /// Drawing everything
+          canvas.drawLine(gsCoord[0], gsCoord[1], gsPaint);
+          canvas.drawLine(windCoord[0], windCoord[1], windPaint);
+          canvas.drawLine(tasCoord[0], tasCoord[1], tasPaint);
 
-        var tasPaint = Paint()
-          ..color = Colors.black
-          ..strokeWidth = 4;
-        var tasCoord = [
-          windCoord[0],
-          gsCoord[0]
-        ];
+          break;
+        }
+      case 'secondo':
+        {
+          break;
+        }
+      case 'terzo':
+        {
+          var windPaint = Paint()
+            ..color = Colors.yellow
+            ..strokeWidth = 4;
+          var windCoord = [
+            Offset(200 + windVel * mult * Math.cos(toRad(w - 90)),
+                200 + windVel * mult * Math.sin(toRad(w - 90))),
+            Offset(200, 200)
+          ];
 
-        /// Drawing everything
-        canvas.drawLine(gsCoord[0], gsCoord[1], gsPaint);
-        canvas.drawLine(windCoord[0], windCoord[1], windPaint);
-        canvas.drawLine(tasCoord[0], tasCoord[1], tasPaint);
+          var gsPaint = Paint()
+            ..color = Colors.red
+            ..strokeWidth = 4;
+          var gsCoord = [
+            Offset(200 + gs * mult * Math.cos(toRad(tc - 90)),
+                200 + gs * mult * Math.sin(toRad(tc - 90))),
+            Offset(200, 200)
+          ];
 
-        break;
-      }
-      case 'secondo': {
+          var tasPaint = Paint()
+            ..color = Colors.black
+            ..strokeWidth = 4;
+          var tasCoord = [windCoord[0], gsCoord[0]];
 
-        break;
-      }
-      case 'terzo': {
-        var windPaint = Paint()
-          ..color = Colors.yellow
-          ..strokeWidth = 4;
-        var windCoord = [
-          Offset(200 + windVel * mult * Math.cos(toRad(w-90)), 200 + windVel * mult * Math.sin(toRad(w - 90))),
-          Offset(200, 200)
-        ];
+          /// Drawing everything
+          canvas.drawLine(gsCoord[0], gsCoord[1], gsPaint);
+          canvas.drawLine(windCoord[0], windCoord[1], windPaint);
+          canvas.drawLine(tasCoord[0], tasCoord[1], tasPaint);
 
+          break;
+        }
+      case 'quarto':
+        {
+          var gsPaint = Paint()
+            ..color = Colors.red
+            ..strokeWidth = 4;
+          var gsCoord = [
+            Offset(200 + gs * mult * Math.cos(toRad(tc - 90)),
+                200 + gs * mult * Math.sin(toRad(tc - 90))),
+            Offset(200, 200)
+          ];
 
-        var gsPaint = Paint()
-          ..color = Colors.red
-          ..strokeWidth = 4;
-        var gsCoord = [
-          Offset(200 + gs * mult * Math.cos(toRad(tc - 90)), 200 + gs * mult * Math.sin(toRad(tc - 90))),
-          Offset(200, 200)
-        ];
+          var tasPaint = Paint()
+            ..color = Colors.black
+            ..strokeWidth = 4;
+          var tasCoord = [
+            Offset(200 + tas * mult * Math.cos(toRad(th - 90)),
+                200 + tas * mult * Math.sin(toRad(th - 90))),
+            Offset(200, 200)
+          ];
 
+          var windPaint = Paint()
+            ..color = Colors.yellow
+            ..strokeWidth = 4;
+          var windCoord = [tasCoord[0], gsCoord[0]];
 
-        var tasPaint = Paint()
-          ..color = Colors.black
-          ..strokeWidth = 4;
-        var tasCoord = [
-          windCoord[0],
-          gsCoord[0]
-        ];
+          /// Drawing everything
+          canvas.drawLine(gsCoord[0], gsCoord[1], gsPaint);
+          canvas.drawLine(windCoord[0], windCoord[1], windPaint);
+          canvas.drawLine(tasCoord[0], tasCoord[1], tasPaint);
 
-
-        /// Drawing everything
-        canvas.drawLine(gsCoord[0], gsCoord[1], gsPaint);
-        canvas.drawLine(windCoord[0], windCoord[1], windPaint);
-        canvas.drawLine(tasCoord[0], tasCoord[1], tasPaint);
-
-        break;
-      }
-      case 'quarto':{
-        var gsPaint = Paint()
-          ..color = Colors.red
-          ..strokeWidth = 4;
-        var gsCoord = [
-          Offset(200 + gs * mult * Math.cos(toRad(tc - 90)), 200 + gs * mult * Math.sin(toRad(tc - 90))),
-          Offset(200, 200)
-        ];
-
-
-        var tasPaint = Paint()
-          ..color = Colors.black
-          ..strokeWidth = 4;
-        var tasCoord = [
-          Offset(200 + tas * mult * Math.cos(toRad(th - 90)), 200 + tas * mult * Math.sin(toRad(th - 90))),
-          Offset(200, 200)
-        ];
-
-        
-        var windPaint = Paint()
-          ..color = Colors.yellow
-          ..strokeWidth = 4;
-        var windCoord = [
-          tasCoord[0],
-          gsCoord[0]
-        ];
-
-
-        /// Drawing everything
-        canvas.drawLine(gsCoord[0], gsCoord[1], gsPaint);
-        canvas.drawLine(windCoord[0], windCoord[1], windPaint);
-        canvas.drawLine(tasCoord[0], tasCoord[1], tasPaint);
-
-        break;
-      }
-      default: {
-        throw Exception('Choose the problem number');
-      }
+          break;
+        }
+      default:
+        {
+          throw Exception('Choose the problem number');
+        }
     }
-
 
     /*final rect = Rect.fromLTRB(0, 0, size.width, size.height);
     final paint = Paint()..color = Colors.red;

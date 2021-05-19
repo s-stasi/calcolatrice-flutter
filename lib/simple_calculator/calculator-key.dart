@@ -3,7 +3,6 @@ import './key-controller.dart';
 import './key-symbol.dart';
 
 abstract class Keys {
-
   static KeySymbol clear = const KeySymbol('C');
   static KeySymbol sign = const KeySymbol('±');
   static KeySymbol percent = const KeySymbol('%');
@@ -27,15 +26,12 @@ abstract class Keys {
 }
 
 class CalculatorKey extends StatelessWidget {
-
-  CalculatorKey({ required this.symbol });
+  CalculatorKey({required this.symbol});
 
   final KeySymbol symbol;
-  
+
   Color get color {
-
     switch (symbol.type) {
-
       case KeyType.FUNCTION:
         return Color.fromARGB(255, 96, 96, 96);
 
@@ -52,23 +48,20 @@ class CalculatorKey extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     double size = MediaQuery.of(context).size.width / 8;
     double size_h = MediaQuery.of(context).size.height / 6.5;
     //TextStyle style = Theme.of(context).textTheme.display1.copyWith(color: Colors.white);
 
     return Container(
-      
-      width: (symbol == Keys.zero) ? (size * 4) : size*2,
-      padding: EdgeInsets.all(2),
-      height: size_h,
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-        color: color,
-        elevation: 4,
-        child: Text(symbol.value, style: TextStyle()),
-        onPressed: () => _fire(this),
-      )
-    );
+        width: (symbol == Keys.zero) ? (size * 4) : size * 2,
+        padding: EdgeInsets.all(2),
+        height: size_h,
+        child: RaisedButton(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+          color: color,
+          elevation: 4,
+          child: Text(symbol.value, style: TextStyle()),
+          onPressed: () => _fire(this),
+        ));
   }
 }

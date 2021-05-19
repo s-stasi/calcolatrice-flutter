@@ -54,78 +54,78 @@ class _PTState extends State<TerzoProblema> {
       body: Column(
         children: <Widget>[
           Row(children: <Widget>[
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-          child: TextField(
-            controller: tc,
-            decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.blue.shade900, width: 3.0)),
-              labelText: 'TC',
-              helperText: 'true course',
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+              child: TextField(
+                controller: tc,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                  labelText: 'TC',
+                  helperText: 'true course',
+                ),
+              ),
             ),
-          ),
-        ),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-          child: TextField(
-            controller: gs,
-            decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.blue.shade900, width: 3.0)),
-              labelText: 'GS',
-              helperText: 'ground speed',
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+              child: TextField(
+                controller: gs,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                  labelText: 'GS',
+                  helperText: 'ground speed',
+                ),
+              ),
             ),
-          ),
-        ),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-          child: TextField(
-            controller: windAngle,
-            decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.blue.shade900, width: 3.0)),
-              labelText: 'WIND ANGLE',
-              helperText: 'wind angle',
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+              child: TextField(
+                controller: windAngle,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                  labelText: 'WIND ANGLE',
+                  helperText: 'wind angle',
+                ),
+              ),
             ),
-          ),
-        ),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-          child: TextField(
-            controller: windVel,
-            decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.blue.shade900, width: 3.0)),
-              labelText: 'WIND SPEED',
-              helperText: 'wind speed',
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+              child: TextField(
+                controller: windVel,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                  labelText: 'WIND SPEED',
+                  helperText: 'wind speed',
+                ),
+              ),
             ),
-          ),
-        ),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-      ]),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+          ]),
           CustomPaint(
-            size: Size(400, 400),
-            painter: PianoCartesianoPainter(
-                      tc: double.tryParse(tc.text) ?? 0.0,
-                      gs: double.tryParse(gs.text) ?? 0.0,
-                      windAngle: double.tryParse(windAngle.text) ?? 0.0,
-                      windVel: double.tryParse(windVel.text) ?? 0.0,
-                      problemNumber: "terzo"))
+              size: Size(400, 400),
+              painter: PianoCartesianoPainter(
+                  tc: double.tryParse(tc.text) ?? 0.0,
+                  gs: double.tryParse(gs.text) ?? 0.0,
+                  windAngle: double.tryParse(windAngle.text) ?? 0.0,
+                  windVel: double.tryParse(windVel.text) ?? 0.0,
+                  problemNumber: "terzo"))
         ],
       ),
       floatingActionButton: FloatingActionButton(

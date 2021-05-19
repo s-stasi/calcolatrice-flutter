@@ -126,32 +126,25 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${d[4]}');
     debugPrint('${d[5]}');
 
-    String arr = 'gs: ${d[0].round().toString()} th: ${d[1].round().toString()}';
+    String arr =
+        'gs: ${d[0].round().toString()} th: ${d[1].round().toString()}';
     return arr;
   }
 
   secondoProblema() {
-    num originWInd;
-    num gamma;
-    num wca;
-    originWInd = windAngle;
-
-    if (windAngle < 180)
-      windAngle += 180;
-    else
-      windAngle -= 180;
-
-    if (originWInd > th)
-      gamma = originWInd - th;
-    else
-      gamma = th - originWInd;
-    if (gamma > 180) gamma = 360 - gamma;
-
-    gs = Math.sqrt(Math.pow(windVel, 2) +
+    num oWInd = windAngle;
+    windAngle = (windAngle < 180) ? windAngle + 180 : windAngle - 180;
+    num gamma = (oWind > th) ? oWind - th : th - oWind;
+    gamma = (gamma > 180) ? 360 - gamma : gamma;
+    num gs = Math.sqrt(Math.pow(windVel, 2) +
         Math.pow(tas, 2) -
         (2 * windVel * tas * Math.cos(toRad(gamma))));
-
-    wca = toDeg(Math.asin((windVel * Math.sin(toRad(gamma))) / gs));
+    gs = (gs.isNaN) ? 0 : gs.round();
+    num wca = toDeg(Math.asin((windVel * Math.sin(toRad(gamma))) / gs));
+    wca = (wca.isNaN) ? 0 : wca.round();
+    num alpha = 180 - gamma - wca;
+    num tc = tas * Math.sin(toRad(gamma)) / Math.sin(toRad(alpha));
+    tc = (th.isNaN) ? 0 : th.round();
 
     if (windAngle < th)
       tc = th + wca;

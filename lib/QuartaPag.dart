@@ -58,78 +58,78 @@ class _QPState extends State<QuartoProblema> {
       body: Column(
         children: <Widget>[
           Row(children: <Widget>[
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-          child: TextField(
-            controller: th,
-            decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.blue.shade900, width: 3.0)),
-              labelText: 'TH',
-              helperText: 'true heading',
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+              child: TextField(
+                controller: th,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                  labelText: 'TH',
+                  helperText: 'true heading',
+                ),
+              ),
             ),
-          ),
-        ),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-          child: TextField(
-            controller: tas,
-            decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.blue.shade900, width: 3.0)),
-              labelText: 'TAS',
-              helperText: 'true air speed',
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+              child: TextField(
+                controller: tas,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                  labelText: 'TAS',
+                  helperText: 'true air speed',
+                ),
+              ),
             ),
-          ),
-        ),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-          child: TextField(
-            controller: tc,
-            decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.blue.shade900, width: 3.0)),
-              labelText: 'TC',
-              helperText: 'true course',
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+              child: TextField(
+                controller: tc,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                  labelText: 'TC',
+                  helperText: 'true course',
+                ),
+              ),
             ),
-          ),
-        ),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-          child: TextField(
-            controller: gs,
-            decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderSide:
-                      BorderSide(color: Colors.blue.shade900, width: 3.0)),
-              labelText: 'GS',
-              helperText: 'ground speed',
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+              child: TextField(
+                controller: gs,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                  labelText: 'GS',
+                  helperText: 'ground speed',
+                ),
+              ),
             ),
-          ),
-        ),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        ]),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+          ]),
           CustomPaint(
-            size: Size(400, 400),
-            painter: PianoCartesianoPainter(
-                      tc: double.tryParse(tc.text) ?? 0.0,
-                      gs: double.tryParse(gs.text) ?? 0.0,
-                      th: double.tryParse(th.text) ?? 0.0,
-                      tas: double.tryParse(tas.text) ?? 0.0,
-                      problemNumber: "quarto")),
+              size: Size(400, 400),
+              painter: PianoCartesianoPainter(
+                  tc: double.tryParse(tc.text) ?? 0.0,
+                  gs: double.tryParse(gs.text) ?? 0.0,
+                  th: double.tryParse(th.text) ?? 0.0,
+                  tas: double.tryParse(tas.text) ?? 0.0,
+                  problemNumber: "quarto")),
         ],
       ),
       floatingActionButton: FloatingActionButton(
