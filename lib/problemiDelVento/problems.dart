@@ -106,12 +106,17 @@ class _ProblemsState extends State<Problems> {
   }
 
   String primoProblema() {
-    num r = (windVel * Math.sin(toRad(windAngle - tc))).round();
-    num l = (-windVel * Math.cos(toRad(tc - windAngle))).round();
-    num wca = (toDeg(Math.asin(r / tas)));
-    num c = (tas * Math.cos(toRad(wca))).round();
-    num th = (tc + wca).round();
-    num gs = (c + l).round();
+    num r = windVel * Math.sin(toRad(windAngle - tc));
+    r = (r.isNaN) ? 0 : r.round();
+    num l = -windVel * Math.cos(toRad(tc - windAngle));
+    l = (l.isNaN) ? 0 : l.round();
+    num wca = toDeg(Math.asin(r / tas));
+    num c = tas * Math.cos(toRad(wca));
+    tas = (tas.isNaN) ? 0 : tas.round();
+    num th = tc + wca;
+    th = (th.isNaN) ? 0 : th.round();
+    num gs = c + l;
+    gs = (gs.isNaN) ? 0 : gs.round();
     var d = [gs, th, c, wca, l, r];
 
     debugPrint('${d[0]}');
@@ -158,12 +163,16 @@ class _ProblemsState extends State<Problems> {
   }
 
   String terzoProblema() {
-    num xc = (windVel * Math.sin(toRad(windAngle - tc))).round();
-    num lc = (-windVel * Math.cos(toRad(tc - windAngle))).round();
+    num xc = windVel * Math.sin(toRad(windAngle - tc));
+    windVel = (windVel.isNaN) ? 0 : windVel.round();
+    num lc = -windVel * Math.cos(toRad(tc - windAngle));
+    lc = (lc.isNaN) ? 0 : lc.round();
     num etas = gs - lc;
-    num wca = (toDeg(Math.atan(xc / etas))).round();
+    num wca = toDeg(Math.atan(xc / etas));
+    wca = (wca.isNaN) ? 0 : wca.round();
     num th = tc + wca;
-    num tas = (etas / Math.cos(toRad(wca))).round();
+    num tas = etas / Math.cos(toRad(wca));
+    tas = (tas.isNaN) ? 0 : tas.round();
     var res = [xc, lc, wca, tas, etas, th];
 
     debugPrint('${res[0]}');
@@ -180,16 +189,21 @@ class _ProblemsState extends State<Problems> {
   String quartoProblema() {
     num wca = th - tc;
     if (wca < 0) wca = wca * -1;
-    num xc = (tas * Math.sin(toRad(wca))).round();
-    num etas = (tas * Math.cos(toRad(wca))).round();
-    num lc = (gs - etas).round();
-    num v = (Math.sqrt(Math.pow(xc, 2) + Math.pow(lc, 2))).round();
+    num xc = tas * Math.sin(toRad(wca));
+    xc = (xc.isNaN) ? 0 : xc.round();
+    num etas = tas * Math.cos(toRad(wca));
+    etas = (etas.isNaN) ? 0 : etas.round();
+    num lc = gs - etas;
+    lc = (lc.isNaN) ? 0 : lc.round();
+    num v = Math.sqrt(Math.pow(xc, 2) + Math.pow(lc, 2));
+    v = (v.isNaN) ? 0 : v.round();
     num w = () {
       if (xc > 0) return tc + toDeg(90 + Math.asin(lc / v));
       return tc + (-toDeg(90 + Math.asin(lc / v)));
     }();
     do {
-      w = w.round();
+      w = w;
+      w = (w.isNaN) ? 0 : w.round();
       w = w - 360;
     } while (w > 360);
     var res = [xc, lc, wca, v, w];

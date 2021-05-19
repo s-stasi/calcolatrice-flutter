@@ -91,7 +91,7 @@ class _PPState extends State<PrimoProblema> {
                 width: MediaQuery.of(context).size.width * 0.04,
                 height: MediaQuery.of(context).size.height * 0.20),
             Expanded(
-                child: TextField(
+              child: TextField(
               controller: windAngle,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -105,7 +105,7 @@ class _PPState extends State<PrimoProblema> {
                 width: MediaQuery.of(context).size.width * 0.04,
                 height: MediaQuery.of(context).size.height * 0.20),
             Expanded(
-                child: TextField(
+              child: TextField(
               controller: windVel,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
