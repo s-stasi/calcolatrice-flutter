@@ -7,7 +7,7 @@ class Display extends StatelessWidget {
   final double height;
 
   String get _output => value.toString();
-  double get _margin => (height / 10);
+  double get _margin => (height / 20);
 
   final LinearGradient _gradient =
       const LinearGradient(colors: [Colors.black26, Colors.black45]);
@@ -18,7 +18,7 @@ class Display extends StatelessWidget {
         TextStyle().copyWith(color: Colors.white, fontWeight: FontWeight.w200);
 
     return Container(
-        padding: EdgeInsets.only(top: _margin, bottom: _margin),
+        padding: EdgeInsets.only(top: 0.0, bottom: 0.0),
         constraints: BoxConstraints.expand(height: height),
         child: AnimatedContainer(
             duration: Duration(milliseconds: 10000),

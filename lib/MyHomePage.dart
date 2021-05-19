@@ -34,15 +34,29 @@ class _CalculatorState extends State<Calculator> {
   Widget build(BuildContext context) {
     Size screen = MediaQuery.of(context).size;
 
-    double buttonSize = screen.width / 4;
-    double displayHeight = (screen.height - (buttonSize * 1.75));
+    double buttonWidth = screen.width / 4;
+    double buttonHeight = screen.height / 2.2;
+    double displayHeight = (screen.height - (buttonHeight * 1.9));
 
     debugPrint('$displayHeight');
-    debugPrint('$buttonSize');
+    debugPrint('$buttonHeight');
 
     return Scaffold(
       backgroundColor: Color.fromARGB(196, 32, 64, 96),
       drawer: SideDrawer(),
+      appBar: AppBar(
+        title: Text(
+          'CALCOLATRICE',
+          style: TextStyle(color: Colors.white),
+        ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Colors.black,
+            Colors.blue,
+          ])),
+        ),
+      ),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
