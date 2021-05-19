@@ -1,4 +1,6 @@
 import 'dart:async';
+//import 'dart:ffi';
+import 'dart:html';
 import './calculator-key.dart';
 import './key-controller.dart';
 import './key-symbol.dart';
@@ -12,7 +14,8 @@ abstract class Processor {
   static StreamController _controller = StreamController();
   static Stream get _stream => _controller.stream;
 
-  static StreamSubscription listen(Function handler) => _stream.listen(handler('0'));
+  static StreamSubscription listen(Function handler) =>
+      _stream.listen(handler as dynamic);
   static void refresh() => _fire(_output);
 
   static void _fire(String data) => _controller.add(_output);
