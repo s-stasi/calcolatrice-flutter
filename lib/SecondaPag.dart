@@ -1,5 +1,3 @@
-import 'package:charcode/charcode.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problemiDelVento/problems.dart';
@@ -17,12 +15,25 @@ class _SPState extends State<SecondoProblema> {
   final windVel = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    th.addListener(_UpdateGraph);
+    tas.addListener(_UpdateGraph);
+    windAngle.addListener(_UpdateGraph);
+    windVel.addListener(_UpdateGraph);
+  }
+
+  @override
   void dispose() {
     th.dispose();
     tas.dispose();
     windAngle.dispose();
     windVel.dispose();
     super.dispose();
+  }
+
+  _UpdateGraph() {
+    setState(() {});
   }
 
   @override
@@ -102,24 +113,27 @@ class _SPState extends State<SecondoProblema> {
                 helperText: 'wind speed',
               ),
             )),
-            Problems(
-                th: int.tryParse(th.text) ?? 0,
-                tas: int.tryParse(tas.text) ?? 0,
-                windAngle: int.tryParse(windAngle.text) ?? 0,
-                windVel: int.tryParse(windVel.text) ?? 0,
-                problemNumber: "terzo"),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.02),
-            CustomPaint(
-                size: Size(400, 400),
-                painter: PianoCartesianoPainter(
-                    th: double.tryParse(th.text) ?? 0.0,
-                    tas: double.tryParse(tas.text) ?? 0.0,
-                    windAngle: double.tryParse(windAngle.text) ?? 0.0,
-                    windVel: double.tryParse(windVel.text) ?? 0.0,
-                    problemNumber: "terzo")),
+                height: MediaQuery.of(context).size.height * 0.20),
           ]),
+          Problems(
+              tc: int.tryParse(th.text) ?? 0,
+              tas: int.tryParse(tas.text) ?? 0,
+              windAngle: int.tryParse(windAngle.text) ?? 0,
+              windVel: int.tryParse(windVel.text) ?? 0,
+              problemNumber: "terzo"),
+          Container(
+              width: MediaQuery.of(context).size.width * 0.04,
+              height: MediaQuery.of(context).size.height * 0.02),
+          CustomPaint(
+              size: Size(400, 400),
+              painter: PianoCartesianoPainter(
+                  tc: double.tryParse(th.text) ?? 0.0,
+                  tas: double.tryParse(tas.text) ?? 0.0,
+                  windAngle: double.tryParse(windAngle.text) ?? 0.0,
+                  windVel: double.tryParse(windVel.text) ?? 0.0,
+                  problemNumber: "terzo")),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -134,7 +148,7 @@ class _SPState extends State<SecondoProblema> {
                       windVel: int.tryParse(windVel.text) ?? 0,
                       problemNumber: "terzo"));
             }),
-        child: Text('   =   '),
+        child: Text('='),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
         ),

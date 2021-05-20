@@ -220,13 +220,7 @@ class _ProblemsState extends State<Problems> {
     return arr;
   }
 
-  primoLossodromia() {
-    var delF;
-    if (aF > bF)
-      delF = aF - bF;
-    else
-      delF = bF - aF;
-  }
+  primoLossodromia() {}
 
   secondoLossodromia() {}
 }
