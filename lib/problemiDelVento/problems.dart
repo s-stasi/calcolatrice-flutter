@@ -70,17 +70,17 @@ class _ProblemsState extends State<Problems> {
 
   _ProblemsState(
       {this.problemNumber: "null",
-      var this.tc,
-      var this.tas,
-      var this.windAngle,
-      var this.windVel,
-      var this.th,
-      var this.gs,
-      var this.aF,
-      var this.aL,
-      var this.bF,
-      var this.bL,
-      var this.d});
+      var this.tc: 0,
+      var this.tas: 0,
+      var this.windAngle: 0,
+      var this.windVel: 0,
+      var this.th: 0,
+      var this.gs: 0,
+      var this.aF: 0,
+      var this.aL: 0,
+      var this.bF: 0,
+      var this.bL: 0,
+      var this.d: 0});
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +133,7 @@ class _ProblemsState extends State<Problems> {
   String secondoProblema() {
     num oWind = windAngle;
     windAngle = (windAngle < 180) ? windAngle + 180 : windAngle - 180;
-    num gamma = (oWind > th) ? oWind - th : th - oWind;
+    num gamma = (th < oWind) ? oWind - th : th - oWind;
     gamma = (gamma > 180) ? 360 - gamma : gamma;
     num gs = Math.sqrt(Math.pow(windVel, 2) +
         Math.pow(tas, 2) -
