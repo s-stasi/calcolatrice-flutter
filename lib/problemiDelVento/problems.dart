@@ -126,13 +126,12 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${d[4]}');
     debugPrint('${d[5]}');
 
-    String arr =
-        'gs: ${d[0].round().toString()} th: ${d[1].round().toString()}';
+    String arr = 'gs: ${d[0].toString()} th: ${d[1].toString()}';
     return arr;
   }
 
-  secondoProblema() {
-    num oWInd = windAngle;
+  String secondoProblema() {
+    num oWind = windAngle;
     windAngle = (windAngle < 180) ? windAngle + 180 : windAngle - 180;
     num gamma = (oWind > th) ? oWind - th : th - oWind;
     gamma = (gamma > 180) ? 360 - gamma : gamma;
@@ -151,7 +150,17 @@ class _ProblemsState extends State<Problems> {
     else
       tc = th - wca;
 
-    var arr = [tc, gs];
+    var d = [oWind, gs, wca, alpha, gamma, tc];
+
+    debugPrint('${d[0]}');
+    debugPrint('${d[1]}');
+    debugPrint('${d[2]}');
+    debugPrint('${d[3]}');
+    debugPrint('${d[4]}');
+    debugPrint('${d[5]}');
+
+    String arr = 'tc: ${d[5].toString()} gs: ${d[1].toString()}';
+
     return arr;
   }
 

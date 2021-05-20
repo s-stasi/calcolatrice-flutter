@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problemiDelVento/problems.dart';
+import 'problemiDelVento/piano_cartesiano.dart';
 
 class SecondoProblema extends StatefulWidget {
   @override
@@ -42,67 +43,85 @@ class _SPState extends State<SecondoProblema> {
           ])),
         ),
       ),
-      body: Row(children: <Widget>[
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-            child: TextField(
-          controller: th,
-          decoration: InputDecoration(
-            enabledBorder: OutlineInputBorder(
-                borderSide:
-                    BorderSide(color: Colors.blue.shade900, width: 3.0)),
-            labelText: 'TH',
-            helperText: 'true heading',
-          ),
-        )),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-            child: TextField(
-          controller: tas,
-          decoration: InputDecoration(
-            enabledBorder: OutlineInputBorder(
-                borderSide:
-                    BorderSide(color: Colors.blue.shade900, width: 3.0)),
-            labelText: 'TAS',
-            helperText: 'true air speed',
-          ),
-        )),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-            child: TextField(
-          controller: windAngle,
-          decoration: InputDecoration(
-            enabledBorder: OutlineInputBorder(
-                borderSide:
-                    BorderSide(color: Colors.blue.shade900, width: 3.0)),
-            labelText: 'WIND ANGLE',
-            helperText: 'wind angle',
-          ),
-        )),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-            child: TextField(
-          controller: windVel,
-          decoration: InputDecoration(
-            enabledBorder: OutlineInputBorder(
-                borderSide:
-                    BorderSide(color: Colors.blue.shade900, width: 3.0)),
-            labelText: 'WIND SPEED',
-            helperText: 'wind speed',
-          ),
-        )),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-      ]),
+      body: Column(
+        children: <Widget>[
+          Row(children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+                child: TextField(
+              controller: th,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'TH',
+                helperText: 'true heading',
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+                child: TextField(
+              controller: tas,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'TAS',
+                helperText: 'true air speed',
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+                child: TextField(
+              controller: windAngle,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'WIND ANGLE',
+                helperText: 'wind angle',
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+                child: TextField(
+              controller: windVel,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'WIND SPEED',
+                helperText: 'wind speed',
+              ),
+            )),
+            Problems(
+                th: int.tryParse(th.text) ?? 0,
+                tas: int.tryParse(tas.text) ?? 0,
+                windAngle: int.tryParse(windAngle.text) ?? 0,
+                windVel: int.tryParse(windVel.text) ?? 0,
+                problemNumber: "terzo"),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.02),
+            CustomPaint(
+                size: Size(400, 400),
+                painter: PianoCartesianoPainter(
+                    th: double.tryParse(th.text) ?? 0.0,
+                    tas: double.tryParse(tas.text) ?? 0.0,
+                    windAngle: double.tryParse(windAngle.text) ?? 0.0,
+                    windVel: double.tryParse(windVel.text) ?? 0.0,
+                    problemNumber: "terzo")),
+          ]),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(
             context: context,
@@ -113,7 +132,7 @@ class _SPState extends State<SecondoProblema> {
                       tas: int.tryParse(tas.text) ?? 0,
                       windAngle: int.tryParse(windAngle.text) ?? 0,
                       windVel: int.tryParse(windVel.text) ?? 0,
-                      problemNumber: "primo"));
+                      problemNumber: "terzo"));
             }),
         child: Text('   =   '),
         shape: RoundedRectangleBorder(
