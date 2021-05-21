@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problemiDelVento/problems.dart';
 import 'problemiDelVento/piano_cartesiano.dart';
+import 'package:NAVTOOL/theming/legend.dart';
 
 class SecondoProblema extends StatefulWidget {
   @override
@@ -134,6 +135,7 @@ class _SPState extends State<SecondoProblema> {
                   windAngle: double.tryParse(windAngle.text) ?? 0.0,
                   windVel: double.tryParse(windVel.text) ?? 0.0,
                   problemNumber: "secondo")),
+          Legend()
         ],
       ),
       floatingActionButton: FloatingActionButton(
