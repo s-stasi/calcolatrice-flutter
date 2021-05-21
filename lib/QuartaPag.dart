@@ -1,3 +1,4 @@
+import 'package:NAVTOOL/theming/legend.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problemiDelVento/problems.dart';
@@ -128,6 +129,7 @@ class _QPState extends State<QuartoProblema> {
                   th: double.tryParse(th.text) ?? 0.0,
                   tas: double.tryParse(tas.text) ?? 0.0,
                   problemNumber: "quarto")),
+          Legend()
         ],
       ),
       floatingActionButton: FloatingActionButton(

@@ -1,3 +1,4 @@
+import 'package:NAVTOOL/theming/legend.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problemiDelVento/problems.dart';
@@ -136,6 +137,7 @@ class _PPState extends State<PrimoProblema> {
                   windAngle: double.tryParse(windAngle.text) ?? 0.0,
                   windVel: double.tryParse(windVel.text) ?? 0.0,
                   problemNumber: "primo")),
+          Legend()
         ],
       ),
       floatingActionButton: FloatingActionButton(
