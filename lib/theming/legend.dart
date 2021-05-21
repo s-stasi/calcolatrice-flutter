@@ -5,21 +5,62 @@ class Legend extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.4,
-      height: MediaQuery.of(context).size.height * 0.079,
+      padding: EdgeInsets.all(10.0),
+      width: 200,
+      //height: MediaQuery.of(context).size.height * 0.079,
       margin: EdgeInsets.all(25.0),
       child: Column(children: <Widget>[
-        Text(
-          'groun speed',
-          style: TextStyle(color: Colors.red),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              Icons.brightness_1,
+              color: Colors.red,
+              size: 20,
+            ),
+            SizedBox(width: 10),
+            Text(
+              'ground speed',
+              style: TextStyle(
+                  color: Colors.red, fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
-        Text(
-          'groun speed',
-          style: TextStyle(color: Colors.red),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              Icons.brightness_1,
+              color: Colors.black,
+              size: 20,
+            ),
+            SizedBox(width: 10),
+            Text(
+              'true air speed',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
-        Text(
-          'groun speed',
-          style: TextStyle(color: Colors.red),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              Icons.brightness_1,
+              color: Colors.yellow,
+              size: 20,
+            ),
+            SizedBox(width: 10),
+            Text(
+              'wind velocity',
+              style: TextStyle(
+                  color: Colors.yellow,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
       ]),
       decoration: BoxDecoration(
