@@ -26,7 +26,8 @@ class _MAState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
         builder: (context, theme, child) => MaterialApp(
-              onGenerateTitle: (BuildContext context) => AppLocalizations.of(context)!.gayyy,
+              onGenerateTitle: (BuildContext context) =>
+                  AppLocalizations.of(context)!.gayyy,
               localizationsDelegates: AppLocalizations.localizationsDelegates,
               supportedLocales: AppLocalizations.supportedLocales,
               theme: theme.getTheme(),

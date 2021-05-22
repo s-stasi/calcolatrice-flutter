@@ -259,11 +259,76 @@ class _ProblemsState extends State<Problems> {
       } else {
         q = 1;
       }
-      return 'fuck u';
     }
 
-    
+    var laA = todec(agla, apla);
+    var loA = todec(aglo, aplo);
+    var laB = todec(bgla, bpla);
+    var loB = todec(bglo, bplo);
+
+    var fm = (laA + laB) / 2;
+    var df;
+    var dl;
+    if (laA > laB) {
+      df = (laA - laB) * 60;
+    } else {
+      df = (laB - laA) * 60;
+    }
+    if (loA > loB) {
+      dl = (loA - loB) * 60;
+    } else {
+      dl = (loB - loA) * 60;
+    }
+
+    var dlc = dl * (Math.cos(toRad(fm)));
+    d = Math.sqrt(Math.pow(df, 2) + Math.pow(dlc, 2));
+
+    var alfa;
+    if (q == 1) {
+      alfa = Math.atan(df / dl);
+      tc = 90 - alfa;
+    } else if (q == 2) {
+      alfa = Math.atan(dl / df);
+      tc = 180 - alfa;
+    } else if (q == 3) {
+      alfa = Math.atan(df / dl);
+      tc = 270 - alfa;
+    } else {
+      alfa = Math.atan(dl / df);
+      tc = 360 - alfa;
+    }
+
+    var res = [d, tc];
+
+    debugPrint('${res[0]}');
+    debugPrint('${res[1]}');
+
+    String arr = 'v: ${res[0]} w: ${res[1]}';
+    return arr;
   }
 
-  secondoLossodromia() {}
+  secondoLossodromia() {
+    var alfa;
+    var df;
+    var dl;
+    var dlc;
+    var fm;
+    if (tc < 90) {
+      alfa = 90 - tc;
+      df = Math.sin(toRad(alfa)) * d;
+      dl = Math.cos(toRad(alfa)) * d;
+    } else if (tc < 180) {
+      alfa = 180 - tc;
+      df = Math.cos(toRad(alfa)) * d;
+      dl = Math.sin(toRad(alfa)) * d;
+    } else if (tc < 270) {
+      alfa = 270 - tc;
+      df = Math.sin(toRad(alfa)) * d;
+      dl = Math.cos(toRad(alfa)) * d;
+    } else {
+      alfa = 360 - tc;
+      df = Math.cos(toRad(alfa)) * d;
+      dl = Math.sin(toRad(alfa)) * d;
+    }
+  }
 }

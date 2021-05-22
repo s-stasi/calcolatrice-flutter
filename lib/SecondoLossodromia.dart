@@ -14,10 +14,8 @@ class _SLState extends State<SecondoLossodromia> {
   final apla = TextEditingController();
   final aglo = TextEditingController();
   final aplo = TextEditingController();
-  final bgla = TextEditingController();
-  final bpla = TextEditingController();
-  final bglo = TextEditingController();
-  final bplo = TextEditingController();
+  final d = TextEditingController();
+  final tc = TextEditingController();
 
   @override
   void dispose() {
@@ -25,10 +23,8 @@ class _SLState extends State<SecondoLossodromia> {
     apla.dispose();
     aglo.dispose();
     aplo.dispose();
-    bgla.dispose();
-    bpla.dispose();
-    bglo.dispose();
-    bplo.dispose();
+    d.dispose();
+    tc.dispose();
     super.dispose();
   }
 
@@ -50,67 +46,107 @@ class _SLState extends State<SecondoLossodromia> {
           ])),
         ),
       ),
-      body: Row(children: <Widget>[
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-            child: TextField(
-          controller: aglo,
-          decoration: InputDecoration(
-            enabledBorder: OutlineInputBorder(
-                borderSide:
-                    BorderSide(color: Colors.blue.shade900, width: 3.0)),
-            labelText: 'φA',
-            helperText: 'latitudine A',
-          ),
-        )),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-            child: TextField(
-          controller: apla,
-          decoration: InputDecoration(
-            enabledBorder: OutlineInputBorder(
-                borderSide:
-                    BorderSide(color: Colors.blue.shade900, width: 3.0)),
-            labelText: 'λA',
-            helperText: 'longitudine A',
-          ),
-        )),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-            child: TextField(
-          controller: bplo,
-          decoration: InputDecoration(
-            enabledBorder: OutlineInputBorder(
-                borderSide:
-                    BorderSide(color: Colors.blue.shade900, width: 3.0)),
-            labelText: 'DISTANCE',
-            helperText: 'distance',
-          ),
-        )),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-        Expanded(
-            child: TextField(
-          controller: aplo,
-          decoration: InputDecoration(
-            enabledBorder: OutlineInputBorder(
-                borderSide:
-                    BorderSide(color: Colors.blue.shade900, width: 3.0)),
-            labelText: 'TC',
-            helperText: 'true course',
-          ),
-        )),
-        Container(
-            width: MediaQuery.of(context).size.width * 0.04,
-            height: MediaQuery.of(context).size.height * 0.20),
-      ]),
+      body: SingleChildScrollView(
+          child: Column(children: <Widget>[
+        Row(
+          children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+                child: TextField(
+              controller: agla,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'GRADI',
+                helperText: 'latitudine A',
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+                child: TextField(
+              controller: apla,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'PRIMI',
+                helperText: 'latitudine A',
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+                child: TextField(
+              controller: aglo,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'GRADI',
+                helperText: 'longitudine A',
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+                child: TextField(
+              controller: aplo,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'PRIMI',
+                helperText: 'longitudine A',
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+                child: TextField(
+              controller: d,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'DISTANCE',
+                helperText: 'distance',
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+            Expanded(
+                child: TextField(
+              controller: tc,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'TC',
+                helperText: 'true course',
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.20),
+          ],
+        )
+      ])),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(
             context: context,
@@ -121,10 +157,8 @@ class _SLState extends State<SecondoLossodromia> {
                       apla: int.tryParse(apla.text) ?? 0,
                       aglo: int.tryParse(aglo.text) ?? 0,
                       aplo: int.tryParse(aplo.text) ?? 0,
-                      bgla: int.tryParse(bgla.text) ?? 0,
-                      bpla: int.tryParse(bpla.text) ?? 0,
-                      bglo: int.tryParse(bglo.text) ?? 0,
-                      bplo: int.tryParse(bplo.text) ?? 0,
+                      tc: int.tryParse(tc.text) ?? 0,
+                      d: int.tryParse(d.text) ?? 0,
                       problemNumber: "secondoLoss"));
             }),
         child: Text('   =   '),
