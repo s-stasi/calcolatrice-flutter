@@ -52,7 +52,8 @@ class _PTState extends State<TerzoProblema> {
               gradient: LinearGradient(colors: [Colors.black, Colors.blue])),
         ),
       ),
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
         children: <Widget>[
           Row(children: <Widget>[
             Container(
@@ -128,7 +129,8 @@ class _PTState extends State<TerzoProblema> {
                   windVel: double.tryParse(windVel.text) ?? 0.0,
                   problemNumber: "terzo")),
           Legend()
-        ],
+         ],
+        )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(

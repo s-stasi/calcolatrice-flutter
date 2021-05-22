@@ -10,17 +10,26 @@ class SecondoLossodromia extends StatefulWidget {
 }
 
 class _SLState extends State<SecondoLossodromia> {
-  final aF = TextEditingController();
-  final aL = TextEditingController();
-  final d = TextEditingController();
-  final tc = TextEditingController();
+  final agla = TextEditingController();
+  final apla = TextEditingController();
+  final aglo = TextEditingController();
+  final aplo = TextEditingController();
+  final bgla = TextEditingController();
+  final bpla = TextEditingController();
+  final bglo = TextEditingController();
+  final bplo = TextEditingController();
+
 
   @override
   void dispose() {
-    aF.dispose();
-    aL.dispose();
-    d.dispose();
-    tc.dispose();
+    agla.dispose();
+    apla.dispose();
+    aglo.dispose();
+    aplo.dispose();
+    bgla.dispose();
+    bpla.dispose();
+    bglo.dispose();
+    bplo.dispose();
     super.dispose();
   }
 
@@ -48,7 +57,7 @@ class _SLState extends State<SecondoLossodromia> {
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
             child: TextField(
-          controller: aF,
+          controller: aglo,
           decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
                 borderSide:
@@ -62,7 +71,7 @@ class _SLState extends State<SecondoLossodromia> {
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
             child: TextField(
-          controller: aL,
+          controller: apla,
           decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
                 borderSide:
@@ -76,7 +85,7 @@ class _SLState extends State<SecondoLossodromia> {
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
             child: TextField(
-          controller: d,
+          controller: bplo,
           decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
                 borderSide:
@@ -90,7 +99,7 @@ class _SLState extends State<SecondoLossodromia> {
             height: MediaQuery.of(context).size.height * 0.20),
         Expanded(
             child: TextField(
-          controller: tc,
+          controller: aplo,
           decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
                 borderSide:
@@ -109,10 +118,14 @@ class _SLState extends State<SecondoLossodromia> {
             builder: (context) {
               return AlertDialog(
                   content: Problems(
-                      aF: int.tryParse(aF.text) ?? 0,
-                      aL: int.tryParse(aL.text) ?? 0,
-                      bF: int.tryParse(d.text) ?? 0,
-                      bL: int.tryParse(tc.text) ?? 0,
+                      agla: int.tryParse(agla.text) ?? 0,
+                      apla: int.tryParse(apla.text) ?? 0,
+                      aglo: int.tryParse(aglo.text) ?? 0,
+                      aplo: int.tryParse(aplo.text) ?? 0,
+                      bgla: int.tryParse(bgla.text) ?? 0,
+                      bpla: int.tryParse(bpla.text) ?? 0,
+                      bglo: int.tryParse(bglo.text) ?? 0,
+                      bplo: int.tryParse(bplo.text) ?? 0,
                       problemNumber: "secondoLoss"));
             }),
         child: Text('   =   '),

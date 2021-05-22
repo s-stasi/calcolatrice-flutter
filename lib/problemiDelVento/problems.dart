@@ -9,7 +9,9 @@ toRad(num deg) {
 toDeg(num rad) {
   return rad * 180 / Math.pi;
 }
-
+todec(num gr, num pr){
+  return gr + (pr/60);
+}
 class Problems extends StatefulWidget {
   var tc;
   var tas;
@@ -17,10 +19,14 @@ class Problems extends StatefulWidget {
   var windVel;
   var th;
   var gs;
-  var aF;
-  var aL;
-  var bF;
-  var bL;
+  var agla;
+  var apla;
+  var aglo;
+  var aplo;
+  var bgla;
+  var bpla;
+  var bglo;
+  var bplo;
   var d;
   String problemNumber;
 
@@ -32,10 +38,14 @@ class Problems extends StatefulWidget {
       windVel: windVel,
       th: th,
       gs: gs,
-      aF: aF,
-      aL: aL,
-      bF: bF,
-      bL: bL,
+      agla: agla,
+      apla: apla,
+      aglo: aglo,
+      aplo: aplo,
+      bgla: bgla,
+      bpla: bpla,
+      bglo: bglo,
+      bplo: bplo,
       d: d,
       problemNumber: problemNumber);
 
@@ -47,10 +57,14 @@ class Problems extends StatefulWidget {
       var this.windVel,
       var this.th,
       var this.gs,
-      var this.aF,
-      var this.aL,
-      var this.bF,
-      var this.bL,
+      var this.agla,
+      var this.apla,
+      var this.aglo,
+      var this.aplo,
+      var this.bgla,
+      var this.bpla,
+      var this.bglo,
+      var this.bplo,
       var this.d});
 }
 
@@ -61,10 +75,14 @@ class _ProblemsState extends State<Problems> {
   var th;
   var gs;
   var tc;
-  var aF;
-  var aL;
-  var bF;
-  var bL;
+  var agla;
+  var apla;
+  var aglo;
+  var aplo;
+  var bgla;
+  var bpla;
+  var bglo;
+  var bplo;
   var d;
   late String problemNumber;
 
@@ -76,10 +94,14 @@ class _ProblemsState extends State<Problems> {
       var this.windVel: 0,
       var this.th: 0,
       var this.gs: 0,
-      var this.aF: 0,
-      var this.aL: 0,
-      var this.bF: 0,
-      var this.bL: 0,
+      var this.agla: 0,
+      var this.apla: 0,
+      var this.aglo: 0,
+      var this.aplo: 0,
+      var this.bgla: 0,
+      var this.bpla: 0,
+      var this.bglo: 0,
+      var this.bplo: 0,
       var this.d: 0});
 
   @override
@@ -220,7 +242,19 @@ class _ProblemsState extends State<Problems> {
     return arr;
   }
 
-  primoLossodromia() {}
+  primoLossodromia() {
+    if(aglo>bglo){
+     if(){
+       
+     }
+
+
+    }else{
+      if(){
+
+      }
+    }
+  }
 
   secondoLossodromia() {}
 }

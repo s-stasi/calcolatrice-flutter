@@ -54,7 +54,8 @@ class _QPState extends State<QuartoProblema> {
           ])),
         ),
       ),
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
         children: <Widget>[
           Row(children: <Widget>[
             Container(
@@ -130,7 +131,8 @@ class _QPState extends State<QuartoProblema> {
                   tas: double.tryParse(tas.text) ?? 0.0,
                   problemNumber: "quarto")),
           Legend()
-        ],
+         ],
+        )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(

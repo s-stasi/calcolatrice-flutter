@@ -5,7 +5,7 @@ class Legend extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(5.0),
       width: 200,
       //height: MediaQuery.of(context).size.height * 0.079,
       margin: EdgeInsets.all(25.0),
@@ -54,7 +54,7 @@ class Legend extends StatelessWidget {
             ),
             SizedBox(width: 10),
             Text(
-              'wind velocity',
+              ' wind velocity',
               style: TextStyle(
                   color: Colors.yellow,
                   fontSize: 20,

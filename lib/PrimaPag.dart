@@ -55,7 +55,8 @@ class _PPState extends State<PrimoProblema> {
           ])),
         ),
       ),
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
         children: <Widget>[
           Row(children: <Widget>[
             Container(
@@ -137,8 +138,9 @@ class _PPState extends State<PrimoProblema> {
                   windAngle: double.tryParse(windAngle.text) ?? 0.0,
                   windVel: double.tryParse(windVel.text) ?? 0.0,
                   problemNumber: "primo")),
-          Legend()
-        ],
+          Legend(),
+         ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(
