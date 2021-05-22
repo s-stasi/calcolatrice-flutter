@@ -128,15 +128,23 @@ class _SPState extends State<SecondoProblema> {
             Container(
                 width: MediaQuery.of(context).size.width * 0.04,
                 height: MediaQuery.of(context).size.height * 0.02),
-            CustomPaint(
-                size: Size(400, 400),
-                painter: PianoCartesianoPainter(
-                    th: double.tryParse(th.text) ?? 0.0,
-                    tas: double.tryParse(tas.text) ?? 0.0,
-                    windAngle: double.tryParse(windAngle.text) ?? 0.0,
-                    windVel: double.tryParse(windVel.text) ?? 0.0,
-                    problemNumber: "secondo")),
-            Legend()
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                    width: MediaQuery.of(context).size.width * 0.2,
+                    height: MediaQuery.of(context).size.height * 0.02),
+                CustomPaint(
+                    size: Size(400, 400),
+                    painter: PianoCartesianoPainter(
+                        th: double.tryParse(th.text) ?? 0.0,
+                        tas: double.tryParse(tas.text) ?? 0.0,
+                        windAngle: double.tryParse(windAngle.text) ?? 0.0,
+                        windVel: double.tryParse(windVel.text) ?? 0.0,
+                        problemNumber: "secondo")),
+                Legend(),
+              ],
+            ),
           ],
         ),
       ),
