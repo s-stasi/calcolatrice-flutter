@@ -57,89 +57,89 @@ class _PPState extends State<PrimoProblema> {
       ),
       body: SingleChildScrollView(
         child: Column(
-        children: <Widget>[
-          Row(children: <Widget>[
-            Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
-            Expanded(
-              child: TextField(
-                controller: tc,
+          children: <Widget>[
+            Row(children: <Widget>[
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.20),
+              Expanded(
+                child: TextField(
+                  controller: tc,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.blue.shade900, width: 3.0)),
+                    labelText: 'TC',
+                    helperText: 'true course',
+                  ),
+                ),
+              ),
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.20),
+              Expanded(
+                child: TextField(
+                  controller: tas,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.blue.shade900, width: 3.0)),
+                    labelText: 'TAS',
+                    helperText: 'true air speed',
+                  ),
+                ),
+              ),
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.20),
+              Expanded(
+                  child: TextField(
+                controller: windAngle,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: 'TC',
-                  helperText: 'true course',
+                  labelText: 'WIND ANGLE',
+                  helperText: 'WInd angle',
                 ),
-              ),
-            ),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
-            Expanded(
-              child: TextField(
-                controller: tas,
+              )),
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.20),
+              Expanded(
+                  child: TextField(
+                controller: windVel,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: 'TAS',
-                  helperText: 'true air speed',
+                  labelText: 'WIND SPEED',
+                  helperText: 'wind speed',
                 ),
-              ),
-            ),
+              )),
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.20),
+            ]),
+            Problems(
+                tc: int.tryParse(tc.text) ?? 0,
+                tas: int.tryParse(tas.text) ?? 0,
+                windAngle: int.tryParse(windAngle.text) ?? 0,
+                windVel: int.tryParse(windVel.text) ?? 0,
+                problemNumber: "primo"),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
-            Expanded(
-                child: TextField(
-              controller: windAngle,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'WIND ANGLE',
-                helperText: 'WInd angle',
-              ),
-            )),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
-            Expanded(
-                child: TextField(
-              controller: windVel,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'WIND SPEED',
-                helperText: 'wind speed',
-              ),
-            )),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
-          ]),
-          Problems(
-              tc: int.tryParse(tc.text) ?? 0,
-              tas: int.tryParse(tas.text) ?? 0,
-              windAngle: int.tryParse(windAngle.text) ?? 0,
-              windVel: int.tryParse(windVel.text) ?? 0,
-              problemNumber: "primo"),
-          Container(
-              width: MediaQuery.of(context).size.width * 0.04,
-              height: MediaQuery.of(context).size.height * 0.02),
-          CustomPaint(
-              size: Size(400, 400),
-              painter: PianoCartesianoPainter(
-                  tc: double.tryParse(tc.text) ?? 0.0,
-                  tas: double.tryParse(tas.text) ?? 0.0,
-                  windAngle: double.tryParse(windAngle.text) ?? 0.0,
-                  windVel: double.tryParse(windVel.text) ?? 0.0,
-                  problemNumber: "primo")),
-          Legend(),
-         ],
+                height: MediaQuery.of(context).size.height * 0.02),
+            CustomPaint(
+                size: Size(400, 400),
+                painter: PianoCartesianoPainter(
+                    tc: double.tryParse(tc.text) ?? 0.0,
+                    tas: double.tryParse(tas.text) ?? 0.0,
+                    windAngle: double.tryParse(windAngle.text) ?? 0.0,
+                    windVel: double.tryParse(windVel.text) ?? 0.0,
+                    problemNumber: "primo")),
+            Legend(),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(

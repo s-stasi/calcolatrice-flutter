@@ -9,9 +9,11 @@ toRad(num deg) {
 toDeg(num rad) {
   return rad * 180 / Math.pi;
 }
-todec(num gr, num pr){
-  return gr + (pr/60);
+
+todec(num gr, num pr) {
+  return gr + (pr / 60);
 }
+
 class Problems extends StatefulWidget {
   var tc;
   var tas;
@@ -243,17 +245,23 @@ class _ProblemsState extends State<Problems> {
   }
 
   primoLossodromia() {
-    if(aglo>bglo){
-     if(){
-       
-     }
+    var q;
 
-
-    }else{
-      if(){
-
+    if (aglo > bglo) {
+      if (agla > bgla) {
+        q = 3;
+      } else {
+        q = 4;
+      }
+    } else {
+      if (agla > bgla) {
+        q = 2;
+      } else {
+        q = 1;
       }
     }
+
+    
   }
 
   secondoLossodromia() {}

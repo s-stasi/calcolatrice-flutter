@@ -19,7 +19,6 @@ class _SLState extends State<SecondoLossodromia> {
   final bglo = TextEditingController();
   final bplo = TextEditingController();
 
-
   @override
   void dispose() {
     agla.dispose();
