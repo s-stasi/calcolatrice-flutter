@@ -300,7 +300,7 @@ class _ProblemsState extends State<Problems> {
     }
 
     var dlc = dl * (Math.cos(toRad(fm)));
-    d = Math.sqrt(Math.pow(df, 2) + Math.pow(dlc, 2));
+    d = Math.sqrt(Math.pow(df, 2) + Math.pow(dlc, 2)).round();
 
     var alfa;
     if (q == 1) {
@@ -316,13 +316,13 @@ class _ProblemsState extends State<Problems> {
       alfa = Math.atan(dl / df);
       tc = 360 - alfa;
     }
-
+    tc = tc.round();
     var res = [d, tc];
 
     debugPrint('${res[0]}');
     debugPrint('${res[1]}');
 
-    String arr = 'v: ${res[0]} w: ${res[1]}';
+    String arr = 'disance: ${res[0]} tc: ${res[1]}';
     return arr;
   }
 
