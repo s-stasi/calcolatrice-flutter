@@ -34,42 +34,43 @@ class Problems extends StatefulWidget {
 
   @override
   _ProblemsState createState() {
-   return _ProblemsState(
-      tc: tc,
-      tas: tas,
-      windAngle: windAngle,
-      windVel: windVel,
-      th: th,
-      gs: gs,
-      agla: agla,
-      apla: apla,
-      aglo: aglo,
-      aplo: aplo,
-      bgla: bgla,
-      bpla: bpla,
-      bglo: bglo,
-      bplo: bplo,
-      d: d,
-      problemNumber: problemNumber);
- }
+    return _ProblemsState(
+        tc: tc,
+        tas: tas,
+        windAngle: windAngle,
+        windVel: windVel,
+        th: th,
+        gs: gs,
+        agla: agla,
+        apla: apla,
+        aglo: aglo,
+        aplo: aplo,
+        bgla: bgla,
+        bpla: bpla,
+        bglo: bglo,
+        bplo: bplo,
+        d: d,
+        problemNumber: problemNumber);
+  }
 
- String get data => _ProblemsState(
-      tc: tc,
-      tas: tas,
-      windAngle: windAngle,
-      windVel: windVel,
-      th: th,
-      gs: gs,
-      agla: agla,
-      apla: apla,
-      aglo: aglo,
-      aplo: aplo,
-      bgla: bgla,
-      bpla: bpla,
-      bglo: bglo,
-      bplo: bplo,
-      d: d,
-      problemNumber: problemNumber).data;
+  String get data => _ProblemsState(
+          tc: tc,
+          tas: tas,
+          windAngle: windAngle,
+          windVel: windVel,
+          th: th,
+          gs: gs,
+          agla: agla,
+          apla: apla,
+          aglo: aglo,
+          aplo: aplo,
+          bgla: bgla,
+          bpla: bpla,
+          bglo: bglo,
+          bplo: bplo,
+          d: d,
+          problemNumber: problemNumber)
+      .data;
 
   Problems(
       {this.problemNumber: "null",
@@ -108,7 +109,6 @@ class _ProblemsState extends State<Problems> {
   var d;
   late String problemNumber;
   String res = '';
-
 
   String get data {
     debugPrint('res string: ${res}');

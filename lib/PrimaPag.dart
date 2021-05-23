@@ -41,11 +41,11 @@ class _PPState extends State<PrimoProblema> {
 
   String txt() {
     Problems data = Problems(
-                    tc: double.tryParse(tc.text) ?? 0.0,
-                    tas: double.tryParse(tas.text) ?? 0.0,
-                    windAngle: double.tryParse(windAngle.text) ?? 0.0,
-                    windVel: double.tryParse(windVel.text) ?? 0.0,
-                    problemNumber: "primo");
+        tc: double.tryParse(tc.text) ?? 0.0,
+        tas: double.tryParse(tas.text) ?? 0.0,
+        windAngle: double.tryParse(windAngle.text) ?? 0.0,
+        windVel: double.tryParse(windVel.text) ?? 0.0,
+        problemNumber: "primo");
     var d = data.data;
     return 'gs: ${d.split(' ')[1]} th: ${d.split(' ')[3]}';
   }
@@ -146,28 +146,9 @@ class _PPState extends State<PrimoProblema> {
                     windAngle: double.tryParse(windAngle.text) ?? 0.0,
                     windVel: double.tryParse(windVel.text) ?? 0.0,
                     problemNumber: "primo")),
-            Legend(),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                  content: Problems(
-                      tc: int.tryParse(tc.text) ?? 0,
-                      tas: int.tryParse(tas.text) ?? 0,
-                      windAngle: int.tryParse(windAngle.text) ?? 0,
-                      windVel: int.tryParse(windVel.text) ?? 0,
-                      problemNumber: "primo"));
-            }),
-        child: Text('='),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
