@@ -31,9 +31,11 @@ class Problems extends StatefulWidget {
   var bplo;
   var d;
   String problemNumber;
+  String? res;
 
   @override
-  _ProblemsState createState() => _ProblemsState(
+  _ProblemsState createState() {
+   _ProblemsState state = _ProblemsState(
       tc: tc,
       tas: tas,
       windAngle: windAngle,
@@ -50,6 +52,13 @@ class Problems extends StatefulWidget {
       bplo: bplo,
       d: d,
       problemNumber: problemNumber);
+
+   res = state.data;
+   debugPrint('res value: ${res}');
+   return state;
+ }
+
+ String? get data => res;
 
   Problems(
       {this.problemNumber: "null",
@@ -87,6 +96,13 @@ class _ProblemsState extends State<Problems> {
   var bplo;
   var d;
   late String problemNumber;
+  String res = '';
+
+
+  String get data {
+    debugPrint('res string: ${res}');
+    return res;
+  }
 
   _ProblemsState(
       {this.problemNumber: "null",
@@ -151,6 +167,8 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${d[5]}');
 
     String arr = 'gs: ${d[0].toString()} th: ${d[1].toString()}';
+    res = arr;
+
     return arr;
   }
 
@@ -184,6 +202,7 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${d[5]}');
 
     String arr = 'tc: ${d[5].toString()} gs: ${d[1].toString()}';
+    res = arr;
 
     return arr;
   }
