@@ -16,10 +16,6 @@ class _PPState extends State<PrimoProblema> {
   final windVel = TextEditingController();
   var _gs = '';
   var _th = '';
-  double _tc = 0;
-  double _tas = 0;
-  double _windAngle = 0;
-  double _windVel = 0;
 
   @override
   void initState() {
@@ -40,29 +36,18 @@ class _PPState extends State<PrimoProblema> {
   }
 
   _UpdateGraph() {
-    setState(() {
-      _tc = double.tryParse(tc.text) ?? 0.0;
-      _tas = double.tryParse(tas.text) ?? 0.0;
-      _windAngle = double.tryParse(windAngle.text) ?? 0.0;
-      _windVel = double.tryParse(windVel.text) ?? 0.0;
+    setState(() {});
+  }
 
-      debugPrint('setstate tc: $_tc');
-      debugPrint('setstate tas: $_tas');
-      debugPrint('setstate windAngle: $_windAngle');
-      debugPrint('setstate windVel: $_windVel');
-
-      Problems data = Problems(
-          tc: _tc,
-          tas: _tas,
-          windAngle: _windAngle,
-          windVel: _windVel,
-          problemNumber: "primo");
-
-      String txt = data.data!;
-      debugPrint('setstate text: $txt');
-      _gs = txt.split(' ')[1];
-      _th = txt.split(' ')[3];
-    });
+  String txt() {
+    Problems data = Problems(
+                    tc: double.tryParse(tc.text) ?? 0.0,
+                    tas: double.tryParse(tas.text) ?? 0.0,
+                    windAngle: double.tryParse(windAngle.text) ?? 0.0,
+                    windVel: double.tryParse(windVel.text) ?? 0.0,
+                    problemNumber: "primo");
+    var d = data.data;
+    return 'gs: ${d.split(' ')[1]} th: ${d.split(' ')[3]}';
   }
 
   @override
@@ -149,18 +134,18 @@ class _PPState extends State<PrimoProblema> {
                   width: MediaQuery.of(context).size.width * 0.04,
                   height: MediaQuery.of(context).size.height * 0.20),
             ]),
-            Text('gs: $_gs th: $_th'),
+            Text(txt()),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04,
                 height: MediaQuery.of(context).size.height * 0.02),
-            // CustomPaint(
-            //     size: Size(400, 400),
-            //     painter: PianoCartesianoPainter(
-            //         tc: double.tryParse(tc.text) ?? 0.0,
-            //         tas: double.tryParse(tas.text) ?? 0.0,
-            //         windAngle: double.tryParse(windAngle.text) ?? 0.0,
-            //         windVel: double.tryParse(windVel.text) ?? 0.0,
-            //         problemNumber: "primo")),
+            CustomPaint(
+                size: Size(400, 400),
+                painter: PianoCartesianoPainter(
+                    tc: double.tryParse(tc.text) ?? 0.0,
+                    tas: double.tryParse(tas.text) ?? 0.0,
+                    windAngle: double.tryParse(windAngle.text) ?? 0.0,
+                    windVel: double.tryParse(windVel.text) ?? 0.0,
+                    problemNumber: "primo")),
             Legend(),
           ],
         ),
