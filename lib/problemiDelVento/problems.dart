@@ -18,10 +18,10 @@ toSes(num dec) {
   dec = (dec * 100).round();
   dec = dec / 100;
   var pri = dec - (dec.round());
-  pri = pri * 60;
+  pri = (pri * 60).round();
   var sec = pri - (pri.round());
-  sec = sec * 60;
-  dec = dec - pri;
+  sec = (sec * 60).round();
+  dec = (dec - pri).round();
   var ses = [dec, pri, sec];
   return ses;
 }
@@ -396,7 +396,22 @@ class _ProblemsState extends State<Problems> {
       dl = (dlc) / Math.cos(toRad(fm));
       loB = loA - dl;
     }
-    toSes(laB);
-    var res = [];
+    debugPrint('${alfa}');
+    debugPrint('${df}');
+    debugPrint('${dlc}');
+    debugPrint('${fm}');
+    debugPrint('${dl}');
+    bgla = toSes(laB)[0];
+    bpla = toSes(laB)[1];
+    var bsla = toSes(laB)[2];
+
+    bglo = toSes(loB)[0];
+    bplo = toSes(loB)[1];
+    var bslo = toSes(loB)[2];
+
+    var res = [bgla, bpla, bsla, bglo, bplo, bslo];
+    String arr =
+        'latitudine B: ${res[0]}°${res[1]}°${res[2]} longitudine B: ${res[3]}°${res[4]}°${res[5]}°';
+    return arr;
   }
 }
