@@ -33,7 +33,9 @@ class Legend extends StatelessWidget {
               color: Colors.black,
               size: 20,
             ),
-            SizedBox(width: 10),
+            SizedBox(
+              width: 10,
+            ),
             Text(
               'true air speed',
               style: TextStyle(
