@@ -53,8 +53,7 @@ class _PLState extends State<PrimoLossodromia> {
         Row(
           children: <Widget>[
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: agla,
@@ -67,8 +66,7 @@ class _PLState extends State<PrimoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: apla,
@@ -81,8 +79,7 @@ class _PLState extends State<PrimoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: aglo,
@@ -95,8 +92,7 @@ class _PLState extends State<PrimoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: aplo,
@@ -109,15 +105,13 @@ class _PLState extends State<PrimoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
           ],
         ),
         Row(
           children: <Widget>[
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: bgla,
@@ -130,8 +124,7 @@ class _PLState extends State<PrimoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: bpla,
@@ -144,8 +137,7 @@ class _PLState extends State<PrimoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: bglo,
@@ -158,8 +150,7 @@ class _PLState extends State<PrimoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: bplo,
@@ -172,8 +163,7 @@ class _PLState extends State<PrimoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
           ],
         )
       ])),

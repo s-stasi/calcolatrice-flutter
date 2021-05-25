@@ -49,8 +49,7 @@ class _SLState extends State<SecondoLossodromia> {
         Row(
           children: <Widget>[
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: agla,
@@ -63,8 +62,7 @@ class _SLState extends State<SecondoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: apla,
@@ -77,8 +75,7 @@ class _SLState extends State<SecondoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: aglo,
@@ -91,8 +88,7 @@ class _SLState extends State<SecondoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: aplo,
@@ -105,15 +101,13 @@ class _SLState extends State<SecondoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
           ],
         ),
         Row(
           children: <Widget>[
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: d,
@@ -126,8 +120,7 @@ class _SLState extends State<SecondoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: tc,
@@ -140,8 +133,7 @@ class _SLState extends State<SecondoLossodromia> {
               ),
             )),
             Container(
-                width: MediaQuery.of(context).size.width * 0.04,
-                height: MediaQuery.of(context).size.height * 0.20),
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
           ],
         )
       ])),
