@@ -10,9 +10,8 @@ import 'SideDrawer.dart';
 import 'MyHomePage.dart';
 import 'PrimoLossodromia.dart';
 import 'SecondoLossodromia.dart';
-import 'dart:async';
-import 'package:flutter/foundation.dart' show SynchronousFuture;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'Salita.dart';
 
 var modalita;
 
@@ -39,6 +38,7 @@ class _MAState extends State<MyApp> {
                 '/QuaPag': (context) => QuartoProblema(),
                 '/priLos': (context) => PrimoLossodromia(),
                 '/secLos': (context) => SecondoLossodromia(),
+                '/salita': (context) => Salita(),
                 '/ImpPag': (context) => Impostazioni(),
               },
             ));

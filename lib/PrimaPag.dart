@@ -1,8 +1,8 @@
 import 'package:NAVTOOL/theming/legend.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
-import 'problemiDelVento/problems.dart';
-import 'problemiDelVento/piano_cartesiano.dart';
+import 'problems/problems.dart';
+import 'problems/piano_cartesiano.dart';
 
 class PrimoProblema extends StatefulWidget {
   @override

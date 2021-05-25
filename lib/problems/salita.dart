@@ -1,0 +1,77 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'dart:math' as Math;
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+class SalitaCalc {
+  static final num qne = 1013.25;
+  String _res = '';
+  num qnh;
+  int flightLevel;
+  num t0;
+  num elev;
+  num vs;
+  num gs;
+  num ff;
+
+  SalitaCalc(
+      {required this.qnh,
+      required this.flightLevel,
+      required this.t0,
+      required this.elev,
+      required this.vs,
+      required this.gs,
+      required this.ff}) {
+
+    num x = qnh - qne * 27;
+    debugPrint('x= $x');
+    num ia = (flightLevel * 100) - x;
+    debugPrint('ia= $ia');
+    num tisa = 15 - 2 * flightLevel / 1000;
+    debugPrint('tisa= $tisa');
+    num deltaT = t0 - tisa;
+    deltaT = (deltaT<0)? - deltaT : deltaT;
+    debugPrint('deltaT= $deltaT');
+    num ta = ia + ((4 / 1000) * ia * deltaT);
+    ta = (ta.isNaN) ? 0 : ta.round();
+    debugPrint('ta= $ta');
+    num ht = ta - elev;
+    debugPrint('ht= $ht');
+    num fttoc = (ht / vs)/60;
+    debugPrint('fttoc= $fttoc');
+    num d = gs * fttoc;
+    debugPrint('d= $d');
+    num c = ff * fttoc;
+    debugPrint('c= $c');
+    _res = 'ta: $ta ft, fttoc: $fttoc h, distance: $d NM, consumo: $c USG';
+  }
+
+  String get result {
+    return _res;
+  }
+}
+
+class SalitaPainter extends CustomPainter {
+  static final double qne = 1013.25;
+  double qnh;
+
+  SalitaPainter({required this.qnh});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    var qnePaint = Paint()
+      ..color = Colors.blue
+      ..strokeWidth = 3;
+    var qneCoord = [
+      Offset(0, 400 - 1 / 4),
+      Offset(400, 400 - 1 / 4)
+    ];
+    
+
+    canvas.drawLine(qneCoord[0], qneCoord[1], qnePaint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}

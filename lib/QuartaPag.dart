@@ -1,8 +1,8 @@
 import 'package:NAVTOOL/theming/legend.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
-import 'problemiDelVento/problems.dart';
-import 'problemiDelVento/piano_cartesiano.dart';
+import 'problems/problems.dart';
+import 'problems/piano_cartesiano.dart';
 
 class QuartoProblema extends StatefulWidget {
   @override
@@ -35,6 +35,17 @@ class _QPState extends State<QuartoProblema> {
 
   _UpdateGraph() {
     setState(() {});
+  }
+
+  String txt() {
+    Problems data = Problems(
+        tc: double.tryParse(th.text) ?? 0.0,
+        tas: double.tryParse(tas.text) ?? 0.0,
+        gs: double.tryParse(gs.text) ?? 0.0,
+        th: double.tryParse(th.text) ?? 0.0,
+        problemNumber: "primo");
+    var d = data.data;
+    return 'tc: ${d.split(' ')[1]} gs: ${d.split(' ')[3]}';
   }
 
   @override
