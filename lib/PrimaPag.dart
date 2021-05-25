@@ -146,7 +146,14 @@ class _PPState extends State<PrimoProblema> {
                     windAngle: double.tryParse(windAngle.text) ?? 0.0,
                     windVel: double.tryParse(windVel.text) ?? 0.0,
                     problemNumber: "primo")),
+            Row(
+              children: [
+                Legend(),
+              ],
+              crossAxisAlignment: CrossAxisAlignment.center,
+            ),
           ],
+          crossAxisAlignment: CrossAxisAlignment.center,
         ),
       ),
     );
