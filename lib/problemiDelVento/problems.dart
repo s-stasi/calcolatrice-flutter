@@ -10,8 +10,20 @@ toDeg(num rad) {
   return rad * 180 / Math.pi;
 }
 
-todec(num gr, num pr) {
+toDec(num gr, num pr) {
   return gr + (pr / 60);
+}
+
+toSes(num dec) {
+  dec = (dec * 100).round();
+  dec = dec / 100;
+  var pri = dec - (dec.round());
+  pri = pri * 60;
+  var sec = pri - (pri.round());
+  sec = sec * 60;
+  dec = dec - pri;
+  var ses = [dec, pri, sec];
+  return ses;
 }
 
 class Problems extends StatefulWidget {
@@ -293,10 +305,10 @@ class _ProblemsState extends State<Problems> {
       }
     }
 
-    var laA = todec(agla, apla);
-    var loA = todec(aglo, aplo);
-    var laB = todec(bgla, bpla);
-    var loB = todec(bglo, bplo);
+    var laA = toDec(agla, apla);
+    var loA = toDec(aglo, aplo);
+    var laB = toDec(bgla, bpla);
+    var loB = toDec(bglo, bplo);
 
     var fm = (laA + laB) / 2;
     var df;
@@ -345,22 +357,46 @@ class _ProblemsState extends State<Problems> {
     var dl;
     var dlc;
     var fm;
+    var loB;
+    var laB;
+
+    var laA = toDec(agla, apla);
+    var loA = toDec(aglo, aplo);
+
     if (tc < 90) {
       alfa = 90 - tc;
       df = Math.sin(toRad(alfa)) * d;
-      dl = Math.cos(toRad(alfa)) * d;
+      dlc = Math.cos(toRad(alfa)) * d;
+      laB = df + laA;
+      fm = (laA + laB) / 2;
+      dl = (dlc) / Math.cos(toRad(fm));
+      loB = loA + dl;
     } else if (tc < 180) {
       alfa = 180 - tc;
       df = Math.cos(toRad(alfa)) * d;
-      dl = Math.sin(toRad(alfa)) * d;
+      dlc = Math.sin(toRad(alfa)) * d;
+      laB = df - laA;
+      fm = (laA + laB) / 2;
+      dl = (dlc) / Math.cos(toRad(fm));
+      loB = loA + dl;
     } else if (tc < 270) {
       alfa = 270 - tc;
       df = Math.sin(toRad(alfa)) * d;
-      dl = Math.cos(toRad(alfa)) * d;
+      dlc = Math.cos(toRad(alfa)) * d;
+      laB = df - laA;
+      fm = (laA + laB) / 2;
+      dl = (dlc) / Math.cos(toRad(fm));
+      loB = loA - dl;
     } else {
       alfa = 360 - tc;
       df = Math.cos(toRad(alfa)) * d;
-      dl = Math.sin(toRad(alfa)) * d;
+      dlc = Math.sin(toRad(alfa)) * d;
+      laB = df + laA;
+      fm = (laA + laB) / 2;
+      dl = (dlc) / Math.cos(toRad(fm));
+      loB = loA - dl;
     }
+    toSes(laB);
+    var res = [];
   }
 }
