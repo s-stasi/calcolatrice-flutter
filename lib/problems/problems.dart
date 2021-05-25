@@ -34,42 +34,43 @@ class Problems extends StatefulWidget {
 
   @override
   _ProblemsState createState() {
-   return _ProblemsState(
-      tc: tc,
-      tas: tas,
-      windAngle: windAngle,
-      windVel: windVel,
-      th: th,
-      gs: gs,
-      agla: agla,
-      apla: apla,
-      aglo: aglo,
-      aplo: aplo,
-      bgla: bgla,
-      bpla: bpla,
-      bglo: bglo,
-      bplo: bplo,
-      d: d,
-      problemNumber: problemNumber);
- }
+    return _ProblemsState(
+        tc: tc,
+        tas: tas,
+        windAngle: windAngle,
+        windVel: windVel,
+        th: th,
+        gs: gs,
+        agla: agla,
+        apla: apla,
+        aglo: aglo,
+        aplo: aplo,
+        bgla: bgla,
+        bpla: bpla,
+        bglo: bglo,
+        bplo: bplo,
+        d: d,
+        problemNumber: problemNumber);
+  }
 
- String get data => _ProblemsState(
-      tc: tc,
-      tas: tas,
-      windAngle: windAngle,
-      windVel: windVel,
-      th: th,
-      gs: gs,
-      agla: agla,
-      apla: apla,
-      aglo: aglo,
-      aplo: aplo,
-      bgla: bgla,
-      bpla: bpla,
-      bglo: bglo,
-      bplo: bplo,
-      d: d,
-      problemNumber: problemNumber).data;
+  String get data => _ProblemsState(
+          tc: tc,
+          tas: tas,
+          windAngle: windAngle,
+          windVel: windVel,
+          th: th,
+          gs: gs,
+          agla: agla,
+          apla: apla,
+          aglo: aglo,
+          aplo: aplo,
+          bgla: bgla,
+          bpla: bpla,
+          bglo: bglo,
+          bplo: bplo,
+          d: d,
+          problemNumber: problemNumber)
+      .data;
 
   Problems(
       {this.problemNumber: "null",
@@ -107,12 +108,11 @@ class _ProblemsState extends State<Problems> {
   var bplo;
   var d;
   late String problemNumber;
-  String res = '';
-
+  String _res = '';
 
   String get data {
-    debugPrint('res string: ${res}');
-    return res;
+    debugPrint('res string: ${_res}');
+    return _res;
   }
 
   _ProblemsState(
@@ -137,28 +137,28 @@ class _ProblemsState extends State<Problems> {
 
   @override
   Widget build(BuildContext context) {
-    return Text(this.solve());
+    return Text(_res);
   }
 
-  String solve() {
+  void solve() {
     if (this.problemNumber == "primo") {
-      return primoProblema();
+      primoProblema();
     } else if (this.problemNumber == "secondo") {
-      return secondoProblema();
+      secondoProblema();
     } else if (this.problemNumber == "terzo") {
-      return terzoProblema();
+      terzoProblema();
     } else if (this.problemNumber == "quarto") {
-      return quartoProblema();
+      quartoProblema();
     } else if (this.problemNumber == "primoLoss") {
-      return primoLossodromia();
+      primoLossodromia();
     } else if (this.problemNumber == "secondoLoss") {
-      return secondoLossodromia();
+      secondoLossodromia();
     } else {
       throw Exception('You have to choose the problem');
     }
   }
 
-  String primoProblema() {
+  void primoProblema() {
     num r = windVel * Math.sin(toRad(windAngle - tc));
     r = (r.isNaN) ? 0 : r.round();
     num l = -windVel * Math.cos(toRad(tc - windAngle));
@@ -180,12 +180,10 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${d[5]}');
 
     String arr = 'gs: ${d[0].toString()} th: ${d[1].toString()}';
-    res = arr;
-
-    return arr;
+    _res = arr;
   }
 
-  String secondoProblema() {
+  void secondoProblema() {
     num oWind = windAngle;
     windAngle = (windAngle < 180) ? windAngle + 180 : windAngle - 180;
     num gamma = (th < oWind) ? oWind - th : th - oWind;
@@ -215,12 +213,10 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${d[5]}');
 
     String arr = 'tc: ${d[5].toString()} gs: ${d[1].toString()}';
-    res = arr;
-
-    return arr;
+    _res = arr;
   }
 
-  String terzoProblema() {
+  void terzoProblema() {
     num xc = windVel * Math.sin(toRad(windAngle - tc));
     windVel = (windVel.isNaN) ? 0 : windVel.round();
     num lc = -windVel * Math.cos(toRad(tc - windAngle));
@@ -241,10 +237,10 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${res[5]}');
 
     String arr = 'th: ${res[5].round()} tas: ${res[4].round()}';
-    return arr;
+    _res = arr;
   }
 
-  String quartoProblema() {
+  void quartoProblema() {
     num wca = th - tc;
     if (wca < 0) wca = wca * -1;
     num xc = tas * Math.sin(toRad(wca));
@@ -273,10 +269,10 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${res[4]}');
 
     String arr = 'v: ${res[3]} w: ${res[4]}';
-    return arr;
+    _res = arr;
   }
 
-  primoLossodromia() {
+  void primoLossodromia() {
     var q;
 
     if (aglo > bglo) {
@@ -336,7 +332,7 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${res[1]}');
 
     String arr = 'disance: ${res[0]} tc: ${res[1]}';
-    return arr;
+    _res = arr;
   }
 
   secondoLossodromia() {

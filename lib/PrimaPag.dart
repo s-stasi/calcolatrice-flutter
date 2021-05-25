@@ -1,8 +1,8 @@
 import 'package:NAVTOOL/theming/legend.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
-import 'problemiDelVento/problems.dart';
-import 'problemiDelVento/piano_cartesiano.dart';
+import 'problems/problems.dart';
+import 'problems/piano_cartesiano.dart';
 
 class PrimoProblema extends StatefulWidget {
   @override
@@ -41,11 +41,11 @@ class _PPState extends State<PrimoProblema> {
 
   String txt() {
     Problems data = Problems(
-                    tc: double.tryParse(tc.text) ?? 0.0,
-                    tas: double.tryParse(tas.text) ?? 0.0,
-                    windAngle: double.tryParse(windAngle.text) ?? 0.0,
-                    windVel: double.tryParse(windVel.text) ?? 0.0,
-                    problemNumber: "primo");
+        tc: double.tryParse(tc.text) ?? 0.0,
+        tas: double.tryParse(tas.text) ?? 0.0,
+        windAngle: double.tryParse(windAngle.text) ?? 0.0,
+        windVel: double.tryParse(windVel.text) ?? 0.0,
+        problemNumber: "primo");
     var d = data.data;
     return 'gs: ${d.split(' ')[1]} th: ${d.split(' ')[3]}';
   }

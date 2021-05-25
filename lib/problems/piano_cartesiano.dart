@@ -94,13 +94,9 @@ class PianoCartesianoPainter extends CustomPainter {
     );
 
     double w = windAngle + 180;
-    double max = 266.66666;
-    double mult = (gs >= max) ? max / (gs * 1.34) : max / (gs * 1.34);
-    if (gs == 0) {
-      mult = 1;
-    }
+    double mult = 0;
 
-    debugPrint('mult: ${mult}');
+    debugPrint('mult: $mult');
 
     switch (problemNumber) {
       case 'primo':
@@ -110,7 +106,7 @@ class PianoCartesianoPainter extends CustomPainter {
           double i = toDeg(Math.asin(r / tas));
           double c = tas * Math.cos(toRad(i));
           var gs = c + l;
-          mult = (gs >= max) ? max / (gs * 1.34) : max / (gs * 1.34);
+          mult = 1 / (gs / 200);
           var gsPaint = Paint()
             ..color = Colors.red
             ..strokeWidth = 4;
@@ -143,6 +139,7 @@ class PianoCartesianoPainter extends CustomPainter {
         }
       case 'secondo':
         {
+          mult = 1 / (tas / 200);
           var windPaint = Paint()
             ..color = Colors.yellow
             ..strokeWidth = 4;
@@ -190,6 +187,7 @@ class PianoCartesianoPainter extends CustomPainter {
         }
       case 'terzo':
         {
+          mult = 1 / (gs / 200);
           var windPaint = Paint()
             ..color = Colors.yellow
             ..strokeWidth = 4;
@@ -222,6 +220,12 @@ class PianoCartesianoPainter extends CustomPainter {
         }
       case 'quarto':
         {
+          if (tas > gs) {
+            mult = 1 / (tas / 200);
+          } else {
+            mult = 1 / (gs / 200);
+          }
+
           var gsPaint = Paint()
             ..color = Colors.red
             ..strokeWidth = 4;
