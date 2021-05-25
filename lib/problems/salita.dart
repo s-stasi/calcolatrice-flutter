@@ -23,7 +23,6 @@ class SalitaCalc {
       required this.vs,
       required this.gs,
       required this.ff}) {
-
     num x = qnh - qne * 27;
     debugPrint('x= $x');
     num ia = (flightLevel * 100) - x;
@@ -31,14 +30,14 @@ class SalitaCalc {
     num tisa = 15 - 2 * flightLevel / 1000;
     debugPrint('tisa= $tisa');
     num deltaT = t0 - tisa;
-    deltaT = (deltaT<0)? - deltaT : deltaT;
+    deltaT = (deltaT < 0) ? -deltaT : deltaT;
     debugPrint('deltaT= $deltaT');
     num ta = ia + ((4 / 1000) * ia * deltaT);
     ta = (ta.isNaN) ? 0 : ta.round();
     debugPrint('ta= $ta');
     num ht = ta - elev;
     debugPrint('ht= $ht');
-    num fttoc = (ht / vs)/60;
+    num fttoc = (ht / vs) / 60;
     debugPrint('fttoc= $fttoc');
     num d = gs * fttoc;
     debugPrint('d= $d');
@@ -62,12 +61,26 @@ class SalitaPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     var qnePaint = Paint()
       ..color = Colors.blue
-      ..strokeWidth = 3;
-    var qneCoord = [
-      Offset(0, 400 - 1 / 4),
-      Offset(400, 400 - 1 / 4)
-    ];
-    
+      ..strokeWidth = 5;
+    var qneCoord = [Offset(0, 400 - 400 / 5), Offset(400, 400 - 400 / 5)];
+    var path = Path();
+    var paint = Paint();
+
+    var w = size.width;
+    var h = size.height;
+
+    var rect = Rect.fromLTWH(0, 0, size.width, size.height);
+    path.addRect(rect);
+
+    path.moveTo(0, 50);
+    path.lineTo(w, 0);
+    path.lineTo(w, h);
+    path.lineTo(0, h);
+    path.close();
+
+    paint = new Paint()..color = Colors.grey.shade600;
+
+    canvas.drawPath(path, paint);
 
     canvas.drawLine(qneCoord[0], qneCoord[1], qnePaint);
   }
