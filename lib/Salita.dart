@@ -82,7 +82,7 @@ class _SalitaState extends State<Salita> {
               Row(children: <Widget>[
                 Container(
                     width: MediaQuery.of(context).size.width * 0.04,
-                    height: MediaQuery.of(context).size.height * 0.20),
+                    height: 150),
                 Expanded(
                   child: TextField(
                     controller: gs,
@@ -97,7 +97,7 @@ class _SalitaState extends State<Salita> {
                 ),
                 Container(
                     width: MediaQuery.of(context).size.width * 0.04,
-                    height: MediaQuery.of(context).size.height * 0.20),
+                    height: 150),
                 Expanded(
                   child: TextField(
                     controller: qnh,
@@ -112,7 +112,7 @@ class _SalitaState extends State<Salita> {
                 ),
                 Container(
                     width: MediaQuery.of(context).size.width * 0.04,
-                    height: MediaQuery.of(context).size.height * 0.20),
+                    height: 150),
                 Expanded(
                     child: TextField(
                   controller: elev,
@@ -126,7 +126,7 @@ class _SalitaState extends State<Salita> {
                 )),
                 Container(
                     width: MediaQuery.of(context).size.width * 0.04,
-                    height: MediaQuery.of(context).size.height * 0.20),
+                    height: 150),
                 Expanded(
                     child: TextField(
                   controller: fl,
@@ -140,12 +140,12 @@ class _SalitaState extends State<Salita> {
                 )),
                 Container(
                     width: MediaQuery.of(context).size.width * 0.04,
-                    height: MediaQuery.of(context).size.height * 0.20),
+                    height: 150),
               ]),
               Row(children: <Widget>[
                 Container(
                     width: MediaQuery.of(context).size.width * 0.04,
-                    height: MediaQuery.of(context).size.height * 0.20),
+                    height: 150),
                 Expanded(
                   child: TextField(
                     controller: t0,
@@ -160,7 +160,7 @@ class _SalitaState extends State<Salita> {
                 ),
                 Container(
                     width: MediaQuery.of(context).size.width * 0.04,
-                    height: MediaQuery.of(context).size.height * 0.20),
+                    height: 150),
                 Expanded(
                   child: TextField(
                     controller: vs,
@@ -175,7 +175,7 @@ class _SalitaState extends State<Salita> {
                 ),
                 Container(
                     width: MediaQuery.of(context).size.width * 0.04,
-                    height: MediaQuery.of(context).size.height * 0.20),
+                    height: 150),
                 Expanded(
                     child: TextField(
                   controller: ff,
@@ -189,7 +189,7 @@ class _SalitaState extends State<Salita> {
                 )),
                 Container(
                     width: MediaQuery.of(context).size.width * 0.04,
-                    height: MediaQuery.of(context).size.height * 0.20),
+                    height: 150),
               ]),
               Text(this.txt()),
               CustomPaint(
