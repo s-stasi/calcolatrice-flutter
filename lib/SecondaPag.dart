@@ -47,8 +47,7 @@ class _SPState extends State<SecondoProblema> {
         windAngle: double.tryParse(windAngle.text) ?? 0.0,
         windVel: double.tryParse(windVel.text) ?? 0.0,
         problemNumber: "secondo");
-    var d = data.data;
-    return 'gs: ${d[1]}  tc: ${d[5]}';
+    return data.data;
   }
 
   @override

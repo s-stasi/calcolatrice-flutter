@@ -44,8 +44,7 @@ class _QPState extends State<QuartoProblema> {
         gs: double.tryParse(gs.text) ?? 0.0,
         th: double.tryParse(th.text) ?? 0.0,
         problemNumber: "primo");
-    var d = data.data;
-    return 'tc: ${d.split(' ')[1]} gs: ${d.split(' ')[3]}';
+    return data.data;
   }
 
   @override
