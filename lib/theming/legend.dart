@@ -7,7 +7,8 @@ class Legend extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20),
       margin: EdgeInsets.all(25.0),
-      height: 100,
+      height: 140,
+      width: 210,
       child: Column(
         children: <Widget>[
           Row(
