@@ -20,10 +20,10 @@ class _SPState extends State<SecondoProblema> {
   @override
   void initState() {
     super.initState();
-    th.addListener(_UpdateGraph);
-    tas.addListener(_UpdateGraph);
-    windAngle.addListener(_UpdateGraph);
-    windVel.addListener(_UpdateGraph);
+    th.addListener(_updateGraph);
+    tas.addListener(_updateGraph);
+    windAngle.addListener(_updateGraph);
+    windVel.addListener(_updateGraph);
   }
 
   @override
@@ -36,7 +36,7 @@ class _SPState extends State<SecondoProblema> {
     super.dispose();
   }
 
-  _UpdateGraph() {
+  _updateGraph() {
     setState(() {});
   }
 

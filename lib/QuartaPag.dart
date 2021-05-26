@@ -18,10 +18,10 @@ class _QPState extends State<QuartoProblema> {
   @override
   void initState() {
     super.initState();
-    tc.addListener(_UpdateGraph);
-    gs.addListener(_UpdateGraph);
-    th.addListener(_UpdateGraph);
-    tas.addListener(_UpdateGraph);
+    tc.addListener(_updateGraph);
+    gs.addListener(_updateGraph);
+    th.addListener(_updateGraph);
+    tas.addListener(_updateGraph);
   }
 
   @override
@@ -33,7 +33,7 @@ class _QPState extends State<QuartoProblema> {
     super.dispose();
   }
 
-  _UpdateGraph() {
+  _updateGraph() {
     setState(() {});
   }
 

@@ -27,6 +27,33 @@ class _SLState extends State<SecondoLossodromia> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    agla.addListener(_update);
+    apla.addListener(_update);
+    aglo.addListener(_update);
+    aplo.addListener(_update);
+    d.addListener(_update);
+    tc.addListener(_update);
+  }
+
+  _update() {
+    setState(() {});
+  }
+
+  String txt() {
+    Problems data = Problems(
+        agla: int.tryParse(agla.text) ?? 0,
+        apla: int.tryParse(apla.text) ?? 0,
+        aglo: int.tryParse(aglo.text) ?? 0,
+        aplo: int.tryParse(aplo.text) ?? 0,
+        d: int.tryParse(d.text) ?? 0,
+        tc: int.tryParse(tc.text) ?? 0,
+        problemNumber: "secondoLoss");
+    return data.data;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: SideDrawer(),
@@ -135,7 +162,8 @@ class _SLState extends State<SecondoLossodromia> {
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
           ],
-        )
+        ),
+        Text(txt()),
       ])),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(
@@ -156,7 +184,6 @@ class _SLState extends State<SecondoLossodromia> {
           borderRadius: BorderRadius.circular(5),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

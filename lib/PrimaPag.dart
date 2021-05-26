@@ -20,10 +20,10 @@ class _PPState extends State<PrimoProblema> {
   @override
   void initState() {
     super.initState();
-    tc.addListener(_UpdateGraph);
-    tas.addListener(_UpdateGraph);
-    windAngle.addListener(_UpdateGraph);
-    windVel.addListener(_UpdateGraph);
+    tc.addListener(_updateGraph);
+    tas.addListener(_updateGraph);
+    windAngle.addListener(_updateGraph);
+    windVel.addListener(_updateGraph);
   }
 
   @override
@@ -35,7 +35,7 @@ class _PPState extends State<PrimoProblema> {
     super.dispose();
   }
 
-  _UpdateGraph() {
+  _updateGraph() {
     setState(() {});
   }
 
@@ -46,8 +46,7 @@ class _PPState extends State<PrimoProblema> {
         windAngle: double.tryParse(windAngle.text) ?? 0.0,
         windVel: double.tryParse(windVel.text) ?? 0.0,
         problemNumber: "primo");
-    var d = data.data;
-    return 'gs: ${d.split(' ')[1]} th: ${d.split(' ')[3]}';
+    return data.data;
   }
 
   @override

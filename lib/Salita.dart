@@ -20,13 +20,13 @@ class _SalitaState extends State<Salita> {
   @override
   void initState() {
     super.initState();
-    gs.addListener(_UpdateGraph);
-    qnh.addListener(_UpdateGraph);
-    elev.addListener(_UpdateGraph);
-    ff.addListener(_UpdateGraph);
-    t0.addListener(_UpdateGraph);
-    fl.addListener(_UpdateGraph);
-    vs.addListener(_UpdateGraph);
+    gs.addListener(_updateGraph);
+    qnh.addListener(_updateGraph);
+    elev.addListener(_updateGraph);
+    ff.addListener(_updateGraph);
+    t0.addListener(_updateGraph);
+    fl.addListener(_updateGraph);
+    vs.addListener(_updateGraph);
   }
 
   @override
@@ -41,7 +41,7 @@ class _SalitaState extends State<Salita> {
     super.dispose();
   }
 
-  _UpdateGraph() {
+  _updateGraph() {
     setState(() {});
   }
 

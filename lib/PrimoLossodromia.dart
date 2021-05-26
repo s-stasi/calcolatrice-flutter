@@ -31,6 +31,37 @@ class _PLState extends State<PrimoLossodromia> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    agla.addListener(_update);
+    apla.addListener(_update);
+    aglo.addListener(_update);
+    aplo.addListener(_update);
+    bgla.addListener(_update);
+    bpla.addListener(_update);
+    bglo.addListener(_update);
+    bplo.addListener(_update);
+  }
+
+  _update() {
+    setState(() {});
+  }
+
+  String txt() {
+    Problems data = Problems(
+        agla: int.tryParse(agla.text) ?? 0,
+        apla: int.tryParse(apla.text) ?? 0,
+        aglo: int.tryParse(aglo.text) ?? 0,
+        aplo: int.tryParse(aplo.text) ?? 0,
+        bgla: int.tryParse(bgla.text) ?? 0,
+        bpla: int.tryParse(bpla.text) ?? 0,
+        bglo: int.tryParse(bglo.text) ?? 0,
+        bplo: int.tryParse(bplo.text) ?? 0,
+        problemNumber: "primoLoss");
+    return data.data;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: SideDrawer(),
@@ -165,7 +196,8 @@ class _PLState extends State<PrimoLossodromia> {
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
           ],
-        )
+        ),
+        Text(txt()),
       ])),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showDialog(
@@ -188,7 +220,6 @@ class _PLState extends State<PrimoLossodromia> {
           borderRadius: BorderRadius.circular(5),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

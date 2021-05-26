@@ -18,10 +18,10 @@ class _PTState extends State<TerzoProblema> {
   @override
   void initState() {
     super.initState();
-    tc.addListener(_UpdateGraph);
-    gs.addListener(_UpdateGraph);
-    windAngle.addListener(_UpdateGraph);
-    windVel.addListener(_UpdateGraph);
+    tc.addListener(_updateGraph);
+    gs.addListener(_updateGraph);
+    windAngle.addListener(_updateGraph);
+    windVel.addListener(_updateGraph);
   }
 
   @override
@@ -33,7 +33,7 @@ class _PTState extends State<TerzoProblema> {
     super.dispose();
   }
 
-  _UpdateGraph() {
+  _updateGraph() {
     setState(() {});
   }
 

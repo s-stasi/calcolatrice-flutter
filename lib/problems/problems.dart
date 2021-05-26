@@ -321,7 +321,8 @@ class _ProblemsState extends State<Problems> {
     }
 
     var dlc = dl * (Math.cos(toRad(fm)));
-    d = Math.sqrt(Math.pow(df, 2) + Math.pow(dlc, 2)).round();
+    d = Math.sqrt(Math.pow(df, 2) + Math.pow(dlc, 2));
+    d = (d.isNaN) ? 0 : d.round();
 
     var alfa;
     if (q == 1) {
@@ -337,7 +338,7 @@ class _ProblemsState extends State<Problems> {
       alfa = Math.atan(dl / df);
       tc = 360 - alfa;
     }
-    tc = tc.round();
+    tc = (tc.isNaN) ? 0 : tc.round();
     var res = [d, tc];
 
     debugPrint('${res[0]}');
@@ -347,7 +348,7 @@ class _ProblemsState extends State<Problems> {
     _res = arr;
   }
 
-  secondoLossodromia() {
+  void secondoLossodromia() {
     var alfa;
     var df;
     var dl;
@@ -408,6 +409,6 @@ class _ProblemsState extends State<Problems> {
     var res = [bgla, bpla, bsla, bglo, bplo, bslo];
     String arr =
         'latitudine B: ${res[0]}°${res[1]}°${res[2]} longitudine B: ${res[3]}°${res[4]}°${res[5]}°';
-    return arr;
+    _res = arr;
   }
 }
