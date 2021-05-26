@@ -34,6 +34,10 @@ class SideDrawer extends StatelessWidget {
                   fontSize: expTitleSmall, fontWeight: FontWeight.w600),
             ),
             children: <Widget>[
+              Divider(
+                color: Colors.blue,
+                thickness: 3,
+              ),
               ListTile(
                 leading: Icon(
                   Icons.local_airport,
@@ -111,7 +115,14 @@ class SideDrawer extends StatelessWidget {
                   ),
                 },
               ),
+              Divider(
+                color: Colors.blue,
+                thickness: 3,
+              ),
             ],
+          ),
+          Divider(
+            color: Colors.grey[900],
           ),
           ExpansionTile(
             title: Text(
@@ -120,6 +131,10 @@ class SideDrawer extends StatelessWidget {
                   fontSize: expTitleSmall, fontWeight: FontWeight.w600),
             ),
             children: <Widget>[
+              Divider(
+                color: Colors.blue,
+                thickness: 3,
+              ),
               ListTile(
                 leading: Icon(
                   Icons.local_airport_sharp,
@@ -160,9 +175,29 @@ class SideDrawer extends StatelessWidget {
                 },
               ),
               Divider(
-                color: Colors.grey[900],
+                color: Colors.blue,
+                thickness: 3,
               ),
             ],
+          ),
+          Divider(
+            color: Colors.grey[900],
+          ),
+          ListTile(
+            leading: Icon(Icons.flight_takeoff_sharp),
+            title: Text(
+              'Salita',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            ),
+            onTap: () => {
+              Navigator.pushNamed(
+                context,
+                '/salita',
+              ),
+            },
+          ),
+          Divider(
+            color: Colors.grey[900],
           ),
           ListTile(
             leading: Icon(Icons.calculate),
@@ -174,22 +209,6 @@ class SideDrawer extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 '/',
-              ),
-            },
-          ),
-          Divider(
-            color: Colors.grey[900],
-          ),
-          ListTile(
-            leading: Icon(Icons.calculate),
-            title: Text(
-              'Salita',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/salita',
               ),
             },
           ),
