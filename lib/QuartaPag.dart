@@ -141,7 +141,11 @@ class _QPState extends State<QuartoProblema> {
                   th: double.tryParse(th.text) ?? 0.0,
                   tas: double.tryParse(tas.text) ?? 0.0,
                   problemNumber: "quarto")),
-          Legend()
+          Row(
+            children: [
+              Legend(),
+            ],
+          ),
         ],
       )),
       floatingActionButton: FloatingActionButton(
@@ -161,7 +165,6 @@ class _QPState extends State<QuartoProblema> {
           borderRadius: BorderRadius.circular(5),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

@@ -160,8 +160,7 @@ class _PPState extends State<PrimoProblema> {
         onPressed: () => showDialog(
             context: context,
             builder: (context) {
-              return AlertDialog(
-                  content: Text('fanculo la scuola'));
+              return AlertDialog(content: Text('fanculo la scuola'));
             }),
         child: Text('='),
       ),

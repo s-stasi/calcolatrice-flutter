@@ -145,7 +145,11 @@ class _SPState extends State<SecondoProblema> {
                     windAngle: double.tryParse(windAngle.text) ?? 0.0,
                     windVel: double.tryParse(windVel.text) ?? 0.0,
                     problemNumber: "secondo")),
-            Legend(),
+            Row(
+              children: [
+                Legend(),
+              ],
+            ),
           ],
         ),
       ),
@@ -166,7 +170,6 @@ class _SPState extends State<SecondoProblema> {
           borderRadius: BorderRadius.circular(5),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
