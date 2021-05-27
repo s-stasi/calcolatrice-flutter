@@ -99,7 +99,7 @@ class SalitaPainter extends CustomPainter {
 
     var flPaint = Paint()
       ..color = Colors.yellow
-      ..strokeLine = 4
+      ..strokeWidth = 4;
     var flCoord0 = [
       Offset(0, 400/7),
       Offset(400/7, 400/7)
@@ -118,10 +118,10 @@ class SalitaPainter extends CustomPainter {
     ];
 
     canvas.drawPath(path, paint);
+    canvas.drawLine(flCoord0[0], flCoord0[1], flPaint);
     canvas.drawLine(flCoord1[0], flCoord1[1], flPaint);
     canvas.drawLine(flCoord2[0], flCoord2[1], flPaint);
     canvas.drawLine(flCoord3[0], flCoord3[1], flPaint);
-    canvas.drawLine(flCoord4[0], flCoord4[1], flPaint);
     canvas.drawLine(qnhCoord[0], qnhCoord[1], qnhPaint);                                                   
     canvas.drawLine(apCoord[0], apCoord[1], apPaint);
     canvas.drawLine(qneCoord[0], qneCoord[1], qnePaint);
