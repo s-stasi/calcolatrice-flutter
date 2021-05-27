@@ -408,7 +408,7 @@ class _ProblemsState extends State<Problems> {
 
     var res = [bgla, bpla, bsla, bglo, bplo, bslo];
     String arr =
-        'latitudine B: ${res[0]}°${res[1]}°${res[2]} longitudine B: ${res[3]}°${res[4]}°${res[5]}°';
+        'latitudine B: ${res[0]}°${res[1]}\'${res[2]}\" longitudine B: ${res[3]}°${res[4]}\'${res[5]}\"';
     _res = arr;
   }
 }
