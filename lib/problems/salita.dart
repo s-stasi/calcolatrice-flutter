@@ -23,7 +23,12 @@ class SalitaCalc {
       required this.vs,
       required this.gs,
       required this.ff}) {
-    num x = qnh - qne * 27;
+    num x;
+    if (qnh > qne) {
+      x = (qnh - qne) * 27;
+    } else {
+      x = (qne - qnh) * 27;
+    }
     debugPrint('x= $x');
     num ia = (flightLevel * 100) - x;
     debugPrint('ia= $ia');
@@ -83,38 +88,29 @@ class SalitaPainter extends CustomPainter {
     var apPaint = Paint()
       ..color = Colors.black
       ..strokeWidth = 4;
-    var apCoord = [
-      Offset(20, 400 * 0.6),
-      Offset(45, 400 * 0.6)
-    ];
+    var apCoord = [Offset(20, 400 * 0.6), Offset(45, 400 * 0.6)];
 
-    var qnhPaint = paint()
+    var qnhPaint = Paint()
       ..color = Colors.blue.shade400
       ..strokeWidth = 4;
     var qnhHeight = (qnh > qne) ? 400 - 400 / 5 + 10 : 400 - 400 / 5 - 10;
-    var qnhCoord = [
-      Offset(0, qnhHeight),
-      Offset(400, qnhHeight)
-    ];
+    var qnhCoord = [Offset(0, qnhHeight), Offset(400, qnhHeight)];
 
     var flPaint = Paint()
       ..color = Colors.yellow
       ..strokeWidth = 4;
-    var flCoord0 = [
-      Offset(0, 400/7),
-      Offset(400/7, 400/7)
-    ];
+    var flCoord0 = [Offset(0, 400 / 7), Offset(400 / 7, 400 / 7)];
     var flCoord1 = [
-      Offset((400/7) *2, 400/7),
-      Offset((400/7) * 3, 400/7)
+      Offset((400 / 7) * 2, 400 / 7),
+      Offset((400 / 7) * 3, 400 / 7)
     ];
     var flCoord2 = [
-      Offset((400/7) *4, 400/7),
-      Offset((400/7) * 5, 400/7)
+      Offset((400 / 7) * 4, 400 / 7),
+      Offset((400 / 7) * 5, 400 / 7)
     ];
     var flCoord3 = [
-      Offset((400/7) *6, 400/7),
-      Offset((400/7) * 7, 400/7)
+      Offset((400 / 7) * 6, 400 / 7),
+      Offset((400 / 7) * 7, 400 / 7)
     ];
 
     canvas.drawPath(path, paint);
@@ -122,7 +118,7 @@ class SalitaPainter extends CustomPainter {
     canvas.drawLine(flCoord1[0], flCoord1[1], flPaint);
     canvas.drawLine(flCoord2[0], flCoord2[1], flPaint);
     canvas.drawLine(flCoord3[0], flCoord3[1], flPaint);
-    canvas.drawLine(qnhCoord[0], qnhCoord[1], qnhPaint);                                                   
+    canvas.drawLine(qnhCoord[0], qnhCoord[1], qnhPaint);
     canvas.drawLine(apCoord[0], apCoord[1], apPaint);
     canvas.drawLine(qneCoord[0], qneCoord[1], qnePaint);
   }

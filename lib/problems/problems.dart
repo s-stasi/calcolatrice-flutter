@@ -165,6 +165,8 @@ class _ProblemsState extends State<Problems> {
       primoLossodromia();
     } else if (this.problemNumber == "secondoLoss") {
       secondoLossodromia();
+    } else if (this.problemNumber == "NavPar1") {
+      navParalleli1();
     } else {
       throw Exception('You have to choose the problem');
     }
@@ -411,4 +413,6 @@ class _ProblemsState extends State<Problems> {
         'latitudine B: ${res[0]}°${res[1]}\'${res[2]}\" longitudine B: ${res[3]}°${res[4]}\'${res[5]}\"';
     _res = arr;
   }
+
+  void navParalleli1() {}
 }

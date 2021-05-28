@@ -29,6 +29,141 @@ class SideDrawer extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text(
+              "Navigazione lineare",
+              style: TextStyle(
+                  fontSize: expTitleSmall, fontWeight: FontWeight.w600),
+            ),
+            children: <Widget>[
+              Divider(
+                color: Colors.blue,
+                thickness: 3,
+              ),
+              ExpansionTile(
+                title: Text(
+                  "navigazione per meridiano",
+                  style: TextStyle(
+                      fontSize: expTitleSmall, fontWeight: FontWeight.w600),
+                ),
+                children: <Widget>[
+                  Divider(
+                    color: Colors.indigo[900],
+                    thickness: 2,
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.local_airport,
+                      size: 18,
+                    ),
+                    title: Text(
+                      'incognite: TC/D',
+                      style: TextStyle(
+                          fontSize: sumMenuItemSmall,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    onTap: () => {
+                      Navigator.pushNamed(
+                        context,
+                        '/PriPag',
+                      ),
+                    },
+                  ),
+                  Divider(
+                    color: Colors.grey[900],
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.local_airport,
+                      size: 18,
+                    ),
+                    title: Text(
+                      'incognite: Coordinate B',
+                      style: TextStyle(
+                          fontSize: sumMenuItemSmall,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    onTap: () => {
+                      Navigator.pushNamed(
+                        context,
+                        '/PriPag',
+                      ),
+                    },
+                  ),
+                  Divider(
+                    color: Colors.indigo[900],
+                    thickness: 2,
+                  ),
+                ],
+              ),
+              Divider(
+                color: Colors.grey[900],
+              ),
+              ExpansionTile(
+                title: Text(
+                  "navigazione per paralleli",
+                  style: TextStyle(
+                      fontSize: expTitleSmall, fontWeight: FontWeight.w600),
+                ),
+                children: <Widget>[
+                  Divider(
+                    color: Colors.indigo[900],
+                    thickness: 2,
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.local_airport,
+                      size: 18,
+                    ),
+                    title: Text(
+                      'incognite: TC/D',
+                      style: TextStyle(
+                          fontSize: sumMenuItemSmall,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    onTap: () => {
+                      Navigator.pushNamed(
+                        context,
+                        '/NavPar1',
+                      ),
+                    },
+                  ),
+                  Divider(
+                    color: Colors.grey[900],
+                  ),
+                  ListTile(
+                    leading: Icon(
+                      Icons.local_airport,
+                      size: 18,
+                    ),
+                    title: Text(
+                      'incognite: Coordinate B',
+                      style: TextStyle(
+                          fontSize: sumMenuItemSmall,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    onTap: () => {
+                      Navigator.pushNamed(
+                        context,
+                        '/PriPag',
+                      ),
+                    },
+                  ),
+                  Divider(
+                    color: Colors.indigo[900],
+                    thickness: 2,
+                  ),
+                ],
+              ),
+              Divider(
+                color: Colors.blue,
+                thickness: 3,
+              ),
+            ],
+          ),
+          Divider(
+            color: Colors.grey[900],
+          ),
+          ExpansionTile(
+            title: Text(
               "Problemi del vento",
               style: TextStyle(
                   fontSize: expTitleSmall, fontWeight: FontWeight.w600),

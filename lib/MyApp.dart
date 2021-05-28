@@ -7,6 +7,7 @@ import 'SecondaPag.dart';
 import 'TerzaPag.dart';
 import 'QuartaPag.dart';
 import 'SideDrawer.dart';
+import 'NavParalleli.dart';
 import 'MyHomePage.dart';
 import 'PrimoLossodromia.dart';
 import 'SecondoLossodromia.dart';
@@ -40,6 +41,7 @@ class _MAState extends State<MyApp> {
                 '/secLos': (context) => SecondoLossodromia(),
                 '/salita': (context) => Salita(),
                 '/ImpPag': (context) => Impostazioni(),
+                '/NavPar1': (context) => Paralleli(),
               },
             ));
   }
