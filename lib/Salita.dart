@@ -47,14 +47,14 @@ class _SalitaState extends State<Salita> {
 
   String txt() {
     SalitaCalc _res = SalitaCalc(
-      elev: double.tryParse(elev.text) ?? 0.0,
-      ff: double.tryParse(ff.text) ?? 0.0,
-      flightLevel: int.tryParse(fl.text) ?? 0,
-      gs: double.tryParse(gs.text) ?? 0.0,
-      qnh: double.tryParse(qnh.text) ?? 0.0,
-      t0: double.tryParse(t0.text) ?? 0.0,
-      vs: double.tryParse(vs.text) ?? 0.0,
-    );
+        elev: double.tryParse(elev.text) ?? 0.0,
+        ff: double.tryParse(ff.text) ?? 0.0,
+        flightLevel: int.tryParse(fl.text) ?? 0,
+        gs: double.tryParse(gs.text) ?? 0.0,
+        qnh: double.tryParse(qnh.text) ?? 0.0,
+        t0: double.tryParse(t0.text) ?? 0.0,
+        vs: double.tryParse(vs.text) ?? 0.0,
+        context: context);
     return _res.result;
   }
 

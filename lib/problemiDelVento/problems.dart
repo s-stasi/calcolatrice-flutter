@@ -194,7 +194,7 @@ class _ProblemsState extends State<Problems> {
     String arr = 'gs: ${d[0].toString()} th: ${d[1].toString()}';
     res = arr;
 
-    if(windVel = 9999){
+    if (windVel == 9999) {
       throw Exception('questo progetto è finanziato dal duce in persona');
     }
 

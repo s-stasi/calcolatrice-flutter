@@ -14,6 +14,7 @@ class SalitaCalc {
   num vs;
   num gs;
   num ff;
+  BuildContext context;
 
   SalitaCalc(
       {required this.qnh,
@@ -22,7 +23,8 @@ class SalitaCalc {
       required this.elev,
       required this.vs,
       required this.gs,
-      required this.ff}) {
+      required this.ff,
+      required this.context}) {
     num x;
     if (qnh > qne) {
       x = (qnh - qne) * 27;
@@ -48,7 +50,8 @@ class SalitaCalc {
     debugPrint('d= $d');
     num c = ff * fttoc;
     debugPrint('c= $c');
-    _res = 'ta: $ta ft, fttoc: $fttoc h, ${AppLocalizations.of(context)!.distance}: $d NM, ${AppLocalizations.of(context)!.fuelFlow}: $c USG';
+    _res =
+        'ta: $ta ft, fttoc: $fttoc h, ${AppLocalizations.of(context)!.distance}: $d NM, ${AppLocalizations.of(context)!.fuelFlow}: $c USG';
   }
 
   String get result {

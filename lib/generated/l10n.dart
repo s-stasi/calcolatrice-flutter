@@ -69,6 +69,106 @@ class S {
       args: [],
     );
   }
+
+  /// `distance`
+  String get distance {
+    return Intl.message(
+      'distance',
+      name: 'distance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `fuelFlow`
+  String get fuelFlow {
+    return Intl.message(
+      'fuelFlow',
+      name: 'fuelFlow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CALCULATOR`
+  String get calculatorTitle {
+    return Intl.message(
+      'CALCULATOR',
+      name: 'calculatorTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Navigazione per paralleli`
+  String get paralNavTitle {
+    return Intl.message(
+      'Navigazione per paralleli',
+      name: 'paralNavTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `GRADI`
+  String get paralNavDegree {
+    return Intl.message(
+      'GRADI',
+      name: 'paralNavDegree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latitude A`
+  String get paralNavLatA {
+    return Intl.message(
+      'Latitude A',
+      name: 'paralNavLatA',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Longitude A`
+  String get paralNavLonA {
+    return Intl.message(
+      'Longitude A',
+      name: 'paralNavLonA',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latitude B`
+  String get paralNavLatB {
+    return Intl.message(
+      'Latitude B',
+      name: 'paralNavLatB',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Longitude B`
+  String get paralNavLonB {
+    return Intl.message(
+      'Longitude B',
+      name: 'paralNavLonB',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Meridian navigation`
+  String get meridNavTitle {
+    return Intl.message(
+      'Meridian navigation',
+      name: 'meridNavTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

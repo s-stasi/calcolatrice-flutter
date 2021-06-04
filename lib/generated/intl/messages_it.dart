@@ -21,7 +21,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "calculatorTitle": MessageLookupByLibrary.simpleMessage("CALCOLATRICE"),
         "climbTitle": MessageLookupByLibrary.simpleMessage("SALITA"),
-        "gayyy": MessageLookupByLibrary.simpleMessage("NAVTOOL")
+        "distance": MessageLookupByLibrary.simpleMessage("distanza"),
+        "fuelFlow": MessageLookupByLibrary.simpleMessage("consumo"),
+        "gayyy": MessageLookupByLibrary.simpleMessage("NAVTOOL"),
+        "meridNavTitle":
+            MessageLookupByLibrary.simpleMessage("Navigazione per meridiani"),
+        "paralNavDegree": MessageLookupByLibrary.simpleMessage("DEGREES"),
+        "paralNavLatA": MessageLookupByLibrary.simpleMessage("Latitudine A"),
+        "paralNavLatB": MessageLookupByLibrary.simpleMessage("Latitudine B"),
+        "paralNavLonA": MessageLookupByLibrary.simpleMessage("Longitudine A"),
+        "paralNavLonB": MessageLookupByLibrary.simpleMessage("Longitudine B"),
+        "paralNavTitle":
+            MessageLookupByLibrary.simpleMessage("Parallel navigation")
       };
 }
