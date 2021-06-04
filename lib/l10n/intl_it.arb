@@ -1,4 +1,17 @@
 {
 	"gayyy": "NAVTOOL",
-  "climbTitle": "SALITA"
+  "climbTitle": "SALITA",
+  "distance": "distanza",
+  "fuelFlow": "consumo",
+
+  "calculatorTitle": "CALCOLATRICE",
+
+  "paralNavTitle": "Parallel navigation",
+  "paralNavDegree": "DEGREES",
+  "paralNavLatA": "Latitudine A",
+  "paralNavLonA": "Longitudine A",
+  "paralNavLatB": "Latitudine B",
+  "paralNavLonB": "Longitudine B",
+
+  "meridNavTitle": "Navigazione per meridiani"
 }

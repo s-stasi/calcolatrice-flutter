@@ -175,9 +175,6 @@ class PianoCartesianoPainter extends CustomPainter {
             Offset(windCoord[0].dx, windCoord[0].dy + 40)
           ];
 
-          debugPrint('mpxpainter[0]:  ${MPXCoord[0]}');
-          debugPrint('mpxpainter[1]:  ${MPXCoord[1]}');
-
           canvas.drawLine(MPXCoord[0], MPXCoord[1], MPPaint);
           canvas.drawLine(MPYCoord[0], MPYCoord[1], MPPaint);
           canvas.drawLine(gsCoord[0], gsCoord[1], gsPaint);

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problems/problems.dart';
 import 'problems/piano_cartesiano.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Paralleli extends StatefulWidget {
   @override
@@ -69,7 +70,7 @@ class _NPState extends State<Paralleli> {
       drawer: SideDrawer(),
       appBar: AppBar(
         title: Text(
-          'Navigazione per paralleli',
+          AppLocalizations.of(context)!.paralNavTitle,
           style: TextStyle(color: Colors.white),
         ),
         iconTheme: IconThemeData(color: Colors.white),
@@ -94,8 +95,8 @@ class _NPState extends State<Paralleli> {
                 enabledBorder: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'GRADI',
-                helperText: 'latitudine A',
+                labelText: AppLocalizations.of(context)!.paralNavDegree,
+                helperText:( labelText: AppLocalizations.of(context)!.paralNavLatA,),),
               ),
             )),
             Container(
@@ -108,7 +109,7 @@ class _NPState extends State<Paralleli> {
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
                 labelText: 'PRIMI',
-                helperText: 'latitudine A',
+                helperText: helperText: labelText: AppLocalizations.of(context)!.paralNavLatA,),
               ),
             )),
             Container(
@@ -120,8 +121,8 @@ class _NPState extends State<Paralleli> {
                 enabledBorder: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'GRADI',
-                helperText: 'longitudine A',
+                labelText: helperText: labelText: AppLocalizations.of(context)!.paralNavDegree,
+                helperText: helperText: labelText: AppLocalizations.of(context)!.paralNavLonA,
               ),
             )),
             Container(
@@ -134,7 +135,7 @@ class _NPState extends State<Paralleli> {
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
                 labelText: 'PRIMI',
-                helperText: 'longitudine A',
+                helperText: AppLocalizations.of(context)!.paralNavLonA,
               ),
             )),
             Container(
@@ -152,8 +153,8 @@ class _NPState extends State<Paralleli> {
                 enabledBorder: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'GRADI',
-                helperText: 'latitudine B ',
+                labelText: AppLocalizations.of(context)!.paralNavDegree,
+                helperText: AppLocalizations.of(context)!.paralNavLonB,
               ),
             )),
             Container(
@@ -166,7 +167,7 @@ class _NPState extends State<Paralleli> {
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
                 labelText: 'PRIMI',
-                helperText: 'latitudine B ',
+                helperText: AppLocalizations.of(context)!.paralNavLatB,
               ),
             )),
             Container(
@@ -178,8 +179,8 @@ class _NPState extends State<Paralleli> {
                 enabledBorder: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'GRADI',
-                helperText: 'longitudine B',
+                labelText: AppLocalizations.of(context)!.paralNavDegree,
+                helperText: AppLocalizations.of(context)!.paralNavLonB,
               ),
             )),
             Container(
@@ -192,7 +193,7 @@ class _NPState extends State<Paralleli> {
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
                 labelText: 'PRIMI',
-                helperText: 'longitudine B',
+                helperText: AppLocalizations.of(context)!.paralNavLonB,
               ),
             )),
             Container(

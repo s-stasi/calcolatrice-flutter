@@ -4,6 +4,7 @@ import 'simple_calculator/display.dart';
 import 'simple_calculator/key-controller.dart';
 import 'simple_calculator/key-pad.dart';
 import 'simple_calculator/processor.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Calculator extends StatefulWidget {
   @override
@@ -38,15 +39,15 @@ class _CalculatorState extends State<Calculator> {
     double buttonHeight = screen.height / 2.2;
     double displayHeight = (screen.height - (buttonHeight * 1.9));
 
-    debugPrint('$displayHeight');
-    debugPrint('$buttonHeight');
+    debugPrint('display weight: $displayHeight');
+    debugPrint('display height: $buttonHeight');
 
     return Scaffold(
       backgroundColor: Color.fromARGB(196, 32, 64, 96),
       drawer: SideDrawer(),
       appBar: AppBar(
         title: Text(
-          'CALCOLATRICE',
+          AppLocalizations.of(context)!.calculatorTitle,
           style: TextStyle(color: Colors.white),
         ),
         flexibleSpace: Container(

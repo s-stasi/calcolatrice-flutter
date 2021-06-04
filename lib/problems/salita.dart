@@ -48,7 +48,7 @@ class SalitaCalc {
     debugPrint('d= $d');
     num c = ff * fttoc;
     debugPrint('c= $c');
-    _res = 'ta: $ta ft, fttoc: $fttoc h, distance: $d NM, consumo: $c USG';
+    _res = 'ta: $ta ft, fttoc: $fttoc h, ${AppLocalizations.of(context)!.distance}: $d NM, ${AppLocalizations.of(context)!.fuelFlow}: $c USG';
   }
 
   String get result {
@@ -102,7 +102,7 @@ class SalitaPainter extends CustomPainter {
     var flCoord0 = [Offset(0, 400 / 7), Offset(400 / 7, 400 / 7)];
     var flCoord1 = [
       Offset((400 / 7) * 2, 400 / 7),
-      Offset((400 / 7) * 3, 400 / 7)
+      Offset((4 / 7) * 3, 400 / 7)
     ];
     var flCoord2 = [
       Offset((400 / 7) * 4, 400 / 7),
