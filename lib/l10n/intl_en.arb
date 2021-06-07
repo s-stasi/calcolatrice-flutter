@@ -7,6 +7,7 @@
   "calculatorTitle": "CALCULATOR",
 
   "paralNavTitle": "Navigazione per paralleli",
+  "meridNavTitle": "navigazione per meridiani",
   "paralNavDegree": "GRADI",
   "paralNavLatA": "Latitude A",
   "paralNavLonA": "Longitude A",

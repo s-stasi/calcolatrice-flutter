@@ -63,7 +63,7 @@ class SideDrawer extends StatelessWidget {
                     onTap: () => {
                       Navigator.pushNamed(
                         context,
-                        '/PriPag',
+                        '/NavMer1',
                       ),
                     },
                   ),

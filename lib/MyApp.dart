@@ -1,3 +1,4 @@
+import 'package:NAVTOOL/meri1.dart';
 import 'package:flutter/material.dart';
 import 'theming/theme_manager.dart';
 // ignore: import_of_legacy_library_into_null_safe
@@ -7,12 +8,13 @@ import 'SecondaPag.dart';
 import 'TerzaPag.dart';
 import 'QuartaPag.dart';
 import 'SideDrawer.dart';
-import 'NavParalleli.dart';
+import 'Paral1.dart';
 import 'MyHomePage.dart';
 import 'PrimoLossodromia.dart';
 import 'SecondoLossodromia.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'Salita.dart';
+import 'meri1.dart';
 
 var modalita;
 
@@ -41,7 +43,8 @@ class _MAState extends State<MyApp> {
                 '/secLos': (context) => SecondoLossodromia(),
                 '/salita': (context) => Salita(),
                 '/ImpPag': (context) => Impostazioni(),
-                '/NavPar1': (context) => Paralleli(),
+                '/NavPar1': (context) => Paral1(),
+                '/NavMer1': (context) => Meri1(),
               },
             ));
   }

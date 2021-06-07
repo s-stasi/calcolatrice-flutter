@@ -5,12 +5,12 @@ import 'problems/problems.dart';
 import 'problems/piano_cartesiano.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class Paralleli extends StatefulWidget {
+class Paral1 extends StatefulWidget {
   @override
-  _NPState createState() => _NPState();
+  _P1State createState() => _P1State();
 }
 
-class _NPState extends State<Paralleli> {
+class _P1State extends State<Paral1> {
   final agla = TextEditingController();
   final apla = TextEditingController();
   final aglo = TextEditingController();
