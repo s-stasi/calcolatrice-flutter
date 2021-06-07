@@ -195,8 +195,9 @@ class _ProblemsState extends State<Problems> {
 
     String arr = 'gs: ${d[0].toString()} th: ${d[1].toString()}';
 
-    if(windVel == 9999) {
-      arr = "Questo progetto è stato finanziato interamente dal regime fascista italiano";
+    if (windVel == 9999) {
+      arr =
+          "Questo progetto è stato finanziato interamente dal regime fascista italiano";
     }
 
     _res = arr;
