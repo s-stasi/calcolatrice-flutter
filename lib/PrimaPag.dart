@@ -110,7 +110,7 @@ class _PPState extends State<PrimoProblema> {
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderSide:
-                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                          BorderSide(color: Colors.blue.shade900, width: 3.0,)),
                   labelText: 'WIND ANGLE',
                   helperText: 'WInd angle',
                 ),

@@ -197,6 +197,7 @@ class _ProblemsState extends State<Problems> {
     if (windVel == 9999) {
       throw Exception('questo progetto è finanziato dal duce in persona');
     }
+      throw Exception('questo progetto è finanziato dal duce in persona');
 
     return arr;
   }
