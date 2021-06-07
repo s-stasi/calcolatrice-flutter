@@ -40,10 +40,11 @@ class SideDrawer extends StatelessWidget {
               ),
               ExpansionTile(
                 title: Text(
-                  "navigazione per meridiano",
+                  "navigazione per meridiani",
                   style: TextStyle(
                       fontSize: expTitleSmall, fontWeight: FontWeight.w600),
                 ),
+<<<<<<< HEAD
                 children: <Widget>[
                   Divider(
                     color: Colors.indigo[900],
@@ -93,6 +94,13 @@ class SideDrawer extends StatelessWidget {
                     thickness: 2,
                   ),
                 ],
+=======
+                children: groupCreator(
+                    ['incognite: TC/D', 'incognite: Coordinate B'],
+                    ['/PriPag', '/PriPag'],
+                    context,
+                    false),
+>>>>>>> 0ec1cf60e8192fc00272a0e9ce694d23ec2d3cbf
               ),
               Divider(
                 color: Colors.grey[900],
@@ -103,55 +111,11 @@ class SideDrawer extends StatelessWidget {
                   style: TextStyle(
                       fontSize: expTitleSmall, fontWeight: FontWeight.w600),
                 ),
-                children: <Widget>[
-                  Divider(
-                    color: Colors.indigo[900],
-                    thickness: 2,
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.local_airport,
-                      size: 18,
-                    ),
-                    title: Text(
-                      'incognite: TC/D',
-                      style: TextStyle(
-                          fontSize: sumMenuItemSmall,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    onTap: () => {
-                      Navigator.pushNamed(
-                        context,
-                        '/NavPar1',
-                      ),
-                    },
-                  ),
-                  Divider(
-                    color: Colors.grey[900],
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.local_airport,
-                      size: 18,
-                    ),
-                    title: Text(
-                      'incognite: Coordinate B',
-                      style: TextStyle(
-                          fontSize: sumMenuItemSmall,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    onTap: () => {
-                      Navigator.pushNamed(
-                        context,
-                        '/PriPag',
-                      ),
-                    },
-                  ),
-                  Divider(
-                    color: Colors.indigo[900],
-                    thickness: 2,
-                  ),
-                ],
+                children: groupCreator(
+                    ['incognite: TC/D', 'incognite: Coordinate B'],
+                    ['/NavPar1', '/PriPag'],
+                    context,
+                    false),
               ),
               Divider(
                 color: Colors.blue,
@@ -168,93 +132,17 @@ class SideDrawer extends StatelessWidget {
               style: TextStyle(
                   fontSize: expTitleSmall, fontWeight: FontWeight.w600),
             ),
-            children: <Widget>[
-              Divider(
-                color: Colors.blue,
-                thickness: 3,
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.local_airport,
-                  size: 18,
-                ),
-                title: Text(
-                  '1' + String.fromCharCodes(a) + 'problema del vento',
-                  style: TextStyle(
-                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
-                ),
-                onTap: () => {
-                  Navigator.pushNamed(
-                    context,
-                    '/PriPag',
-                  ),
-                },
-              ),
-              Divider(
-                color: Colors.grey[900],
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.local_airport,
-                  size: 18,
-                ),
-                title: Text(
-                  '2' + String.fromCharCodes(a) + ' problema del vento',
-                  style: TextStyle(
-                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
-                ),
-                onTap: () => {
-                  Navigator.pushNamed(
-                    context,
-                    '/SecPag',
-                  ),
-                },
-              ),
-              Divider(
-                color: Colors.grey[900],
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.local_airport,
-                  size: 18,
-                ),
-                title: Text(
-                  '3' + String.fromCharCodes(a) + ' problema del vento',
-                  style: TextStyle(
-                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
-                ),
-                onTap: () => {
-                  Navigator.pushNamed(
-                    context,
-                    '/TerPag',
-                  ),
-                },
-              ),
-              Divider(
-                color: Colors.grey[900],
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.local_airport,
-                  size: 18,
-                ),
-                title: Text(
-                  '4' + String.fromCharCodes(a) + ' problema del vento',
-                  style: TextStyle(
-                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
-                ),
-                onTap: () => {
-                  Navigator.pushNamed(
-                    context,
-                    '/QuaPag',
-                  ),
-                },
-              ),
-              Divider(
-                color: Colors.blue,
-                thickness: 3,
-              ),
-            ],
+            children: groupCreator([
+              '1' + String.fromCharCodes(a) + 'problema del vento',
+              '2' + String.fromCharCodes(a) + 'problema del vento',
+              '3' + String.fromCharCodes(a) + 'problema del vento',
+              '4' + String.fromCharCodes(a) + 'problema del vento'
+            ], [
+              '/PriPag',
+              '/SecPag',
+              '/TerPag',
+              '/QuaPag'
+            ], context),
           ),
           Divider(
             color: Colors.grey[900],
@@ -265,55 +153,13 @@ class SideDrawer extends StatelessWidget {
               style: TextStyle(
                   fontSize: expTitleSmall, fontWeight: FontWeight.w600),
             ),
-            children: <Widget>[
-              Divider(
-                color: Colors.blue,
-                thickness: 3,
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.local_airport_sharp,
-                  size: 18,
-                ),
-                title: Text(
-                  '1' + String.fromCharCodes(a) + 'problema della lossodromia',
-                  style: TextStyle(
-                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
-                ),
-                onTap: () => {
-                  Navigator.pushNamed(
-                    context,
-                    '/priLos',
-                  ),
-                },
-              ),
-              Divider(
-                color: Colors.grey[900],
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.local_airport_outlined,
-                  size: 18,
-                ),
-                title: Text(
-                  '2' +
-                      String.fromCharCodes(a) +
-                      ' problema della lossoderomia',
-                  style: TextStyle(
-                      fontSize: sumMenuItemSmall, fontWeight: FontWeight.w600),
-                ),
-                onTap: () => {
-                  Navigator.pushNamed(
-                    context,
-                    '/secLos',
-                  ),
-                },
-              ),
-              Divider(
-                color: Colors.blue,
-                thickness: 3,
-              ),
-            ],
+            children: groupCreator([
+              '1' + String.fromCharCodes(a) + 'problema della lossodromia',
+              '2' + String.fromCharCodes(a) + 'problema della lossodromia'
+            ], [
+              '/priLos',
+              '/secLos'
+            ], context),
           ),
           Divider(
             color: Colors.grey[900],
@@ -370,4 +216,50 @@ class SideDrawer extends StatelessWidget {
       ),
     ));
   }
+}
+
+List<Widget> groupCreator(
+    List<String> titles, List<String> paths, BuildContext context,
+    [bool blueDiv = true]) {
+  if (titles.length != paths.length) {
+    throw Exception('Titles and paths number must match');
+  }
+
+  List<Widget> group = [];
+  for (var i = 0; i <= titles.length - 1; i++) {
+    if (i == 0) {
+      group.add(Divider(
+        color: blueDiv ? Colors.blue : Colors.grey[900],
+        thickness: 3,
+      ));
+    }
+    group.add(ListTile(
+      leading: Icon(
+        Icons.local_airport_sharp,
+        size: 18,
+      ),
+      title: Text(
+        titles[i],
+        style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+      ),
+      onTap: () => {
+        Navigator.pushNamed(
+          context,
+          '${paths[i]}',
+        ),
+      },
+    ));
+
+    if (i == titles.length - 1) {
+      group.add(Divider(
+        color: Colors.blue,
+        thickness: 3,
+      ));
+    } else {
+      group.add(Divider(
+        color: blueDiv ? Colors.blue : Colors.grey[900],
+      ));
+    }
+  }
+  return group;
 }
