@@ -44,63 +44,11 @@ class SideDrawer extends StatelessWidget {
                   style: TextStyle(
                       fontSize: expTitleSmall, fontWeight: FontWeight.w600),
                 ),
-<<<<<<< HEAD
-                children: <Widget>[
-                  Divider(
-                    color: Colors.indigo[900],
-                    thickness: 2,
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.local_airport,
-                      size: 18,
-                    ),
-                    title: Text(
-                      'incognite: TC/D',
-                      style: TextStyle(
-                          fontSize: sumMenuItemSmall,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    onTap: () => {
-                      Navigator.pushNamed(
-                        context,
-                        '/NavMer1',
-                      ),
-                    },
-                  ),
-                  Divider(
-                    color: Colors.grey[900],
-                  ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.local_airport,
-                      size: 18,
-                    ),
-                    title: Text(
-                      'incognite: Coordinate B',
-                      style: TextStyle(
-                          fontSize: sumMenuItemSmall,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    onTap: () => {
-                      Navigator.pushNamed(
-                        context,
-                        '/PriPag',
-                      ),
-                    },
-                  ),
-                  Divider(
-                    color: Colors.indigo[900],
-                    thickness: 2,
-                  ),
-                ],
-=======
                 children: groupCreator(
                     ['incognite: TC/D', 'incognite: Coordinate B'],
                     ['/PriPag', '/PriPag'],
                     context,
                     false),
->>>>>>> 0ec1cf60e8192fc00272a0e9ce694d23ec2d3cbf
               ),
               Divider(
                 color: Colors.grey[900],

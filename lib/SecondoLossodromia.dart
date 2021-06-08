@@ -14,6 +14,8 @@ class _SLState extends State<SecondoLossodromia> {
   final aplo = TextEditingController();
   final d = TextEditingController();
   final tc = TextEditingController();
+  String latVal = "N";
+  String lonVal = "E";
 
   @override
   void dispose() {
@@ -103,6 +105,26 @@ class _SLState extends State<SecondoLossodromia> {
             )),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            DropdownButton<String>(
+              value: latVal,
+              style: TextStyle(color: Colors.blue),
+              onChanged: (String? value) {
+                setState(() {
+                  latVal = value!;
+                });
+              },
+              items: <String>['N', 'S']
+                .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+
+                    );
+                  })
+                .toList(),
+            ),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: aglo,
@@ -127,6 +149,26 @@ class _SLState extends State<SecondoLossodromia> {
                 helperText: 'longitudine A',
               ),
             )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            DropdownButton<String>(
+              value: lonVal,
+              style: TextStyle(color: Colors.blue),
+              onChanged: (String? value) {
+                setState(() {
+                  latVal = value!;
+                });
+              },
+              items: <String>['E', 'W']
+                .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+
+                    );
+                  })
+                .toList(),
+            ),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
           ],
