@@ -16,6 +16,10 @@ class _PLState extends State<PrimoLossodromia> {
   final bpla = TextEditingController();
   final bglo = TextEditingController();
   final bplo = TextEditingController();
+  String latValA = 'N';
+  String latValB = 'N';
+  String lonValA = 'E';
+  String lonValB = 'E';
 
   @override
   void dispose() {
@@ -111,6 +115,27 @@ class _PLState extends State<PrimoLossodromia> {
             )),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            DropdownButton<String>(
+              value: latValA,
+              style: TextStyle(color: Colors.blue, fontSize: 20),
+              onChanged: (String? value) {
+                setState(() {
+                  latValA = value!;
+                  debugPrint('latValA dropdown value $latValA');
+                });
+              },
+              items: <String>['N', 'S']
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(
+                    value,
+                  ),
+                );
+              }).toList(),
+            ),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: aglo,
@@ -135,6 +160,27 @@ class _PLState extends State<PrimoLossodromia> {
                 helperText: 'longitudine A',
               ),
             )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            DropdownButton<String>(
+              value: lonValA,
+              style: TextStyle(color: Colors.blue, fontSize: 20),
+              onChanged: (String? value) {
+                setState(() {
+                  lonValA = value!;
+                  debugPrint('lonValA dropdown value $lonValA');
+                });
+              },
+              items: <String>['E', 'W']
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(
+                    value,
+                  ),
+                );
+              }).toList(),
+            ),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
           ],
@@ -169,6 +215,27 @@ class _PLState extends State<PrimoLossodromia> {
             )),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            DropdownButton<String>(
+              value: latValB,
+              style: TextStyle(color: Colors.blue, fontSize: 20),
+              onChanged: (String? value) {
+                setState(() {
+                  latValB = value!;
+                  debugPrint('latValB dropdown value $latValB');
+                });
+              },
+              items: <String>['N', 'S']
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(
+                    value,
+                  ),
+                );
+              }).toList(),
+            ),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
               controller: bglo,
@@ -193,6 +260,27 @@ class _PLState extends State<PrimoLossodromia> {
                 helperText: 'longitudine B',
               ),
             )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            DropdownButton<String>(
+              value: lonValB,
+              style: TextStyle(color: Colors.blue, fontSize: 20),
+              onChanged: (String? value) {
+                setState(() {
+                  lonValB = value!;
+                  debugPrint('lonValB dropdown value $lonValB');
+                });
+              },
+              items: <String>['E', 'W']
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(
+                    value,
+                  ),
+                );
+              }).toList(),
+            ),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
           ],

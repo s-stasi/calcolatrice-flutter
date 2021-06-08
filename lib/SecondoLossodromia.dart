@@ -107,21 +107,20 @@ class _SLState extends State<SecondoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             DropdownButton<String>(
               value: latVal,
-              style: TextStyle(color: Colors.blue),
+              style: TextStyle(color: Colors.blue, fontSize: 20),
               onChanged: (String? value) {
                 setState(() {
                   latVal = value!;
                 });
               },
               items: <String>['N', 'S']
-                .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-
-                    );
-                  })
-                .toList(),
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              underline: null,
             ),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
@@ -153,21 +152,22 @@ class _SLState extends State<SecondoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             DropdownButton<String>(
               value: lonVal,
-              style: TextStyle(color: Colors.blue),
+              style: TextStyle(color: Colors.blue, fontSize: 20),
               onChanged: (String? value) {
                 setState(() {
-                  latVal = value!;
+                  lonVal = value!;
+                  debugPrint('lonVal dropdown value $lonVal');
                 });
               },
               items: <String>['E', 'W']
-                .map<DropdownMenuItem<String>>((String value) {
-                  return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value),
-
-                    );
-                  })
-                .toList(),
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(
+                    value,
+                  ),
+                );
+              }).toList(),
             ),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),

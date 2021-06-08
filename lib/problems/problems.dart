@@ -43,6 +43,8 @@ class Problems extends StatefulWidget {
   var bglo;
   var bplo;
   var d;
+  String lator;
+  String lonor;
   String problemNumber;
 
   @override
@@ -63,7 +65,9 @@ class Problems extends StatefulWidget {
         bglo: bglo,
         bplo: bplo,
         d: d,
-        problemNumber: problemNumber);
+        problemNumber: problemNumber,
+        lator: lator,
+        lonor: lonor);
   }
 
   String get data => _ProblemsState(
@@ -82,6 +86,8 @@ class Problems extends StatefulWidget {
           bglo: bglo,
           bplo: bplo,
           d: d,
+          lator: lator,
+          lonor: lonor,
           problemNumber: problemNumber)
       .data;
 
@@ -101,7 +107,9 @@ class Problems extends StatefulWidget {
       var this.bpla,
       var this.bglo,
       var this.bplo,
-      var this.d});
+      var this.d,
+      var this.lator: 'N',
+      var this.lonor: 'E'});
 }
 
 class _ProblemsState extends State<Problems> {
@@ -120,6 +128,8 @@ class _ProblemsState extends State<Problems> {
   var bglo;
   var bplo;
   var d;
+  late String lator;
+  late String lonor;
   late String problemNumber;
   String _res = '';
 
@@ -144,7 +154,9 @@ class _ProblemsState extends State<Problems> {
       var this.bpla: 0,
       var this.bglo: 0,
       var this.bplo: 0,
-      var this.d: 0}) {
+      var this.d: 0,
+      var this.lator: 'N',
+      var this.lonor: 'E'}) {
     this.solve();
   }
 

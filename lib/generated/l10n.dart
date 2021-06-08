@@ -110,6 +110,16 @@ class S {
     );
   }
 
+  /// `Meridian navigation`
+  String get meridNavTitle {
+    return Intl.message(
+      'Meridian navigation',
+      name: 'meridNavTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `GRADI`
   String get paralNavDegree {
     return Intl.message(
@@ -155,16 +165,6 @@ class S {
     return Intl.message(
       'Longitude B',
       name: 'paralNavLonB',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Meridian navigation`
-  String get meridNavTitle {
-    return Intl.message(
-      'Meridian navigation',
-      name: 'meridNavTitle',
       desc: '',
       args: [],
     );
