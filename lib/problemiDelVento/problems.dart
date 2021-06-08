@@ -401,10 +401,10 @@ class _ProblemsState extends State<Problems> {
       loB = loA - dl;
     }
     debugPrint('$alfa');
-    debugPrint('${df}');
-    debugPrint('${dlc}');
-    debugPrint('${fm}');
-    debugPrint('${dl}');
+    debugPrint('$df');
+    debugPrint('$dlc');
+    debugPrint('$fm');
+    debugPrint('$dl');
 
     bgla = toSes(laB)[0];
     bpla = toSes(laB)[1];
