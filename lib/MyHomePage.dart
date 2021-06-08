@@ -35,7 +35,6 @@ class _CalculatorState extends State<Calculator> {
   Widget build(BuildContext context) {
     Size screen = MediaQuery.of(context).size;
 
-    double buttonWidth = screen.width / 4;
     double buttonHeight = screen.height / 2.2;
     double displayHeight = (screen.height - (buttonHeight * 1.9));
 

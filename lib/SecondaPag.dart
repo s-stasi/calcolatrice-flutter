@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problems/problems.dart';
 import 'problems/piano_cartesiano.dart';
-import 'package:NAVTOOL/theming/legend.dart';
+import 'theming/legend.dart';
 
 class SecondoProblema extends StatefulWidget {
   @override
@@ -14,7 +14,6 @@ class _SPState extends State<SecondoProblema> {
   final tas = TextEditingController();
   final windAngle = TextEditingController();
   final windVel = TextEditingController();
-  var _gs = '';
   var tc = '';
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'theming/theme_manager.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'SideDrawer.dart';

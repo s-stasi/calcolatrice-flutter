@@ -26,6 +26,7 @@ toSes(num dec) {
   return ses;
 }
 
+// ignore: must_be_immutable
 class Problems extends StatefulWidget {
   var tc;
   var tas;
@@ -123,7 +124,7 @@ class _ProblemsState extends State<Problems> {
   String res = '';
 
   String get data {
-    debugPrint('res string: ${res}');
+    debugPrint('res string: $res');
     return res;
   }
 
@@ -198,8 +199,6 @@ class _ProblemsState extends State<Problems> {
       throw Exception('questo progetto è finanziato dal duce in persona');
     }
     throw Exception('questo progetto è finanziato dal duce in persona');
-
-    return arr;
   }
 
   String secondoProblema() {
@@ -401,7 +400,7 @@ class _ProblemsState extends State<Problems> {
       dl = (dlc) / Math.cos(toRad(fm));
       loB = loA - dl;
     }
-    debugPrint('${alfa}');
+    debugPrint('$alfa');
     debugPrint('${df}');
     debugPrint('${dlc}');
     debugPrint('${fm}');

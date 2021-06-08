@@ -1,4 +1,4 @@
-import 'package:NAVTOOL/theming/legend.dart';
+import 'theming/legend.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problems/problems.dart';
@@ -14,8 +14,6 @@ class _PPState extends State<PrimoProblema> {
   final tas = TextEditingController();
   final windAngle = TextEditingController();
   final windVel = TextEditingController();
-  var _gs = '';
-  var _th = '';
 
   @override
   void initState() {

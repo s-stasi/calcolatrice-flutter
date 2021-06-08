@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class SideDrawer extends StatelessWidget {
   Iterable<int> a = [0x00B0];
   final double sumMenuItemSmall = 12;

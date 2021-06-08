@@ -56,6 +56,7 @@ class CalculatorKey extends StatelessWidget {
         width: (symbol == Keys.zero) ? (size * 4) : size * 2,
         padding: EdgeInsets.all(2),
         height: size_h,
+        // ignore: deprecated_member_use
         child: RaisedButton(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
           color: color,
