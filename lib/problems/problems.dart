@@ -77,10 +77,6 @@ class Problems extends StatefulWidget {
 }
 
 class _ProblemsState extends State<Problems> {
-  String get data {
-    debugPrint('res string: $_res');
-    return _res;
-  }
 
   _ProblemsState() {
     this.solve();
