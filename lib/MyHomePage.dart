@@ -12,7 +12,7 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
-  late String _output;
+  late String _output = '';
 
   @override
   void initState() {

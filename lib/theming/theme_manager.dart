@@ -20,7 +20,7 @@ class ThemeNotifier with ChangeNotifier {
       accentIconTheme: IconThemeData(color: Colors.white),
       dividerColor: Colors.white54);
 
-  late ThemeData _themeData;
+  late ThemeData _themeData = ThemeData();
   ThemeData getTheme() => _themeData;
 
   ThemeNotifier() {
