@@ -4,6 +4,7 @@ import 'theming/theme_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'SideDrawer.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:settings_ui/settings_ui.dart';
 
 class Impostazioni extends StatefulWidget {
@@ -44,7 +45,8 @@ class ImpostazioniState extends State<Impostazioni> {
                     title: AppLocalizations.of(context)!.settingsInterface,
                     tiles: [
                       SettingsTile.switchTile(
-                        title: AppLocalizations.of(context)!.settingsInterfaceTheme,
+                        title: AppLocalizations.of(context)!
+                            .settingsInterfaceTheme,
                         leading: Icon(Icons.mode_night),
                         switchValue: isBlack,
                         onToggle: (bool isBlack) {
@@ -54,7 +56,8 @@ class ImpostazioniState extends State<Impostazioni> {
                       ),
                     ],
                   ),
-                ]
+                ],
+                backgroundColor: Color(0xFF212121),
               ),
             ));
   }
