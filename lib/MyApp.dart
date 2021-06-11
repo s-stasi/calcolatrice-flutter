@@ -14,6 +14,7 @@ import 'SecondoLossodromia.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'Salita.dart';
 import 'meri1.dart';
+import 'settings.dart';
 
 var modalita;
 
@@ -49,98 +50,60 @@ class _MAState extends State<MyApp> {
   }
 }
 
-class Impostazioni extends StatefulWidget {
-  @override
-  ImpostazioniState createState() => ImpostazioniState();
-}
-
-class ImpostazioniState extends State<Impostazioni> {
-  bool status = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<ThemeNotifier>(
-      builder: (context, theme, child) => Scaffold(
-          drawer: SideDrawer(),
-          appBar: AppBar(
-            title: Text(
-              AppLocalizations.of(context)!.gayyy,
-              style: TextStyle(color: Colors.black),
-            ),
-            iconTheme: IconThemeData(color: Colors.black),
-            flexibleSpace: Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [
-                Colors.grey,
-                Colors.white,
-              ])),
-            ),
-          ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                TextButton(
-                    onPressed: () => {
-                          print('set light theme'),
-                          theme.setLightMode(),
-                        },
-                    child: Text('set light theme',
-                        style: TextStyle(
-                            fontSize: 30,
-                            backgroundColor: Colors.grey,
-                            color: Colors.black))),
-                TextButton(
-                    onPressed: () => {
-                          print('set dark theme'),
-                          theme.setDarkMode(),
-                        },
-                    child: Text('set dark theme',
-                        style: TextStyle(
-                            fontSize: 30,
-                            backgroundColor: Colors.grey,
-                            color: Colors.black))),
-              ],
-            ),
-          )),
-    );
-  }
-}
-
-// class AppLocalizations {
-//   AppLocalizations(this.locale);
-
-//   final Locale locale;
-
-//   static AppLocalizations of(BuildContext context) {
-//     return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
-//   }
-
-//   static Map<String, Map<String, String>> _localizedValues = {
-//     'en': {
-//       'title': 'ciao zio',
-//     },
-//     'it': {
-//       'title': 'ciao zio',
-//     },
-//   };
-
-//   String get title {
-//     return _localizedValues[locale.languageCode]!['title']!;
-//   }
+// class Impostazioni extends StatefulWidget {
+//   @override
+//   ImpostazioniState createState() => ImpostazioniState();
 // }
 
-// class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
-//   const AppLocalizationsDelegate();
+// class ImpostazioniState extends State<Impostazioni> {
+//   bool status = false;
 
 //   @override
-//   bool isSupported(Locale locale) => ['en', 'it'].contains(locale.languageCode);
-
-//   @override
-//   Future<AppLocalizations> load(Locale locale) {
-//     return SynchronousFuture<AppLocalizations>(AppLocalizations(locale));
+//   Widget build(BuildContext context) {
+//     return Consumer<ThemeNotifier>(
+//       builder: (context, theme, child) => Scaffold(
+//           drawer: SideDrawer(),
+//           appBar: AppBar(
+//             title: Text(
+//               AppLocalizations.of(context)!.gayyy,
+//               style: TextStyle(color: Colors.black),
+//             ),
+//             iconTheme: IconThemeData(color: Colors.black),
+//             flexibleSpace: Container(
+//               decoration: BoxDecoration(
+//                   gradient: LinearGradient(colors: [
+//                 Colors.grey,
+//                 Colors.white,
+//               ])),
+//             ),
+//           ),
+//           body: Center(
+//             child: Column(
+//               mainAxisAlignment: MainAxisAlignment.center,
+//               children: <Widget>[
+//                 TextButton(
+//                     onPressed: () => {
+//                           print('set light theme'),
+//                           theme.setLightMode(),
+//                         },
+//                     child: Text('set light theme',
+//                         style: TextStyle(
+//                             fontSize: 30,
+//                             backgroundColor: Colors.grey,
+//                             color: Colors.black))),
+//                 TextButton(
+//                     onPressed: () => {
+//                           print('set dark theme'),
+//                           theme.setDarkMode(),
+//                         },
+//                     child: Text('set dark theme',
+//                         style: TextStyle(
+//                             fontSize: 30,
+//                             backgroundColor: Colors.grey,
+//                             color: Colors.black))),
+//               ],
+//             ),
+//           )),
+//     );
 //   }
-
-//   @override
-//   bool shouldReload(AppLocalizationsDelegate old) => false;
 // }

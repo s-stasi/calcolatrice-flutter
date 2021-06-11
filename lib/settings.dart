@@ -4,6 +4,7 @@ import 'theming/theme_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'SideDrawer.dart';
+import 'package:settings_ui/settings_ui.dart';
 
 class Impostazioni extends StatefulWidget {
   @override
@@ -11,13 +12,18 @@ class Impostazioni extends StatefulWidget {
 }
 
 class ImpostazioniState extends State<Impostazioni> {
-  bool status = false;
+  late bool isBlack;
+
+  magheggio(bool e) {
+    isBlack = e;
+    return SideDrawer();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
         builder: (context, theme, child) => Scaffold(
-              drawer: SideDrawer(),
+              drawer: magheggio(theme.isDark),
               appBar: AppBar(
                 title: Text(
                   AppLocalizations.of(context)!.gayyy,
@@ -32,19 +38,23 @@ class ImpostazioniState extends State<Impostazioni> {
                   ])),
                 ),
               ),
-              body: Container(
-                child: ListView(
-                  children: [
-                    Row(
-                      children: [
-                        Icon(Icons.person, color: Colors.green),
-                        SizedBox(width: 5),
-                        Text('Grafica'),
-                      ],
-                    ),
-                    Divider(height: 15, thickness: 3),
-                  ],
-                ),
+              body: SettingsList(
+                sections: [
+                  SettingsSection(
+                    title: AppLocalizations.of(context)!.settingsInterface,
+                    tiles: [
+                      SettingsTile.switchTile(
+                        title: AppLocalizations.of(context)!.settingsInterfaceTheme,
+                        leading: Icon(Icons.mode_night),
+                        switchValue: isBlack,
+                        onToggle: (bool isBlack) {
+                          theme.changeMode();
+                          isBlack = !isBlack;
+                        },
+                      ),
+                    ],
+                  ),
+                ]
               ),
             ));
   }

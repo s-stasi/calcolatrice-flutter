@@ -14,5 +14,8 @@
   "paralNavLatB": "Latitude B",
   "paralNavLonB": "Longitude B",
 
-  "meridNavTitle": "Meridian navigation"
+  "meridNavTitle": "Meridian navigation",
+
+  "settingsInterface": "Interface",
+  "settingsInterfaceTheme": "Black theme"
 }

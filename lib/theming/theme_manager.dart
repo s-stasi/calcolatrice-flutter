@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../services/storage_manager.dart';
 
 class ThemeNotifier with ChangeNotifier {
+  late bool isDarkB = true;
   final darkTheme = ThemeData(
       primarySwatch: Colors.grey,
       primaryColor: Colors.black,
@@ -23,15 +24,19 @@ class ThemeNotifier with ChangeNotifier {
   late ThemeData _themeData = ThemeData();
   ThemeData getTheme() => _themeData;
 
+  get isDark => isDarkB;
+
   ThemeNotifier() {
     StorageManager.readData('themeMode').then((value) {
       print('value read from storage: ' + value.toString());
       var themeMode = value ?? 'light';
       if (themeMode == 'light') {
         _themeData = lightTheme;
+        isDarkB = false;
       } else {
         print('setting dark mode');
         _themeData = darkTheme;
+        isDarkB = true;
       }
       notifyListeners();
     });
@@ -46,6 +51,14 @@ class ThemeNotifier with ChangeNotifier {
   void setLightMode() async {
     _themeData = lightTheme;
     StorageManager.saveData('themeMode', 'light');
+    notifyListeners();
+  }
+
+  void changeMode() {
+    isDarkB = !isDarkB;
+    print('isDark: $isDarkB');
+    _themeData = (isDarkB) ? darkTheme : lightTheme;
+    StorageManager.saveData('themeMode', (isDarkB) ? 'dark' : 'light');
     notifyListeners();
   }
 }

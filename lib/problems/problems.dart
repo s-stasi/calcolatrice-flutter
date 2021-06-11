@@ -87,23 +87,47 @@ class _ProblemsState extends State<Problems> {
   }
 
   void solve() {
-    switch(widget.problemNumber) {
-      case "primo": {primoProblema();}
-      break;
-      case "secondo": {secondoProblema();}
-      break;
-      case "terzo": {terzoProblema();}
-      break;
-      case "quarto": {quartoProblema();}
-      break;
-      case "primoLoss": {primoLossodromia();}
-      break;
-      case "secondoLoss": {secondoLossodromia();}
-      break;
-      case "NavPar1": {navParalleli1();}
-      break;
-      default: {throw Exception('You have to choose the problem');}
-      break;
+    switch (widget.problemNumber) {
+      case "primo":
+        {
+          primoProblema();
+        }
+        break;
+      case "secondo":
+        {
+          secondoProblema();
+        }
+        break;
+      case "terzo":
+        {
+          terzoProblema();
+        }
+        break;
+      case "quarto":
+        {
+          quartoProblema();
+        }
+        break;
+      case "primoLoss":
+        {
+          primoLossodromia();
+        }
+        break;
+      case "secondoLoss":
+        {
+          secondoLossodromia();
+        }
+        break;
+      case "NavPar1":
+        {
+          navParalleli1();
+        }
+        break;
+      default:
+        {
+          throw Exception('You have to choose the problem');
+        }
+        break;
     }
   }
 
