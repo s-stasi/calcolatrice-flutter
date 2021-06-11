@@ -87,22 +87,23 @@ class _ProblemsState extends State<Problems> {
   }
 
   void solve() {
-    if (widget.problemNumber == "primo") {
-      primoProblema();
-    } else if (widget.problemNumber == "secondo") {
-      secondoProblema();
-    } else if (widget.problemNumber == "terzo") {
-      terzoProblema();
-    } else if (widget.problemNumber == "quarto") {
-      quartoProblema();
-    } else if (widget.problemNumber == "primoLoss") {
-      primoLossodromia();
-    } else if (widget.problemNumber == "secondoLoss") {
-      secondoLossodromia();
-    } else if (widget.problemNumber == "NavPar1") {
-      navParalleli1();
-    } else {
-      throw Exception('You have to choose the problem');
+    switch(widget.problemNumber) {
+      case "primo": {primoProblema();}
+      break;
+      case "sacondo": {sacondoProblema();}
+      break;
+      case "terzo": {terzoProblema();}
+      break;
+      case "quarto": {quartoProblema();}
+      break;
+      case "primoLoss": {primoLossodromia();}
+      break;
+      case "secondoLoss": {secondoLossodromia();}
+      break;
+      case "NavPar1": {navParalleli1();}
+      break;
+      default: {throw Exception('You have to choose the problem');}
+      break;
     }
   }
 
