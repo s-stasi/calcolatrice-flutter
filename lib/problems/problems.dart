@@ -90,7 +90,7 @@ class _ProblemsState extends State<Problems> {
     switch(widget.problemNumber) {
       case "primo": {primoProblema();}
       break;
-      case "sacondo": {sacondoProblema();}
+      case "secondo": {secondoProblema();}
       break;
       case "terzo": {terzoProblema();}
       break;

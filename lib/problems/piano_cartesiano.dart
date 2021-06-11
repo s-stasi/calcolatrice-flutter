@@ -9,6 +9,13 @@ toDeg(num rad) {
   return rad * 180 / Math.pi;
 }
 
+double offCheck(double offset) {
+  double off = 200;
+  if (offset.isNaN) return off;
+  if (offset.isInfinite) return off;
+  return offset;
+}
+
 class PianoCartesianoPainter extends CustomPainter {
   double th;
   double tc;
@@ -111,8 +118,8 @@ class PianoCartesianoPainter extends CustomPainter {
             ..color = Colors.red
             ..strokeWidth = 4;
           var gsCoord = [
-            Offset(200 + gs * mult * Math.cos(toRad(tc - 90)),
-                200 + gs * mult * Math.sin(toRad(tc - 90))),
+            Offset(offCheck(200 + gs * mult * Math.cos(toRad(tc - 90))),
+                offCheck(200 + gs * mult * Math.sin(toRad(tc - 90)))),
             Offset(200, 200)
           ];
 
@@ -120,8 +127,8 @@ class PianoCartesianoPainter extends CustomPainter {
             ..color = Colors.yellow
             ..strokeWidth = 4;
           var windCoord = [
-            Offset(200 + windVel * mult * Math.cos(toRad(w - 90)),
-                200 + windVel * mult * Math.sin(toRad(w - 90))),
+            Offset(offCheck(200 + windVel * mult * Math.cos(toRad(w - 90))),
+                offCheck(200 + windVel * mult * Math.sin(toRad(w - 90)))),
             Offset(200, 200)
           ];
 
@@ -144,8 +151,8 @@ class PianoCartesianoPainter extends CustomPainter {
             ..color = Colors.yellow
             ..strokeWidth = 4;
           var windCoord = [
-            Offset(200 + windVel * mult * Math.cos(toRad(w - 90)),
-                200 + windVel * mult * Math.sin(toRad(w - 90))),
+            Offset(offCheck(200 + windVel * mult * Math.cos(toRad(w - 90))),
+                offCheck(200 + windVel * mult * Math.sin(toRad(w - 90)))),
             Offset(200, 200)
           ];
 
@@ -153,8 +160,8 @@ class PianoCartesianoPainter extends CustomPainter {
             ..color = Colors.black
             ..strokeWidth = 4;
           var tasCoord = [
-            Offset(200 + tas * mult * Math.cos(toRad(th - 90)),
-                200 + tas * mult * Math.sin(toRad(th - 90))),
+            Offset(offCheck(200 + tas * mult * Math.cos(toRad(th - 90))),
+                offCheck(200 + tas * mult * Math.sin(toRad(th - 90)))),
             Offset(200, 200)
           ];
 
@@ -189,8 +196,8 @@ class PianoCartesianoPainter extends CustomPainter {
             ..color = Colors.yellow
             ..strokeWidth = 4;
           var windCoord = [
-            Offset(200 + windVel * mult * Math.cos(toRad(w - 90)),
-                200 + windVel * mult * Math.sin(toRad(w - 90))),
+            Offset(offCheck(200 + windVel * mult * Math.cos(toRad(w - 90))),
+                offCheck(200 + windVel * mult * Math.sin(toRad(w - 90)))),
             Offset(200, 200)
           ];
 
@@ -198,8 +205,8 @@ class PianoCartesianoPainter extends CustomPainter {
             ..color = Colors.red
             ..strokeWidth = 4;
           var gsCoord = [
-            Offset(200 + gs * mult * Math.cos(toRad(tc - 90)),
-                200 + gs * mult * Math.sin(toRad(tc - 90))),
+            Offset(offCheck(200 + gs * mult * Math.cos(toRad(tc - 90))),
+                offCheck(200 + gs * mult * Math.sin(toRad(tc - 90)))),
             Offset(200, 200)
           ];
 
@@ -227,8 +234,8 @@ class PianoCartesianoPainter extends CustomPainter {
             ..color = Colors.red
             ..strokeWidth = 4;
           var gsCoord = [
-            Offset(200 + gs * mult * Math.cos(toRad(tc - 90)),
-                200 + gs * mult * Math.sin(toRad(tc - 90))),
+            Offset(offCheck(200 + gs * mult * Math.cos(toRad(tc - 90))),
+                offCheck(200 + gs * mult * Math.sin(toRad(tc - 90)))),
             Offset(200, 200)
           ];
 
@@ -236,8 +243,8 @@ class PianoCartesianoPainter extends CustomPainter {
             ..color = Colors.black
             ..strokeWidth = 4;
           var tasCoord = [
-            Offset(200 + tas * mult * Math.cos(toRad(th - 90)),
-                200 + tas * mult * Math.sin(toRad(th - 90))),
+            Offset(offCheck(200 + tas * mult * Math.cos(toRad(th - 90))),
+                offCheck(200 + tas * mult * Math.sin(toRad(th - 90)))),
             Offset(200, 200)
           ];
 
