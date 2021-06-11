@@ -1,8 +1,6 @@
-import 'package:NAVTOOL/theming/legend.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problems/problems.dart';
-import 'problems/piano_cartesiano.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Meri1 extends StatefulWidget {

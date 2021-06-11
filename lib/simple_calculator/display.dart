@@ -7,7 +7,6 @@ class Display extends StatelessWidget {
   final double height;
 
   String get _output => value.toString();
-  double get _margin => (height / 20);
 
   final LinearGradient _gradient =
       const LinearGradient(colors: [Colors.black26, Colors.black45]);

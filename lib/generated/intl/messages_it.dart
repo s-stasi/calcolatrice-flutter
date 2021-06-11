@@ -34,6 +34,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "paralNavLonA": MessageLookupByLibrary.simpleMessage("Longitudine A"),
         "paralNavLonB": MessageLookupByLibrary.simpleMessage("Longitudine B"),
         "paralNavTitle":
-            MessageLookupByLibrary.simpleMessage("Parallel navigation")
+            MessageLookupByLibrary.simpleMessage("Parallel navigation"),
+        "settingsInterface":
+            MessageLookupByLibrary.simpleMessage("Interfaccia"),
+        "settingsInterfaceTheme":
+            MessageLookupByLibrary.simpleMessage("Tema Scuro")
       };
 }

@@ -49,13 +49,13 @@ class CalculatorKey extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width / 8;
-    double size_h = MediaQuery.of(context).size.height / 6.5;
+    double sizeH = MediaQuery.of(context).size.height / 6.5;
     //TextStyle style = Theme.of(context).textTheme.display1.copyWith(color: Colors.white);
 
     return Container(
         width: (symbol == Keys.zero) ? (size * 4) : size * 2,
         padding: EdgeInsets.all(2),
-        height: size_h,
+        height: sizeH,
         // ignore: deprecated_member_use
         child: RaisedButton(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),

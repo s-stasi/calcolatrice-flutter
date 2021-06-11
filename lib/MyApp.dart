@@ -6,7 +6,6 @@ import 'PrimaPag.dart';
 import 'SecondaPag.dart';
 import 'TerzaPag.dart';
 import 'QuartaPag.dart';
-import 'SideDrawer.dart';
 import 'Paral1.dart';
 import 'MyHomePage.dart';
 import 'PrimoLossodromia.dart';

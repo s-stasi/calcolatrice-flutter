@@ -169,6 +169,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Interface`
+  String get settingsInterface {
+    return Intl.message(
+      'Interface',
+      name: 'settingsInterface',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Black theme`
+  String get settingsInterfaceTheme {
+    return Intl.message(
+      'Black theme',
+      name: 'settingsInterfaceTheme',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

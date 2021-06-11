@@ -127,7 +127,6 @@ class _ProblemsState extends State<Problems> {
         {
           throw Exception('You have to choose the problem');
         }
-        break;
     }
   }
 

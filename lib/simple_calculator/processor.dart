@@ -19,12 +19,7 @@ abstract class Processor {
 
   static void _fire(String data) => _controller.add(_output);
 
-  static String get _output => _result == null ? _equation : _result;
-
-  static String get _equation =>
-      _valA +
-      (_operator != null ? ' ' + _operator.value : '') +
-      (_valB != '0' ? ' ' + _valB : '');
+  static String get _output => _result;
 
   static dispose() => _controller.close();
 
@@ -46,9 +41,7 @@ abstract class Processor {
     if (_valA == '0') {
       return;
     }
-    if (_result != null) {
-      _condense();
-    }
+    _condense();
 
     Map<KeySymbol, dynamic> table = {
       Keys.clear: () => _clear(),
@@ -68,9 +61,7 @@ abstract class Processor {
     if (key.symbol == Keys.equals) {
       return _calculate();
     }
-    if (_result != null) {
-      _condense();
-    }
+    _condense();
 
     _operator = key.symbol;
     refresh();
@@ -78,11 +69,7 @@ abstract class Processor {
 
   static void handleInteger(CalculatorKey key) {
     String val = key.symbol.value;
-    if (_operator == null) {
-      _valA = (_valA == '0') ? val : _valA + val;
-    } else {
-      _valB = (_valB == '0') ? val : _valB + val;
-    }
+    _valB = (_valB == '0') ? val : _valB + val;
     refresh();
   }
 
@@ -119,7 +106,7 @@ abstract class Processor {
   }
 
   static void _calculate() {
-    if (_operator == null || _valB == '0') {
+    if (_valB == '0') {
       return;
     }
 
