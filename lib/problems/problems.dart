@@ -55,25 +55,26 @@ class Problems extends StatefulWidget {
 
   String get data => res;
 
-  Problems(
-      {this.problemNumber: "null",
-      var this.tc,
-      var this.tas,
-      var this.windAngle,
-      var this.windVel,
-      var this.th,
-      var this.gs,
-      var this.agla,
-      var this.apla,
-      var this.aglo,
-      var this.aplo,
-      var this.bgla,
-      var this.bpla,
-      var this.bglo,
-      var this.bplo,
-      var this.d,
-      var this.lator: 'N',
-      var this.lonor: 'E'});
+  Problems({
+    this.problemNumber: "null",
+    var this.tc,
+    var this.tas,
+    var this.windAngle,
+    var this.windVel,
+    var this.th,
+    var this.gs,
+    var this.agla,
+    var this.apla,
+    var this.aglo,
+    var this.aplo,
+    var this.bgla,
+    var this.bpla,
+    var this.bglo,
+    var this.bplo,
+    var this.d,
+    var this.lator: 'N',
+    var this.lonor: 'E',
+  });
 }
 
 class _ProblemsState extends State<Problems> {

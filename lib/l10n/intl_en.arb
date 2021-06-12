@@ -13,7 +13,7 @@
   "paralNavLonA": "Longitude A",
   "paralNavLatB": "Latitude B",
   "paralNavLonB": "Longitude B",
- 
+  "distance" : "distance",
   "settingsTitle": "Settings",
   "settingsInterface": "Interface",
   "settingsInterfaceTheme": "Black theme"

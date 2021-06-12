@@ -47,7 +47,7 @@ class SideDrawer extends StatelessWidget {
                 ),
                 children: groupCreator(
                     ['incognite: TC/D', 'incognite: Coordinate B'],
-                    ['/PriPag', '/PriPag'],
+                    ['/NavMer1', '/NavMer2'],
                     context,
                     false),
               ),

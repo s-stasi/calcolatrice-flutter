@@ -13,6 +13,7 @@
   "paralNavLonA": "Longitudine A",
   "paralNavLatB": "Latitudine B",
   "paralNavLonB": "Longitudine B",
+  "distance": "distanza",
 
   "settingsTitle": "Impostazioni",
   "settingsInterface": "Interfaccia",

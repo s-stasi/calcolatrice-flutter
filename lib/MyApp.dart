@@ -6,13 +6,15 @@ import 'PrimaPag.dart';
 import 'SecondaPag.dart';
 import 'TerzaPag.dart';
 import 'QuartaPag.dart';
-import 'Paral1.dart';
 import 'MyHomePage.dart';
 import 'PrimoLossodromia.dart';
 import 'SecondoLossodromia.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'Salita.dart';
-import 'meri1.dart';
+import 'Meri1.dart';
+import 'Meri2.dart';
+import 'Paral1.dart';
+import 'paral2.dart';
 import 'settings.dart';
 
 var modalita;
@@ -44,6 +46,8 @@ class _MAState extends State<MyApp> {
                 '/ImpPag': (context) => Impostazioni(),
                 '/NavPar1': (context) => Paral1(),
                 '/NavMer1': (context) => Meri1(),
+                '/NavPar2': (context) => Paral2(),
+                '/NavMer2': (context) => Meri2(),
               },
             ));
   }
