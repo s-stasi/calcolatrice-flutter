@@ -13,8 +13,13 @@
   "paralNavLonA": "Longitude A",
   "paralNavLatB": "Latitude B",
   "paralNavLonB": "Longitude B",
-  "distance" : "distance",
+  "distance": "distance",
+
   "settingsTitle": "Settings",
   "settingsInterface": "Interface",
-  "settingsInterfaceTheme": "Black theme"
+  "settingsInterfaceTheme": "Black theme",
+  "settingsLanguage": "Language",
+
+  "expMachToKnots": "Mach to knots conversion",
+  "expMachToKnotsExp": "Simple, just multiply for 666,739"
 }

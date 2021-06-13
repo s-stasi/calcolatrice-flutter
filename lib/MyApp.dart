@@ -16,6 +16,8 @@ import 'Meri2.dart';
 import 'Paral1.dart';
 import 'paral2.dart';
 import 'settings.dart';
+import 'explanations/explanations.dart';
+import 'explanations/expmkt.dart';
 
 var modalita;
 
@@ -48,6 +50,8 @@ class _MAState extends State<MyApp> {
                 '/NavMer1': (context) => Meri1(),
                 '/NavPar2': (context) => Paral2(),
                 '/NavMer2': (context) => Meri2(),
+                '/explanations': (context) => Explanations(),
+                '/expMTK': (context) => ExpMTK()
               },
             ));
   }

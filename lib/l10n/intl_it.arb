@@ -17,5 +17,9 @@
 
   "settingsTitle": "Impostazioni",
   "settingsInterface": "Interfaccia",
-  "settingsInterfaceTheme": "Tema Scuro"
+  "settingsInterfaceTheme": "Tema Scuro",
+  "settingsLanguage": "Lingua",
+
+  "expMachToKnots": "Conversione da mach a nodi",
+  "expMachToKnotsExp": "Facile, basta moltiplicare per 666,739"
 }

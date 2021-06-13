@@ -84,6 +84,7 @@ class _ProblemsState extends State<Problems> {
 
   @override
   Widget build(BuildContext context) {
+    solve();
     return Text(widget.res);
   }
 
@@ -160,6 +161,7 @@ class _ProblemsState extends State<Problems> {
     }
 
     widget.res = arr;
+    print('aaaa: ${widget.res}');
   }
 
   void secondoProblema() {

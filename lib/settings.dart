@@ -23,42 +23,101 @@ class ImpostazioniState extends State<Impostazioni> {
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
-        builder: (context, theme, child) => Scaffold(
-              drawer: magheggio(theme.isDark),
-              appBar: AppBar(
-                title: Text(
-                  AppLocalizations.of(context)!.gayyy,
-                  style: TextStyle(color: Colors.black),
+      builder: (context, theme, child) => Scaffold(
+        drawer: magheggio(theme.isDark),
+        appBar: AppBar(
+          title: Text(
+            AppLocalizations.of(context)!.gayyy,
+            style: TextStyle(color: Colors.black),
+          ),
+          iconTheme: IconThemeData(color: Colors.black),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+              Colors.grey,
+              Colors.white,
+            ])),
+          ),
+        ),
+        body: SettingsList(
+          sections: [
+            SettingsSection(
+              tiles: [
+                SettingsTile.switchTile(
+                  title: AppLocalizations.of(context)!.settingsInterfaceTheme,
+                  leading: Icon(Icons.mode_night),
+                  switchValue: isBlack,
+                  onToggle: (bool isBlack) {
+                    theme.changeMode();
+                    isBlack = !isBlack;
+                  },
                 ),
-                iconTheme: IconThemeData(color: Colors.black),
-                flexibleSpace: Container(
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                    Colors.grey,
-                    Colors.white,
-                  ])),
-                ),
-              ),
-              body: SettingsList(
-                sections: [
-                  SettingsSection(
-                    title: AppLocalizations.of(context)!.settingsInterface,
-                    tiles: [
-                      SettingsTile.switchTile(
-                        title: AppLocalizations.of(context)!
-                            .settingsInterfaceTheme,
-                        leading: Icon(Icons.mode_night),
-                        switchValue: isBlack,
-                        onToggle: (bool isBlack) {
-                          theme.changeMode();
-                          isBlack = !isBlack;
-                        },
+                SettingsTile(
+                  title: AppLocalizations.of(context)!.settingsLanguage,
+                  leading: Icon(Icons.language),
+                  onPressed: (context) {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => Language(),
                       ),
-                    ],
-                  ),
-                ],
-                backgroundColor: Color(0xFF212121),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ],
+          backgroundColor: Color(0xFF212121),
+        ),
+      ),
+    );
+  }
+}
+
+class Language extends StatefulWidget {
+  @override
+  LanguageState createState() => LanguageState();
+}
+
+class LanguageState extends State<Language> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          AppLocalizations.of(context)!.gayyy,
+          style: TextStyle(color: Colors.black),
+        ),
+        iconTheme: IconThemeData(color: Colors.black),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Colors.grey,
+            Colors.white,
+          ])),
+        ),
+      ),
+      body: SettingsList(
+        sections: [
+          SettingsSection(
+            title: AppLocalizations.of(context)!.settingsLanguage,
+            tiles: [
+              SettingsTile(
+                title: "English",
+                onPressed: (BuildContext context) {
+                  //AppLocalizations.load(Locale('en', 'US'));
+                },
               ),
-            ));
+              SettingsTile(
+                title: "Italiano",
+                onPressed: (BuildContext context) {
+                  //AppLocalizations.load(Locale('it', 'IT'));
+                },
+              ),
+            ],
+          ),
+        ],
+        backgroundColor: Color(0xFF212121),
+      ),
+    );
   }
 }

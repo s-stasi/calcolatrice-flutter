@@ -33,7 +33,7 @@ dependencies:
   shared_preferences: ^0.5.10
   provider: ^4.3.2+2
   flutter_native_splash: "^1.2.0"
-  settings_ui: ^0.3.0
+  settings_ui: ^0.6.0
 
 dev_dependencies:
   flutter_test:

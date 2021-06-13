@@ -146,6 +146,22 @@ class SideDrawer extends StatelessWidget {
             color: Colors.grey[900],
           ),
           ListTile(
+            leading: Icon(Icons.book),
+            title: Text(
+              'spiegazioni',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            ),
+            onTap: () => {
+              Navigator.pushNamed(
+                context,
+                '/explanations',
+              ),
+            },
+          ),
+          Divider(
+            color: Colors.grey[900],
+          ),
+          ListTile(
             leading: Icon(Icons.settings_outlined),
             title: Text(
               'impostazioni',
