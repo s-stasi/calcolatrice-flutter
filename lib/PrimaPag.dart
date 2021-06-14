@@ -38,14 +38,12 @@ class _PPState extends State<PrimoProblema> {
   }
 
   String txt() {
-    String data = Problems(
+    return Problems(
         tc: double.tryParse(tc.text) ?? 0.0,
         tas: double.tryParse(tas.text) ?? 0.0,
         windAngle: double.tryParse(windAngle.text) ?? 0.0,
         windVel: double.tryParse(windVel.text) ?? 0.0,
         problemNumber: "primo").data;
-    print('${data}');
-    return data;
   }
 
   @override
@@ -134,18 +132,22 @@ class _PPState extends State<PrimoProblema> {
                   width: MediaQuery.of(context).size.width * 0.04,
                   height: MediaQuery.of(context).size.height * 0.20),
             ]),
-            Text(txt()),
+            Text(txt(), style: TextStyle(fontSize:25)),
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.01),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04,
                 height: MediaQuery.of(context).size.height * 0.02),
             CustomPaint(
-                size: Size(400, 400),
+                size: Size(400 < MediaQuery.of(context).size.width ? 400 : MediaQuery.of(context).size.width -5, 400 < MediaQuery.of(context).size.width ? 400 : MediaQuery.of(context).size.width -5),
                 painter: PianoCartesianoPainter(
                     tc: double.tryParse(tc.text) ?? 0.0,
                     tas: double.tryParse(tas.text) ?? 0.0,
                     windAngle: double.tryParse(windAngle.text) ?? 0.0,
                     windVel: double.tryParse(windVel.text) ?? 0.0,
-                    problemNumber: "primo")),
+                    problemNumber: "primo",
+                    context: context)),
             Row(
               children: [
                 Legend(),

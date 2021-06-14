@@ -38,13 +38,12 @@ class _PTState extends State<TerzoProblema> {
   }
 
   String txt() {
-    Problems data = Problems(
+    return Problems(
         tc: double.tryParse(tc.text) ?? 0.0,
         gs: double.tryParse(gs.text) ?? 0.0,
         windAngle: double.tryParse(windAngle.text) ?? 0.0,
         windVel: double.tryParse(windVel.text) ?? 0.0,
-        problemNumber: "primo");
-    return data.data;
+        problemNumber: "terzo").data;
   }
 
   @override
@@ -130,14 +129,19 @@ class _PTState extends State<TerzoProblema> {
                 width: MediaQuery.of(context).size.width * 0.04,
                 height: MediaQuery.of(context).size.height * 0.20),
           ]),
+            Text(txt(), style: TextStyle(fontSize:25)),
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.01),
           CustomPaint(
-              size: Size(400, 400),
+                size: Size(400 < MediaQuery.of(context).size.width ? 400 : MediaQuery.of(context).size.width -5, 400 < MediaQuery.of(context).size.width ? 400 : MediaQuery.of(context).size.width -5),
               painter: PianoCartesianoPainter(
                   tc: double.tryParse(tc.text) ?? 0.0,
                   gs: double.tryParse(gs.text) ?? 0.0,
                   windAngle: double.tryParse(windAngle.text) ?? 0.0,
                   windVel: double.tryParse(windVel.text) ?? 0.0,
-                  problemNumber: "terzo")),
+                  problemNumber: "terzo",
+                    context: context)),
           Row(
             children: [
               Legend(),

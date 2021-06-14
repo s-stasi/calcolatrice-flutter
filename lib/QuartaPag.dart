@@ -38,13 +38,12 @@ class _QPState extends State<QuartoProblema> {
   }
 
   String txt() {
-    Problems data = Problems(
+    return Problems(
         tc: double.tryParse(th.text) ?? 0.0,
         tas: double.tryParse(tas.text) ?? 0.0,
         gs: double.tryParse(gs.text) ?? 0.0,
         th: double.tryParse(th.text) ?? 0.0,
-        problemNumber: "primo");
-    return data.data;
+        problemNumber: "quarto").data;
   }
 
   @override
@@ -132,14 +131,19 @@ class _QPState extends State<QuartoProblema> {
                 width: MediaQuery.of(context).size.width * 0.04,
                 height: MediaQuery.of(context).size.height * 0.20),
           ]),
+            Text(txt(), style: TextStyle(fontSize:25)),
+              Container(
+                  width: MediaQuery.of(context).size.width * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.01),
           CustomPaint(
-              size: Size(400, 400),
+                size: Size(400 < MediaQuery.of(context).size.width ? 400 : MediaQuery.of(context).size.width -5, 400 < MediaQuery.of(context).size.width ? 400 : MediaQuery.of(context).size.width -5),
               painter: PianoCartesianoPainter(
                   tc: double.tryParse(tc.text) ?? 0.0,
                   gs: double.tryParse(gs.text) ?? 0.0,
                   th: double.tryParse(th.text) ?? 0.0,
                   tas: double.tryParse(tas.text) ?? 0.0,
-                  problemNumber: "quarto")),
+                  problemNumber: "quarto",
+                    context: context)),
           Row(
             children: [
               Legend(),
