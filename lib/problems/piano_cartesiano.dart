@@ -10,7 +10,7 @@ toDeg(num rad) {
 }
 
 double offCheck(double offset, Size size) {
-  double off = size.height/2;
+  double off = size.height / 2;
   if (offset.isNaN) return off;
   if (offset.isInfinite) return off;
   return offset;
@@ -88,8 +88,8 @@ class PianoCartesianoPainter extends CustomPainter {
       ..strokeWidth = 5;
 
     canvas.drawLine(
-      Offset(0, size.height/2),
-      Offset(size.width, size.height/2),
+      Offset(0, size.height / 2),
+      Offset(size.width, size.height / 2),
       midHor,
     );
 
@@ -98,15 +98,13 @@ class PianoCartesianoPainter extends CustomPainter {
       ..strokeWidth = 5;
 
     canvas.drawLine(
-      Offset(size.height/2, 0),
-      Offset(size.height/2, size.height),
+      Offset(size.height / 2, 0),
+      Offset(size.height / 2, size.height),
       midVer,
     );
 
     double w = windAngle + 180;
     double mult = 0;
-
-    debugPrint('mult: $mult');
 
     switch (problemNumber) {
       case 'primo':
@@ -116,23 +114,32 @@ class PianoCartesianoPainter extends CustomPainter {
           double i = toDeg(Math.asin(r / tas));
           double c = tas * Math.cos(toRad(i));
           var gs = c + l;
-          mult = 1 / (gs / size.height/2);
+          mult = 1 / (gs / (size.height / 2));
+          debugPrint('mult: $mult');
           var gsPaint = Paint()
             ..color = Colors.red
             ..strokeWidth = 4;
           var gsCoord = [
-            Offset(offCheck(size.height/2 + gs * mult * Math.cos(toRad(tc - 90)), size),
-                offCheck(size.height/2 + gs * mult * Math.sin(toRad(tc - 90)), size)),
-            Offset(size.height/2, size.height/2)
+            Offset(
+                offCheck(size.height / 2 + gs * mult * Math.cos(toRad(tc - 90)),
+                    size),
+                offCheck(size.height / 2 + gs * mult * Math.sin(toRad(tc - 90)),
+                    size)),
+            Offset(size.height / 2, size.height / 2)
           ];
 
           var windPaint = Paint()
             ..color = Colors.yellow
             ..strokeWidth = 4;
           var windCoord = [
-            Offset(offCheck(size.height/2 + windVel * mult * Math.cos(toRad(w - 90)), size),
-                offCheck(size.height/2 + windVel * mult * Math.sin(toRad(w - 90)), size)),
-            Offset(size.height/2, size.height/2)
+            Offset(
+                offCheck(
+                    size.height / 2 + windVel * mult * Math.cos(toRad(w - 90)),
+                    size),
+                offCheck(
+                    size.height / 2 + windVel * mult * Math.sin(toRad(w - 90)),
+                    size)),
+            Offset(size.height / 2, size.height / 2)
           ];
 
           var tasPaint = Paint()
@@ -149,23 +156,34 @@ class PianoCartesianoPainter extends CustomPainter {
         }
       case 'secondo':
         {
-          mult = 1 / (tas / size.height/2);
+          mult = 1 / (tas / (size.height / 2));
+          debugPrint('mult: $mult');
           var windPaint = Paint()
             ..color = Colors.yellow
             ..strokeWidth = 4;
           var windCoord = [
-            Offset(offCheck(size.height/2 + windVel * mult * Math.cos(toRad(w - 90)), size),
-                offCheck(size.height/2 + windVel * mult * Math.sin(toRad(w - 90)), size)),
-            Offset(size.height/2, size.height/2)
+            Offset(
+                offCheck(
+                    size.height / 2 + windVel * mult * Math.cos(toRad(w - 90)),
+                    size),
+                offCheck(
+                    size.height / 2 + windVel * mult * Math.sin(toRad(w - 90)),
+                    size)),
+            Offset(size.height / 2, size.height / 2)
           ];
 
           var tasPaint = Paint()
             ..color = Colors.black
             ..strokeWidth = 4;
           var tasCoord = [
-            Offset(offCheck(size.height/2 + tas * mult * Math.cos(toRad(th - 90)), size),
-                offCheck(size.height/2 + tas * mult * Math.sin(toRad(th - 90)), size)),
-            Offset(size.height/2, size.height/2)
+            Offset(
+                offCheck(
+                    size.height / 2 + tas * mult * Math.cos(toRad(th - 90)),
+                    size),
+                offCheck(
+                    size.height / 2 + tas * mult * Math.sin(toRad(th - 90)),
+                    size)),
+            Offset(size.height / 2, size.height / 2)
           ];
 
           var gsPaint = Paint()
@@ -194,23 +212,32 @@ class PianoCartesianoPainter extends CustomPainter {
         }
       case 'terzo':
         {
-          mult = 1 / (gs / size.height/2);
+          mult = 1 / (gs / (size.height / 2));
+          debugPrint('mult: $mult');
           var windPaint = Paint()
             ..color = Colors.yellow
             ..strokeWidth = 4;
           var windCoord = [
-            Offset(offCheck(size.height/2 + windVel * mult * Math.cos(toRad(w - 90)), size),
-                offCheck(size.height/2 + windVel * mult * Math.sin(toRad(w - 90)), size)),
-            Offset(size.height/2, size.height/2)
+            Offset(
+                offCheck(
+                    size.height / 2 + windVel * mult * Math.cos(toRad(w - 90)),
+                    size),
+                offCheck(
+                    size.height / 2 + windVel * mult * Math.sin(toRad(w - 90)),
+                    size)),
+            Offset(size.height / 2, size.height / 2)
           ];
 
           var gsPaint = Paint()
             ..color = Colors.red
             ..strokeWidth = 4;
           var gsCoord = [
-            Offset(offCheck(size.height/2 + gs * mult * Math.cos(toRad(tc - 90)), size),
-                offCheck(size.height/2 + gs * mult * Math.sin(toRad(tc - 90)), size)),
-            Offset(size.height/2, size.height/2)
+            Offset(
+                offCheck(size.height / 2 + gs * mult * Math.cos(toRad(tc - 90)),
+                    size),
+                offCheck(size.height / 2 + gs * mult * Math.sin(toRad(tc - 90)),
+                    size)),
+            Offset(size.height / 2, size.height / 2)
           ];
 
           var tasPaint = Paint()
@@ -228,27 +255,37 @@ class PianoCartesianoPainter extends CustomPainter {
       case 'quarto':
         {
           if (tas > gs) {
-            mult = 1 / (tas / size.height/2);
+            mult = 1 / (tas / (size.height / 2));
+            debugPrint('mult: $mult');
           } else {
-            mult = 1 / (gs / size.height/2);
+            mult = 1 / (gs / (size.height / 2));
+            debugPrint('mult: $mult');
           }
 
           var gsPaint = Paint()
             ..color = Colors.red
             ..strokeWidth = 4;
           var gsCoord = [
-            Offset(offCheck(size.height/2 + gs * mult * Math.cos(toRad(tc - 90)), size),
-                offCheck(size.height/2 + gs * mult * Math.sin(toRad(tc - 90)), size)),
-            Offset(size.height/2, size.height/2)
+            Offset(
+                offCheck(size.height / 2 + gs * mult * Math.cos(toRad(tc - 90)),
+                    size),
+                offCheck(size.height / 2 + gs * mult * Math.sin(toRad(tc - 90)),
+                    size)),
+            Offset(size.height / 2, size.height / 2)
           ];
 
           var tasPaint = Paint()
             ..color = Colors.black
             ..strokeWidth = 4;
           var tasCoord = [
-            Offset(offCheck(size.height/2 + tas * mult * Math.cos(toRad(th - 90)), size),
-                offCheck(size.height/2 + tas * mult * Math.sin(toRad(th - 90)), size)),
-            Offset(size.height/2, size.height/2)
+            Offset(
+                offCheck(
+                    size.height / 2 + tas * mult * Math.cos(toRad(th - 90)),
+                    size),
+                offCheck(
+                    size.height / 2 + tas * mult * Math.sin(toRad(th - 90)),
+                    size)),
+            Offset(size.height / 2, size.height / 2)
           ];
 
           var windPaint = Paint()

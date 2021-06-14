@@ -39,11 +39,12 @@ class _PTState extends State<TerzoProblema> {
 
   String txt() {
     return Problems(
-        tc: double.tryParse(tc.text) ?? 0.0,
-        gs: double.tryParse(gs.text) ?? 0.0,
-        windAngle: double.tryParse(windAngle.text) ?? 0.0,
-        windVel: double.tryParse(windVel.text) ?? 0.0,
-        problemNumber: "terzo").data;
+            tc: double.tryParse(tc.text) ?? 0.0,
+            gs: double.tryParse(gs.text) ?? 0.0,
+            windAngle: double.tryParse(windAngle.text) ?? 0.0,
+            windVel: double.tryParse(windVel.text) ?? 0.0,
+            problemNumber: "terzo")
+        .data;
   }
 
   @override
@@ -129,19 +130,25 @@ class _PTState extends State<TerzoProblema> {
                 width: MediaQuery.of(context).size.width * 0.04,
                 height: MediaQuery.of(context).size.height * 0.20),
           ]),
-            Text(txt(), style: TextStyle(fontSize:25)),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04,
-                  height: MediaQuery.of(context).size.height * 0.01),
+          Text(txt(), style: TextStyle(fontSize: 25)),
+          Container(
+              width: MediaQuery.of(context).size.width * 0.04,
+              height: MediaQuery.of(context).size.height * 0.01),
           CustomPaint(
-                size: Size(400 < MediaQuery.of(context).size.width ? 400 : MediaQuery.of(context).size.width -5, 400 < MediaQuery.of(context).size.width ? 400 : MediaQuery.of(context).size.width -5),
+              size: Size(
+                  400 < MediaQuery.of(context).size.width
+                      ? 400
+                      : MediaQuery.of(context).size.width - 5,
+                  400 < MediaQuery.of(context).size.width
+                      ? 400
+                      : MediaQuery.of(context).size.width - 5),
               painter: PianoCartesianoPainter(
                   tc: double.tryParse(tc.text) ?? 0.0,
                   gs: double.tryParse(gs.text) ?? 0.0,
                   windAngle: double.tryParse(windAngle.text) ?? 0.0,
                   windVel: double.tryParse(windVel.text) ?? 0.0,
                   problemNumber: "terzo",
-                    context: context)),
+                  context: context)),
           Row(
             children: [
               Legend(),

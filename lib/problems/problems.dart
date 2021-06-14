@@ -51,24 +51,25 @@ class Problems extends StatefulWidget {
   @override
   _ProblemsState createState() {
     return _ProblemsState(
-  tc: tc,
-  tas: tas,
-  windAngle: windAngle,
-  windVel: windVel,
-  th: th,
-  gs: gs,
-  agla: agla,
-  apla: apla,
-  aglo: aglo,
-  aplo: aplo,
-  bgla: bgla,
-  bpla: bpla,
-  bglo: bglo,
-  bplo: bplo,
-  d: d,
-  lator: lator,
-  lonor: lonor,
-  problemNumber: problemNumber,);
+      tc: tc,
+      tas: tas,
+      windAngle: windAngle,
+      windVel: windVel,
+      th: th,
+      gs: gs,
+      agla: agla,
+      apla: apla,
+      aglo: aglo,
+      aplo: aplo,
+      bgla: bgla,
+      bpla: bpla,
+      bglo: bglo,
+      bplo: bplo,
+      d: d,
+      lator: lator,
+      lonor: lonor,
+      problemNumber: problemNumber,
+    );
   }
 
   String get data => createState().data;
@@ -235,9 +236,7 @@ class _ProblemsState extends State<Problems> {
 
   void secondoProblema() {
     num oWind = windAngle;
-    windAngle = (windAngle < 180)
-        ? windAngle + 180
-        : windAngle - 180;
+    windAngle = (windAngle < 180) ? windAngle + 180 : windAngle - 180;
     num gamma = (th < oWind) ? oWind - th : th - oWind;
     gamma = (gamma > 180) ? 360 - gamma : gamma;
     num gs = Math.sqrt(Math.pow(windVel, 2) +
@@ -455,6 +454,8 @@ class _ProblemsState extends State<Problems> {
   void navParalleli1() {
     this.res = 'r';
   }
+
   void navMeridiani1() {
-    this.res = 'r';}
+    this.res = 'r';
+  }
 }

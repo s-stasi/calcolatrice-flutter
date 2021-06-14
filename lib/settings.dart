@@ -105,7 +105,9 @@ class LanguageState extends State<Language> {
             tiles: [
               SettingsTile(
                 title: "English",
-                leading: MyApp.of(context).locale == 'en' ? Icon(Icons.check) : Icon(null),
+                leading: MyApp.of(context).locale == 'en'
+                    ? Icon(Icons.check)
+                    : Icon(null),
                 onPressed: (BuildContext context) {
                   MyApp.of(context)
                       .setLocale(Locale.fromSubtags(languageCode: 'en'));
@@ -113,7 +115,9 @@ class LanguageState extends State<Language> {
               ),
               SettingsTile(
                 title: "Italiano",
-                leading: MyApp.of(context).locale == 'it' ? Icon(Icons.check) : Icon(null),
+                leading: MyApp.of(context).locale == 'it'
+                    ? Icon(Icons.check)
+                    : Icon(null),
                 onPressed: (BuildContext context) {
                   MyApp.of(context)
                       .setLocale(Locale.fromSubtags(languageCode: 'it'));
@@ -122,8 +126,8 @@ class LanguageState extends State<Language> {
             ],
           ),
         ],
-          darkBackgroundColor: Color(0xFF212121),
-          lightBackgroundColor: Color(0xFFE5E5E5),
+        darkBackgroundColor: Color(0xFF212121),
+        lightBackgroundColor: Color(0xFFE5E5E5),
       ),
     );
   }

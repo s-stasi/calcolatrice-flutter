@@ -41,11 +41,12 @@ class _SPState extends State<SecondoProblema> {
 
   String txt() {
     return Problems(
-        th: double.tryParse(th.text) ?? 0.0,
-        tas: double.tryParse(tas.text) ?? 0.0,
-        windAngle: double.tryParse(windAngle.text) ?? 0.0,
-        windVel: double.tryParse(windVel.text) ?? 0.0,
-        problemNumber: "secondo").data;
+            th: double.tryParse(th.text) ?? 0.0,
+            tas: double.tryParse(tas.text) ?? 0.0,
+            windAngle: double.tryParse(windAngle.text) ?? 0.0,
+            windVel: double.tryParse(windVel.text) ?? 0.0,
+            problemNumber: "secondo")
+        .data;
   }
 
   @override
@@ -130,15 +131,21 @@ class _SPState extends State<SecondoProblema> {
                   width: MediaQuery.of(context).size.width * 0.04,
                   height: MediaQuery.of(context).size.height * 0.20),
             ]),
-            Text(txt(), style: TextStyle(fontSize:25)),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04,
-                  height: MediaQuery.of(context).size.height * 0.01),
+            Text(txt(), style: TextStyle(fontSize: 25)),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04,
+                height: MediaQuery.of(context).size.height * 0.01),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04,
                 height: MediaQuery.of(context).size.height * 0.02),
             CustomPaint(
-                size: Size(400 < MediaQuery.of(context).size.width ? 400 : MediaQuery.of(context).size.width -5, 400 < MediaQuery.of(context).size.width ? 400 : MediaQuery.of(context).size.width -5),
+                size: Size(
+                    400 < MediaQuery.of(context).size.width
+                        ? 400
+                        : MediaQuery.of(context).size.width - 5,
+                    400 < MediaQuery.of(context).size.width
+                        ? 400
+                        : MediaQuery.of(context).size.width - 5),
                 painter: PianoCartesianoPainter(
                     th: double.tryParse(th.text) ?? 0.0,
                     tas: double.tryParse(tas.text) ?? 0.0,
