@@ -125,6 +125,11 @@ class _ProblemsState extends State<Problems> {
           navParalleli1();
         }
         break;
+      case "NavMer1":
+        {
+          navMeridiani1();
+        }
+        break;
       default:
         {
           throw Exception('You have to choose the problem');
@@ -384,4 +389,5 @@ class _ProblemsState extends State<Problems> {
   }
 
   void navParalleli1() {}
+  void navMeridiani1() {}
 }

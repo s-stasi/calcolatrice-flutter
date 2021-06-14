@@ -170,6 +170,16 @@ class S {
     );
   }
 
+  /// `Longitude `
+  String get paralNavLon {
+    return Intl.message(
+      'Longitude ',
+      name: 'paralNavLon',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Interface`
   String get settingsInterface {
     return Intl.message(
