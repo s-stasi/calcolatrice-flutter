@@ -28,7 +28,7 @@ class ImpostazioniState extends State<Impostazioni> {
         drawer: magheggio(theme.isDark),
         appBar: AppBar(
           title: Text(
-            AppLocalizations.of(context)!.gayyy,
+            AppLocalizations.of(context)!.settingsTitle,
             style: TextStyle(color: Colors.black),
           ),
           iconTheme: IconThemeData(color: Colors.black),
@@ -105,6 +105,7 @@ class LanguageState extends State<Language> {
             tiles: [
               SettingsTile(
                 title: "English",
+                leading: MyApp.of(context).locale == 'en' ? Icon(Icons.check) : Icon(null),
                 onPressed: (BuildContext context) {
                   MyApp.of(context)
                       .setLocale(Locale.fromSubtags(languageCode: 'en'));
@@ -112,6 +113,7 @@ class LanguageState extends State<Language> {
               ),
               SettingsTile(
                 title: "Italiano",
+                leading: MyApp.of(context).locale == 'it' ? Icon(Icons.check) : Icon(null),
                 onPressed: (BuildContext context) {
                   MyApp.of(context)
                       .setLocale(Locale.fromSubtags(languageCode: 'it'));

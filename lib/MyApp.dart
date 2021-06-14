@@ -38,6 +38,8 @@ class _MAState extends State<MyApp> {
     });
   }
 
+  get locale => _locale.toString();
+
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
