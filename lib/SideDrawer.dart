@@ -31,7 +31,7 @@ class SideDrawer extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text(
-              "Navigazione lineare",
+              AppLocalizations.of(context)!.linearNavTitle,
               style: TextStyle(
                   fontSize: expTitleSmall, fontWeight: FontWeight.w600),
             ),
@@ -42,7 +42,7 @@ class SideDrawer extends StatelessWidget {
               ),
               ExpansionTile(
                 title: Text(
-                  "navigazione per meridiani",
+                  AppLocalizations.of(context)!.meridNavTitle,
                   style: TextStyle(
                       fontSize: expTitleSmall, fontWeight: FontWeight.w600),
                 ),
@@ -57,7 +57,7 @@ class SideDrawer extends StatelessWidget {
               ),
               ExpansionTile(
                 title: Text(
-                  "navigazione per paralleli",
+                  AppLocalizations.of(context)!.paralNavTitle,
                   style: TextStyle(
                       fontSize: expTitleSmall, fontWeight: FontWeight.w600),
                 ),
@@ -78,15 +78,15 @@ class SideDrawer extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text(
-              "Problemi del vento",
+              AppLocalizations.of(context)!.wpTitle,
               style: TextStyle(
                   fontSize: expTitleSmall, fontWeight: FontWeight.w600),
             ),
             children: groupCreator([
-              '1' + String.fromCharCodes(a) + 'problema del vento',
-              '2' + String.fromCharCodes(a) + 'problema del vento',
-              '3' + String.fromCharCodes(a) + 'problema del vento',
-              '4' + String.fromCharCodes(a) + 'problema del vento'
+              '1' + String.fromCharCodes(a) + AppLocalizations.of(context)!.wpSingular,
+              '2' + String.fromCharCodes(a) + AppLocalizations.of(context)!.wpSingular,
+              '3' + String.fromCharCodes(a) + AppLocalizations.of(context)!.wpSingular,
+              '4' + String.fromCharCodes(a) + AppLocalizations.of(context)!.wpSingular
             ], [
               '/PriPag',
               '/SecPag',
@@ -99,13 +99,13 @@ class SideDrawer extends StatelessWidget {
           ),
           ExpansionTile(
             title: Text(
-              "Problemi della lossodromia",
+              AppLocalizations.of(context)!.rhumbTitle,
               style: TextStyle(
                   fontSize: expTitleSmall, fontWeight: FontWeight.w600),
             ),
             children: groupCreator([
-              '1' + String.fromCharCodes(a) + 'problema della lossodromia',
-              '2' + String.fromCharCodes(a) + 'problema della lossodromia'
+              '1' + String.fromCharCodes(a) + AppLocalizations.of(context)!.rhumbSingular,
+              '2' + String.fromCharCodes(a) + AppLocalizations.of(context)!.rhumbSingular
             ], [
               '/priLos',
               '/secLos'
@@ -117,7 +117,7 @@ class SideDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.flight_takeoff_sharp),
             title: Text(
-              'Salita',
+              AppLocalizations.of(context)!.climbTitle,
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             ),
             onTap: () => {
@@ -133,7 +133,7 @@ class SideDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.calculate),
             title: Text(
-              'calcolatrice principale',
+              AppLocalizations.of(context)!.calculatorTitle,
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             ),
             onTap: () => {
@@ -149,7 +149,7 @@ class SideDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.book),
             title: Text(
-              'spiegazioni',
+              AppLocalizations.of(context)!.expTitle,
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             ),
             onTap: () => {
@@ -165,7 +165,7 @@ class SideDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.settings_outlined),
             title: Text(
-              'impostazioni',
+              AppLocalizations.of(context)!.settingsTitle,
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             ),
             onTap: () => {

@@ -1,14 +1,15 @@
 {
 	"gayyy": "NAVTOOL",
-  "climbTitle": "CLIMB",
+  "climbTitle": "Climb",
   "distance": "distance",
   "fuelFlow": "fuelFlow",
 
-  "calculatorTitle": "CALCULATOR",
+  "calculatorTitle": "Calculator",
 
-  "paralNavTitle": "Navigazione per paralleli",
-  "meridNavTitle": "navigazione per meridiani",
-  "paralNavDegree": "GRADI",
+  "linearNavTitle": "Linear navigation",
+  "paralNavTitle": "Parallel navigation",
+  "meridNavTitle": "Meridian navigation",
+  "paralNavDegree": "Degrees",
   "paralNavLatA": "Latitude A",
   "paralNavLonA": "Longitude A",
   "paralNavLatB": "Latitude B",
@@ -21,6 +22,13 @@
   "settingsInterfaceTheme": "Black theme",
   "settingsLanguage": "Language",
 
+  "rhumbTitle": "Rhumb line problems",
+  "rhumbSingular": "rhumb line problem",
+
+  "expTitle": "Explanations",
   "expMachToKnots": "Mach to knots conversion",
-  "expMachToKnotsExp": "Simple, just multiply for 666,739"
+  "expMachToKnotsExp": "Simple, just multiply for 666,739",
+
+  "wpTitle": "Wind Problems",
+  "wpSingular": "wind problem"
 }

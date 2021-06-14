@@ -1,14 +1,15 @@
 {
 	"gayyy": "NAVTOOL",
-  "climbTitle": "SALITA",
+  "climbTitle": "Salita",
   "distance": "distanza",
   "fuelFlow": "consumo",
 
-  "calculatorTitle": "CALCOLATRICE",
+  "calculatorTitle": "Calcolatrice",
 
-  "paralNavTitle": "Parallel navigation",
-  "meridNavTitle": "navigazione per meridiani",
-  "paralNavDegree": "DEGREES",
+  "linearNavTitle": "Navigazione lineare",
+  "paralNavTitle": "Navigazione per paralleli",
+  "meridNavTitle": "Navigazione per meridiani",
+  "paralNavDegree": "gradi",
   "paralNavLatA": "Latitudine A",
   "paralNavLonA": "Longitudine A",
   "paralNavLatB": "Latitudine B",
@@ -21,6 +22,13 @@
   "settingsInterfaceTheme": "Tema Scuro",
   "settingsLanguage": "Lingua",
 
+  "rhumbTitle": "Problemi della lossodromia",
+  "rhumbSingular": "problema della lossodromia",
+
+  "expTitle": "Spiegazioni",
   "expMachToKnots": "Conversione da mach a nodi",
-  "expMachToKnotsExp": "Facile, basta moltiplicare per 666,739"
+  "expMachToKnotsExp": "Facile, basta moltiplicare per 666,739",
+
+  "wpTitle": "Problemi del vento",
+  "wpSingular": "problema del vento"
 }
