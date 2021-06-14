@@ -120,7 +120,8 @@ class LanguageState extends State<Language> {
             ],
           ),
         ],
-        backgroundColor: Color(0xFF212121),
+          darkBackgroundColor: Color(0xFF212121),
+          lightBackgroundColor: Color(0xFFE5E5E5),
       ),
     );
   }
