@@ -311,6 +311,7 @@ class _ProblemsState extends State<Problems> {
       w = (w.isNaN) ? 0 : w.round();
       w = w - 360;
     } while (w > 360);
+    w = w == -360 ? 0 : w;
     var res = [xc, lc, wca, v, w];
 
     debugPrint('${res[0]}');
