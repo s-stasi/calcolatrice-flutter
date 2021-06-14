@@ -45,18 +45,36 @@ class Problems extends StatefulWidget {
   var d;
   String lator;
   String lonor;
-  String problemNumber;
-  String res = '';
+  String problemNumber = 'nann';
+  String res = 'nann';
 
   @override
   _ProblemsState createState() {
-    return _ProblemsState();
+    return _ProblemsState(
+  tc: tc,
+  tas: tas,
+  windAngle: windAngle,
+  windVel: windVel,
+  th: th,
+  gs: gs,
+  agla: agla,
+  apla: apla,
+  aglo: aglo,
+  aplo: aplo,
+  bgla: bgla,
+  bpla: bpla,
+  bglo: bglo,
+  bplo: bplo,
+  d: d,
+  lator: lator,
+  lonor: lonor,
+  problemNumber: problemNumber,);
   }
 
-  String get data => res;
+  String get data => createState().data;
 
   Problems({
-    this.problemNumber: "null",
+    this.problemNumber: "nann",
     var this.tc,
     var this.tas,
     var this.windAngle,
@@ -78,18 +96,64 @@ class Problems extends StatefulWidget {
 }
 
 class _ProblemsState extends State<Problems> {
-  _ProblemsState() {
+  var tc;
+  var tas;
+  var windAngle;
+  var windVel;
+  var th;
+  var gs;
+  var agla;
+  var apla;
+  var aglo;
+  var aplo;
+  var bgla;
+  var bpla;
+  var bglo;
+  var bplo;
+  var d;
+  String lator;
+  String lonor;
+  String problemNumber = 'nann';
+  String res = 'nann';
+
+  _ProblemsState({
+    this.problemNumber: "nann",
+    var this.tc,
+    var this.tas,
+    var this.windAngle,
+    var this.windVel,
+    var this.th,
+    var this.gs,
+    var this.agla,
+    var this.apla,
+    var this.aglo,
+    var this.aplo,
+    var this.bgla,
+    var this.bpla,
+    var this.bglo,
+    var this.bplo,
+    var this.d,
+    var this.lator: 'N',
+    var this.lonor: 'E',
+  }) {
     this.solve();
+  }
+
+  get data => res;
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     solve();
-    return Text(widget.res);
+    return Text(res);
   }
 
   void solve() {
-    switch (widget.problemNumber) {
+    switch (problemNumber) {
       case "primo":
         {
           primoProblema();
@@ -138,14 +202,14 @@ class _ProblemsState extends State<Problems> {
   }
 
   void primoProblema() {
-    num r = widget.windVel * Math.sin(toRad(widget.windAngle - widget.tc));
+    num r = windVel * Math.sin(toRad(windAngle - tc));
     r = (r.isNaN) ? 0 : r.round();
-    num l = -widget.windVel * Math.cos(toRad(widget.tc - widget.windAngle));
+    num l = -windVel * Math.cos(toRad(tc - windAngle));
     l = (l.isNaN) ? 0 : l.round();
-    num wca = toDeg(Math.asin(r / widget.tas));
-    num c = widget.tas * Math.cos(toRad(wca));
-    widget.tas = (widget.tas.isNaN) ? 0 : widget.tas.round();
-    num th = widget.tc + wca;
+    num wca = toDeg(Math.asin(r / tas));
+    num c = tas * Math.cos(toRad(wca));
+    tas = (tas.isNaN) ? 0 : tas.round();
+    num th = tc + wca;
     th = (th.isNaN) ? 0 : th.round();
     num gs = c + l;
     gs = (gs.isNaN) ? 0 : gs.round();
@@ -160,36 +224,36 @@ class _ProblemsState extends State<Problems> {
 
     String arr = 'gs: ${d[0].toString()} th: ${d[1].toString()}';
 
-    if (widget.windVel == 9999) {
+    if (windVel == 9999) {
       arr =
           "Questo progetto è stato finanziato interamente dal regime fascista italiano";
     }
 
-    widget.res = arr;
-    print('aaaa: ${widget.res}');
+    res = arr;
+    print('aaaa: ${res}');
   }
 
   void secondoProblema() {
-    num oWind = widget.windAngle;
-    widget.windAngle = (widget.windAngle < 180)
-        ? widget.windAngle + 180
-        : widget.windAngle - 180;
-    num gamma = (widget.th < oWind) ? oWind - widget.th : widget.th - oWind;
+    num oWind = windAngle;
+    windAngle = (windAngle < 180)
+        ? windAngle + 180
+        : windAngle - 180;
+    num gamma = (th < oWind) ? oWind - th : th - oWind;
     gamma = (gamma > 180) ? 360 - gamma : gamma;
-    num gs = Math.sqrt(Math.pow(widget.windVel, 2) +
-        Math.pow(widget.tas, 2) -
-        (2 * widget.windVel * widget.tas * Math.cos(toRad(gamma))));
+    num gs = Math.sqrt(Math.pow(windVel, 2) +
+        Math.pow(tas, 2) -
+        (2 * windVel * tas * Math.cos(toRad(gamma))));
     gs = (gs.isNaN) ? 0 : gs.round();
-    num wca = toDeg(Math.asin((widget.windVel * Math.sin(toRad(gamma))) / gs));
+    num wca = toDeg(Math.asin((windVel * Math.sin(toRad(gamma))) / gs));
     wca = (wca.isNaN) ? 0 : wca.round();
     num alpha = 180 - gamma - wca;
-    num tc = widget.tas * Math.sin(toRad(gamma)) / Math.sin(toRad(alpha));
-    tc = (widget.th.isNaN) ? 0 : widget.th.round();
+    num tc = tas * Math.sin(toRad(gamma)) / Math.sin(toRad(alpha));
+    tc = (th.isNaN) ? 0 : th.round();
 
-    if (widget.windAngle < widget.th)
-      tc = widget.th + wca;
+    if (windAngle < th)
+      tc = th + wca;
     else
-      tc = widget.th - wca;
+      tc = th - wca;
 
     var d = [oWind, gs, wca, alpha, gamma, tc];
 
@@ -201,18 +265,18 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${d[5]}');
 
     String arr = 'tc: ${d[5].toString()} gs: ${d[1].toString()}';
-    widget.res = arr;
+    res = arr;
   }
 
   void terzoProblema() {
-    num xc = widget.windVel * Math.sin(toRad(widget.windAngle - widget.tc));
-    widget.windVel = (widget.windVel.isNaN) ? 0 : widget.windVel.round();
-    num lc = -widget.windVel * Math.cos(toRad(widget.tc - widget.windAngle));
+    num xc = windVel * Math.sin(toRad(windAngle - tc));
+    windVel = (windVel.isNaN) ? 0 : windVel.round();
+    num lc = -windVel * Math.cos(toRad(tc - windAngle));
     lc = (lc.isNaN) ? 0 : lc.round();
-    num etas = widget.gs - lc;
+    num etas = gs - lc;
     num wca = toDeg(Math.atan(xc / etas));
     wca = (wca.isNaN) ? 0 : wca.round();
-    num th = widget.tc + wca;
+    num th = tc + wca;
     num tas = etas / Math.cos(toRad(wca));
     tas = (tas.isNaN) ? 0 : tas.round();
     var res = [xc, lc, wca, tas, etas, th];
@@ -225,23 +289,23 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${res[5]}');
 
     String arr = 'th: ${res[5].round()} tas: ${res[4].round()}';
-    widget.res = arr;
+    this.res = arr;
   }
 
   void quartoProblema() {
-    num wca = widget.th - widget.tc;
+    num wca = th - tc;
     if (wca < 0) wca = wca * -1;
-    num xc = widget.tas * Math.sin(toRad(wca));
+    num xc = tas * Math.sin(toRad(wca));
     xc = (xc.isNaN) ? 0 : xc.round();
-    num etas = widget.tas * Math.cos(toRad(wca));
+    num etas = tas * Math.cos(toRad(wca));
     etas = (etas.isNaN) ? 0 : etas.round();
-    num lc = widget.gs - etas;
+    num lc = gs - etas;
     lc = (lc.isNaN) ? 0 : lc.round();
     num v = Math.sqrt(Math.pow(xc, 2) + Math.pow(lc, 2));
     v = (v.isNaN) ? 0 : v.round();
     num w = () {
-      if (xc > 0) return widget.tc + toDeg(90 + Math.asin(lc / v));
-      return widget.tc + (-toDeg(90 + Math.asin(lc / v)));
+      if (xc > 0) return tc + toDeg(90 + Math.asin(lc / v));
+      return tc + (-toDeg(90 + Math.asin(lc / v)));
     }();
     do {
       w = w;
@@ -257,30 +321,30 @@ class _ProblemsState extends State<Problems> {
     debugPrint('${res[4]}');
 
     String arr = 'v: ${res[3]} w: ${res[4]}';
-    widget.res = arr;
+    this.res = arr;
   }
 
   void primoLossodromia() {
     var q;
 
-    if (widget.aglo > widget.bglo) {
-      if (widget.agla > widget.bgla) {
+    if (aglo > bglo) {
+      if (agla > bgla) {
         q = 3;
       } else {
         q = 4;
       }
     } else {
-      if (widget.agla > widget.bgla) {
+      if (agla > bgla) {
         q = 2;
       } else {
         q = 1;
       }
     }
 
-    var laA = toDec(widget.agla, widget.apla);
-    var loA = toDec(widget.aglo, widget.aplo);
-    var laB = toDec(widget.bgla, widget.bpla);
-    var loB = toDec(widget.bglo, widget.bplo);
+    var laA = toDec(agla, apla);
+    var loA = toDec(aglo, aplo);
+    var laB = toDec(bgla, bpla);
+    var loB = toDec(bglo, bplo);
 
     var fm = (laA + laB) / 2;
     var df;
@@ -297,31 +361,31 @@ class _ProblemsState extends State<Problems> {
     }
 
     var dlc = dl * (Math.cos(toRad(fm)));
-    widget.d = Math.sqrt(Math.pow(df, 2) + Math.pow(dlc, 2));
-    widget.d = (widget.d.isNaN) ? 0 : widget.d.round();
+    d = Math.sqrt(Math.pow(df, 2) + Math.pow(dlc, 2));
+    d = (d.isNaN) ? 0 : d.round();
 
     var alfa;
     if (q == 1) {
       alfa = Math.atan(df / dl);
-      widget.tc = 90 - alfa;
+      tc = 90 - alfa;
     } else if (q == 2) {
       alfa = Math.atan(dl / df);
-      widget.tc = 180 - alfa;
+      tc = 180 - alfa;
     } else if (q == 3) {
       alfa = Math.atan(df / dl);
-      widget.tc = 270 - alfa;
+      tc = 270 - alfa;
     } else {
       alfa = Math.atan(dl / df);
-      widget.tc = 360 - alfa;
+      tc = 360 - alfa;
     }
-    widget.tc = (widget.tc.isNaN) ? 0 : widget.tc.round();
-    var res = [widget.d, widget.tc];
+    tc = (tc.isNaN) ? 0 : tc.round();
+    var res = [d, tc];
 
     debugPrint('${res[0]}');
     debugPrint('${res[1]}');
 
     String arr = 'disance: ${res[0]} tc: ${res[1]}';
-    widget.res = arr;
+    this.res = arr;
   }
 
   void secondoLossodromia() {
@@ -333,37 +397,37 @@ class _ProblemsState extends State<Problems> {
     var loB;
     var laB;
 
-    var laA = toDec(widget.agla, widget.apla);
-    var loA = toDec(widget.aglo, widget.aplo);
+    var laA = toDec(agla, apla);
+    var loA = toDec(aglo, aplo);
 
-    if (widget.tc < 90) {
-      alfa = 90 - widget.tc;
-      df = Math.sin(toRad(alfa)) * widget.d;
-      dlc = Math.cos(toRad(alfa)) * widget.d;
+    if (tc < 90) {
+      alfa = 90 - tc;
+      df = Math.sin(toRad(alfa)) * d;
+      dlc = Math.cos(toRad(alfa)) * d;
       laB = df + laA;
       fm = (laA + laB) / 2;
       dl = (dlc) / Math.cos(toRad(fm));
       loB = loA + dl;
-    } else if (widget.tc < 180) {
-      alfa = 180 - widget.tc;
-      df = Math.cos(toRad(alfa)) * widget.d;
-      dlc = Math.sin(toRad(alfa)) * widget.d;
+    } else if (tc < 180) {
+      alfa = 180 - tc;
+      df = Math.cos(toRad(alfa)) * d;
+      dlc = Math.sin(toRad(alfa)) * d;
       laB = df - laA;
       fm = (laA + laB) / 2;
       dl = (dlc) / Math.cos(toRad(fm));
       loB = loA + dl;
-    } else if (widget.tc < 270) {
-      alfa = 270 - widget.tc;
-      df = Math.sin(toRad(alfa)) * widget.d;
-      dlc = Math.cos(toRad(alfa)) * widget.d;
+    } else if (tc < 270) {
+      alfa = 270 - tc;
+      df = Math.sin(toRad(alfa)) * d;
+      dlc = Math.cos(toRad(alfa)) * d;
       laB = df - laA;
       fm = (laA + laB) / 2;
       dl = (dlc) / Math.cos(toRad(fm));
       loB = loA - dl;
     } else {
-      alfa = 360 - widget.tc;
-      df = Math.cos(toRad(alfa)) * widget.d;
-      dlc = Math.sin(toRad(alfa)) * widget.d;
+      alfa = 360 - tc;
+      df = Math.cos(toRad(alfa)) * d;
+      dlc = Math.sin(toRad(alfa)) * d;
       laB = df + laA;
       fm = (laA + laB) / 2;
       dl = (dlc) / Math.cos(toRad(fm));
@@ -374,20 +438,23 @@ class _ProblemsState extends State<Problems> {
     debugPrint('$dlc');
     debugPrint('$fm');
     debugPrint('$dl');
-    widget.bgla = toSes(laB)[0];
-    widget.bpla = toSes(laB)[1];
+    bgla = toSes(laB)[0];
+    bpla = toSes(laB)[1];
     var bsla = toSes(laB)[2];
 
-    widget.bglo = toSes(loB)[0];
-    widget.bplo = toSes(loB)[1];
+    bglo = toSes(loB)[0];
+    bplo = toSes(loB)[1];
     var bslo = toSes(loB)[2];
 
-    var res = [widget.bgla, widget.bpla, bsla, widget.bglo, widget.bplo, bslo];
+    var res = [bgla, bpla, bsla, bglo, bplo, bslo];
     String arr =
         'latitudine B: ${res[0]}°${res[1]}\'${res[2]}\" longitudine B: ${res[3]}°${res[4]}\'${res[5]}\"';
-    widget.res = arr;
+    this.res = arr;
   }
 
-  void navParalleli1() {}
-  void navMeridiani1() {}
+  void navParalleli1() {
+    this.res = 'r';
+  }
+  void navMeridiani1() {
+    this.res = 'r';}
 }

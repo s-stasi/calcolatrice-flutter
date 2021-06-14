@@ -38,14 +38,14 @@ class _PPState extends State<PrimoProblema> {
   }
 
   String txt() {
-    Problems data = Problems(
+    String data = Problems(
         tc: double.tryParse(tc.text) ?? 0.0,
         tas: double.tryParse(tas.text) ?? 0.0,
         windAngle: double.tryParse(windAngle.text) ?? 0.0,
         windVel: double.tryParse(windVel.text) ?? 0.0,
-        problemNumber: "primo");
-    print('${data.data}');
-    return data.data;
+        problemNumber: "primo").data;
+    print('${data}');
+    return data;
   }
 
   @override
