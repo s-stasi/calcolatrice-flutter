@@ -40,46 +40,34 @@ class PianoCartesianoPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     double gridScale = (size.height * 0.05).round().toDouble();
     List<dynamic> verticalArray = [];
-    for (var i = 0; i <= size.height; i++) {
-      if (i % gridScale == 0) {
+    List<dynamic> horizontalArray = [];
+
+    for (var i = 0; i <= 1; i++) {
+      for (var i = 0; i <= 20; i++) {
         var paintLine = Paint()
           ..color = Colors.green
           ..strokeWidth = 0.5;
-        verticalArray.add(paintLine);
+        i == 0 ? verticalArray.add(paintLine) : horizontalArray.add(paintLine);
       }
     }
 
     for (dynamic j in verticalArray) {
-      for (double i = 0; i <= size.height; i++) {
-        if (i % gridScale == 0) {
-          canvas.drawLine(
-            Offset(i, 0),
-            Offset(i, size.height),
-            j,
-          );
-        }
-      }
-    }
-
-    List<dynamic> horizontalArray = [];
-    for (var i = 0; i <= size.height; i++) {
-      if (i % gridScale == 0) {
-        var paintLine = Paint()
-          ..color = Colors.green
-          ..strokeWidth = 0.5;
-        horizontalArray.add(paintLine);
+      for (double i = 0; i <= 20; i++) {
+        canvas.drawLine(
+          Offset((size.height / 20) * i, 0),
+          Offset((size.height / 20) * i, size.height),
+          j,
+        );
       }
     }
 
     for (dynamic j in horizontalArray) {
-      for (double i = 0; i <= size.height; i++) {
-        if (i % gridScale == 0) {
-          canvas.drawLine(
-            Offset(0, i),
-            Offset(size.width, i),
-            j,
-          );
-        }
+      for (double i = 0; i <= 20; i++) {
+        canvas.drawLine(
+          Offset(0, (size.width / 20) * i),
+          Offset(size.width, (size.width / 20) * i),
+          j,
+        );
       }
     }
 
