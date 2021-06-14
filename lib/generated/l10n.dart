@@ -90,6 +90,16 @@ class S {
     );
   }
 
+  /// `windproblem`
+  String get wpSingular {
+    return Intl.message(
+      'Wind Problem',
+      name: 'wpSingular',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `CALCULATOR`
   String get calculatorTitle {
     return Intl.message(
@@ -165,6 +175,16 @@ class S {
     return Intl.message(
       'Longitude B',
       name: 'paralNavLonB',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Longitude `
+  String get paralNavLon {
+    return Intl.message(
+      'Longitude ',
+      name: 'paralNavLon',
       desc: '',
       args: [],
     );

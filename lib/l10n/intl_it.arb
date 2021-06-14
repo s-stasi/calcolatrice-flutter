@@ -14,8 +14,9 @@
   "paralNavLonA": "Longitudine A",
   "paralNavLatB": "Latitudine B",
   "paralNavLonB": "Longitudine B",
+  "paralNavLon": "Longitudine",
   "distance": "distanza",
-
+  "linearNavigation": "Navigazione lineare",
   "settingsTitle": "Impostazioni",
   "settingsInterface": "Interfaccia",
   "settingsInterfaceTheme": "Tema Scuro",
