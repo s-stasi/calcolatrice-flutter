@@ -90,6 +90,16 @@ class S {
     );
   }
 
+  /// `windproblem`
+  String get wpSingular {
+    return Intl.message(
+      'Wind Problem',
+      name: 'wpSingular',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `CALCULATOR`
   String get calculatorTitle {
     return Intl.message(

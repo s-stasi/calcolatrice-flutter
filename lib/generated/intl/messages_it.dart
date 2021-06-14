@@ -35,7 +35,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "paralNavLonB": MessageLookupByLibrary.simpleMessage("Longitudine B"),
         "paralNavLon": MessageLookupByLibrary.simpleMessage("Longitudine "),
         "paralNavTitle":
-            MessageLookupByLibrary.simpleMessage("Parallel navigation"),
+            MessageLookupByLibrary.simpleMessage("Navigazione per paralleli"),
+        "wpSingular":
+            MessageLookupByLibrary.simpleMessage("Problema Del Vento"),
         "settingsInterface":
             MessageLookupByLibrary.simpleMessage("Interfaccia"),
         "settingsInterfaceTheme":
