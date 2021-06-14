@@ -179,16 +179,17 @@ class PianoCartesianoPainter extends CustomPainter {
             ..strokeWidth = 4;
           var gsCoord = [windCoord[0], tasCoord[0]];
 
+          var MPScale = 400 > size.height ? 1 / (40 / (size.height / 10)) : 1;
           var MPPaint = Paint()
             ..color = Colors.blue
             ..strokeWidth = 4;
           var MPXCoord = [
-            Offset(windCoord[0].dx - 40, windCoord[0].dy),
-            Offset(windCoord[0].dx + 40, windCoord[0].dy)
+            Offset(windCoord[0].dx - 40 * MPScale, windCoord[0].dy),
+            Offset(windCoord[0].dx + 40 * MPScale, windCoord[0].dy)
           ];
           var MPYCoord = [
-            Offset(windCoord[0].dx, windCoord[0].dy - 40),
-            Offset(windCoord[0].dx, windCoord[0].dy + 40)
+            Offset(windCoord[0].dx, windCoord[0].dy - 40 * MPScale),
+            Offset(windCoord[0].dx, windCoord[0].dy + 40 * MPScale)
           ];
 
           canvas.drawLine(MPXCoord[0], MPXCoord[1], MPPaint);
