@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'SideDrawer.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:settings_ui/settings_ui.dart';
+import 'MyApp.dart';
 
 class Impostazioni extends StatefulWidget {
   @override
@@ -104,13 +105,15 @@ class LanguageState extends State<Language> {
               SettingsTile(
                 title: "English",
                 onPressed: (BuildContext context) {
-                  //AppLocalizations.load(Locale('en', 'US'));
+                  MyApp.of(context)
+                      .setLocale(Locale.fromSubtags(languageCode: 'en'));
                 },
               ),
               SettingsTile(
                 title: "Italiano",
                 onPressed: (BuildContext context) {
-                  //AppLocalizations.load(Locale('it', 'IT'));
+                  MyApp.of(context)
+                      .setLocale(Locale.fromSubtags(languageCode: 'it'));
                 },
               ),
             ],

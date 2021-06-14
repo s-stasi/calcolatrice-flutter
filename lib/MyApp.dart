@@ -24,13 +24,25 @@ var modalita;
 class MyApp extends StatefulWidget {
   @override
   _MAState createState() => _MAState();
+
+  static _MAState of(BuildContext context) =>
+      context.findAncestorStateOfType<_MAState>()!;
 }
 
 class _MAState extends State<MyApp> {
+  Locale _locale = Locale.fromSubtags(languageCode: 'en');
+
+  void setLocale(Locale value) {
+    setState(() {
+      _locale = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
         builder: (context, theme, child) => MaterialApp(
+              locale: _locale,
               onGenerateTitle: (BuildContext context) =>
                   AppLocalizations.of(context)!.gayyy,
               localizationsDelegates: AppLocalizations.localizationsDelegates,
