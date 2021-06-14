@@ -83,10 +83,10 @@ class SideDrawer extends StatelessWidget {
                   fontSize: expTitleSmall, fontWeight: FontWeight.w600),
             ),
             children: groupCreator([
-              '1' + String.fromCharCodes(a) + 'problema del vento',
-              '2' + String.fromCharCodes(a) + 'problema del vento',
-              '3' + String.fromCharCodes(a) + 'problema del vento',
-              '4' + String.fromCharCodes(a) + 'problema del vento'
+              '1' + String.fromCharCodes(a) + AppLocalizations.of(context)!.wpSingular,
+              '2' + String.fromCharCodes(a) + AppLocalizations.of(context)!.wpSingular,
+              '3' + String.fromCharCodes(a) + AppLocalizations.of(context)!.wpSingular,
+              '4' + String.fromCharCodes(a) + AppLocalizations.of(context)!.wpSingular
             ], [
               '/PriPag',
               '/SecPag',
@@ -104,8 +104,8 @@ class SideDrawer extends StatelessWidget {
                   fontSize: expTitleSmall, fontWeight: FontWeight.w600),
             ),
             children: groupCreator([
-              '1' + String.fromCharCodes(a) + 'problema della lossodromia',
-              '2' + String.fromCharCodes(a) + 'problema della lossodromia'
+              '1' + String.fromCharCodes(a) + AppLocalizations.of(context)!.rhumbSingular,
+              '2' + String.fromCharCodes(a) + AppLocalizations.of(context)!.rhumbSingular
             ], [
               '/priLos',
               '/secLos'

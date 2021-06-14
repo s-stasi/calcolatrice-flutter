@@ -22,10 +22,12 @@
   "settingsLanguage": "Language",
 
   "rhumbTitle": "Rhumb line problems",
+  "rhumbSingular": "rhumb line problem",
 
   "expTitle": "Explanations",
   "expMachToKnots": "Mach to knots conversion",
   "expMachToKnotsExp": "Simple, just multiply for 666,739",
 
-  "wpTitle": "Wind Problems"
+  "wpTitle": "Wind Problems",
+  "wpSingular": "wind problem"
 }

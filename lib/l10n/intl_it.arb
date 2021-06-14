@@ -22,10 +22,12 @@
   "settingsLanguage": "Lingua",
 
   "rhumbTitle": "Problemi della lossodromia",
+  "rhumbSingular": "problema della lossodromia",
 
   "expTitle": "Spiegazioni",
   "expMachToKnots": "Conversione da mach a nodi",
   "expMachToKnotsExp": "Facile, basta moltiplicare per 666,739",
 
-  "wpTitle": "Problemi del vento"
+  "wpTitle": "Problemi del vento",
+  "wpSingular": "problema del vento"
 }
