@@ -19,6 +19,7 @@ import 'settings.dart';
 import 'explanations/explanations.dart';
 import 'explanations/expmkt.dart';
 import 'services/storage_manager.dart';
+import 'pdftest.dart';
 
 var modalita;
 
@@ -78,6 +79,7 @@ class _MAState extends State<MyApp> {
                         '/NavPar2': (context) => Paral2(),
                         '/NavMer2': (context) => Meri2(),
                         '/explanations': (context) => Explanations(),
+                        '/pdf': (context) => PdfTest(),
                         '/expMTK': (context) => ExpMTK()
                       },
                     )));

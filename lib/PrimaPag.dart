@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problems/problems.dart';
 import 'problems/piano_cartesiano.dart';
+//import 'package:pdf/widget.dart';
+import 'package:path_provider/path_provider.dart';
 
 class PrimoProblema extends StatefulWidget {
   @override
@@ -47,8 +49,11 @@ class _PPState extends State<PrimoProblema> {
         .data;
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
+    createPdf(context);
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(

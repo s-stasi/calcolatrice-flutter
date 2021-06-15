@@ -175,6 +175,22 @@ class SideDrawer extends StatelessWidget {
             color: Colors.grey[900],
           ),
           ListTile(
+            leading: Icon(Icons.book),
+            title: Text(
+              'pdf',
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            ),
+            onTap: () => {
+              Navigator.pushNamed(
+                context,
+                '/pdf',
+              ),
+            },
+          ),
+          Divider(
+            color: Colors.grey[900],
+          ),
+          ListTile(
             leading: Icon(Icons.settings_outlined),
             title: Text(
               AppLocalizations.of(context)!.settingsTitle,
