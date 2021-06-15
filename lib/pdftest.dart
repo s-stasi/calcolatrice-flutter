@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_full_pdf_viewer/full_pdf_viewer_scaffold.dart';
 import 'SideDrawer.dart';
 
-class PdfTest extends StatefulWidget {
+class PdfTest extends StatelessWidget {
   PdfTest();
 
-	@override
-	Widget build(BuildContext context) {
-		return return Scaffold(
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
         title: Text(
@@ -16,10 +16,10 @@ class PdfTest extends StatefulWidget {
           style: TextStyle(color: Colors.white),
         ),
         actions: [
-        	IconButton(
-        		icon: Icon(Icons.save),
-        		onPressed: () => savePdf(),
-        	),
+          IconButton(
+            icon: Icon(Icons.save),
+            onPressed: () => 0,
+          ),
         ],
         iconTheme: IconThemeData(color: Colors.white),
         flexibleSpace: Container(
@@ -48,5 +48,5 @@ class PdfTest extends StatefulWidget {
                     reportView(context);
                   }))),
     );
-	}
+  }
 }

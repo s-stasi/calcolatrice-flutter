@@ -21,24 +21,40 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "calculatorTitle": MessageLookupByLibrary.simpleMessage("CALCULATOR"),
-        "climbTitle": MessageLookupByLibrary.simpleMessage("CLIMB"),
+        "calculatorTitle": MessageLookupByLibrary.simpleMessage("Calculator"),
+        "climbTitle": MessageLookupByLibrary.simpleMessage("Climb"),
         "distance": MessageLookupByLibrary.simpleMessage("distance"),
+        "expMachToKnots":
+            MessageLookupByLibrary.simpleMessage("Mach to knots conversion"),
+        "expMachToKnotsExp": MessageLookupByLibrary.simpleMessage(
+            "Simple, just multiply for 666,739"),
+        "expTitle": MessageLookupByLibrary.simpleMessage("Explanations"),
         "fuelFlow": MessageLookupByLibrary.simpleMessage("fuelFlow"),
         "gayyy": MessageLookupByLibrary.simpleMessage("NAVTOOL"),
+        "linearNavTitle":
+            MessageLookupByLibrary.simpleMessage("Linear navigation"),
+        "linearNavigation":
+            MessageLookupByLibrary.simpleMessage("Linear Navigation"),
         "meridNavTitle":
             MessageLookupByLibrary.simpleMessage("Meridian navigation"),
-        "paralNavDegree": MessageLookupByLibrary.simpleMessage("GRADI"),
+        "paralNavDegree": MessageLookupByLibrary.simpleMessage("Degrees"),
         "paralNavLatA": MessageLookupByLibrary.simpleMessage("Latitude A"),
         "paralNavLatB": MessageLookupByLibrary.simpleMessage("Latitude B"),
+        "paralNavLon": MessageLookupByLibrary.simpleMessage("longitude"),
         "paralNavLonA": MessageLookupByLibrary.simpleMessage("Longitude A"),
         "paralNavLonB": MessageLookupByLibrary.simpleMessage("Longitude B"),
-        "paralNavLon": MessageLookupByLibrary.simpleMessage("Longitude"),
         "paralNavTitle":
-            MessageLookupByLibrary.simpleMessage("parallel navigation"),
-        "wpSingular": MessageLookupByLibrary.simpleMessage("wind problem"),
+            MessageLookupByLibrary.simpleMessage("Parallel navigation"),
+        "rhumbSingular":
+            MessageLookupByLibrary.simpleMessage("rhumb line problem"),
+        "rhumbTitle":
+            MessageLookupByLibrary.simpleMessage("Rhumb line problems"),
         "settingsInterface": MessageLookupByLibrary.simpleMessage("Interface"),
         "settingsInterfaceTheme":
-            MessageLookupByLibrary.simpleMessage("Black theme")
+            MessageLookupByLibrary.simpleMessage("Black theme"),
+        "settingsLanguage": MessageLookupByLibrary.simpleMessage("Language"),
+        "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
+        "wpSingular": MessageLookupByLibrary.simpleMessage("wind problem"),
+        "wpTitle": MessageLookupByLibrary.simpleMessage("Wind Problems")
       };
 }

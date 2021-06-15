@@ -60,10 +60,10 @@ class S {
     );
   }
 
-  /// `CLIMB`
+  /// `Climb`
   String get climbTitle {
     return Intl.message(
-      'CLIMB',
+      'Climb',
       name: 'climbTitle',
       desc: '',
       args: [],
@@ -90,30 +90,30 @@ class S {
     );
   }
 
-  /// `windproblem`
-  String get wpSingular {
-    return Intl.message(
-      'Wind Problem',
-      name: 'wpSingular',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `CALCULATOR`
+  /// `Calculator`
   String get calculatorTitle {
     return Intl.message(
-      'CALCULATOR',
+      'Calculator',
       name: 'calculatorTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Navigazione per paralleli`
+  /// `Linear navigation`
+  String get linearNavTitle {
+    return Intl.message(
+      'Linear navigation',
+      name: 'linearNavTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parallel navigation`
   String get paralNavTitle {
     return Intl.message(
-      'Navigazione per paralleli',
+      'Parallel navigation',
       name: 'paralNavTitle',
       desc: '',
       args: [],
@@ -130,10 +130,10 @@ class S {
     );
   }
 
-  /// `GRADI`
+  /// `Degrees`
   String get paralNavDegree {
     return Intl.message(
-      'GRADI',
+      'Degrees',
       name: 'paralNavDegree',
       desc: '',
       args: [],
@@ -180,11 +180,31 @@ class S {
     );
   }
 
-  /// `Longitude `
+  /// `longitude`
   String get paralNavLon {
     return Intl.message(
-      'Longitude ',
+      'longitude',
       name: 'paralNavLon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Linear Navigation`
+  String get linearNavigation {
+    return Intl.message(
+      'Linear Navigation',
+      name: 'linearNavigation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settingsTitle {
+    return Intl.message(
+      'Settings',
+      name: 'settingsTitle',
       desc: '',
       args: [],
     );
@@ -205,6 +225,86 @@ class S {
     return Intl.message(
       'Black theme',
       name: 'settingsInterfaceTheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get settingsLanguage {
+    return Intl.message(
+      'Language',
+      name: 'settingsLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rhumb line problems`
+  String get rhumbTitle {
+    return Intl.message(
+      'Rhumb line problems',
+      name: 'rhumbTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `rhumb line problem`
+  String get rhumbSingular {
+    return Intl.message(
+      'rhumb line problem',
+      name: 'rhumbSingular',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Explanations`
+  String get expTitle {
+    return Intl.message(
+      'Explanations',
+      name: 'expTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mach to knots conversion`
+  String get expMachToKnots {
+    return Intl.message(
+      'Mach to knots conversion',
+      name: 'expMachToKnots',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Simple, just multiply for 666,739`
+  String get expMachToKnotsExp {
+    return Intl.message(
+      'Simple, just multiply for 666,739',
+      name: 'expMachToKnotsExp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wind Problems`
+  String get wpTitle {
+    return Intl.message(
+      'Wind Problems',
+      name: 'wpTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `wind problem`
+  String get wpSingular {
+    return Intl.message(
+      'wind problem',
+      name: 'wpSingular',
       desc: '',
       args: [],
     );

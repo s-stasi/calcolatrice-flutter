@@ -21,26 +21,42 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "calculatorTitle": MessageLookupByLibrary.simpleMessage("CALCOLATRICE"),
-        "climbTitle": MessageLookupByLibrary.simpleMessage("SALITA"),
+        "calculatorTitle": MessageLookupByLibrary.simpleMessage("Calcolatrice"),
+        "climbTitle": MessageLookupByLibrary.simpleMessage("Salita"),
         "distance": MessageLookupByLibrary.simpleMessage("distanza"),
+        "expMachToKnots":
+            MessageLookupByLibrary.simpleMessage("Conversione da mach a nodi"),
+        "expMachToKnotsExp": MessageLookupByLibrary.simpleMessage(
+            "Facile, basta moltiplicare per 666,739"),
+        "expTitle": MessageLookupByLibrary.simpleMessage("Spiegazioni"),
         "fuelFlow": MessageLookupByLibrary.simpleMessage("consumo"),
         "gayyy": MessageLookupByLibrary.simpleMessage("NAVTOOL"),
+        "linearNavTitle":
+            MessageLookupByLibrary.simpleMessage("Navigazione lineare"),
+        "linearNavigation":
+            MessageLookupByLibrary.simpleMessage("Navigazione lineare"),
         "meridNavTitle":
             MessageLookupByLibrary.simpleMessage("Navigazione per meridiani"),
-        "paralNavDegree": MessageLookupByLibrary.simpleMessage("DEGREES"),
+        "paralNavDegree": MessageLookupByLibrary.simpleMessage("gradi"),
         "paralNavLatA": MessageLookupByLibrary.simpleMessage("Latitudine A"),
         "paralNavLatB": MessageLookupByLibrary.simpleMessage("Latitudine B"),
+        "paralNavLon": MessageLookupByLibrary.simpleMessage("Longitudine"),
         "paralNavLonA": MessageLookupByLibrary.simpleMessage("Longitudine A"),
         "paralNavLonB": MessageLookupByLibrary.simpleMessage("Longitudine B"),
-        "paralNavLon": MessageLookupByLibrary.simpleMessage("Longitudine "),
         "paralNavTitle":
             MessageLookupByLibrary.simpleMessage("Navigazione per paralleli"),
-        "wpSingular":
-            MessageLookupByLibrary.simpleMessage("Problema Del Vento"),
+        "rhumbSingular":
+            MessageLookupByLibrary.simpleMessage("problema della lossodromia"),
+        "rhumbTitle":
+            MessageLookupByLibrary.simpleMessage("Problemi della lossodromia"),
         "settingsInterface":
             MessageLookupByLibrary.simpleMessage("Interfaccia"),
         "settingsInterfaceTheme":
-            MessageLookupByLibrary.simpleMessage("Tema Scuro")
+            MessageLookupByLibrary.simpleMessage("Tema Scuro"),
+        "settingsLanguage": MessageLookupByLibrary.simpleMessage("Lingua"),
+        "settingsTitle": MessageLookupByLibrary.simpleMessage("Impostazioni"),
+        "wpSingular":
+            MessageLookupByLibrary.simpleMessage("problema del vento"),
+        "wpTitle": MessageLookupByLibrary.simpleMessage("Problemi del vento")
       };
 }

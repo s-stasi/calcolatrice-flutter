@@ -1,12 +1,19 @@
+import 'dart:typed_data';
+
 import 'theming/legend.dart';
 import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
+import 'dart:ui' as ui;
 import 'problems/problems.dart';
 import 'problems/piano_cartesiano.dart';
 //import 'package:pdf/widget.dart';
 import 'package:path_provider/path_provider.dart';
+import 'pdfcr.dart';
+import 'package:pdf/widgets.dart' as pdfw;
 
 class PrimoProblema extends StatefulWidget {
+  final recorder = ui.PictureRecorder();
+
   @override
   _PPState createState() => _PPState();
 }
@@ -49,11 +56,33 @@ class _PPState extends State<PrimoProblema> {
         .data;
   }
 
-  
+  saveImage(String path) async {
+    final Size size = Size(400, 400);
+    final recorder = new ui.PictureRecorder();
+    final canvas = new Canvas(recorder,
+        new Rect.fromPoints(new Offset(0.0, 0.0), new Offset(400.0, 400.0)));
+    PianoCartesianoPainter(
+            tc: double.tryParse(tc.text) ?? 0.0,
+            tas: double.tryParse(tas.text) ?? 0.0,
+            windAngle: double.tryParse(windAngle.text) ?? 0.0,
+            windVel: double.tryParse(windVel.text) ?? 0.0,
+            problemNumber: "primo",
+            context: context)
+        .paint(canvas, size);
+    final picture = recorder.endRecording();
+    final img = await picture.toImage(400, 400);
+    final buf = img.toString();
+    final bdata = await img.toByteData(format: ui.ImageByteFormat.png);
+    Uint8List pngBytes = bdata!.buffer.asUint8List();
+    final list = buf.codeUnits;
+    return pngBytes;
+    //final File file = File(path);
+    //print('path: $path');
+    //await file.writeAsBytes(list);
+  }
 
   @override
   Widget build(BuildContext context) {
-    createPdf(context);
     return Scaffold(
       drawer: SideDrawer(),
       appBar: AppBar(
@@ -69,6 +98,16 @@ class _PPState extends State<PrimoProblema> {
             Colors.blue,
           ])),
         ),
+        actions: [
+          IconButton(
+              onPressed: () async {
+                final String dir = (await getDownloadsDirectory()).path;
+                final String path = '$dir/report.pdf';
+                saveImage(path);
+                reportView(context, await saveImage(path));
+              },
+              icon: Icon(Icons.print)),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
