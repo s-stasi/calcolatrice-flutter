@@ -159,19 +159,12 @@ class _PPState extends State<PrimoProblema> {
               children: [
                 Legend(),
               ],
+              mainAxisAlignment: MainAxisAlignment.center,
             ),
           ],
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(content: Text('fanculo la scuola'));
-            }),
-        child: Text('='),
       ),
     );
   }

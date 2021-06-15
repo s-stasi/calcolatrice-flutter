@@ -157,25 +157,9 @@ class _SPState extends State<SecondoProblema> {
               children: [
                 Legend(),
               ],
+              mainAxisAlignment: MainAxisAlignment.center,
             ),
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                  content: Problems(
-                      th: int.tryParse(th.text) ?? 0,
-                      tas: int.tryParse(tas.text) ?? 0,
-                      windAngle: int.tryParse(windAngle.text) ?? 0,
-                      windVel: int.tryParse(windVel.text) ?? 0,
-                      problemNumber: "secondo"));
-            }),
-        child: Text('='),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5),
         ),
       ),
     );

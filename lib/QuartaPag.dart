@@ -155,26 +155,10 @@ class _QPState extends State<QuartoProblema> {
             children: [
               Legend(),
             ],
+            mainAxisAlignment: MainAxisAlignment.center,
           ),
         ],
       )),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                  content: Problems(
-                      tc: int.tryParse(tc.text) ?? 0,
-                      tas: int.tryParse(tas.text) ?? 0,
-                      th: int.tryParse(th.text) ?? 0,
-                      gs: int.tryParse(gs.text) ?? 0,
-                      problemNumber: "quarto"));
-            }),
-        child: Text('   =   '),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5),
-        ),
-      ),
     );
   }
 }
