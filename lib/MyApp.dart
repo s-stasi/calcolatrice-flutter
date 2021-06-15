@@ -35,13 +35,13 @@ class _MAState extends State<MyApp> {
   dynamic _locale = StorageManager.readData('locale').then((value) {
     if (value != null) return Locale.fromSubtags(languageCode: value);
     return Locale.fromSubtags(languageCode: 'en');
-    });
+  });
 
   void setLocale(Locale value) {
     setState(() {
       _locale = StorageManager.readData('locale').then((value) {
-      if (value != null) return Locale.fromSubtags(languageCode: value);
-      return Locale.fromSubtags(languageCode: 'en');
+        if (value != null) return Locale.fromSubtags(languageCode: value);
+        return Locale.fromSubtags(languageCode: 'en');
       });
     });
   }
@@ -49,32 +49,37 @@ class _MAState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<dynamic>(
-      future: _locale,
-      builder: (BuildContext context, AsyncSnapshot<dynamic> loc) => Consumer<ThemeNotifier>(
-        builder: (context, theme, child) => MaterialApp(
-              locale: (loc.hasData) ? Locale.fromSubtags(languageCode: loc.data.toString()) : Locale.fromSubtags(languageCode: 'en'),
-              onGenerateTitle: (BuildContext context) =>
-                  AppLocalizations.of(context)!.gayyy,
-              localizationsDelegates: AppLocalizations.localizationsDelegates,
-              supportedLocales: AppLocalizations.supportedLocales,
-              theme: theme.getTheme(),
-              routes: {
-                '/': (context) => Calculator(),
-                '/PriPag': (context) => PrimoProblema(),
-                '/SecPag': (context) => SecondoProblema(),
-                '/TerPag': (context) => TerzoProblema(),
-                '/QuaPag': (context) => QuartoProblema(),
-                '/priLos': (context) => PrimoLossodromia(),
-                '/secLos': (context) => SecondoLossodromia(),
-                '/salita': (context) => Salita(),
-                '/ImpPag': (context) => Impostazioni(),
-                '/NavPar1': (context) => Paral1(),
-                '/NavMer1': (context) => Meri1(),
-                '/NavPar2': (context) => Paral2(),
-                '/NavMer2': (context) => Meri2(),
-                '/explanations': (context) => Explanations(),
-                '/expMTK': (context) => ExpMTK()
-              },
-            )));
+        future: _locale,
+        builder: (BuildContext context, AsyncSnapshot<dynamic> loc) =>
+            Consumer<ThemeNotifier>(
+                builder: (context, theme, child) => MaterialApp(
+                      locale: (loc.hasData)
+                          ? Locale.fromSubtags(
+                              languageCode: loc.data.toString())
+                          : Locale.fromSubtags(languageCode: 'en'),
+                      onGenerateTitle: (BuildContext context) =>
+                          AppLocalizations.of(context)!.gayyy,
+                      localizationsDelegates:
+                          AppLocalizations.localizationsDelegates,
+                      supportedLocales: AppLocalizations.supportedLocales,
+                      theme: theme.getTheme(),
+                      routes: {
+                        '/': (context) => Calculator(),
+                        '/PriPag': (context) => PrimoProblema(),
+                        '/SecPag': (context) => SecondoProblema(),
+                        '/TerPag': (context) => TerzoProblema(),
+                        '/QuaPag': (context) => QuartoProblema(),
+                        '/priLos': (context) => PrimoLossodromia(),
+                        '/secLos': (context) => SecondoLossodromia(),
+                        '/salita': (context) => Salita(),
+                        '/ImpPag': (context) => Impostazioni(),
+                        '/NavPar1': (context) => Paral1(),
+                        '/NavMer1': (context) => Meri1(),
+                        '/NavPar2': (context) => Paral2(),
+                        '/NavMer2': (context) => Meri2(),
+                        '/explanations': (context) => Explanations(),
+                        '/expMTK': (context) => ExpMTK()
+                      },
+                    )));
   }
 }

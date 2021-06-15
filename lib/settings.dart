@@ -103,30 +103,10 @@ class LanguageState extends State<Language> {
         sections: [
           SettingsSection(
             title: AppLocalizations.of(context)!.settingsLanguage,
-            tiles: [
-              SettingsTile(
-                title: "English",
-                leading: Localizations.localeOf(context).languageCode == 'en'
-                    ? Icon(Icons.check)
-                    : Icon(null),
-                onPressed: (BuildContext context) {
-                  StorageManager.saveData('locale', 'en');
-                  MyApp.of(context)
-                      .setLocale(Locale.fromSubtags(languageCode: 'en'));
-                },
-              ),
-              SettingsTile(
-                title: "Italiano",
-                leading: Localizations.localeOf(context).languageCode == 'it'
-                    ? Icon(Icons.check)
-                    : Icon(null),
-                onPressed: (BuildContext context) {
-                  StorageManager.saveData('locale', 'it');
-                  MyApp.of(context)
-                      .setLocale(Locale.fromSubtags(languageCode: 'it'));
-                },
-              ),
-            ],
+            tiles: builder(
+                titles: ['English', 'Italiano'],
+                languageCodes: ['en', 'it'],
+                context: context),
           ),
         ],
         darkBackgroundColor: Color(0xFF212121),
@@ -134,4 +114,25 @@ class LanguageState extends State<Language> {
       ),
     );
   }
+}
+
+List<SettingsTile> builder(
+    {required List<String> titles,
+    required List<String> languageCodes,
+    required BuildContext context}) {
+  List<SettingsTile> list = [];
+  for (var i = 0; i <= titles.length - 1; i++) {
+    list.add(SettingsTile(
+      title: titles[i],
+      leading: Localizations.localeOf(context).languageCode == languageCodes[i]
+          ? Icon(Icons.check)
+          : Icon(null),
+      onPressed: (BuildContext context) {
+        StorageManager.saveData('locale', languageCodes[i]);
+        MyApp.of(context)
+            .setLocale(Locale.fromSubtags(languageCode: languageCodes[i]));
+      },
+    ));
+  }
+  return list;
 }
