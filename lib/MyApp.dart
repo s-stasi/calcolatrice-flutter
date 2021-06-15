@@ -18,6 +18,7 @@ import 'paral2.dart';
 import 'settings.dart';
 import 'explanations/explanations.dart';
 import 'explanations/expmkt.dart';
+import 'services/storage_manager.dart';
 
 var modalita;
 
@@ -30,21 +31,28 @@ class MyApp extends StatefulWidget {
 }
 
 class _MAState extends State<MyApp> {
-  Locale _locale = Locale.fromSubtags(languageCode: 'en');
+  //Locale _locale = Locale.fromSubtags(languageCode: (() => await StorageManager.readData('locale'))() ?? 'en');
+  dynamic _locale = StorageManager.readData('locale').then((value) {
+    if (value != null) return Locale.fromSubtags(languageCode: value);
+    return Locale.fromSubtags(languageCode: 'en');
+    });
 
   void setLocale(Locale value) {
     setState(() {
-      _locale = value;
+      _locale = StorageManager.readData('locale').then((value) {
+      if (value != null) return Locale.fromSubtags(languageCode: value);
+      return Locale.fromSubtags(languageCode: 'en');
+      });
     });
   }
 
-  get locale => _locale.toString();
-
   @override
   Widget build(BuildContext context) {
-    return Consumer<ThemeNotifier>(
+    return FutureBuilder<dynamic>(
+      future: _locale,
+      builder: (BuildContext context, AsyncSnapshot<dynamic> loc) => Consumer<ThemeNotifier>(
         builder: (context, theme, child) => MaterialApp(
-              locale: _locale,
+              locale: (loc.hasData) ? Locale.fromSubtags(languageCode: loc.data.toString()) : Locale.fromSubtags(languageCode: 'en'),
               onGenerateTitle: (BuildContext context) =>
                   AppLocalizations.of(context)!.gayyy,
               localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -67,6 +75,6 @@ class _MAState extends State<MyApp> {
                 '/explanations': (context) => Explanations(),
                 '/expMTK': (context) => ExpMTK()
               },
-            ));
+            )));
   }
 }

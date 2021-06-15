@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'SideDrawer.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:settings_ui/settings_ui.dart';
+import 'services/storage_manager.dart';
 import 'MyApp.dart';
 
 class Impostazioni extends StatefulWidget {
@@ -105,20 +106,22 @@ class LanguageState extends State<Language> {
             tiles: [
               SettingsTile(
                 title: "English",
-                leading: MyApp.of(context).locale == 'en'
+                leading: Localizations.localeOf(context).languageCode == 'en'
                     ? Icon(Icons.check)
                     : Icon(null),
                 onPressed: (BuildContext context) {
+                  StorageManager.saveData('locale', 'en');
                   MyApp.of(context)
                       .setLocale(Locale.fromSubtags(languageCode: 'en'));
                 },
               ),
               SettingsTile(
                 title: "Italiano",
-                leading: MyApp.of(context).locale == 'it'
+                leading: Localizations.localeOf(context).languageCode == 'it'
                     ? Icon(Icons.check)
                     : Icon(null),
                 onPressed: (BuildContext context) {
+                  StorageManager.saveData('locale', 'it');
                   MyApp.of(context)
                       .setLocale(Locale.fromSubtags(languageCode: 'it'));
                 },
