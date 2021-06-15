@@ -83,7 +83,7 @@ class _M1State extends State<Meri1> {
         body: SingleChildScrollView(
             child: Column(children: <Widget>[
           Text(
-            'inserire i valori S/W come negativi e N/E come positivi ',
+            'inserire i valori S come negativi e N come positivi ',
             style: TextStyle(fontSize: 20),
           ),
           Row(
@@ -148,32 +148,6 @@ class _M1State extends State<Meri1> {
           ),
           Row(
             children: <Widget>[
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: glo,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: AppLocalizations.of(context)!.paralNavDegree,
-                  helperText: AppLocalizations.of(context)!.paralNavLon,
-                ),
-              )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: plo,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: 'PRIMI',
-                  helperText: AppLocalizations.of(context)!.paralNavLon,
-                ),
-              )),
               Container(
                   width: MediaQuery.of(context).size.width * 0.04, height: 150),
               Expanded(
