@@ -11,7 +11,12 @@ toDeg(num rad) {
 }
 
 toDec(num gr, num pr) {
-  return gr + (pr / 60);
+  if (gr > 0) {
+    return gr + (pr / 60);
+  } else {
+    gr = gr * -1;
+    return (gr + (pr / 60)) * -1;
+  }
 }
 
 toSes(num dec) {
@@ -457,6 +462,34 @@ class _ProblemsState extends State<Problems> {
   }
 
   void navMeridiani1() {
-    this.res = 'r';
+    if (d == 0) {
+      var ala = toDec(agla, apla);
+      var bla = toDec(bgla, bpla);
+      var dg = ala - bla;
+      if (dg < 0) dg = dg * -1;
+      d = dg * 60;
+      if (ala > bla)
+        tc = 180;
+      else
+        tc = 0;
+      var res = [d, tc];
+      String arr = 'distance: ${res[0]}kt  tc: ${res[1]}°';
+      this.res = arr;
+    } else {
+      var ala = toDec(agla, apla);
+      var dg = d / 60;
+      var bla;
+      if (tc == 0 || tc == 360)
+        bla = ala + dg;
+      else
+        bla = ala - dg;
+      bgla = toSes(bla)[0];
+      bpla = toSes(bla)[1];
+      var res = [bgla, bpla];
+      if (tc != 0 || tc != 360 || tc != 180)
+        var arr = 'inserisci un  allore valido (0/360 & 180) ';
+      String arr = "B: ${res[0]}° ${res[1]}'";
+      this.res = arr;
+    }
   }
 }
