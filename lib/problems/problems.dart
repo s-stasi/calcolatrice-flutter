@@ -31,8 +31,7 @@ toSes(num dec) {
   return ses;
 }
 
-// ignore: must_be_immutable
-class Problems extends StatefulWidget {
+class Problems{
   var tc;
   var tas;
   var windAngle;
@@ -48,45 +47,40 @@ class Problems extends StatefulWidget {
   var bglo;
   var bplo;
   var d;
-  String lator;
-  String lonor;
+  String lator = '';
+  String lonor = '';
   String problemNumber = 'nann';
   String res = 'nann';
 
-  @override
-  _ProblemsState createState() {
-    return _ProblemsState(
-      tc: tc,
-      tas: tas,
-      windAngle: windAngle,
-      windVel: windVel,
-      th: th,
-      gs: gs,
-      agla: agla,
-      apla: apla,
-      aglo: aglo,
-      aplo: aplo,
-      bgla: bgla,
-      bpla: bpla,
-      bglo: bglo,
-      bplo: bplo,
-      d: d,
-      lator: lator,
-      lonor: lonor,
-      problemNumber: problemNumber,
-    );
+  Problems.primo({
+    var this.tc,
+    var this.tas,
+    var this.windAngle,
+    var this.windVel}) {
+    primoProblema();
   }
-
-  String get data => createState().data;
-
-  Problems({
-    this.problemNumber: "nann",
-    var this.tc,
+  Problems.secondo({
+    var this.th,
     var this.tas,
     var this.windAngle,
-    var this.windVel,
-    var this.th,
+    var this.windVel}) {
+    secondoProblema();
+  }
+  Problems.terzo({
+    var this.tc,
     var this.gs,
+    var this.windAngle,
+    var this.windVel}) {
+    terzoProblema();
+  }
+  Problems.quarto({
+    var this.tc,
+    var this.tas,
+    var this.gs,
+    var this.th}) {
+    quartoProblema();
+  }
+  Problems.priLoss({
     var this.agla,
     var this.apla,
     var this.aglo,
@@ -94,118 +88,34 @@ class Problems extends StatefulWidget {
     var this.bgla,
     var this.bpla,
     var this.bglo,
-    var this.bplo,
-    var this.d,
-    var this.lator: 'N',
-    var this.lonor: 'E',
-  });
-}
-
-class _ProblemsState extends State<Problems> {
-  var tc;
-  var tas;
-  var windAngle;
-  var windVel;
-  var th;
-  var gs;
-  var agla;
-  var apla;
-  var aglo;
-  var aplo;
-  var bgla;
-  var bpla;
-  var bglo;
-  var bplo;
-  var d;
-  String lator;
-  String lonor;
-  String problemNumber = 'nann';
-  String res = 'nann';
-
-  _ProblemsState({
-    this.problemNumber: "nann",
-    var this.tc,
-    var this.tas,
-    var this.windAngle,
-    var this.windVel,
-    var this.th,
-    var this.gs,
+    var this.bplo}) {
+    primoLossodromia();
+  }
+  Problems.secLoss({
     var this.agla,
     var this.apla,
     var this.aglo,
     var this.aplo,
+    var this.d,
+    var this.tc}) {
+    secondoLossodromia();
+  }
+  Problems.priPar() {
+    navParalleli1();
+  }
+  Problems.priMer({
+    var this.agla,
+    var this.apla,
     var this.bgla,
     var this.bpla,
     var this.bglo,
     var this.bplo,
     var this.d,
-    var this.lator: 'N',
-    var this.lonor: 'E',
-  }) {
-    this.solve();
+    var this.tc}) {
+    navMeridiani1();
   }
 
   get data => res;
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    solve();
-    return Text(res);
-  }
-
-  void solve() {
-    switch (problemNumber) {
-      case "primo":
-        {
-          primoProblema();
-        }
-        break;
-      case "secondo":
-        {
-          secondoProblema();
-        }
-        break;
-      case "terzo":
-        {
-          terzoProblema();
-        }
-        break;
-      case "quarto":
-        {
-          quartoProblema();
-        }
-        break;
-      case "primoLoss":
-        {
-          primoLossodromia();
-        }
-        break;
-      case "secondoLoss":
-        {
-          secondoLossodromia();
-        }
-        break;
-      case "NavPar1":
-        {
-          navParalleli1();
-        }
-        break;
-      case "NavMer1":
-        {
-          navMeridiani1();
-        }
-        break;
-      default:
-        {
-          throw Exception('You have to choose the problem');
-        }
-    }
-  }
 
   void primoProblema() {
     num r = windVel * Math.sin(toRad(windAngle - tc));

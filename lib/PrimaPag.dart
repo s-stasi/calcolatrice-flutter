@@ -47,12 +47,11 @@ class _PPState extends State<PrimoProblema> {
   }
 
   String txt() {
-    return Problems(
+    return Problems.primo(
             tc: double.tryParse(tc.text) ?? 0.0,
             tas: double.tryParse(tas.text) ?? 0.0,
             windAngle: double.tryParse(windAngle.text) ?? 0.0,
-            windVel: double.tryParse(windVel.text) ?? 0.0,
-            problemNumber: "primo")
+            windVel: double.tryParse(windVel.text) ?? 0.0)
         .data;
   }
 
@@ -104,7 +103,7 @@ class _PPState extends State<PrimoProblema> {
                 final String dir = (await getDownloadsDirectory()).path;
                 final String path = '$dir/report.pdf';
                 saveImage(path);
-                reportView(context, await saveImage(path));
+                reportView(context, await saveImage(path), 'Dodi gayyyyyyyy');
               },
               icon: Icon(Icons.print)),
         ],

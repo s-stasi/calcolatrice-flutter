@@ -49,7 +49,7 @@ class _P1State extends State<Paral1> {
   }
 
   String txt() {
-    Problems data = Problems(
+    return 'implement this';/*Problems.priPar(
         agla: int.tryParse(agla.text) ?? 0,
         apla: int.tryParse(apla.text) ?? 0,
         aglo: int.tryParse(aglo.text) ?? 0,
@@ -57,9 +57,8 @@ class _P1State extends State<Paral1> {
         bgla: int.tryParse(bgla.text) ?? 0,
         bpla: int.tryParse(bpla.text) ?? 0,
         bglo: int.tryParse(bglo.text) ?? 0,
-        bplo: int.tryParse(bplo.text) ?? 0,
-        problemNumber: "NavPar1");
-    return data.data;
+        bplo: int.tryParse(bplo.text) ?? 0)
+      .data;*/
   }
 
   @override
@@ -201,27 +200,6 @@ class _P1State extends State<Paral1> {
             ],
           ),
           Text(txt()),
-        ])),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                    content: Problems(
-                        agla: int.tryParse(agla.text) ?? 0,
-                        apla: int.tryParse(apla.text) ?? 0,
-                        aglo: int.tryParse(aglo.text) ?? 0,
-                        aplo: int.tryParse(aplo.text) ?? 0,
-                        bgla: int.tryParse(bgla.text) ?? 0,
-                        bpla: int.tryParse(bpla.text) ?? 0,
-                        bglo: int.tryParse(bglo.text) ?? 0,
-                        bplo: int.tryParse(bplo.text) ?? 0,
-                        problemNumber: "NavPar1"));
-              }),
-          child: Text('   =   '),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
-          ),
-        ));
+        ])),);
   }
 }

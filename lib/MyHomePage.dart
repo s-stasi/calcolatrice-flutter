@@ -1,9 +1,5 @@
 import 'SideDrawer.dart';
 import 'package:flutter/material.dart';
-import 'simple_calculator/display.dart';
-import 'simple_calculator/key-controller.dart';
-import 'simple_calculator/key-pad.dart';
-import 'simple_calculator/processor.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Calculator extends StatefulWidget {
@@ -12,35 +8,19 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
-  late String _output = '';
 
   @override
   void initState() {
-    KeyController.listen((event) => Processor.process(event));
-    Processor.listen((data) => setState(() {
-          _output = data;
-        }));
-    Processor.refresh();
     super.initState();
   }
 
   @override
   void dispose() {
-    KeyController.dispose();
-    Processor.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    Size screen = MediaQuery.of(context).size;
-
-    double buttonHeight = screen.height / 2.2;
-    double displayHeight = (screen.height - (buttonHeight * 1.9));
-
-    debugPrint('display weight: $displayHeight');
-    debugPrint('display height: $buttonHeight');
-
     return Scaffold(
       backgroundColor: Color.fromARGB(196, 32, 64, 96),
       drawer: SideDrawer(),
@@ -58,10 +38,8 @@ class _CalculatorState extends State<Calculator> {
         ),
       ),
       body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Display(value: _output, height: displayHeight),
-            KeyPad()
+            Text('implement homepage'),
           ]),
     );
   }

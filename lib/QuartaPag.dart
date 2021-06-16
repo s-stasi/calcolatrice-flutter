@@ -38,12 +38,11 @@ class _QPState extends State<QuartoProblema> {
   }
 
   String txt() {
-    return Problems(
+    return Problems.quarto(
             tc: double.tryParse(th.text) ?? 0.0,
             tas: double.tryParse(tas.text) ?? 0.0,
             gs: double.tryParse(gs.text) ?? 0.0,
-            th: double.tryParse(th.text) ?? 0.0,
-            problemNumber: "quarto")
+            th: double.tryParse(th.text) ?? 0.0)
         .data;
   }
 

@@ -57,17 +57,18 @@ class _M2State extends State<Meri2> {
   }
 
   String txt() {
-    Problems data = Problems(
-        agla: int.tryParse(agla.text) ?? 0,
-        apla: int.tryParse(apla.text) ?? 0,
-        aglo: int.tryParse(aglo.text) ?? 0,
-        aplo: int.tryParse(aplo.text) ?? 0,
-        bgla: int.tryParse(bgla.text) ?? 0,
-        bpla: int.tryParse(bpla.text) ?? 0,
-        bglo: int.tryParse(bglo.text) ?? 0,
-        bplo: int.tryParse(bplo.text) ?? 0,
-        problemNumber: "NavMer2");
-    return data.data;
+    return 'implement this';
+    // Problems data = Problems(
+    //     agla: int.tryParse(agla.text) ?? 0,
+    //     apla: int.tryParse(apla.text) ?? 0,
+    //     aglo: int.tryParse(aglo.text) ?? 0,
+    //     aplo: int.tryParse(aplo.text) ?? 0,
+    //     bgla: int.tryParse(bgla.text) ?? 0,
+    //     bpla: int.tryParse(bpla.text) ?? 0,
+    //     bglo: int.tryParse(bglo.text) ?? 0,
+    //     bplo: int.tryParse(bplo.text) ?? 0,
+    //     problemNumber: "NavMer2");
+    // return data.data;
   }
 
   @override
@@ -267,27 +268,6 @@ class _M2State extends State<Meri2> {
           ),
           Text(txt()),
         ])),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                    content: Problems(
-                        agla: int.tryParse(agla.text) ?? 0,
-                        apla: int.tryParse(apla.text) ?? 0,
-                        aglo: int.tryParse(aglo.text) ?? 0,
-                        aplo: int.tryParse(aplo.text) ?? 0,
-                        bgla: int.tryParse(bgla.text) ?? 0,
-                        bpla: int.tryParse(bpla.text) ?? 0,
-                        bglo: int.tryParse(bglo.text) ?? 0,
-                        bplo: int.tryParse(bplo.text) ?? 0,
-                        d: int.tryParse(d.text) ?? 0,
-                        problemNumber: "NavMer2"));
-              }),
-          child: Text('   =   '),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
-          ),
-        ));
+    );
   }
 }

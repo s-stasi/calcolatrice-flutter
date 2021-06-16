@@ -6,7 +6,7 @@ import 'package:pdf/widgets.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutter/material.dart' as material;
 
-reportView(context, [Uint8List? imgPath]) async {
+reportView(context, [Uint8List? imgPath, String problemName = 'boh']) async {
   final Document pdf = Document();
 
   pdf.addPage(MultiPage(
@@ -45,7 +45,15 @@ reportView(context, [Uint8List? imgPath]) async {
                       Text('Result', textScaleFactor: 2),
                       PdfLogo()
                     ])),
-            Paragraph(text: 'cluding versions of Lorem Ipsum.'),
+            Header(
+                level: 0,
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text('problema:', textScaleFactor: 1),
+                      PdfLogo()
+                    ])),
+            Paragraph(text: 'primo'),
             Padding(padding: const EdgeInsets.all(10)),
             imgPath != null
                 ? Center(

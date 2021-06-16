@@ -38,12 +38,11 @@ class _PTState extends State<TerzoProblema> {
   }
 
   String txt() {
-    return Problems(
+    return Problems.terzo(
             tc: double.tryParse(tc.text) ?? 0.0,
             gs: double.tryParse(gs.text) ?? 0.0,
             windAngle: double.tryParse(windAngle.text) ?? 0.0,
-            windVel: double.tryParse(windVel.text) ?? 0.0,
-            problemNumber: "terzo")
+            windVel: double.tryParse(windVel.text) ?? 0.0,)
         .data;
   }
 

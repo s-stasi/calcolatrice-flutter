@@ -49,7 +49,7 @@ class _M1State extends State<Meri1> {
   }
 
   String txt() {
-    Problems data = Problems(
+    return Problems.priMer(
         agla: int.tryParse(agla.text) ?? 0,
         apla: int.tryParse(apla.text) ?? 0,
         bgla: int.tryParse(bgla.text) ?? 0,
@@ -57,9 +57,8 @@ class _M1State extends State<Meri1> {
         bglo: int.tryParse(glo.text) ?? 0,
         bplo: int.tryParse(plo.text) ?? 0,
         tc: int.tryParse(tc.text) ?? 0,
-        d: int.tryParse(d.text) ?? 0,
-        problemNumber: "NavMer1");
-    return data.data;
+        d: int.tryParse(d.text) ?? 0)
+      .data;
   }
 
   @override
@@ -180,26 +179,6 @@ class _M1State extends State<Meri1> {
           ),
           Text(txt()),
         ])),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () => showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                    content: Problems(
-                        agla: int.tryParse(agla.text) ?? 0,
-                        apla: int.tryParse(apla.text) ?? 0,
-                        bgla: int.tryParse(bgla.text) ?? 0,
-                        bpla: int.tryParse(bpla.text) ?? 0,
-                        bglo: int.tryParse(glo.text) ?? 0,
-                        bplo: int.tryParse(plo.text) ?? 0,
-                        tc: int.tryParse(tc.text) ?? 0,
-                        d: int.tryParse(d.text) ?? 0,
-                        problemNumber: "NavMer1"));
-              }),
-          child: Text('   =   '),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
-          ),
-        ));
+    );
   }
 }

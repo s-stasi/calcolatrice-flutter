@@ -15,12 +15,32 @@ class SideDrawer extends StatelessWidget {
       child: Column(
         children: <Widget>[
           DrawerHeader(
-            child: Center(
-              child: Text(
-                'MENU PROBLEMI',
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 30),
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/',
+                        );
+                      },
+                      icon: Icon(Icons.home)
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/ImpPag',
+                        );
+                      },
+                      icon: Icon(Icons.settings_outlined)
+                    ),
+                  ],
+                ),
+              ],
             ),
             decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
@@ -143,9 +163,9 @@ class SideDrawer extends StatelessWidget {
             color: Colors.grey[900],
           ),
           ListTile(
-            leading: Icon(Icons.calculate),
+            leading: Icon(Icons.home),
             title: Text(
-              AppLocalizations.of(context)!.calculatorTitle,
+              'home',
               style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             ),
             onTap: () => {

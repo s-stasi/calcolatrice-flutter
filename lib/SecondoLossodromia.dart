@@ -44,15 +44,14 @@ class _SLState extends State<SecondoLossodromia> {
   }
 
   String txt() {
-    Problems data = Problems(
+    return Problems.secLoss(
         agla: int.tryParse(agla.text) ?? 0,
         apla: int.tryParse(apla.text) ?? 0,
         aglo: int.tryParse(aglo.text) ?? 0,
         aplo: int.tryParse(aplo.text) ?? 0,
         d: int.tryParse(d.text) ?? 0,
-        tc: int.tryParse(tc.text) ?? 0,
-        problemNumber: "secondoLoss");
-    return data.data;
+        tc: int.tryParse(tc.text) ?? 0)
+      .data;
   }
 
   @override
@@ -207,25 +206,6 @@ class _SLState extends State<SecondoLossodromia> {
         ),
         Text(txt()),
       ])),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                  content: Problems(
-                      agla: int.tryParse(agla.text) ?? 0,
-                      apla: int.tryParse(apla.text) ?? 0,
-                      aglo: int.tryParse(aglo.text) ?? 0,
-                      aplo: int.tryParse(aplo.text) ?? 0,
-                      tc: int.tryParse(tc.text) ?? 0,
-                      d: int.tryParse(d.text) ?? 0,
-                      problemNumber: "secondoLoss"));
-            }),
-        child: Text('   =   '),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5),
-        ),
-      ),
     );
   }
 }

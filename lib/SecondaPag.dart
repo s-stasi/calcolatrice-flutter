@@ -40,12 +40,11 @@ class _SPState extends State<SecondoProblema> {
   }
 
   String txt() {
-    return Problems(
+    return Problems.secondo(
             th: double.tryParse(th.text) ?? 0.0,
             tas: double.tryParse(tas.text) ?? 0.0,
             windAngle: double.tryParse(windAngle.text) ?? 0.0,
-            windVel: double.tryParse(windVel.text) ?? 0.0,
-            problemNumber: "secondo")
+            windVel: double.tryParse(windVel.text) ?? 0.0)
         .data;
   }
 
