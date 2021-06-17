@@ -163,22 +163,6 @@ class SideDrawer extends StatelessWidget {
             color: Colors.grey[900],
           ),
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text(
-              'home',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/',
-              ),
-            },
-          ),
-          Divider(
-            color: Colors.grey[900],
-          ),
-          ListTile(
             leading: Icon(Icons.book),
             title: Text(
               AppLocalizations.of(context)!.expTitle,
@@ -204,22 +188,6 @@ class SideDrawer extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 '/pdf',
-              ),
-            },
-          ),
-          Divider(
-            color: Colors.grey[900],
-          ),
-          ListTile(
-            leading: Icon(Icons.settings_outlined),
-            title: Text(
-              AppLocalizations.of(context)!.settingsTitle,
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/ImpPag',
               ),
             },
           ),

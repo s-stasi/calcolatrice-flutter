@@ -37,10 +37,14 @@ dependencies:
   pdf: ^3.3.0
   path_provider: ^1.6.28
   flutter_full_pdf_viewer: ^1.0.6
+#   flutter_launcher_icons: ^0.9.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+# dependency_overrides:
+#   args: ^2.0.0
 
 flutter_icons:
   android: "launcher_icon"
