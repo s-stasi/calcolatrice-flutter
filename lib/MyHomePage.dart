@@ -8,7 +8,6 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
-
   @override
   void initState() {
     super.initState();
@@ -37,10 +36,16 @@ class _CalculatorState extends State<Calculator> {
           ])),
         ),
       ),
-      body: Column(
-          children: <Widget>[
-            Text('implement homepage'),
-          ]),
+      body: Column(children: <Widget>[
+        Center(
+          child: Text(
+            'NAVTOOL',
+            style: TextStyle(
+              fontSize: 85,
+            ),
+          ),
+        ),
+      ]),
     );
   }
 }

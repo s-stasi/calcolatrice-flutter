@@ -55,7 +55,7 @@ class _PPState extends State<PrimoProblema> {
         .data;
   }
 
-  saveImage(String path) async {
+  Future<Uint8List> saveImage() async {
     final Size size = Size(400, 400);
     final recorder = new ui.PictureRecorder();
     final canvas = new Canvas(recorder,
@@ -70,14 +70,9 @@ class _PPState extends State<PrimoProblema> {
         .paint(canvas, size);
     final picture = recorder.endRecording();
     final img = await picture.toImage(400, 400);
-    final buf = img.toString();
     final bdata = await img.toByteData(format: ui.ImageByteFormat.png);
     Uint8List pngBytes = bdata!.buffer.asUint8List();
-    final list = buf.codeUnits;
     return pngBytes;
-    //final File file = File(path);
-    //print('path: $path');
-    //await file.writeAsBytes(list);
   }
 
   @override
@@ -100,10 +95,13 @@ class _PPState extends State<PrimoProblema> {
         actions: [
           IconButton(
               onPressed: () async {
-                final String dir = (await getDownloadsDirectory()).path;
-                final String path = '$dir/report.pdf';
-                saveImage(path);
-                reportView(context, await saveImage(path), 'Dodi gayyyyyyyy');
+                PdfBuilder.primo(
+                    tc: double.tryParse(tc.text) ?? 0.0,
+                    tas: double.tryParse(tas.text) ?? 0.0,
+                    windAngle: double.tryParse(windAngle.text) ?? 0.0,
+                    windVel: double.tryParse(windVel.text) ?? 0.0,
+                    img: await saveImage(),
+                    context: context);
               },
               icon: Icon(Icons.print)),
         ],

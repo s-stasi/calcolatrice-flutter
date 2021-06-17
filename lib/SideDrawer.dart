@@ -18,26 +18,28 @@ class SideDrawer extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                Text(
+                  'NAVTOOL',
+                  style: TextStyle(fontSize: 50),
+                ),
                 Row(
                   children: [
                     IconButton(
-                      onPressed: () {
-                        Navigator.pushNamed(
-                          context,
-                          '/',
-                        );
-                      },
-                      icon: Icon(Icons.home)
-                    ),
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/',
+                          );
+                        },
+                        icon: Icon(Icons.home)),
                     IconButton(
-                      onPressed: () {
-                        Navigator.pushNamed(
-                          context,
-                          '/ImpPag',
-                        );
-                      },
-                      icon: Icon(Icons.settings_outlined)
-                    ),
+                        onPressed: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/ImpPag',
+                          );
+                        },
+                        icon: Icon(Icons.settings_outlined)),
                   ],
                 ),
               ],
@@ -172,22 +174,6 @@ class SideDrawer extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 '/explanations',
-              ),
-            },
-          ),
-          Divider(
-            color: Colors.grey[900],
-          ),
-          ListTile(
-            leading: Icon(Icons.book),
-            title: Text(
-              'pdf',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-            onTap: () => {
-              Navigator.pushNamed(
-                context,
-                '/pdf',
               ),
             },
           ),
