@@ -31,7 +31,8 @@ class SideDrawer extends StatelessWidget {
                             '/',
                           );
                         },
-                        icon: Icon(Icons.home)),
+                        icon: Icon(Icons.home),
+                        color: Colors.blueAccent),
                     IconButton(
                         onPressed: () {
                           Navigator.pushNamed(
@@ -39,7 +40,8 @@ class SideDrawer extends StatelessWidget {
                             '/ImpPag',
                           );
                         },
-                        icon: Icon(Icons.settings_outlined)),
+                        icon: Icon(Icons.settings_outlined),
+                        color: Colors.blueAccent),
                   ],
                 ),
               ],

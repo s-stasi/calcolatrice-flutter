@@ -25,7 +25,7 @@ class _CalculatorState extends State<Calculator> {
       drawer: SideDrawer(),
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context)!.calculatorTitle,
+          'HOME PAGE',
           style: TextStyle(color: Colors.white),
         ),
         flexibleSpace: Container(
