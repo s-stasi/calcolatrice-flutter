@@ -8,6 +8,7 @@ import 'SideDrawer.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'services/storage_manager.dart';
 import 'MyApp.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 class Impostazioni extends StatefulWidget {
   @override
@@ -26,6 +27,19 @@ class ImpostazioniState extends State<Impostazioni> {
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
       builder: (context, theme, child) => Scaffold(
+        bottomNavigationBar: ConvexAppBar(
+          items: [
+            TabItem(icon: Icons.menu_open, title: 'Problems'),
+            TabItem(icon: Icons.home, title: 'Home'),
+            TabItem(icon: Icons.settings, title: 'Settings'),
+          ],
+          initialActiveIndex: 2, //optional, default as 0
+          onTap: (int i) {
+            if (i == 0) Navigator.pushNamed(context, '/');
+            if (i == 1) Navigator.pushNamed(context, '/');
+            if (i == 2) Navigator.pushNamed(context, '/ImpPag');
+          },
+        ),
         drawer: magheggio(theme.isDark),
         appBar: AppBar(
           title: Text(

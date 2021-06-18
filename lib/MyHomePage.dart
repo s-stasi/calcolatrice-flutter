@@ -29,7 +29,11 @@ class _CalculatorState extends State<Calculator> {
           TabItem(icon: Icons.settings, title: 'Settings'),
         ],
         initialActiveIndex: 1, //optional, default as 0
-        onTap: (int i) => print('click index=$i'),
+        onTap: (int i) {
+          if (i == 0) Navigator.pushNamed(context, '/');
+          if (i == 1) Navigator.pushNamed(context, '/');
+          if (i == 2) Navigator.pushNamed(context, '/ImpPag');
+        },
       ),
       backgroundColor: Color.fromARGB(196, 32, 64, 96),
       drawer: SideDrawer(),

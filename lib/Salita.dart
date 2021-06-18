@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problems/salita.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 class Salita extends StatefulWidget {
   @override
@@ -61,6 +62,19 @@ class _SalitaState extends State<Salita> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        bottomNavigationBar: ConvexAppBar(
+          items: [
+            TabItem(icon: Icons.menu_open, title: 'Problems'),
+            TabItem(icon: Icons.home, title: 'Home'),
+            TabItem(icon: Icons.settings, title: 'Settings'),
+          ],
+          initialActiveIndex: 0, //optional, default as 0
+          onTap: (int i) {
+            if (i == 0) Navigator.pushNamed(context, '/salita');
+            if (i == 1) Navigator.pushNamed(context, '/');
+            if (i == 2) Navigator.pushNamed(context, '/ImpPag');
+          },
+        ),
         drawer: SideDrawer(),
         appBar: AppBar(
           title: Text(

@@ -8,7 +8,7 @@ import 'pdfSaver.dart';
 void primoPdfCreator(
     num tc, num tas, num windAngle, num windVel, Uint8List img, context) async {
   Document pdf = Document();
-  final font = await rootBundle.load("assets/open-sans.ttf");
+  /* final font = await rootBundle.load("assets/open-sans.ttf");
   final ttf = pdf.Font.ttf(font);
   final fontBold = await rootBundle.load("asset/open-sans-bold.ttf");
   final ttfBold = pdf.Font.ttf(fontBold);
@@ -21,7 +21,7 @@ void primoPdfCreator(
     bold: ttfBold,
     italic: ttfItalic,
     boldItalic: ttfBoldItalic,
-  );
+  );*/
   pdf.addPage(MultiPage(
       pageFormat:
           PdfPageFormat.letter.copyWith(marginBottom: 1.5 * PdfPageFormat.cm),
