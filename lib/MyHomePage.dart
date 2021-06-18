@@ -23,6 +23,7 @@ class _CalculatorState extends State<Calculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: ConvexAppBar(
+        activeColor: Colors.blue[50],
         items: [
           TabItem(icon: Icons.menu_open, title: 'Problems'),
           TabItem(icon: Icons.home, title: 'Home'),
@@ -30,8 +31,8 @@ class _CalculatorState extends State<Calculator> {
         ],
         initialActiveIndex: 1, //optional, default as 0
         onTap: (int i) {
-          if (i == 0) Navigator.pushNamed(context, '/');
-          if (i == 1) Navigator.pushNamed(context, '/');
+          if (i == 0) Navigator.pushNamed(context, '/Problems');
+          //  if (i == 1) Navigator.pushNamed(context, '/');
           if (i == 2) Navigator.pushNamed(context, '/ImpPag');
         },
       ),

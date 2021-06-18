@@ -15,6 +15,7 @@ import 'Meri1.dart';
 import 'Meri2.dart';
 import 'Paral1.dart';
 import 'paral2.dart';
+import 'problems.dart';
 import 'settings.dart';
 import 'explanations/explanations.dart';
 import 'explanations/expmkt.dart';
@@ -77,6 +78,7 @@ class _MAState extends State<MyApp> {
                         '/NavMer1': (context) => Meri1(),
                         '/NavPar2': (context) => Paral2(),
                         '/NavMer2': (context) => Meri2(),
+                        '/Problems': (context) => Problems(),
                         '/explanations': (context) => Explanations(),
                         '/expMTK': (context) => ExpMTK()
                       },

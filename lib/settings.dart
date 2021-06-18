@@ -28,6 +28,7 @@ class ImpostazioniState extends State<Impostazioni> {
     return Consumer<ThemeNotifier>(
       builder: (context, theme, child) => Scaffold(
         bottomNavigationBar: ConvexAppBar(
+          activeColor: Colors.blue[50],
           items: [
             TabItem(icon: Icons.menu_open, title: 'Problems'),
             TabItem(icon: Icons.home, title: 'Home'),
@@ -35,9 +36,9 @@ class ImpostazioniState extends State<Impostazioni> {
           ],
           initialActiveIndex: 2, //optional, default as 0
           onTap: (int i) {
-            if (i == 0) Navigator.pushNamed(context, '/');
+            if (i == 0) Navigator.pushNamed(context, '/Problems');
             if (i == 1) Navigator.pushNamed(context, '/');
-            if (i == 2) Navigator.pushNamed(context, '/ImpPag');
+            //  if (i == 2) Navigator.pushNamed(context, '/ImpPag');
           },
         ),
         drawer: magheggio(theme.isDark),
