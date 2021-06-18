@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'SideDrawer.dart';
 import 'problems/problems.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 class Paral1 extends StatefulWidget {
   @override
@@ -66,21 +67,20 @@ class _P1State extends State<Paral1> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: SideDrawer(),
-
-      /* appBar: AppBar(
-          title: Text(
-            AppLocalizations.of(context)!.paralNavTitle,
-            style: TextStyle(color: Colors.white),
-          ),
-          iconTheme: IconThemeData(color: Colors.white),
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [
-              Colors.black,
-              Colors.blue,
-            ])),
-          ),
-        ),*/
+      appBar: AppBar(
+        title: Text(
+          AppLocalizations.of(context)!.paralNavTitle,
+          style: TextStyle(color: Colors.white),
+        ),
+        iconTheme: IconThemeData(color: Colors.white),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Colors.black,
+            Colors.blue,
+          ])),
+        ),
+      ),
       body: SingleChildScrollView(
           child: Column(children: <Widget>[
         Row(

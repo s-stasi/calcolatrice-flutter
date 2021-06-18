@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 import 'package:NAVTOOL/PrimaPag.dart';
+import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 import 'pdfSaver.dart';
@@ -7,6 +8,20 @@ import 'pdfSaver.dart';
 void primoPdfCreator(
     num tc, num tas, num windAngle, num windVel, Uint8List img, context) async {
   Document pdf = Document();
+  final font = await rootBundle.load("assets/open-sans.ttf");
+  final ttf = pdf.Font.ttf(font);
+  final fontBold = await rootBundle.load("asset/open-sans-bold.ttf");
+  final ttfBold = pdf.Font.ttf(fontBold);
+  final fontItalic = await rootBundle.load("asset/open-sans-italic.ttf");
+  final ttfItalic = pdf.Font.ttf(fontItalic);
+  final fontBoldItalic = await rootBundle.load("asset/open-sans-italic.ttf");
+  final ttfBoldItalic = pdf.Font.ttf(fontBoldItalic);
+  final pdf.Theme theme = pdf.Theme.withFont(
+    base: ttf,
+    bold: ttfBold,
+    italic: ttfItalic,
+    boldItalic: ttfBoldItalic,
+  );
   pdf.addPage(MultiPage(
       pageFormat:
           PdfPageFormat.letter.copyWith(marginBottom: 1.5 * PdfPageFormat.cm),

@@ -1,6 +1,7 @@
 import 'SideDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 class Calculator extends StatefulWidget {
   @override
@@ -21,6 +22,15 @@ class _CalculatorState extends State<Calculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: ConvexAppBar(
+        items: [
+          TabItem(icon: Icons.menu_open, title: 'Problems'),
+          TabItem(icon: Icons.home, title: 'Home'),
+          TabItem(icon: Icons.settings, title: 'Settings'),
+        ],
+        initialActiveIndex: 1, //optional, default as 0
+        onTap: (int i) => print('click index=$i'),
+      ),
       backgroundColor: Color.fromARGB(196, 32, 64, 96),
       drawer: SideDrawer(),
       appBar: AppBar(
