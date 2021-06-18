@@ -20,7 +20,7 @@ class SideDrawer extends StatelessWidget {
               children: [
                 Text(
                   'NAVTOOL',
-                  style: TextStyle(fontSize: 50),
+                  style: TextStyle(fontSize: 50, color: Colors.white),
                 ),
                 Row(
                   children: [
