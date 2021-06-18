@@ -49,7 +49,8 @@ class _P1State extends State<Paral1> {
   }
 
   String txt() {
-    return 'implement this';/*Problems.priPar(
+    return 'implement this';
+    /*Problems.priPar(
         agla: int.tryParse(agla.text) ?? 0,
         apla: int.tryParse(apla.text) ?? 0,
         aglo: int.tryParse(aglo.text) ?? 0,
@@ -64,8 +65,9 @@ class _P1State extends State<Paral1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: SideDrawer(),
-        appBar: AppBar(
+      drawer: SideDrawer(),
+
+      /* appBar: AppBar(
           title: Text(
             AppLocalizations.of(context)!.paralNavTitle,
             style: TextStyle(color: Colors.white),
@@ -78,128 +80,129 @@ class _P1State extends State<Paral1> {
               Colors.blue,
             ])),
           ),
+        ),*/
+      body: SingleChildScrollView(
+          child: Column(children: <Widget>[
+        Row(
+          children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+              child: TextField(
+                controller: agla,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                  labelText: AppLocalizations.of(context)!.paralNavDegree,
+                  helperText: AppLocalizations.of(context)!.paralNavLatA,
+                ),
+              ),
+            ),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+              child: TextField(
+                controller: apla,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                  labelText: 'PRIMI',
+                  helperText: AppLocalizations.of(context)!.paralNavLatA,
+                ),
+              ),
+            ),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: aglo,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: AppLocalizations.of(context)!.paralNavDegree,
+                helperText: AppLocalizations.of(context)!.paralNavLonA,
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: aplo,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'PRIMI',
+                helperText: AppLocalizations.of(context)!.paralNavLonA,
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+          ],
         ),
-        body: SingleChildScrollView(
-            child: Column(children: <Widget>[
-          Row(
-            children: <Widget>[
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
+        Row(
+          children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
                 child: TextField(
-                  controller: agla,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.blue.shade900, width: 3.0)),
-                    labelText: AppLocalizations.of(context)!.paralNavDegree,
-                    helperText: AppLocalizations.of(context)!.paralNavLatA,
-                  ),
-                ),
+              controller: bgla,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: AppLocalizations.of(context)!.paralNavDegree,
+                helperText: AppLocalizations.of(context)!.paralNavLonB,
               ),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
                 child: TextField(
-                  controller: apla,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.blue.shade900, width: 3.0)),
-                    labelText: 'PRIMI',
-                    helperText: AppLocalizations.of(context)!.paralNavLatA,
-                  ),
-                ),
+              controller: bpla,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'PRIMI',
+                helperText: AppLocalizations.of(context)!.paralNavLatB,
               ),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: aglo,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: AppLocalizations.of(context)!.paralNavDegree,
-                  helperText: AppLocalizations.of(context)!.paralNavLonA,
-                ),
-              )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: aplo,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: 'PRIMI',
-                  helperText: AppLocalizations.of(context)!.paralNavLonA,
-                ),
-              )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-            ],
-          ),
-          Row(
-            children: <Widget>[
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: bgla,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: AppLocalizations.of(context)!.paralNavDegree,
-                  helperText: AppLocalizations.of(context)!.paralNavLonB,
-                ),
-              )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: bpla,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: 'PRIMI',
-                  helperText: AppLocalizations.of(context)!.paralNavLatB,
-                ),
-              )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: bglo,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: AppLocalizations.of(context)!.paralNavDegree,
-                  helperText: AppLocalizations.of(context)!.paralNavLonB,
-                ),
-              )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: bplo,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: 'PRIMI',
-                  helperText: AppLocalizations.of(context)!.paralNavLonB,
-                ),
-              )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-            ],
-          ),
-          Text(txt()),
-        ])),);
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: bglo,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: AppLocalizations.of(context)!.paralNavDegree,
+                helperText: AppLocalizations.of(context)!.paralNavLonB,
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: bplo,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'PRIMI',
+                helperText: AppLocalizations.of(context)!.paralNavLonB,
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+          ],
+        ),
+        Text(txt()),
+      ])),
+    );
   }
 }
