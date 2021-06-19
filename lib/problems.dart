@@ -26,11 +26,12 @@ class _ProblemsState extends State<Problems> {
           },
         ),
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Text(
             'Problems',
             style: TextStyle(color: Colors.white),
           ),
-          iconTheme: IconThemeData(color: Colors.white),
+          //iconTheme: IconThemeData(color: Colors.red),
           flexibleSpace: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
@@ -41,7 +42,14 @@ class _ProblemsState extends State<Problems> {
         ),
         body: SingleChildScrollView(
             child: Column(
-          children: <Widget>[],
+          children: <Widget>[
+            ExpansionTile(
+              title: Text(
+                AppLocalizations.of(context)!.wpTitle,
+                style: TextStyle(fontWeight: FontWeight.w600),
+              ),
+            )
+          ],
         )));
   }
 }

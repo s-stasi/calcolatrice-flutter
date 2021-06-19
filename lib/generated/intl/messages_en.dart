@@ -55,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "settingsLanguage": MessageLookupByLibrary.simpleMessage("Language"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "wpSingular": MessageLookupByLibrary.simpleMessage("wind problem"),
-        "wpTitle": MessageLookupByLibrary.simpleMessage("Wind Problems")
+        "wpTitle": MessageLookupByLibrary.simpleMessage("Wind Problems"),
+        "Problems": MessageLookupByLibrary.simpleMessage("Problems")
       };
 }

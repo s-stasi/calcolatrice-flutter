@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+import 'package:NAVTOOL/problems/problems.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'intl/messages_all.dart';
@@ -65,6 +66,15 @@ class S {
     return Intl.message(
       'Climb',
       name: 'climbTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get Problems {
+    return Intl.message(
+      'Problems',
+      name: 'Problems',
       desc: '',
       args: [],
     );

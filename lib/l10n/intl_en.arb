@@ -24,7 +24,7 @@
 
   "rhumbTitle": "Rhumb line problems",
   "rhumbSingular": "rhumb line problem",
-
+  "Problems": "Problems"
   "expTitle": "Explanations",
   "expMachToKnots": "Mach to knots conversion",
   "expMachToKnotsExp": "Simple, just multiply for 666,739",
