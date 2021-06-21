@@ -31,7 +31,7 @@ toSes(num dec) {
   return ses;
 }
 
-class Problems{
+class Problems {
   var tc;
   var tas;
   var windAngle;
@@ -52,66 +52,53 @@ class Problems{
   String problemNumber = 'nann';
   String res = 'nann';
 
-  Problems.primo({
-    var this.tc,
-    var this.tas,
-    var this.windAngle,
-    var this.windVel}) {
+  Problems.primo(
+      {var this.tc, var this.tas, var this.windAngle, var this.windVel}) {
     primoProblema();
   }
-  Problems.secondo({
-    var this.th,
-    var this.tas,
-    var this.windAngle,
-    var this.windVel}) {
+  Problems.secondo(
+      {var this.th, var this.tas, var this.windAngle, var this.windVel}) {
     secondoProblema();
   }
-  Problems.terzo({
-    var this.tc,
-    var this.gs,
-    var this.windAngle,
-    var this.windVel}) {
+  Problems.terzo(
+      {var this.tc, var this.gs, var this.windAngle, var this.windVel}) {
     terzoProblema();
   }
-  Problems.quarto({
-    var this.tc,
-    var this.tas,
-    var this.gs,
-    var this.th}) {
+  Problems.quarto({var this.tc, var this.tas, var this.gs, var this.th}) {
     quartoProblema();
   }
-  Problems.priLoss({
-    var this.agla,
-    var this.apla,
-    var this.aglo,
-    var this.aplo,
-    var this.bgla,
-    var this.bpla,
-    var this.bglo,
-    var this.bplo}) {
+  Problems.priLoss(
+      {var this.agla,
+      var this.apla,
+      var this.aglo,
+      var this.aplo,
+      var this.bgla,
+      var this.bpla,
+      var this.bglo,
+      var this.bplo}) {
     primoLossodromia();
   }
-  Problems.secLoss({
-    var this.agla,
-    var this.apla,
-    var this.aglo,
-    var this.aplo,
-    var this.d,
-    var this.tc}) {
+  Problems.secLoss(
+      {var this.agla,
+      var this.apla,
+      var this.aglo,
+      var this.aplo,
+      var this.d,
+      var this.tc}) {
     secondoLossodromia();
   }
   Problems.priPar() {
     navParalleli1();
   }
-  Problems.priMer({
-    var this.agla,
-    var this.apla,
-    var this.bgla,
-    var this.bpla,
-    var this.bglo,
-    var this.bplo,
-    var this.d,
-    var this.tc}) {
+  Problems.priMer(
+      {var this.agla,
+      var this.apla,
+      var this.bgla,
+      var this.bpla,
+      var this.bglo,
+      var this.bplo,
+      var this.d,
+      var this.tc}) {
     navMeridiani1();
   }
 

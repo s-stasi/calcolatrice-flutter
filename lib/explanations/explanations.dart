@@ -11,22 +11,41 @@ class Explanations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     titles = [AppLocalizations.of(context)!.expMachToKnots];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Exp'),
       ),
-      drawer: SideDrawer(),
       body: ListView.builder(
         itemCount: titles.length,
         itemBuilder: (context, index) {
           return Card(
-            child: InkWell(
-              child: ListTile(
-                title: Text(titles[index]),
+            child: ExpansionTile(
+              title: Text(
+                titles[index],
+                style: TextStyle(fontSize: 17),
               ),
-              onTap: () {
-                Navigator.pushNamed(context, routes[index]);
-              },
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.3,
+                      child: RaisedButton(
+                        onPressed: () {},
+                        child: Text('solve'),
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.3,
+                      child: RaisedButton(
+                        onPressed: () {},
+                        child: Text('Explanation'),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
             elevation: 5,
           );

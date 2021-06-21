@@ -20,7 +20,7 @@ void primoPdfCreator(
     base: ttf,
   );
   pdf.addPage(MultiPage(
-        theme: theme,
+      theme: theme,
       pageFormat:
           PdfPageFormat.letter.copyWith(marginBottom: 1.5 * PdfPageFormat.cm),
       crossAxisAlignment: CrossAxisAlignment.start,

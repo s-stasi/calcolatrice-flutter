@@ -79,20 +79,19 @@ class _SPState extends State<SecondoProblema> {
         title: Text(
           'SECONDO PROBLEMA',
           style: TextStyle(color: Colors.white),
-          
         ),
         actions: [
-            IconButton(
-                onPressed: () async {
-                  PdfBuilder.primo(
-                      tc: double.tryParse(th.text) ?? 0.0,
-                      tas: double.tryParse(tas.text) ?? 0.0,
-                      windAngle: double.tryParse(windAngle.text) ?? 0.0,
-                      windVel: double.tryParse(windVel.text) ?? 0.0,
-                      img: await saveImage(),
-                      context: context);
-                },
-                icon: Icon(Icons.print)),
+          IconButton(
+              onPressed: () async {
+                PdfBuilder.primo(
+                    tc: double.tryParse(th.text) ?? 0.0,
+                    tas: double.tryParse(tas.text) ?? 0.0,
+                    windAngle: double.tryParse(windAngle.text) ?? 0.0,
+                    windVel: double.tryParse(windVel.text) ?? 0.0,
+                    img: await saveImage(),
+                    context: context);
+              },
+              icon: Icon(Icons.print)),
         ],
         iconTheme: IconThemeData(color: Colors.white),
         flexibleSpace: Container(
