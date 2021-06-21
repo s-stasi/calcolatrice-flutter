@@ -58,114 +58,115 @@ class _P2State extends State<Paral2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: SideDrawer(),
-        appBar: AppBar(
-          title: Text(
-            AppLocalizations.of(context)!.paralNavTitle,
-            style: TextStyle(color: Colors.white),
-          ),
-          iconTheme: IconThemeData(color: Colors.white),
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [
-              Colors.black,
-              Colors.blue,
-            ])),
-          ),
+      //drawer: SideDrawer(),
+      appBar: AppBar(
+        title: Text(
+          AppLocalizations.of(context)!.paralNavTitle,
+          style: TextStyle(color: Colors.white),
         ),
-        body: SingleChildScrollView(
-            child: Column(children: <Widget>[
-          Row(
-            children: <Widget>[
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                child: TextField(
-                  controller: agla,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.blue.shade900, width: 3.0)),
-                    labelText: AppLocalizations.of(context)!.paralNavDegree,
-                    helperText: AppLocalizations.of(context)!.paralNavLatA,
-                  ),
-                ),
-              ),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                child: TextField(
-                  controller: apla,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.blue.shade900, width: 3.0)),
-                    labelText: 'PRIMI',
-                    helperText: AppLocalizations.of(context)!.paralNavLatA,
-                  ),
-                ),
-              ),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: aglo,
+        iconTheme: IconThemeData(color: Colors.white),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Colors.black,
+            Colors.blue,
+          ])),
+        ),
+      ),
+      body: SingleChildScrollView(
+          child: Column(children: <Widget>[
+        Row(
+          children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+              child: TextField(
+                controller: agla,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Colors.blue.shade900, width: 3.0)),
                   labelText: AppLocalizations.of(context)!.paralNavDegree,
-                  helperText: AppLocalizations.of(context)!.paralNavLonA,
+                  helperText: AppLocalizations.of(context)!.paralNavLatA,
                 ),
-              )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: aplo,
+              ),
+            ),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+              child: TextField(
+                controller: apla,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Colors.blue.shade900, width: 3.0)),
                   labelText: 'PRIMI',
-                  helperText: AppLocalizations.of(context)!.paralNavLonA,
+                  helperText: AppLocalizations.of(context)!.paralNavLatA,
                 ),
-              )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-            ],
-          ),
-          Row(
-            children: <Widget>[
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: tc,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: AppLocalizations.of(context)!.paralNavDegree,
-                  helperText: AppLocalizations.of(context)!.paralNavLonB,
-                ),
-              )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.04, height: 150),
-              Expanded(
-                  child: TextField(
-                controller: d,
-                decoration: InputDecoration(
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                  labelText: 'PRIMI',
-                  helperText: AppLocalizations.of(context)!.paralNavLatB,
-                ),
-              )),
-            ],
-          ),
-          Text(txt()),
-        ])),);
+              ),
+            ),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: aglo,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: AppLocalizations.of(context)!.paralNavDegree,
+                helperText: AppLocalizations.of(context)!.paralNavLonA,
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: aplo,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'PRIMI',
+                helperText: AppLocalizations.of(context)!.paralNavLonA,
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: tc,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: AppLocalizations.of(context)!.paralNavDegree,
+                helperText: AppLocalizations.of(context)!.paralNavLonB,
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: d,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'PRIMI',
+                helperText: AppLocalizations.of(context)!.paralNavLatB,
+              ),
+            )),
+          ],
+        ),
+        Text(txt()),
+      ])),
+    );
   }
 }

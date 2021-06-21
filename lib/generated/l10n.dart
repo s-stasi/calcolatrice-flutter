@@ -71,10 +71,10 @@ class S {
     );
   }
 
-  String get Problems {
+  String get problems {
     return Intl.message(
-      'Problems',
-      name: 'Problems',
+      'problems',
+      name: 'problems',
       desc: '',
       args: [],
     );

@@ -66,7 +66,7 @@ class _P1State extends State<Paral1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideDrawer(),
+      //drawer: SideDrawer(),
       appBar: AppBar(
         title: Text(
           AppLocalizations.of(context)!.paralNavTitle,

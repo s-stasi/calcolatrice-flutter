@@ -58,6 +58,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "wpSingular":
             MessageLookupByLibrary.simpleMessage("problema del vento"),
         "wpTitle": MessageLookupByLibrary.simpleMessage("Problemi del vento"),
-        "Problems": MessageLookupByLibrary.simpleMessage("Problemi")
+        "problems": MessageLookupByLibrary.simpleMessage("Problemi")
       };
 }
