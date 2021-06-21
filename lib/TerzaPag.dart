@@ -39,17 +39,17 @@ class _PTState extends State<TerzoProblema> {
 
   String txt() {
     return Problems.terzo(
-            tc: double.tryParse(tc.text) ?? 0.0,
-            gs: double.tryParse(gs.text) ?? 0.0,
-            windAngle: double.tryParse(windAngle.text) ?? 0.0,
-            windVel: double.tryParse(windVel.text) ?? 0.0,)
-        .data;
+      tc: double.tryParse(tc.text) ?? 0.0,
+      gs: double.tryParse(gs.text) ?? 0.0,
+      windAngle: double.tryParse(windAngle.text) ?? 0.0,
+      windVel: double.tryParse(windVel.text) ?? 0.0,
+    ).data;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideDrawer(),
+      //drawer: SideDrawer(),
       appBar: AppBar(
         title: Text(
           'TERZO PROBLEMA',

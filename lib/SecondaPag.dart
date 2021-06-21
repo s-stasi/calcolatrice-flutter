@@ -51,7 +51,7 @@ class _SPState extends State<SecondoProblema> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideDrawer(),
+      //drawer: SideDrawer(),
       appBar: AppBar(
         title: Text(
           'SECONDO PROBLEMA',

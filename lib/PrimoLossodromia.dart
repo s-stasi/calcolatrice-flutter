@@ -53,21 +53,21 @@ class _PLState extends State<PrimoLossodromia> {
 
   String txt() {
     return Problems.priLoss(
-        agla: int.tryParse(agla.text) ?? 0,
-        apla: int.tryParse(apla.text) ?? 0,
-        aglo: int.tryParse(aglo.text) ?? 0,
-        aplo: int.tryParse(aplo.text) ?? 0,
-        bgla: int.tryParse(bgla.text) ?? 0,
-        bpla: int.tryParse(bpla.text) ?? 0,
-        bglo: int.tryParse(bglo.text) ?? 0,
-        bplo: int.tryParse(bplo.text) ?? 0)
-      .data;
+            agla: int.tryParse(agla.text) ?? 0,
+            apla: int.tryParse(apla.text) ?? 0,
+            aglo: int.tryParse(aglo.text) ?? 0,
+            aplo: int.tryParse(aplo.text) ?? 0,
+            bgla: int.tryParse(bgla.text) ?? 0,
+            bpla: int.tryParse(bpla.text) ?? 0,
+            bglo: int.tryParse(bglo.text) ?? 0,
+            bplo: int.tryParse(bplo.text) ?? 0)
+        .data;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideDrawer(),
+      //drawer: SideDrawer(),
       appBar: AppBar(
         title: Text(
           'PRIMO PROBLEMA LOSSODROMIA',

@@ -78,7 +78,7 @@ class _PPState extends State<PrimoProblema> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideDrawer(),
+      //drawer: SideDrawer(),
       appBar: AppBar(
         title: Text(
           'PRIMO PROBLEMA',

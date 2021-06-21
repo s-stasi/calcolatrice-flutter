@@ -75,7 +75,7 @@ class _SalitaState extends State<Salita> {
             if (i == 2) Navigator.pushNamed(context, '/ImpPag');
           },
         ),
-        drawer: SideDrawer(),
+        //drawer: SideDrawer(),
         appBar: AppBar(
           title: Text(
             AppLocalizations.of(context)!.climbTitle,

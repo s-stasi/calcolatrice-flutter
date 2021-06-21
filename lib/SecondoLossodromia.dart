@@ -45,19 +45,19 @@ class _SLState extends State<SecondoLossodromia> {
 
   String txt() {
     return Problems.secLoss(
-        agla: int.tryParse(agla.text) ?? 0,
-        apla: int.tryParse(apla.text) ?? 0,
-        aglo: int.tryParse(aglo.text) ?? 0,
-        aplo: int.tryParse(aplo.text) ?? 0,
-        d: int.tryParse(d.text) ?? 0,
-        tc: int.tryParse(tc.text) ?? 0)
-      .data;
+            agla: int.tryParse(agla.text) ?? 0,
+            apla: int.tryParse(apla.text) ?? 0,
+            aglo: int.tryParse(aglo.text) ?? 0,
+            aplo: int.tryParse(aplo.text) ?? 0,
+            d: int.tryParse(d.text) ?? 0,
+            tc: int.tryParse(tc.text) ?? 0)
+        .data;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: SideDrawer(),
+      //drawer: SideDrawer(),
       appBar: AppBar(
         title: Text(
           'SECONDO PROBLEMA LOSSODROMIA',
