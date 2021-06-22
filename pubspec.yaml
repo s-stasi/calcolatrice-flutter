@@ -39,6 +39,10 @@ dependencies:
   pdf: ^3.3.0
   path_provider: ^1.6.28
   flutter_full_pdf_viewer: ^1.0.6
+  window_size:
+    git:
+      url: git://github.com/google/flutter-desktop-embedding.git
+      path: plugins/window_size
   
 #   flutter_launcher_icons: ^0.9.0
 

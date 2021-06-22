@@ -11,6 +11,7 @@ class Explanations extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     titles = [AppLocalizations.of(context)!.expMachToKnots];
+    var width = MediaQuery.of(context).size.width * 0.3;
 
     return Scaffold(
       appBar: AppBar(
@@ -30,14 +31,14 @@ class Explanations extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.3,
+                      width: width,
                       child: RaisedButton(
                         onPressed: () {},
                         child: Text('solve'),
                       ),
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.3,
+                      width: width,
                       child: RaisedButton(
                         onPressed: () {},
                         child: Text('Explanation'),

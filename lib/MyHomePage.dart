@@ -23,7 +23,7 @@ class _CalculatorState extends State<Calculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: ConvexAppBar(
-        activeColor: Colors.blue[50],
+        activeColor: Colors.blue[900],
         items: [
           TabItem(icon: Icons.menu_open, title: 'Problems'),
           TabItem(icon: Icons.home, title: 'Home'),
