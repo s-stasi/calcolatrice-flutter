@@ -2,14 +2,10 @@ import 'dart:typed_data';
 
 import 'theming/legend.dart';
 import 'package:flutter/material.dart';
-import 'SideDrawer.dart';
 import 'dart:ui' as ui;
 import 'problems/problems.dart';
 import 'problems/piano_cartesiano.dart';
-//import 'package:pdf/widget.dart';
-import 'package:path_provider/path_provider.dart';
 import 'pdfcr.dart';
-import 'package:pdf/widgets.dart' as pdfw;
 
 class PrimoProblema extends StatefulWidget {
   final recorder = ui.PictureRecorder();

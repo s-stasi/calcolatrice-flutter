@@ -133,7 +133,7 @@ class Problems {
     }
 
     res = arr;
-    print('aaaa: ${res}');
+    print('aaaa: $res');
   }
 
   void secondoProblema() {
@@ -384,6 +384,7 @@ class Problems {
       bpla = toSes(bla)[1];
       var res = [bgla, bpla];
       if (tc != 0 || tc != 360 || tc != 180)
+        // TODO: convert this in runtime error or console warning
         var arr = 'inserisci un  allore valido (0/360 & 180) ';
       String arr = "B: ${res[0]}° ${res[1]}'";
       this.res = arr;

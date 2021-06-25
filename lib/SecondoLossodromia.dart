@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'SideDrawer.dart';
 import 'problems/problems.dart';
 
 class SecondoLossodromia extends StatefulWidget {

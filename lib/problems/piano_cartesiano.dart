@@ -38,7 +38,6 @@ class PianoCartesianoPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    double gridScale = (size.height * 0.05).round().toDouble();
     List<dynamic> verticalArray = [];
     List<dynamic> horizontalArray = [];
 
@@ -179,14 +178,18 @@ class PianoCartesianoPainter extends CustomPainter {
             ..strokeWidth = 4;
           var gsCoord = [windCoord[0], tasCoord[0]];
 
+          // ignore: non_constant_identifier_names
           var MPScale = 400 > size.height ? 1 / (40 / (size.height / 10)) : 1;
+          // ignore: non_constant_identifier_names
           var MPPaint = Paint()
             ..color = Colors.blue
             ..strokeWidth = 4;
+          // ignore: non_constant_identifier_names
           var MPXCoord = [
             Offset(windCoord[0].dx - 40 * MPScale, windCoord[0].dy),
             Offset(windCoord[0].dx + 40 * MPScale, windCoord[0].dy)
           ];
+          // ignore: non_constant_identifier_names
           var MPYCoord = [
             Offset(windCoord[0].dx, windCoord[0].dy - 40 * MPScale),
             Offset(windCoord[0].dx, windCoord[0].dy + 40 * MPScale)

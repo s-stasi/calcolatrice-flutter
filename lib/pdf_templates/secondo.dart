@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-import 'package:NAVTOOL/PrimaPag.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 import 'pdfSaver.dart';
