@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "paralNavLonB": MessageLookupByLibrary.simpleMessage("Longitudine B"),
         "paralNavTitle":
             MessageLookupByLibrary.simpleMessage("Navigazione per paralleli"),
+        "problems": MessageLookupByLibrary.simpleMessage("Problemi"),
         "rhumbSingular":
             MessageLookupByLibrary.simpleMessage("problema della lossodromia"),
         "rhumbTitle":
@@ -57,7 +58,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Impostazioni"),
         "wpSingular":
             MessageLookupByLibrary.simpleMessage("problema del vento"),
-        "wpTitle": MessageLookupByLibrary.simpleMessage("Problemi del vento"),
-        "problems": MessageLookupByLibrary.simpleMessage("Problemi")
+        "wpTitle": MessageLookupByLibrary.simpleMessage("Problemi del vento")
       };
 }

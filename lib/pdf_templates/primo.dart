@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-import 'package:NAVTOOL/PrimaPag.dart';
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
@@ -7,9 +6,9 @@ import 'pdfSaver.dart';
 
 void primoPdfCreator(
     num tc, num tas, num windAngle, num windVel, Uint8List img, context) async {
-  final font = await rootBundle.load("asset/arial.ttf");
-  final ttf = Font.ttf(font);
-  final ttfStyle = TextStyle(font: ttf);
+  // final font = await rootBundle.load("asset/arial.ttf");
+  // final ttf = Font.ttf(font);
+  // final ttfStyle = TextStyle(font: ttf);
   // final fontBold = await rootBundle.load("asset/open-sans-bold.ttf");
   // final ttfBold = pdf.Font.ttf(fontBold);
   // final fontItalic = await rootBundle.load("asset/open-sans-italic.ttf");
@@ -20,13 +19,15 @@ void primoPdfCreator(
     base: Font.ttf(await rootBundle.load("asset/OpenSans-Regular.ttf")),
     bold: Font.ttf(await rootBundle.load("asset/OpenSans-Bold.ttf")),
     italic: Font.ttf(await rootBundle.load("asset/OpenSans-Italic.ttf")),
-    boldItalic: Font.ttf(await rootBundle.load("asset/OpenSans-BoldItalic.ttf")),
+    boldItalic:
+        Font.ttf(await rootBundle.load("asset/OpenSans-BoldItalic.ttf")),
   );
   Document pdf = Document(
     theme: theme,
-    );
+  );
   print('1pdf');
   pdf.addPage(MultiPage(
+      theme: theme,
       pageFormat:
           PdfPageFormat.letter.copyWith(marginBottom: 1.5 * PdfPageFormat.cm),
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +73,7 @@ void primoPdfCreator(
             Row(
               children: [
                 Text('text'),
-                Icon(IconData(57499, matchTextDirection: true)),
+                // Icon(IconData(57499, matchTextDirection: true)),
                 Text('text'),
               ],
             ),

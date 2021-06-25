@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "paralNavLonB": MessageLookupByLibrary.simpleMessage("Longitude B"),
         "paralNavTitle":
             MessageLookupByLibrary.simpleMessage("Parallel navigation"),
+        "problems": MessageLookupByLibrary.simpleMessage("Problems"),
         "rhumbSingular":
             MessageLookupByLibrary.simpleMessage("rhumb line problem"),
         "rhumbTitle":
@@ -55,7 +56,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "settingsLanguage": MessageLookupByLibrary.simpleMessage("Language"),
         "settingsTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "wpSingular": MessageLookupByLibrary.simpleMessage("wind problem"),
-        "wpTitle": MessageLookupByLibrary.simpleMessage("Wind Problems"),
-        "problems": MessageLookupByLibrary.simpleMessage("Problems")
+        "wpTitle": MessageLookupByLibrary.simpleMessage("Wind Problems")
       };
 }
