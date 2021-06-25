@@ -7,9 +7,9 @@ import 'pdfSaver.dart';
 
 void primoPdfCreator(
     num tc, num tas, num windAngle, num windVel, Uint8List img, context) async {
-  Document pdf = Document();
-  final font = await rootBundle.load("arial.ttf");
+  final font = await rootBundle.load("asset/arial.ttf");
   final ttf = Font.ttf(font);
+  final ttfStyle = TextStyle(font: ttf);
   // final fontBold = await rootBundle.load("asset/open-sans-bold.ttf");
   // final ttfBold = pdf.Font.ttf(fontBold);
   // final fontItalic = await rootBundle.load("asset/open-sans-italic.ttf");
@@ -17,10 +17,16 @@ void primoPdfCreator(
   // final fontBoldItalic = await rootBundle.load("asset/open-sans-italic.ttf");
   // final ttfBoldItalic = pdf.Font.ttf(fontBoldItalic);
   final ThemeData theme = ThemeData.withFont(
-    base: ttf,
+    base: Font.ttf(await rootBundle.load("asset/OpenSans-Regular.ttf")),
+    bold: Font.ttf(await rootBundle.load("asset/OpenSans-Bold.ttf")),
+    italic: Font.ttf(await rootBundle.load("asset/OpenSans-Italic.ttf")),
+    boldItalic: Font.ttf(await rootBundle.load("asset/OpenSans-BoldItalic.ttf")),
   );
+  Document pdf = Document(
+    theme: theme,
+    );
+  print('1pdf');
   pdf.addPage(MultiPage(
-      theme: theme,
       pageFormat:
           PdfPageFormat.letter.copyWith(marginBottom: 1.5 * PdfPageFormat.cm),
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,19 +39,13 @@ void primoPdfCreator(
             decoration: const BoxDecoration(
                 border: Border(
                     bottom: BorderSide(color: PdfColors.grey, width: 0.5))),
-            child: Text('Report',
-                style: Theme.of(context)
-                    .defaultTextStyle
-                    .copyWith(color: PdfColors.grey)));
+            child: Text('Report'));
       },
       footer: (Context context) {
         return Container(
             alignment: Alignment.centerRight,
             margin: const EdgeInsets.only(top: 1.0 * PdfPageFormat.cm),
-            child: Text('Page ${context.pageNumber} of ${context.pagesCount}',
-                style: Theme.of(context)
-                    .defaultTextStyle
-                    .copyWith(color: PdfColors.grey)));
+            child: Text('Page ${context.pageNumber} of ${context.pagesCount}'));
       },
       build: (Context context) => <Widget>[
             Header(
