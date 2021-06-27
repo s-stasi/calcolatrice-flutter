@@ -3,10 +3,23 @@ import 'package:NAVTOOL/PrimaPag.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 import 'pdfSaver.dart';
+import 'dart:math' as Math;
+
+toRad(num deg) {
+  return deg * Math.pi / 180;
+}
+
+toDeg(num rad) {
+  return rad * 180 / Math.pi;
+}
 
 void secondoPdfCreator(
     num th, num tas, num windAngle, num windVel, Uint8List img, context) async {
   Document pdf = Document();
+  final gamma = (th < windAngle) ? windAngle - th : th - windAngle;
+  final gs = Math.sqrt(Math.pow(windVel, 2) +
+        Math.pow(tas, 2) -
+        (2 * windVel * tas * Math.cos(toRad(gamma))));
   pdf.addPage(MultiPage(
       pageFormat:
           PdfPageFormat.letter.copyWith(marginBottom: 1.5 * PdfPageFormat.cm),
@@ -59,24 +72,25 @@ void secondoPdfCreator(
             Row(
               children: [
                 Text(
-                    'gamma = ${(th < windAngle) ? "wind angle originale - th" : "th - wind angle originale"}'),
-                Icon(IconData(57499, matchTextDirection: true)),
+                    'gamma = ${(th < windAngle) ? "wind angle originale - th" : "th - wind angle originale"} = '),
+                // Icon(IconData(57499, matchTextDirection: true)),
                 Text(
-                    '${(th < windAngle) ? "$windAngle - $th" : "$th - $windAngle"}'),
-                Text('${(th < windAngle) ? windAngle - th : th - windAngle} '),
+                    '${(th < windAngle) ? "$windAngle - $th" : "$th - $windAngle"} = '),
+                Text('$gamma'),
+                // TODO: add degree symbol
               ],
             ),
             Row(
               children: [
                 Text(
-                    'gamma = ${(th < windAngle) ? "wind angle originale - th" : "th - wind angle originale"}'),
-                Icon(IconData(57499, matchTextDirection: true)),
+                    'gs = sqrt(wind velocity^2 + tas^2 - (2 * wind velocity * tas * cos(gamma))) = '),
+                // Icon(IconData(57499, matchTextDirection: true)),
                 Text(
-                    '${(th < windAngle) ? "$windAngle - $th" : "$th - $windAngle"} = '),
-                Text('${(th < windAngle) ? windAngle - th : th - windAngle} '),
+                    'sqrt($windVel^2 + $tas^2 - (2 * $windVel * $tas * cos($gamma))) = '),
+                Text('$gs'),
+                // TODO: add degree symbol
               ],
-            ),
-          ]));
+            ),]));
 
   save(pdf);
 }

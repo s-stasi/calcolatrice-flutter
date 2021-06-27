@@ -83,8 +83,8 @@ class _SPState extends State<SecondoProblema> {
         actions: [
           IconButton(
               onPressed: () async {
-                PdfBuilder.primo(
-                    tc: double.tryParse(th.text) ?? 0.0,
+                PdfBuilder.secondo(
+                    th: double.tryParse(th.text) ?? 0.0,
                     tas: double.tryParse(tas.text) ?? 0.0,
                     windAngle: double.tryParse(windAngle.text) ?? 0.0,
                     windVel: double.tryParse(windVel.text) ?? 0.0,

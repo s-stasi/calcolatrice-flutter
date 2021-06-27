@@ -9,7 +9,7 @@ import 'dart:io';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  if(Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     setWindowTitle('navtool');
     setWindowMinSize(const Size(380, 500));
     setWindowMaxSize(Size.infinite);

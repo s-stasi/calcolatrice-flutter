@@ -20,11 +20,12 @@ void primoPdfCreator(
     base: Font.ttf(await rootBundle.load("asset/OpenSans-Regular.ttf")),
     bold: Font.ttf(await rootBundle.load("asset/OpenSans-Bold.ttf")),
     italic: Font.ttf(await rootBundle.load("asset/OpenSans-Italic.ttf")),
-    boldItalic: Font.ttf(await rootBundle.load("asset/OpenSans-BoldItalic.ttf")),
+    boldItalic:
+        Font.ttf(await rootBundle.load("asset/OpenSans-BoldItalic.ttf")),
   );
   Document pdf = Document(
     theme: theme,
-    );
+  );
   print('1pdf');
   pdf.addPage(MultiPage(
       pageFormat:
@@ -72,7 +73,7 @@ void primoPdfCreator(
             Row(
               children: [
                 Text('text'),
-                Icon(IconData(57499, matchTextDirection: true)),
+                // Icon(IconData(57499, matchTextDirection: true)),
                 Text('text'),
               ],
             ),
