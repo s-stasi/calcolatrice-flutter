@@ -69,6 +69,7 @@ class _PTState extends State<TerzoProblema> {
                 height: MediaQuery.of(context).size.height * 0.20),
             Expanded(
               child: TextField(
+                keyboardType: TextInputType.number,
                 controller: tc,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -84,6 +85,7 @@ class _PTState extends State<TerzoProblema> {
                 height: MediaQuery.of(context).size.height * 0.20),
             Expanded(
               child: TextField(
+                keyboardType: TextInputType.number,
                 controller: gs,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -99,6 +101,7 @@ class _PTState extends State<TerzoProblema> {
                 height: MediaQuery.of(context).size.height * 0.20),
             Expanded(
               child: TextField(
+                keyboardType: TextInputType.number,
                 controller: windAngle,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -114,6 +117,7 @@ class _PTState extends State<TerzoProblema> {
                 height: MediaQuery.of(context).size.height * 0.20),
             Expanded(
               child: TextField(
+                keyboardType: TextInputType.number,
                 controller: windVel,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(

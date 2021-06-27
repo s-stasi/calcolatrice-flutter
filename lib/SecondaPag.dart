@@ -110,6 +110,7 @@ class _SPState extends State<SecondoProblema> {
                   height: MediaQuery.of(context).size.height * 0.20),
               Expanded(
                   child: TextField(
+                keyboardType: TextInputType.number,
                 controller: th,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -124,6 +125,7 @@ class _SPState extends State<SecondoProblema> {
                   height: MediaQuery.of(context).size.height * 0.20),
               Expanded(
                   child: TextField(
+                keyboardType: TextInputType.number,
                 controller: tas,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -138,6 +140,7 @@ class _SPState extends State<SecondoProblema> {
                   height: MediaQuery.of(context).size.height * 0.20),
               Expanded(
                   child: TextField(
+                keyboardType: TextInputType.number,
                 controller: windAngle,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -152,6 +155,7 @@ class _SPState extends State<SecondoProblema> {
                   height: MediaQuery.of(context).size.height * 0.20),
               Expanded(
                   child: TextField(
+                keyboardType: TextInputType.number,
                 controller: windVel,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(

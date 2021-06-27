@@ -89,6 +89,7 @@ class _PLState extends State<PrimoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: agla,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -102,6 +103,7 @@ class _PLState extends State<PrimoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: apla,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -136,6 +138,7 @@ class _PLState extends State<PrimoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: aglo,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -149,6 +152,7 @@ class _PLState extends State<PrimoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: aplo,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -189,6 +193,7 @@ class _PLState extends State<PrimoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: bgla,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -202,6 +207,7 @@ class _PLState extends State<PrimoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: bpla,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -236,6 +242,7 @@ class _PLState extends State<PrimoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: bglo,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -249,6 +256,7 @@ class _PLState extends State<PrimoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: bplo,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
