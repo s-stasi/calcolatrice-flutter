@@ -56,11 +56,11 @@ class _SPState extends State<SecondoProblema> {
     final canvas = new Canvas(recorder,
         new Rect.fromPoints(new Offset(0.0, 0.0), new Offset(400.0, 400.0)));
     PianoCartesianoPainter(
-            tc: double.tryParse(th.text) ?? 0.0,
+            th: double.tryParse(th.text) ?? 0.0,
             tas: double.tryParse(tas.text) ?? 0.0,
             windAngle: double.tryParse(windAngle.text) ?? 0.0,
             windVel: double.tryParse(windVel.text) ?? 0.0,
-            problemNumber: "primo",
+            problemNumber: "secondo",
             context: context)
         .paint(canvas, size);
     final picture = recorder.endRecording();
