@@ -50,26 +50,6 @@ class _SPState extends State<SecondoProblema> {
         .data;
   }
 
-  Future<Uint8List> saveImage() async {
-    final Size size = Size(400, 400);
-    final recorder = new ui.PictureRecorder();
-    final canvas = new Canvas(recorder,
-        new Rect.fromPoints(new Offset(0.0, 0.0), new Offset(400.0, 400.0)));
-    PianoCartesianoPainter(
-            th: double.tryParse(th.text) ?? 0.0,
-            tas: double.tryParse(tas.text) ?? 0.0,
-            windAngle: double.tryParse(windAngle.text) ?? 0.0,
-            windVel: double.tryParse(windVel.text) ?? 0.0,
-            problemNumber: "secondo",
-            context: context)
-        .paint(canvas, size);
-    final picture = recorder.endRecording();
-    final img = await picture.toImage(400, 400);
-    final bdata = await img.toByteData(format: ui.ImageByteFormat.png);
-    Uint8List pngBytes = bdata!.buffer.asUint8List();
-    return pngBytes;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,19 +59,6 @@ class _SPState extends State<SecondoProblema> {
           'SECONDO PROBLEMA',
           style: TextStyle(color: Colors.white),
         ),
-        actions: [
-          IconButton(
-              onPressed: () async {
-                PdfBuilder.secondo(
-                    th: double.tryParse(th.text) ?? 0.0,
-                    tas: double.tryParse(tas.text) ?? 0.0,
-                    windAngle: double.tryParse(windAngle.text) ?? 0.0,
-                    windVel: double.tryParse(windVel.text) ?? 0.0,
-                    img: await saveImage(),
-                    context: context);
-              },
-              icon: Icon(Icons.print)),
-        ],
         iconTheme: IconThemeData(color: Colors.white),
         flexibleSpace: Container(
           decoration: BoxDecoration(
