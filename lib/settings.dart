@@ -18,75 +18,73 @@ class Impostazioni extends StatefulWidget {
 class ImpostazioniState extends State<Impostazioni> {
   late bool isBlack;
 
-  magheggio(bool e) {
-    isBlack = e;
-    return SideDrawer();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeNotifier>(
-      builder: (context, theme, child) => Scaffold(
-        bottomNavigationBar: ConvexAppBar(
-          activeColor: Colors.blue[50],
-          items: [
-            TabItem(icon: Icons.menu_open, title: 'Problems'),
-            TabItem(icon: Icons.home, title: 'Home'),
-            TabItem(icon: Icons.settings, title: 'Settings'),
-          ],
-          initialActiveIndex: 2, //optional, default as 0
-          onTap: (int i) {
-            if (i == 0) Navigator.pushNamed(context, '/Problems');
-            if (i == 1) Navigator.pushNamed(context, '/');
-            //  if (i == 2) Navigator.pushNamed(context, '/ImpPag');
-          },
-        ),
-        drawer: magheggio(theme.isDark),
-        appBar: AppBar(
-          title: Text(
-            AppLocalizations.of(context)!.settingsTitle,
-            style: TextStyle(color: Colors.black),
+      builder: (context, theme, child) {
+        isBlack = theme.isDark;
+        return Scaffold(
+          bottomNavigationBar: ConvexAppBar(
+            activeColor: Colors.blue[50],
+            items: [
+              TabItem(icon: Icons.menu_open, title: 'Problems'),
+              TabItem(icon: Icons.home, title: 'Home'),
+              TabItem(icon: Icons.settings, title: 'Settings'),
+            ],
+            initialActiveIndex: 2, //optional, default as 0
+            onTap: (int i) {
+              if (i == 0) Navigator.pushNamed(context, '/Problems');
+              if (i == 1) Navigator.pushNamed(context, '/');
+              //  if (i == 2) Navigator.pushNamed(context, '/ImpPag');
+            },
           ),
-          iconTheme: IconThemeData(color: Colors.black),
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [
-              Colors.grey,
-              Colors.white,
-            ])),
-          ),
-        ),
-        body: SettingsList(
-          sections: [
-            SettingsSection(
-              tiles: [
-                SettingsTile.switchTile(
-                  title: AppLocalizations.of(context)!.settingsInterfaceTheme,
-                  leading: Icon(Icons.mode_night),
-                  switchValue: isBlack,
-                  onToggle: (bool isBlack) {
-                    theme.changeMode();
-                    isBlack = !isBlack;
-                  },
-                ),
-                SettingsTile(
-                  title: AppLocalizations.of(context)!.settingsLanguage,
-                  leading: Icon(Icons.language),
-                  onPressed: (context) {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => Language(),
-                      ),
-                    );
-                  },
-                ),
-              ],
+          // drawer: magheggio(theme.isDark),
+          appBar: AppBar(
+            title: Text(
+              AppLocalizations.of(context)!.settingsTitle,
+              style: TextStyle(color: Colors.black),
             ),
-          ],
-          darkBackgroundColor: Color(0xFF212121),
-          lightBackgroundColor: Color(0xFFE5E5E5),
-        ),
-      ),
+            iconTheme: IconThemeData(color: Colors.black),
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                Colors.grey,
+                Colors.white,
+              ])),
+            ),
+          ),
+          body: SettingsList(
+            sections: [
+              SettingsSection(
+                tiles: [
+                  SettingsTile.switchTile(
+                    title: AppLocalizations.of(context)!.settingsInterfaceTheme,
+                    leading: Icon(Icons.mode_night),
+                    switchValue: isBlack,
+                    onToggle: (bool isBlack) {
+                      theme.changeMode();
+                      isBlack = !isBlack;
+                    },
+                  ),
+                  SettingsTile(
+                    title: AppLocalizations.of(context)!.settingsLanguage,
+                    leading: Icon(Icons.language),
+                    onPressed: (context) {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (_) => Language(),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ],
+            darkBackgroundColor: Color(0xFF212121),
+            lightBackgroundColor: Color(0xFFE5E5E5),
+          ),
+        );
+      },
     );
   }
 }

@@ -53,52 +53,65 @@ class Problems {
   String res = 'nann';
 
   Problems.primo(
-      {var this.tc, var this.tas, var this.windAngle, var this.windVel}) {
+      {required this.tc,
+      required this.tas,
+      required this.windAngle,
+      required this.windVel}) {
     primoProblema();
   }
   Problems.secondo(
-      {var this.th, var this.tas, var this.windAngle, var this.windVel}) {
+      {required this.th,
+      required this.tas,
+      required this.windAngle,
+      required this.windVel}) {
     secondoProblema();
   }
   Problems.terzo(
-      {var this.tc, var this.gs, var this.windAngle, var this.windVel}) {
+      {required this.tc,
+      required this.gs,
+      required this.windAngle,
+      required this.windVel}) {
     terzoProblema();
   }
-  Problems.quarto({var this.tc, var this.tas, var this.gs, var this.th}) {
+  Problems.quarto(
+      {required this.tc,
+      required this.tas,
+      required this.gs,
+      required this.th}) {
     quartoProblema();
   }
   Problems.priLoss(
-      {var this.agla,
-      var this.apla,
-      var this.aglo,
-      var this.aplo,
-      var this.bgla,
-      var this.bpla,
-      var this.bglo,
-      var this.bplo}) {
+      {required this.agla,
+      required this.apla,
+      required this.aglo,
+      required this.aplo,
+      required this.bgla,
+      required this.bpla,
+      required this.bglo,
+      required this.bplo}) {
     primoLossodromia();
   }
   Problems.secLoss(
-      {var this.agla,
-      var this.apla,
-      var this.aglo,
-      var this.aplo,
-      var this.d,
-      var this.tc}) {
+      {required this.agla,
+      required this.apla,
+      required this.aglo,
+      required this.aplo,
+      required this.d,
+      required this.tc}) {
     secondoLossodromia();
   }
   Problems.priPar() {
     navParalleli1();
   }
   Problems.priMer(
-      {var this.agla,
-      var this.apla,
-      var this.bgla,
-      var this.bpla,
-      var this.bglo,
-      var this.bplo,
-      var this.d,
-      var this.tc}) {
+      {required this.agla,
+      required this.apla,
+      required this.bgla,
+      required this.bpla,
+      required this.bglo,
+      required this.bplo,
+      required this.d,
+      required this.tc}) {
     navMeridiani1();
   }
 

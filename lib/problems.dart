@@ -141,22 +141,22 @@ class _ProblemsState extends State<Problems> {
                 '/secLos'
               ], context),
             ),
-            Divider(
-              color: Colors.grey[900],
-            ),
-            ListTile(
-              leading: Icon(Icons.flight_takeoff_sharp),
-              title: Text(
-                AppLocalizations.of(context)!.climbTitle,
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-              ),
-              onTap: () => {
-                Navigator.pushNamed(
-                  context,
-                  '/salita',
-                ),
-              },
-            ),
+            // Divider(
+            //   color: Colors.grey[900],
+            // ),
+            // ListTile(
+            //   leading: Icon(Icons.flight_takeoff_sharp),
+            //   title: Text(
+            //     AppLocalizations.of(context)!.climbTitle,
+            //     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            //   ),
+            //   onTap: () => {
+            //     Navigator.pushNamed(
+            //       context,
+            //       '/salita',
+            //     ),
+            //   },
+            // ),
             Divider(
               color: Colors.grey[900],
             ),
