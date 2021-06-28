@@ -1,11 +1,8 @@
-import 'dart:typed_data';
-
 import 'theming/legend.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 import 'problems/problems.dart';
 import 'problems/piano_cartesiano.dart';
-import 'pdfcr.dart';
 
 class PrimoProblema extends StatefulWidget {
   final recorder = ui.PictureRecorder();
