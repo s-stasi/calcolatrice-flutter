@@ -40,6 +40,7 @@ class ImpostazioniState extends State<Impostazioni> {
           ),
           // drawer: magheggio(theme.isDark),
           appBar: AppBar(
+            automaticallyImplyLeading: false,
             title: Text(
               AppLocalizations.of(context)!.settingsTitle,
               style: TextStyle(color: Colors.black),

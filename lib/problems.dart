@@ -79,11 +79,13 @@ class _ProblemsState extends State<Problems> {
                     style: TextStyle(
                         fontSize: expTitleSmall, fontWeight: FontWeight.w600),
                   ),
-                  children: groupCreator(
-                      ['incognite: TC/D', 'incognite: Coordinate B'],
-                      ['/NavPar1', '/PriPag'],
-                      context,
-                      false),
+                  children: groupCreator([
+                    'navigazione per paralleli',
+                    'navigazione per paralleli corretto'
+                  ], [
+                    '/NavPar1',
+                    '/PriPag'
+                  ], context, false),
                 ),
                 Divider(
                   color: Colors.blue,

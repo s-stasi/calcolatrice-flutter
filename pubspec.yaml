@@ -44,14 +44,14 @@ dependencies:
       url: git://github.com/google/flutter-desktop-embedding.git
       path: plugins/window_size
   
-#   flutter_launcher_icons: ^0.9.0
+  flutter_launcher_icons: ^0.9.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-# dependency_overrides:
-#   args: ^2.0.0
+dependency_overrides:
+  args: ^2.0.0
 
 flutter_icons:
   android: "launcher_icon"

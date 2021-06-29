@@ -396,9 +396,11 @@ class Problems {
       bgla = toSes(bla)[0];
       bpla = toSes(bla)[1];
       var res = [bgla, bpla];
+
+      String arr = '';
       if (tc != 0 || tc != 360 || tc != 180)
-        String arr = 'inserisci un  allore valido (0/360 & 180) ';
-      String arr = "B: ${res[0]}° ${res[1]}'";
+        arr = 'inserisci un  allore valido (0/360 & 180) ';
+      arr = "B: ${res[0]}° ${res[1]}'";
       this.res = arr;
     }
   }
