@@ -23,27 +23,30 @@ class Explanations extends StatelessWidget {
             child: ExpansionTile(
               title: Text(
                 titles[index],
-                style: TextStyle(fontSize: 17),
+                style: TextStyle(fontSize: 17, color: Colors.white),
               ),
               children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                      width: width,
-                      child: RaisedButton(
-                        onPressed: () {},
-                        child: Text('solve'),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 7),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        width: width,
+                        child: RaisedButton(
+                          onPressed: () {},
+                          child: Text('solve'),
+                        ),
                       ),
-                    ),
-                    Container(
-                      width: width,
-                      child: RaisedButton(
-                        onPressed: () {},
-                        child: Text('Explanation'),
+                      Container(
+                        width: width,
+                        child: RaisedButton(
+                          onPressed: () {},
+                          child: Text('Explanation'),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
