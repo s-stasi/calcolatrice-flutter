@@ -33,14 +33,14 @@ class Explanations extends StatelessWidget {
                     children: [
                       Container(
                         width: width,
-                        child: RaisedButton(
+                        child: ElevatedButton(
                           onPressed: () {},
                           child: Text('solve'),
                         ),
                       ),
                       Container(
                         width: width,
-                        child: RaisedButton(
+                        child: ElevatedButton(
                           onPressed: () {},
                           child: Text('Explanation'),
                         ),

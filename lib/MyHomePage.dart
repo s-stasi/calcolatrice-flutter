@@ -1,6 +1,6 @@
-import 'SideDrawer.dart';
+//import 'SideDrawer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
 class Calculator extends StatefulWidget {

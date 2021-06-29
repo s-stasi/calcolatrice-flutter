@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'SideDrawer.dart';
-import 'problems/problems.dart';
+//import 'SideDrawer.dart';
+//import 'problems/problems.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Paral2 extends StatefulWidget {
