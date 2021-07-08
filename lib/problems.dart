@@ -27,20 +27,22 @@ class _ProblemsState extends State<Problems> {
           onTap: (int i) {
             // if (i == 0) Navigator.pushNamed(context, '/Problems');
             if (i == 1)
-              Navigator.push(
+              Navigator.pushAndRemoveUntil(
                 context,
                 PageRouteBuilder(
                   pageBuilder: (_, __, ___) => Calculator(),
                   transitionDuration: Duration(seconds: 0),
                 ),
+                (route) => false,
               );
             if (i == 2)
-              Navigator.push(
+              Navigator.pushAndRemoveUntil(
                 context,
                 PageRouteBuilder(
                   pageBuilder: (_, __, ___) => Impostazioni(),
                   transitionDuration: Duration(seconds: 0),
                 ),
+                (route) => false,
               );
           },
         ),

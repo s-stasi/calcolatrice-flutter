@@ -36,20 +36,22 @@ class ImpostazioniState extends State<Impostazioni> {
             initialActiveIndex: 2, //optional, default as 0
             onTap: (int i) {
               if (i == 0)
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
                   PageRouteBuilder(
                     pageBuilder: (_, __, ___) => Problems(),
                     transitionDuration: Duration(seconds: 0),
                   ),
+                  (route) => false,
                 );
               if (i == 1)
-                Navigator.push(
+                Navigator.pushAndRemoveUntil(
                   context,
                   PageRouteBuilder(
                     pageBuilder: (_, __, ___) => Calculator(),
                     transitionDuration: Duration(seconds: 0),
                   ),
+                  (route) => false,
                 );
               //  if (i == 2) Navigator.pushNamed(context, '/ImpPag');
             },
