@@ -9,6 +9,8 @@ import 'package:settings_ui/settings_ui.dart';
 import 'services/storage_manager.dart';
 import 'MyApp.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'MyHomePage.dart';
+import 'problems.dart';
 
 class Impostazioni extends StatefulWidget {
   @override
@@ -33,8 +35,22 @@ class ImpostazioniState extends State<Impostazioni> {
             ],
             initialActiveIndex: 2, //optional, default as 0
             onTap: (int i) {
-              if (i == 0) Navigator.pushNamed(context, '/Problems');
-              if (i == 1) Navigator.pushNamed(context, '/');
+              if (i == 0)
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (_, __, ___) => Problems(),
+                    transitionDuration: Duration(seconds: 0),
+                  ),
+                );
+              if (i == 1)
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (_, __, ___) => Calculator(),
+                    transitionDuration: Duration(seconds: 0),
+                  ),
+                );
               //  if (i == 2) Navigator.pushNamed(context, '/ImpPag');
             },
           ),

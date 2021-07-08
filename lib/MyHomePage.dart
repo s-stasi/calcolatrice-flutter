@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'problems.dart';
+import 'settings.dart';
 
 class Calculator extends StatefulWidget {
   @override
@@ -21,6 +23,7 @@ class _CalculatorState extends State<Calculator> {
 
   @override
   Widget build(BuildContext context) {
+    final dividerHeight = MediaQuery.of(context).size.height * 0.3;
     return Scaffold(
       bottomNavigationBar: ConvexAppBar(
         activeColor: Colors.blue[900],
@@ -31,9 +34,23 @@ class _CalculatorState extends State<Calculator> {
         ],
         initialActiveIndex: 1, //optional, default as 0
         onTap: (int i) {
-          if (i == 0) Navigator.pushNamed(context, '/Problems');
+          if (i == 0)
+            Navigator.push(
+              context,
+              PageRouteBuilder(
+                pageBuilder: (_, __, ___) => Problems(),
+                transitionDuration: Duration(seconds: 0),
+              ),
+            );
           //  if (i == 1) Navigator.pushNamed(context, '/');
-          if (i == 2) Navigator.pushNamed(context, '/ImpPag');
+          if (i == 2)
+            Navigator.push(
+              context,
+              PageRouteBuilder(
+                pageBuilder: (_, __, ___) => Impostazioni(),
+                transitionDuration: Duration(seconds: 0),
+              ),
+            );
         },
       ),
       backgroundColor: Color.fromARGB(196, 32, 64, 96),
@@ -52,16 +69,20 @@ class _CalculatorState extends State<Calculator> {
           ])),
         ),
       ),
-      body: Column(children: <Widget>[
-        Center(
-          child: Text(
-            'NAVTOOL',
-            style: TextStyle(
-              fontSize: 85,
+      body: Column(
+        children: <Widget>[
+          Center(
+            child: Text(
+              'NAVTOOL',
+              style: TextStyle(
+                fontSize: 85,
+              ),
             ),
           ),
-        ),
-      ]),
+          Container(height: dividerHeight),
+          Text('in arrivo...', style: TextStyle(fontSize: 20)),
+        ],
+      ),
     );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'settings.dart';
+import 'MyHomePage.dart';
 
 class Problems extends StatefulWidget {
   @override
@@ -24,8 +26,22 @@ class _ProblemsState extends State<Problems> {
           initialActiveIndex: 0, //optional, default as 0
           onTap: (int i) {
             // if (i == 0) Navigator.pushNamed(context, '/Problems');
-            if (i == 1) Navigator.pushNamed(context, '/');
-            if (i == 2) Navigator.pushNamed(context, '/ImpPag');
+            if (i == 1)
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => Calculator(),
+                  transitionDuration: Duration(seconds: 0),
+                ),
+              );
+            if (i == 2)
+              Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => Impostazioni(),
+                  transitionDuration: Duration(seconds: 0),
+                ),
+              );
           },
         ),
         appBar: AppBar(
