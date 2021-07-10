@@ -127,6 +127,9 @@ class Problems {
     tas = (tas.isNaN) ? 0 : tas.round();
     num th = tc + wca;
     th = (th.isNaN) ? 0 : th.round();
+    while(th >= 360) {
+      th = th - 360;
+    }
     num gs = c + l;
     gs = (gs.isNaN) ? 0 : gs.round();
     var d = [gs, th, c, wca, l, r];
@@ -169,6 +172,11 @@ class Problems {
     else
       tc = th - wca;
 
+
+    while(tc >= 360) {
+      tc = tc - 360;
+    }
+
     var d = [oWind, gs, wca, alpha, gamma, tc];
 
     debugPrint('${d[0]}');
@@ -191,6 +199,9 @@ class Problems {
     num wca = toDeg(Math.atan(xc / etas));
     wca = (wca.isNaN) ? 0 : wca.round();
     num th = tc + wca;
+    while(th >= 360) {
+      th = th - 360;
+    }
     num tas = etas / Math.cos(toRad(wca));
     tas = (tas.isNaN) ? 0 : tas.round();
     var res = [xc, lc, wca, tas, etas, th];
@@ -221,6 +232,7 @@ class Problems {
       if (xc > 0) return tc + toDeg(90 + Math.asin(lc / v));
       return tc + (-toDeg(90 + Math.asin(lc / v)));
     }();
+    if(w < 0) w = w * -1;
     do {
       w = w;
       w = (w.isNaN) ? 0 : w.round();
