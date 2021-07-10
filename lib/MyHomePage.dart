@@ -77,7 +77,7 @@ class _CalculatorState extends State<Calculator> {
             child: Text(
               'NAVTOOL',
               style: TextStyle(
-                fontSize: 85,
+                fontSize: 75,
               ),
             ),
           ),

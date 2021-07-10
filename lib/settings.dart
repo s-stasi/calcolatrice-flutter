@@ -3,7 +3,7 @@ import 'theming/theme_manager.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-//import 'SideDrawer.dart';
+// import 'SideDrawer.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:settings_ui/settings_ui.dart';
 import 'services/storage_manager.dart';
@@ -61,14 +61,14 @@ class ImpostazioniState extends State<Impostazioni> {
             automaticallyImplyLeading: false,
             title: Text(
               AppLocalizations.of(context)!.settingsTitle,
-              style: TextStyle(color: Colors.black),
+              style: TextStyle(color: Colors.white),
             ),
             iconTheme: IconThemeData(color: Colors.black),
             flexibleSpace: Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
-                Colors.grey,
-                Colors.white,
+                Colors.black,
+                Colors.blue,
               ])),
             ),
           ),
