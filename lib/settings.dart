@@ -99,7 +99,7 @@ class ImpostazioniState extends State<Impostazioni> {
                 ],
               ),
             ],
-            darkBackgroundColor: Color(0xFF212121),
+            darkBackgroundColor: Color(0x303030),
             lightBackgroundColor: Color(0xFFE5E5E5),
           ),
         );
@@ -141,7 +141,7 @@ class LanguageState extends State<Language> {
                 context: context),
           ),
         ],
-        darkBackgroundColor: Color(0xFF212121),
+        darkBackgroundColor: Color(0x303030),
         lightBackgroundColor: Color(0xFFE5E5E5),
       ),
     );
