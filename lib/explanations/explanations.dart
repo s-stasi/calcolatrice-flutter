@@ -40,9 +40,9 @@ class Explanations extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.push(
-                              context, 
-                              MaterialPageRoute(builder: (context) => solveWidgets[index])
-                            );
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => solveWidgets[index]));
                           },
                           child: Text('solve'),
                         ),
@@ -52,9 +52,9 @@ class Explanations extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.push(
-                              context, 
-                              MaterialPageRoute(builder: (context) => expWidgets[index])
-                            );
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => expWidgets[index]));
                           },
                           child: Text('Explanation'),
                         ),
