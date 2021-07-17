@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'todo.dart';
+import 'expmkt.dart';
 
 // ignore: must_be_immutable
 class Explanations extends StatelessWidget {
   final kRouteName = '/explanations';
   late List<String> titles;
-  final routes = ["/expMTK"];
+  final List<Widget> expWidgets = [ExpMTK()];
+  final List<Widget> solveWidgets = [ToDo()];
   final icons = [Icons.mode_night];
 
   @override
@@ -35,14 +38,24 @@ class Explanations extends StatelessWidget {
                       Container(
                         width: width,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(builder: (context) => solveWidgets[index])
+                            );
+                          },
                           child: Text('solve'),
                         ),
                       ),
                       Container(
                         width: width,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context, 
+                              MaterialPageRoute(builder: (context) => expWidgets[index])
+                            );
+                          },
                           child: Text('Explanation'),
                         ),
                       ),
