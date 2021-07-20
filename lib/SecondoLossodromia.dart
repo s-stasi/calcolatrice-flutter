@@ -79,6 +79,7 @@ class _SLState extends State<SecondoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: agla,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -92,6 +93,7 @@ class _SLState extends State<SecondoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: apla,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -124,6 +126,7 @@ class _SLState extends State<SecondoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: aglo,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -137,6 +140,7 @@ class _SLState extends State<SecondoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: aplo,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -177,6 +181,7 @@ class _SLState extends State<SecondoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: d,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -190,6 +195,7 @@ class _SLState extends State<SecondoLossodromia> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: tc,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(

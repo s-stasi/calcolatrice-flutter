@@ -25,66 +25,108 @@ class _CalculatorState extends State<Calculator> {
   Widget build(BuildContext context) {
     final dividerHeight = MediaQuery.of(context).size.height * 0.3;
     return Scaffold(
-      bottomNavigationBar: ConvexAppBar(
-        activeColor: Colors.blue[900],
-        items: [
-          TabItem(icon: Icons.menu_open, title: 'Problems'),
-          TabItem(icon: Icons.home, title: 'Home'),
-          TabItem(icon: Icons.settings, title: 'Settings'),
-        ],
-        initialActiveIndex: 1, //optional, default as 0
-        onTap: (int i) {
-          if (i == 0)
-            Navigator.pushAndRemoveUntil(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (_, __, ___) => Problems(),
-                transitionDuration: Duration(seconds: 0),
-              ),
-              (route) => false,
-            );
-          //  if (i == 1) Navigator.pushNamed(context, '/');
-          if (i == 2)
-            Navigator.pushAndRemoveUntil(
-              context,
-              PageRouteBuilder(
-                pageBuilder: (_, __, ___) => Impostazioni(),
-                transitionDuration: Duration(seconds: 0),
-              ),
-              (route) => false,
-            );
-        },
-      ),
-      backgroundColor: Color.fromARGB(196, 32, 64, 96),
-      //drawer: SideDrawer(),
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(
-          'HOME PAGE',
-          style: TextStyle(color: Colors.white),
+        bottomNavigationBar: ConvexAppBar(
+          activeColor: Colors.blue[900],
+          items: [
+            TabItem(icon: Icons.menu_open, title: 'Problems'),
+            TabItem(icon: Icons.home, title: 'Home'),
+            TabItem(icon: Icons.settings, title: 'Settings'),
+          ],
+          initialActiveIndex: 1, //optional, default as 0
+          onTap: (int i) {
+            if (i == 0)
+              Navigator.pushAndRemoveUntil(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => Problems(),
+                  transitionDuration: Duration(seconds: 0),
+                ),
+                (route) => false,
+              );
+            //  if (i == 1) Navigator.pushNamed(context, '/');
+            if (i == 2)
+              Navigator.pushAndRemoveUntil(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => Impostazioni(),
+                  transitionDuration: Duration(seconds: 0),
+                ),
+                (route) => false,
+              );
+          },
         ),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-            Colors.black,
-            Colors.blue,
-          ])),
-        ),
-      ),
-      body: Column(
-        children: <Widget>[
-          Center(
-            child: Text(
-              'NAVTOOL',
-              style: TextStyle(
-                fontSize: 75,
-              ),
-            ),
+        backgroundColor: Color.fromARGB(196, 32, 64, 96),
+        //drawer: SideDrawer(),
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text(
+            'HOME PAGE',
+            style: TextStyle(color: Colors.white),
           ),
-          Container(height: dividerHeight),
-          Text('in arrivo...', style: TextStyle(fontSize: 20)),
-        ],
-      ),
-    );
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+              Colors.black,
+              Colors.blue,
+            ])),
+          ),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Text(
+                'conversione nodi / Km/h',
+                style: TextStyle(fontSize: 20),
+              ),
+              Row(
+                children: <Widget>[
+                  Container(
+                      width: MediaQuery.of(context).size.width * 0.04,
+                      height: 150),
+                  Expanded(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      //controller: ,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Colors.blue.shade900, width: 3.0)),
+                          labelText:
+                              'nodi', //AppLocalizations.of(context)!.paralNavDegree,
+                          helperText:
+                              'nodi' //AppLocalizations.of(context)!.paralNavLatA,
+                          ),
+                    ),
+                  ),
+                  Container(
+                      width: MediaQuery.of(context).size.width * 0.04,
+                      height: 150),
+                  Text(
+                    '=',
+                    style: TextStyle(fontSize: 100),
+                  ),
+                  Container(
+                      width: MediaQuery.of(context).size.width * 0.04,
+                      height: 150),
+                  Expanded(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      //controller: ,
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Colors.blue.shade900, width: 3.0)),
+                        labelText:
+                            'km/h', //AppLocalizations.of(context)!.paralNavDegree,
+                        helperText:
+                            'km/h', //AppLocalizations.of(context)!.paralNavLatA,
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ));
   }
 }
