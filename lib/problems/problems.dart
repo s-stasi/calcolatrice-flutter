@@ -130,6 +130,7 @@ class Problems {
     while (th >= 360) {
       th = th - 360;
     }
+    if(th < 0) th = th * -1;
     num gs = c + l;
     gs = (gs.isNaN) ? 0 : gs.round();
     var d = [gs, th, c, wca, l, r];
