@@ -11,6 +11,9 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
+  final giuseppe = TextEditingController();
+  final mario = TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -19,6 +22,8 @@ class _CalculatorState extends State<Calculator> {
   @override
   void dispose() {
     super.dispose();
+    giuseppe.dispose();
+    mario.dispose();
   }
 
   @override
@@ -101,9 +106,9 @@ class _CalculatorState extends State<Calculator> {
                   Container(
                       width: MediaQuery.of(context).size.width * 0.04,
                       height: 150),
-                  Text(
-                    '=',
-                    style: TextStyle(fontSize: 100),
+                  Icon(
+                    Icons.compare_arrows,
+                    size: 38,
                   ),
                   Container(
                       width: MediaQuery.of(context).size.width * 0.04,
@@ -123,6 +128,9 @@ class _CalculatorState extends State<Calculator> {
                       ),
                     ),
                   ),
+                  Container(
+                      width: MediaQuery.of(context).size.width * 0.04,
+                      height: 150),
                 ],
               )
             ],
