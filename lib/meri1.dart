@@ -90,6 +90,7 @@ class _M1State extends State<Meri1> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
               child: TextField(
+                keyboardType: TextInputType.number,
                 controller: agla,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -104,6 +105,7 @@ class _M1State extends State<Meri1> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
               child: TextField(
+                keyboardType: TextInputType.number,
                 controller: apla,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
@@ -118,6 +120,7 @@ class _M1State extends State<Meri1> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: bgla,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -131,6 +134,7 @@ class _M1State extends State<Meri1> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: bpla,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -150,6 +154,7 @@ class _M1State extends State<Meri1> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: d,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -163,6 +168,7 @@ class _M1State extends State<Meri1> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: tc,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
