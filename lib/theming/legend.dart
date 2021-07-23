@@ -7,7 +7,7 @@ class Legend extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20),
       margin: EdgeInsets.all(25.0),
-      height: 140,
+      height: 120,
       width: 210,
       child: Column(
         children: <Widget>[
@@ -17,14 +17,14 @@ class Legend extends StatelessWidget {
               Icon(
                 Icons.brightness_1,
                 color: Colors.red,
-                size: 20,
+                size: 17,
               ),
               SizedBox(width: 10),
               Text(
                 'ground speed',
                 style: TextStyle(
                     color: Colors.red,
-                    fontSize: 20,
+                    fontSize: 17,
                     fontWeight: FontWeight.bold),
               ),
             ],
@@ -35,7 +35,7 @@ class Legend extends StatelessWidget {
               Icon(
                 Icons.brightness_1,
                 color: Colors.black,
-                size: 20,
+                size: 17,
               ),
               SizedBox(
                 width: 10,
@@ -44,7 +44,7 @@ class Legend extends StatelessWidget {
                 'true air speed',
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 20,
+                    fontSize: 17,
                     fontWeight: FontWeight.bold),
               ),
             ],
@@ -55,14 +55,14 @@ class Legend extends StatelessWidget {
               Icon(
                 Icons.brightness_1,
                 color: Colors.yellow,
-                size: 20,
+                size: 17,
               ),
               SizedBox(width: 10),
               Text(
                 'Wind velocity',
                 style: TextStyle(
                     color: Colors.yellow,
-                    fontSize: 20,
+                    fontSize: 17,
                     fontWeight: FontWeight.bold),
               ),
             ],

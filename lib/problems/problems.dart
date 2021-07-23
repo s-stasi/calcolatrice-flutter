@@ -31,6 +31,23 @@ toSes(num dec) {
   return ses;
 }
 
+whquad(num agla, num apla, num aglo, num aplo, num bgla, num bpla, num bglo,
+    num bplo) {
+  int laa = toDec(agla, apla);
+  int loa = toDec(aglo, aplo);
+  int lab = toDec(bgla, bpla);
+  int lob = toDec(bglo, bplo);
+  int q;
+
+  if (laa > lab) {
+    if (loa > lob) q = 3;
+    q = 2;
+  } else if (loa > lob) q = 4;
+  q = 1;
+
+  return q;
+}
+
 class Problems {
   var tc;
   var tas;
@@ -130,7 +147,7 @@ class Problems {
     while (th >= 360) {
       th = th - 360;
     }
-    if(th < 0) th = th * -1;
+    if (th < 0) th = th * -1;
     num gs = c + l;
     gs = (gs.isNaN) ? 0 : gs.round();
     var d = [gs, th, c, wca, l, r];
@@ -176,6 +193,8 @@ class Problems {
     while (tc >= 360) {
       tc = tc - 360;
     }
+
+    tc.toInt();
 
     var d = [oWind, gs, wca, alpha, gamma, tc];
 
