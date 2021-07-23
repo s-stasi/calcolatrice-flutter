@@ -60,7 +60,6 @@ class _CalculatorState extends State<Calculator> {
               );
           },
         ),
-        backgroundColor: Color.fromARGB(196, 32, 64, 96),
         //drawer: SideDrawer(),
         appBar: AppBar(
           automaticallyImplyLeading: false,
