@@ -17,6 +17,8 @@ class _P1State extends State<Paral1> {
   final bglo = TextEditingController();
   final bplo = TextEditingController();
 
+  bool correction = false;
+
   @override
   void dispose() {
     agla.dispose();
@@ -141,6 +143,76 @@ class _P1State extends State<Paral1> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
           ],
         ),
+        Row(
+          children: <Widget>[
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: bgla,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: AppLocalizations.of(context)!.paralNavDegree,
+                helperText: AppLocalizations.of(context)!.paralNavLonB,
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: bpla,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'PRIMI',
+                helperText: AppLocalizations.of(context)!.paralNavLatB,
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: bglo,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: AppLocalizations.of(context)!.paralNavDegree,
+                helperText: AppLocalizations.of(context)!.paralNavLonB,
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+            Expanded(
+                child: TextField(
+              controller: bplo,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
+                labelText: 'PRIMI',
+                helperText: AppLocalizations.of(context)!.paralNavLonB,
+              ),
+            )),
+            Container(
+                width: MediaQuery.of(context).size.width * 0.04, height: 150),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            RaisedButton(
+              child: Text(correction == false ? 'Corretto' : 'Dom toretto', style: TextStyle(fontSize: 20)),
+              onPressed: () => setState(() {
+                correction = ! correction;
+              })
+            ),
+          ],
+        ),
+        correction == false ? SizedBox(height: 0, width: 0) :
         Row(
           children: <Widget>[
             Container(
