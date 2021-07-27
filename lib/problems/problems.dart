@@ -272,11 +272,12 @@ class Problems {
   }
 
   void primoLossodromia() {
-    var q = whquad(agla, apla, aglo, aplo, bgla, bpla, bglo, bplo)[0];
-    var laA = whquad(agla, apla, aglo, aplo, bgla, bpla, bglo, bplo)[1];
-    var loA = whquad(agla, apla, aglo, aplo, bgla, bpla, bglo, bplo)[2];
-    var laB = whquad(agla, apla, aglo, aplo, bgla, bpla, bglo, bplo)[3];
-    var loB = whquad(agla, apla, aglo, aplo, bgla, bpla, bglo, bplo)[4];
+    var inf = whquad(agla, apla, aglo, aplo, bgla, bpla, bglo, bplo);
+    var q = inf[0];
+    var laA = inf[1];
+    var loA = inf[2];
+    var laB = inf[3];
+    var loB = inf[4];
 
     var fm = (laA + laB) / 2;
     var df;
