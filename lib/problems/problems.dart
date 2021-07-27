@@ -33,19 +33,20 @@ toSes(num dec) {
 
 whquad(num agla, num apla, num aglo, num aplo, num bgla, num bpla, num bglo,
     num bplo) {
-  int laa = toDec(agla, apla);
-  int loa = toDec(aglo, aplo);
-  int lab = toDec(bgla, bpla);
-  int lob = toDec(bglo, bplo);
+  int laA = toDec(agla, apla);
+  int loA = toDec(aglo, aplo);
+  int laB = toDec(bgla, bpla);
+  int loB = toDec(bglo, bplo);
   int q;
 
-  if (laa > lab) {
-    if (loa > lob) q = 3;
+  if (laA > laB) {
+    if (loA > loB) q = 3;
     q = 2;
-  } else if (loa > lob) q = 4;
+  } else if (loA > loB) q = 4;
   q = 1;
 
-  return q;
+  var r = [q, laA, loA, laB, loB];
+  return r;
 }
 
 class Problems {
@@ -271,26 +272,11 @@ class Problems {
   }
 
   void primoLossodromia() {
-    var q;
-
-    if (aglo > bglo) {
-      if (agla > bgla) {
-        q = 3;
-      } else {
-        q = 4;
-      }
-    } else {
-      if (agla > bgla) {
-        q = 2;
-      } else {
-        q = 1;
-      }
-    }
-
-    var laA = toDec(agla, apla);
-    var loA = toDec(aglo, aplo);
-    var laB = toDec(bgla, bpla);
-    var loB = toDec(bglo, bplo);
+    var q = whquad(agla, apla, aglo, aplo, bgla, bpla, bglo, bplo)[0];
+    var laA = whquad(agla, apla, aglo, aplo, bgla, bpla, bglo, bplo)[1];
+    var loA = whquad(agla, apla, aglo, aplo, bgla, bpla, bglo, bplo)[2];
+    var laB = whquad(agla, apla, aglo, aplo, bgla, bpla, bglo, bplo)[3];
+    var loB = whquad(agla, apla, aglo, aplo, bgla, bpla, bglo, bplo)[4];
 
     var fm = (laA + laB) / 2;
     var df;
