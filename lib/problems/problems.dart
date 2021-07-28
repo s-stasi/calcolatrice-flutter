@@ -335,32 +335,32 @@ class Problems {
 
     if (tc < 90) {
       alfa = 90 - tc;
-      df = Math.sin(toRad(alfa)) * d;
-      dlc = Math.cos(toRad(alfa)) * d;
+      df = (Math.sin(toRad(alfa)) * d) / 60;
+      dlc = (Math.cos(toRad(alfa)) * d) / 60;
       laB = df + laA;
       fm = (laA + laB) / 2;
       dl = (dlc) / Math.cos(toRad(fm));
       loB = loA + dl;
     } else if (tc < 180) {
       alfa = 180 - tc;
-      df = Math.cos(toRad(alfa)) * d;
-      dlc = Math.sin(toRad(alfa)) * d;
+      df = (Math.cos(toRad(alfa)) * d) / 60;
+      dlc = (Math.sin(toRad(alfa)) * d) / 60;
       laB = df - laA;
       fm = (laA + laB) / 2;
       dl = (dlc) / Math.cos(toRad(fm));
       loB = loA + dl;
     } else if (tc < 270) {
       alfa = 270 - tc;
-      df = Math.sin(toRad(alfa)) * d;
-      dlc = Math.cos(toRad(alfa)) * d;
+      df = (Math.sin(toRad(alfa)) * d) / 60;
+      dlc = (Math.cos(toRad(alfa)) * d) / 60;
       laB = df - laA;
       fm = (laA + laB) / 2;
       dl = (dlc) / Math.cos(toRad(fm));
       loB = loA - dl;
     } else {
       alfa = 360 - tc;
-      df = Math.cos(toRad(alfa)) * d;
-      dlc = Math.sin(toRad(alfa)) * d;
+      df = (Math.cos(toRad(alfa)) * d) / 60;
+      dlc = (Math.sin(toRad(alfa)) * d) / 60;
       laB = df + laA;
       fm = (laA + laB) / 2;
       dl = (dlc) / Math.cos(toRad(fm));
