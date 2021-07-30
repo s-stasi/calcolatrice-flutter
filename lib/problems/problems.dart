@@ -1,6 +1,5 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'dart:math' as Math;
+import '__tests.dart';
 
 toRad(num deg) {
   return deg * Math.pi / 180;
@@ -58,10 +57,14 @@ class Problems {
   var gs;
   var agla;
   var apla;
+  Degree ala = Degree(0);
+  Degree alo = Degree(0);
   var aglo;
   var aplo;
   var bgla;
   var bpla;
+  Degree bla = Degree(0);
+  Degree blo = Degree(0);
   var bglo;
   var bplo;
   var d;
@@ -110,10 +113,8 @@ class Problems {
     primoLossodromia();
   }
   Problems.secLoss(
-      {required this.agla,
-      required this.apla,
-      required this.aglo,
-      required this.aplo,
+      {required this.ala,
+      required this.alo,
       required this.d,
       required this.tc}) {
     secondoLossodromia();
@@ -153,12 +154,12 @@ class Problems {
     gs = (gs.isNaN) ? 0 : gs.round();
     var d = [gs, th, c, wca, l, r];
 
-    debugPrint('${d[0]}');
-    debugPrint('${d[1]}');
-    debugPrint('${d[2]}');
-    debugPrint('${d[3]}');
-    debugPrint('${d[4]}');
-    debugPrint('${d[5]}');
+    // debugPrint('${d[0]}');
+    // debugPrint('${d[1]}');
+    // debugPrint('${d[2]}');
+    // debugPrint('${d[3]}');
+    // debugPrint('${d[4]}');
+    // debugPrint('${d[5]}');
 
     String arr = 'gs: ${d[0].toString()} th: ${d[1].toString()}';
 
@@ -199,12 +200,12 @@ class Problems {
 
     var d = [oWind, gs, wca, alpha, gamma, tc];
 
-    debugPrint('${d[0]}');
-    debugPrint('${d[1]}');
-    debugPrint('${d[2]}');
-    debugPrint('${d[3]}');
-    debugPrint('${d[4]}');
-    debugPrint('${d[5]}');
+    // debugPrint('${d[0]}');
+    // debugPrint('${d[1]}');
+    // debugPrint('${d[2]}');
+    // debugPrint('${d[3]}');
+    // debugPrint('${d[4]}');
+    // debugPrint('${d[5]}');
 
     String arr = 'tc: ${d[5].toString()} gs: ${d[1].toString()}';
     res = arr;
@@ -226,12 +227,12 @@ class Problems {
     tas = (tas.isNaN) ? 0 : tas.round();
     var res = [xc, lc, wca, tas, etas, th];
 
-    debugPrint('${res[0]}');
-    debugPrint('${res[1]}');
-    debugPrint('${res[2]}');
-    debugPrint('${res[3]}');
-    debugPrint('${res[4]}');
-    debugPrint('${res[5]}');
+    // debugPrint('${res[0]}');
+    // debugPrint('${res[1]}');
+    // debugPrint('${res[2]}');
+    // debugPrint('${res[3]}');
+    // debugPrint('${res[4]}');
+    // debugPrint('${res[5]}');
 
     String arr = 'th: ${res[5].round()} tas: ${res[4].round()}';
     this.res = arr;
@@ -261,11 +262,11 @@ class Problems {
     w = w == -360 ? 0 : w;
     var res = [xc, lc, wca, v, w];
 
-    debugPrint('${res[0]}');
-    debugPrint('${res[1]}');
-    debugPrint('${res[2]}');
-    debugPrint('${res[3]}');
-    debugPrint('${res[4]}');
+    // debugPrint('${res[0]}');
+    // debugPrint('${res[1]}');
+    // debugPrint('${res[2]}');
+    // debugPrint('${res[3]}');
+    // debugPrint('${res[4]}');
 
     String arr = 'v: ${res[3]} w: ${res[4]}';
     this.res = arr;
@@ -314,74 +315,72 @@ class Problems {
     tc = (tc.isNaN) ? 0 : tc.round();
     var res = [d, tc];
 
-    debugPrint('${res[0]}');
-    debugPrint('${res[1]}');
+    // debugPrint('${res[0]}');
+    // debugPrint('${res[1]}');
 
     String arr = 'disance: ${res[0]} tc: ${res[1]}';
     this.res = arr;
   }
 
   void secondoLossodromia() {
-    var alfa;
-    var df;
-    var dl;
-    var dlc;
-    var fm;
-    var loB;
-    var laB;
+    Degree alfa;
+    Degree df;
+    Degree dl;
+    Degree dlc;
+    Degree fm;
+    Degree loB;
+    Degree laB;
 
-    var laA = toDec(agla, apla);
-    var loA = toDec(aglo, aplo);
 
-    if (tc < 90) {
-      alfa = 90 - tc;
-      df = (Math.sin(toRad(alfa)) * d) / 60;
-      dlc = (Math.cos(toRad(alfa)) * d) / 60;
-      laB = df + laA;
-      fm = (laA + laB) / 2;
-      dl = (dlc) / Math.cos(toRad(fm));
-      loB = loA + dl;
+    if (tc < 90) {//
+      alfa = Degree.dec(90) - tc;//
+      df = Degree(Math.sin(alfa.radians) * d) / Degree(60);
+      dlc = Degree(Math.cos(alfa.radians) * d) / Degree(60);
+      laB = df + ala;
+      fm = (ala + laB) / Degree(2);
+      dl = (dlc) / Degree(Math.cos(fm.radians));
+      loB = alo + dl;
     } else if (tc < 180) {
-      alfa = 180 - tc;
-      df = (Math.cos(toRad(alfa)) * d) / 60;
-      dlc = (Math.sin(toRad(alfa)) * d) / 60;
-      laB = df - laA;
-      fm = (laA + laB) / 2;
-      dl = (dlc) / Math.cos(toRad(fm));
-      loB = loA + dl;
+      alfa = Degree.dec(180) - tc;
+      df = Degree(Math.cos(alfa.radians) * d) / Degree(60);
+      dlc = Degree(Math.sin(alfa.radians) * d) / Degree(60);
+      laB = df - ala;
+      fm = (ala + laB) / Degree(2);
+      dl = (dlc) / Degree(Math.cos(fm.radians));
+      loB = alo + dl;
     } else if (tc < 270) {
-      alfa = 270 - tc;
-      df = (Math.sin(toRad(alfa)) * d) / 60;
-      dlc = (Math.cos(toRad(alfa)) * d) / 60;
-      laB = df - laA;
-      fm = (laA + laB) / 2;
-      dl = (dlc) / Math.cos(toRad(fm));
-      loB = loA - dl;
+      alfa = Degree.dec(270) - tc;
+      df = Degree(Math.sin(alfa.radians) * d) / Degree(60);
+      dlc = Degree(Math.cos(alfa.radians) * d) / Degree(60);
+      laB = df - ala;
+      fm = (ala + laB) / Degree(2);
+      dl = (dlc) / Degree(Math.cos(fm.radians));
+      loB = alo - dl;
     } else {
-      alfa = 360 - tc;
-      df = (Math.cos(toRad(alfa)) * d) / 60;
-      dlc = (Math.sin(toRad(alfa)) * d) / 60;
-      laB = df + laA;
-      fm = (laA + laB) / 2;
-      dl = (dlc) / Math.cos(toRad(fm));
-      loB = loA - dl;
+      alfa = Degree.dec(360) - tc;
+      df = Degree(Math.cos(alfa.radians) * d) / Degree(60);
+      dlc = Degree(Math.sin(alfa.radians) * d) / Degree(60);
+      laB = df + ala;
+      fm = (ala + laB) / Degree(2);
+      dl = (dlc) / Degree(Math.cos(fm.radians));
+      loB = alo - dl;
     }
-    debugPrint('$alfa');
-    debugPrint('$df');
-    debugPrint('$dlc');
-    debugPrint('$fm');
-    debugPrint('$dl');
-    bgla = toSes(laB)[0];
-    bpla = toSes(laB)[1];
-    var bsla = toSes(laB)[2];
+    // debugPrint('$alfa');
+    // debugPrint('$df');
+    // debugPrint('$dlc');
+    // debugPrint('$fm');
+    // debugPrint('$dl');
+    // bgla = toSes(laB)[0];
+    // bpla = toSes(laB)[1];
+    // var bsla = toSes(laB)[2];
 
-    bglo = toSes(loB)[0];
-    bplo = toSes(loB)[1];
-    var bslo = toSes(loB)[2];
+    // bglo = toSes(loB)[0];
+    // bplo = toSes(loB)[1];
+    // var bslo = toSes(loB)[2];
 
-    var res = [bgla, bpla, bsla, bglo, bplo, bslo];
+    // var res = [bgla, bpla, bsla, bglo, bplo, bslo];
     String arr =
-        'latitudine B: ${res[0]}°${res[1]}\'${res[2]}\" longitudine B: ${res[3]}°${res[4]}\'${res[5]}\"';
+        'latitudine B: ${laB.sesToString()} longitudine B: ${loB.sesToString()}';
     this.res = arr;
   }
 
