@@ -65,6 +65,7 @@ class Problems {
   var bpla;
   Degree bla = Degree(0);
   Degree blo = Degree(0);
+  Degree dtc = Degree(0);
   var bglo;
   var bplo;
   var d;
@@ -116,7 +117,7 @@ class Problems {
       {required this.ala,
       required this.alo,
       required this.d,
-      required this.tc}) {
+      required this.dtc}) {
     secondoLossodromia();
   }
   Problems.priPar() {
@@ -332,24 +333,24 @@ class Problems {
     Degree laB;
 
 
-    if (tc < 90) {//
-      alfa = Degree.dec(90) - tc;//
+    if (dtc < 90) {//
+      alfa = Degree.dec(90) - dtc;//
       df = Degree(Math.sin(alfa.radians) * d) / Degree(60);
       dlc = Degree(Math.cos(alfa.radians) * d) / Degree(60);
       laB = df + ala;
       fm = (ala + laB) / Degree(2);
       dl = (dlc) / Degree(Math.cos(fm.radians));
       loB = alo + dl;
-    } else if (tc < 180) {
-      alfa = Degree.dec(180) - tc;
+    } else if (dtc < 180) {
+      alfa = Degree.dec(180) - dtc;
       df = Degree(Math.cos(alfa.radians) * d) / Degree(60);
       dlc = Degree(Math.sin(alfa.radians) * d) / Degree(60);
       laB = df - ala;
       fm = (ala + laB) / Degree(2);
       dl = (dlc) / Degree(Math.cos(fm.radians));
       loB = alo + dl;
-    } else if (tc < 270) {
-      alfa = Degree.dec(270) - tc;
+    } else if (dtc < 270) {
+      alfa = Degree.dec(270) - dtc;
       df = Degree(Math.sin(alfa.radians) * d) / Degree(60);
       dlc = Degree(Math.cos(alfa.radians) * d) / Degree(60);
       laB = df - ala;
@@ -357,7 +358,7 @@ class Problems {
       dl = (dlc) / Degree(Math.cos(fm.radians));
       loB = alo - dl;
     } else {
-      alfa = Degree.dec(360) - tc;
+      alfa = Degree.dec(360) - dtc;
       df = Degree(Math.cos(alfa.radians) * d) / Degree(60);
       dlc = Degree(Math.sin(alfa.radians) * d) / Degree(60);
       laB = df + ala;

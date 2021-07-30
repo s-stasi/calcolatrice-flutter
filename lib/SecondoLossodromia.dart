@@ -48,7 +48,7 @@ class _SLState extends State<SecondoLossodromia> {
             ala: Degree.ses(int.tryParse(agla.text) ?? 0, int.tryParse(apla.text) ?? 0, 0),
             alo: Degree.ses(int.tryParse(aglo.text) ?? 0, int.tryParse(aplo.text) ?? 0, 0),
             d: int.tryParse(d.text) ?? 0,
-            tc: int.tryParse(tc.text) ?? 0)
+            dtc: Degree.dec(int.tryParse(tc.text) ?? 0))
         .data;
   }
 

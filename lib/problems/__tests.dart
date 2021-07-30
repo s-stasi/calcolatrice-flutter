@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'dart:math' as Math;
 
 class Degree {
@@ -11,9 +12,9 @@ class Degree {
 	/////////////////////////
 	/// Constructors
 	/////////////////////////
-	Degree(double dec) {
-			g = num.parse(dec.toString().split('.')[0]);
-			p = num.parse(((dec - g) * 60).toString().split('.')[0]);
+	Degree(this.dec) {
+			g = num.parse(this.dec.toStringAsFixed(0));
+			p = num.parse(((dec - g) * 60).toStringAsFixed(0));
 			s = ((((dec - g) * 60) - p) * 60).round();
 
 			rad = toRad(dec);
@@ -26,8 +27,9 @@ class Degree {
 	}
 
 	Degree.dec(this.dec) {
-		g = num.parse(dec.toString().split('.')[0]);
-		p = num.parse(((dec - g) * 60).toString().split('.')[0]);
+		g = num.parse(this.dec.toStringAsFixed(0));
+		print('${g}');
+		p = num.parse(((dec - g) * 60).toStringAsFixed(0));
 		s = ((((dec - g) * 60) - p) * 60).round();
 
 		rad = toRad(dec);
@@ -64,4 +66,19 @@ class Degree {
 	/////////////////////////
 	static double toRad(num deg) => deg * Math.pi / 180;
 	static double toDeg(num rad) => rad * 180 / Math.pi;
+
+	/////////////////////////
+	/// Debug functions
+	/////////////////////////
+	log(String constructorType) {
+		debugPrint('''
+------------------------
+built with $constructorType
+gradi=    $g
+primi=    $p
+secondi=  $s
+
+decimale= $dec
+------------------------''');
+	}
 }
