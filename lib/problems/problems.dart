@@ -32,11 +32,11 @@ toSes(num dec) {
 
 whquad(num agla, num apla, num aglo, num aplo, num bgla, num bpla, num bglo,
     num bplo) {
-  int laA = toDec(agla, apla);
-  int loA = toDec(aglo, aplo);
-  int laB = toDec(bgla, bpla);
-  int loB = toDec(bglo, bplo);
-  int q;
+  num laA = toDec(agla, apla);
+  num loA = toDec(aglo, aplo);
+  num laB = toDec(bgla, bpla);
+  num loB = toDec(bglo, bplo);
+  num q;
 
   if (laA > laB) {
     if (loA > loB) q = 3;

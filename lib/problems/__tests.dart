@@ -15,7 +15,7 @@ class Degree {
 	Degree(this.dec) {
 			g = num.parse(this.dec.toStringAsFixed(0));
 			p = num.parse(((dec - g) * 60).toStringAsFixed(0));
-			s = ((((dec - g) * 60) - p) * 60).round();
+			s = ((((dec - g) * 60) - p) * 60);//.round();
 
 			rad = toRad(dec);
 	}
