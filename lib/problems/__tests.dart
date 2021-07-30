@@ -43,6 +43,7 @@ class Degree {
 	Degree operator /(Degree other) {
 		return Degree.dec(dec / other.dec);
 	}
+	bool operator <(covariant int other) => dec<other;
 
 	/////////////////////////
 	/// Getters

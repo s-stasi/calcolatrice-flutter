@@ -45,8 +45,8 @@ class _SLState extends State<SecondoLossodromia> {
 
   String txt() {
     return Problems.secLoss(
-            ala: Degree(int.tryParse(agla.text) ?? 0, int.tryParse(apla.text) ?? 0),
-            alo: Degree(int.tryParse(aglo.text) ?? 0, int.tryParse(aplo.text) ?? 0)
+            ala: Degree.ses(int.tryParse(agla.text) ?? 0, int.tryParse(apla.text) ?? 0, 0),
+            alo: Degree.ses(int.tryParse(aglo.text) ?? 0, int.tryParse(aplo.text) ?? 0, 0),
             d: int.tryParse(d.text) ?? 0,
             tc: int.tryParse(tc.text) ?? 0)
         .data;
