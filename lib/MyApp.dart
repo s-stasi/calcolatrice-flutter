@@ -61,7 +61,7 @@ class _MAState extends State<MyApp> {
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           theme: theme.getTheme(),
-          home: Calculator(),
+          home: HomePage(),
           routes: {
             '/PriPag': (context) => PrimoProblema(),
             '/SecPag': (context) => SecondoProblema(),

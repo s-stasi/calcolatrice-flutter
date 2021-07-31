@@ -48,7 +48,7 @@ class ImpostazioniState extends State<Impostazioni> {
                 Navigator.pushAndRemoveUntil(
                   context,
                   PageRouteBuilder(
-                    pageBuilder: (_, __, ___) => Calculator(),
+                    pageBuilder: (_, __, ___) => HomePage(),
                     transitionDuration: Duration(seconds: 0),
                   ),
                   (route) => false,

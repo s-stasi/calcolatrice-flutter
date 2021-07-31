@@ -30,7 +30,7 @@ class _ProblemsState extends State<Problems> {
               Navigator.pushAndRemoveUntil(
                 context,
                 PageRouteBuilder(
-                  pageBuilder: (_, __, ___) => Calculator(),
+                  pageBuilder: (_, __, ___) => HomePage(),
                   transitionDuration: Duration(seconds: 0),
                 ),
                 (route) => false,
