@@ -13,17 +13,19 @@ class Degree {
 	/// Constructors
 	/////////////////////////
 	Degree(this.dec) {
-			g = num.parse(this.dec.toStringAsFixed(0));
-			p = num.parse(((dec - g) * 60).toStringAsFixed(0));
-			s = ((((dec - g) * 60) - p) * 60);//.round();
+		g = num.parse(this.dec.toStringAsFixed(0));
+		p = num.parse(((dec - g) * 60).toStringAsFixed(0));
+		s = ((((dec - g) * 60) - p) * 60).round();
 
-			rad = toRad(dec);
+		rad = toRad(dec);
+		//__adjustResult();
 	}
 
 	Degree.ses(this.g, this.p, this.s) {
 		dec = (g > 0) ? g + (p / 60) + (s / 3600) : ((g * -1) + (p / 60) + (s / 3600)) * -1;
 
 		rad = toRad(dec);
+		//__adjustResult();
 	}
 
 	Degree.dec(this.dec) {
@@ -33,6 +35,7 @@ class Degree {
 		s = ((((dec - g) * 60) - p) * 60).round();
 
 		rad = toRad(dec);
+		//__adjustResult();
 	}
 
 	/////////////////////////
@@ -70,7 +73,7 @@ class Degree {
 	/////////////////////////
 	/// Debug functions
 	/////////////////////////
-	log(String constructorType) {
+	void __log(String constructorType) {
 		debugPrint('''
 ------------------------
 built with $constructorType
@@ -80,5 +83,22 @@ secondi=  $s
 
 decimale= $dec
 ------------------------''');
+	}
+
+	void __adjustResult() {
+		if (s < 0 && p < 0 && g < 0) {
+			s = s*-1;
+			p = p*-1;
+			g = g*-1;
+			return;
+		}
+		if (s < 0) {
+			s = 60 - s;
+			p = p - 1;
+		}
+		if (p < 0) {
+			p = 60 - p;
+			g = g - 1;
+		}
 	}
 }
