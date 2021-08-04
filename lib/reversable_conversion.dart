@@ -7,7 +7,11 @@ class ReversableConversion extends StatefulWidget {
   final String title;
   final String first;
   final String second;
-  const ReversableConversion({@required this.functions, @required this.title = 'n', @required this.first = 'n', @required this.second = 'n'});
+  const ReversableConversion(
+      {@required this.functions,
+      @required this.title = 'n',
+      @required this.first = 'n',
+      @required this.second = 'n'});
 
   @override
   _ReversableConversionState createState() => _ReversableConversionState();
@@ -55,8 +59,8 @@ class _ReversableConversionState extends State<ReversableConversion> {
                   controller: controller,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.blue.shade900, width: 3.0),
+                      borderSide:
+                          BorderSide(color: Colors.blue.shade900, width: 3.0),
                     ),
                     labelText: (selector == 0) ? widget.first : widget.second,
                     helperText: (selector == 0) ? widget.first : widget.second,
@@ -66,10 +70,11 @@ class _ReversableConversionState extends State<ReversableConversion> {
               Container(
                   width: MediaQuery.of(context).size.width * 0.04, height: 150),
               IconButton(
-                icon: Icon(Icons.compare_arrows),
-                iconSize: 38,
-                onPressed: () {invert();}
-              ),
+                  icon: Icon(Icons.compare_arrows),
+                  iconSize: 38,
+                  onPressed: () {
+                    invert();
+                  }),
               Container(
                   width: MediaQuery.of(context).size.width * 0.04, height: 150),
               Expanded(
@@ -92,8 +97,11 @@ class _ReversableConversionState extends State<ReversableConversion> {
   }
 
   void invert() {
-    setState(() {selector == 0 ? selector = 1 : selector = 0;});
+    setState(() {
+      selector == 0 ? selector = 1 : selector = 0;
+    });
   }
+
   void __update() {
     setState(() {});
   }

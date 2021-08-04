@@ -13,6 +13,8 @@ class _ProblemsState extends State<Problems> {
   Iterable<int> a = [0x00B0];
   final double sumMenuItemSmall = 12;
   final double expTitleSmall = 18;
+  List<int?> opened = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,6 +67,17 @@ class _ProblemsState extends State<Problems> {
             child: Column(
           children: <Widget>[
             ExpansionTile(
+              onExpansionChanged: (bool value) {
+                value
+                    ? opened.indexOf(1) == -1
+                        ? opened.add(1)
+                        : null
+                    : opened.indexOf(1) != -1
+                        ? opened.remove(1)
+                        : null;
+                print('$opened');
+                setState(() {});
+              },
               title: Text(
                 AppLocalizations.of(context)!.linearNavTitle,
                 style: TextStyle(
@@ -111,10 +124,23 @@ class _ProblemsState extends State<Problems> {
                 ),
               ],
             ),
-            Divider(
-              color: Colors.grey[900],
-            ),
+            opened.indexOf(1) == -1
+                ? Divider(
+                    color: Colors.grey[900],
+                  )
+                : Container(),
             ExpansionTile(
+              onExpansionChanged: (bool value) {
+                value
+                    ? opened.indexOf(2) == -1
+                        ? opened.add(2)
+                        : null
+                    : opened.indexOf(2) != -1
+                        ? opened.remove(2)
+                        : null;
+                print('$opened');
+                setState(() {});
+              },
               title: Text(
                 AppLocalizations.of(context)!.wpTitle,
                 style: TextStyle(
@@ -140,10 +166,23 @@ class _ProblemsState extends State<Problems> {
                 '/QuaPag'
               ], context),
             ),
-            Divider(
-              color: Colors.grey[900],
-            ),
+            opened.indexOf(2) == -1
+                ? Divider(
+                    color: Colors.grey[900],
+                  )
+                : Container(),
             ExpansionTile(
+              onExpansionChanged: (bool value) {
+                value
+                    ? opened.indexOf(3) == -1
+                        ? opened.add(3)
+                        : null
+                    : opened.indexOf(3) != -1
+                        ? opened.remove(3)
+                        : null;
+                print('$opened');
+                setState(() {});
+              },
               title: Text(
                 AppLocalizations.of(context)!.rhumbTitle,
                 style: TextStyle(
@@ -161,25 +200,11 @@ class _ProblemsState extends State<Problems> {
                 '/secLos'
               ], context),
             ),
-            // Divider(
-            //   color: Colors.grey[900],
-            // ),
-            // ListTile(
-            //   leading: Icon(Icons.flight_takeoff_sharp),
-            //   title: Text(
-            //     AppLocalizations.of(context)!.climbTitle,
-            //     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            //   ),
-            //   onTap: () => {
-            //     Navigator.pushNamed(
-            //       context,
-            //       '/salita',
-            //     ),
-            //   },
-            // ),
-            Divider(
-              color: Colors.grey[900],
-            ),
+            opened.indexOf(3) == -1
+                ? Divider(
+                    color: Colors.grey[900],
+                  )
+                : Container(),
             ListTile(
               leading: Icon(Icons.book),
               title: Text(

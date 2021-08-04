@@ -163,6 +163,7 @@ List<SettingsTile> builder(
         StorageManager.saveData('locale', languageCodes[i]);
         MyApp.of(context)
             .setLocale(Locale.fromSubtags(languageCode: languageCodes[i]));
+        Navigator.pop(context);
       },
     ));
   }
