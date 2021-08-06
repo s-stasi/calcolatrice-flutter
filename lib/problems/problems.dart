@@ -69,6 +69,8 @@ class Problems {
   var bglo;
   var bplo;
   var d;
+  var gla;
+  var pla;
   String lator = '';
   String lonor = '';
   String problemNumber = 'nann';
@@ -120,7 +122,15 @@ class Problems {
       required this.dtc}) {
     secondoLossodromia();
   }
-  Problems.priPar() {
+  Problems.priPar(
+      {required this.aglo,
+      required this.aplo,
+      required this.bglo,
+      required this.bplo,
+      required this.gla,
+      required this.pla,
+      required this.d,
+      required this.tc}) {
     navParalleli1();
   }
   Problems.priMer(
@@ -332,9 +342,9 @@ class Problems {
     Degree loB;
     Degree laB;
 
-
-    if (dtc < 90) {//
-      alfa = Degree.dec(90) - dtc;//
+    if (dtc < 90) {
+      //
+      alfa = Degree.dec(90) - dtc; //
       df = Degree(Math.sin(alfa.radians) * d) / Degree(60);
       dlc = Degree(Math.cos(alfa.radians) * d) / Degree(60);
       laB = df + ala;
@@ -386,7 +396,11 @@ class Problems {
   }
 
   void navParalleli1() {
-    this.res = 'r';
+    alo = toDec(aglo, aplo);
+    blo = toDec(bglo, bplo);
+    var la = toDec(gla, pla);
+    var dL = bla - ala;
+    var all = dL * Math.cos(toRad(la));
   }
 
   void navMeridiani1() {

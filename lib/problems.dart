@@ -91,19 +91,18 @@ class _ProblemsState extends State<Problems> {
                 Divider(
                   color: Colors.grey[900],
                 ),
-                ExpansionTile(
+                ListTile(
+                  leading: Icon(Icons.local_airport_sharp),
                   title: Text(
                     AppLocalizations.of(context)!.paralNavTitle,
-                    style: TextStyle(
-                        fontSize: expTitleSmall, fontWeight: FontWeight.w600),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
                   ),
-                  children: groupCreator([
-                    'navigazione per paralleli',
-                    'navigazione per paralleli corretto'
-                  ], [
-                    '/NavPar1',
-                    '/PriPag'
-                  ], context, false),
+                  onTap: () => {
+                    Navigator.pushNamed(
+                      context,
+                      '/NavPar1',
+                    ),
+                  },
                 ),
                 Divider(
                   color: Colors.blue,

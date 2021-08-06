@@ -8,41 +8,41 @@ class Paral1 extends StatefulWidget {
 }
 
 class _P1State extends State<Paral1> {
-  final agla = TextEditingController();
-  final apla = TextEditingController();
   final aglo = TextEditingController();
   final aplo = TextEditingController();
-  final bgla = TextEditingController();
-  final bpla = TextEditingController();
   final bglo = TextEditingController();
   final bplo = TextEditingController();
+  final gla = TextEditingController();
+  final pla = TextEditingController();
+  final tc = TextEditingController();
+  final d = TextEditingController();
 
   bool correction = false;
 
   @override
   void dispose() {
-    agla.dispose();
-    apla.dispose();
     aglo.dispose();
     aplo.dispose();
-    bgla.dispose();
-    bpla.dispose();
     bglo.dispose();
     bplo.dispose();
+    gla.dispose();
+    pla.dispose();
+    tc.dispose();
+    d.dispose();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    agla.addListener(_update);
-    apla.addListener(_update);
     aglo.addListener(_update);
     aplo.addListener(_update);
-    bgla.addListener(_update);
-    bpla.addListener(_update);
     bglo.addListener(_update);
     bplo.addListener(_update);
+    gla.addListener(_update);
+    pla.addListener(_update);
+    tc.addListener(_update);
+    d.addListener(_update);
   }
 
   _update() {
@@ -52,14 +52,15 @@ class _P1State extends State<Paral1> {
   String txt() {
     return 'implement this';
     /*Problems.priPar(
-        agla: int.tryParse(agla.text) ?? 0,
-        apla: int.tryParse(apla.text) ?? 0,
         aglo: int.tryParse(aglo.text) ?? 0,
         aplo: int.tryParse(aplo.text) ?? 0,
-        bgla: int.tryParse(bgla.text) ?? 0,
-        bpla: int.tryParse(bpla.text) ?? 0,
         bglo: int.tryParse(bglo.text) ?? 0,
-        bplo: int.tryParse(bplo.text) ?? 0)
+        bplo: int.tryParse(bplo.text) ?? 0,
+        gla: int.tryParse(gla.text) ?? 0,
+        pla: int.tryParse(pla.text) ?? 0,
+        tc: int.tryParse(tc.text) ?? 0,
+        d: tryParse(d.text) ?? 0
+        )
       .data;*/
   }
 
@@ -83,19 +84,24 @@ class _P1State extends State<Paral1> {
       ),
       body: SingleChildScrollView(
           child: Column(children: <Widget>[
+        Text(
+          'inserire i valori W come negativi e E come positivi ',
+          style: TextStyle(fontSize: 20),
+        ),
         Row(
           children: <Widget>[
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
               child: TextField(
-                controller: agla,
+                keyboardType: TextInputType.number,
+                controller: aglo,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Colors.blue.shade900, width: 3.0)),
                   labelText: AppLocalizations.of(context)!.paralNavDegree,
-                  helperText: AppLocalizations.of(context)!.paralNavLatA,
+                  helperText: AppLocalizations.of(context)!.paralNavLonA,
                 ),
               ),
             ),
@@ -103,13 +109,14 @@ class _P1State extends State<Paral1> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
               child: TextField(
-                controller: apla,
+                keyboardType: TextInputType.number,
+                controller: aplo,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Colors.blue.shade900, width: 3.0)),
                   labelText: 'PRIMI',
-                  helperText: AppLocalizations.of(context)!.paralNavLatA,
+                  helperText: AppLocalizations.of(context)!.paralNavLonA,
                 ),
               ),
             ),
@@ -117,64 +124,7 @@ class _P1State extends State<Paral1> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
-              controller: aglo,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: AppLocalizations.of(context)!.paralNavDegree,
-                helperText: AppLocalizations.of(context)!.paralNavLonA,
-              ),
-            )),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.04, height: 150),
-            Expanded(
-                child: TextField(
-              controller: aplo,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'PRIMI',
-                helperText: AppLocalizations.of(context)!.paralNavLonA,
-              ),
-            )),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.04, height: 150),
-          ],
-        ),
-        Row(
-          children: <Widget>[
-            Container(
-                width: MediaQuery.of(context).size.width * 0.04, height: 150),
-            Expanded(
-                child: TextField(
-              controller: bgla,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: AppLocalizations.of(context)!.paralNavDegree,
-                helperText: AppLocalizations.of(context)!.paralNavLonB,
-              ),
-            )),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.04, height: 150),
-            Expanded(
-                child: TextField(
-              controller: bpla,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'PRIMI',
-                helperText: AppLocalizations.of(context)!.paralNavLatB,
-              ),
-            )),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.04, height: 150),
-            Expanded(
-                child: TextField(
+              keyboardType: TextInputType.number,
               controller: bglo,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -188,6 +138,7 @@ class _P1State extends State<Paral1> {
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
+              keyboardType: TextInputType.number,
               controller: bplo,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
@@ -202,76 +153,67 @@ class _P1State extends State<Paral1> {
           ],
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            RaisedButton(
-              child: Text(correction == false ? 'Corretto' : 'Dom toretto', style: TextStyle(fontSize: 20)),
-              onPressed: () => setState(() {
-                correction = ! correction;
-              })
-            ),
-          ],
-        ),
-        correction == false ? SizedBox(height: 0, width: 0) :
-        Row(
           children: <Widget>[
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
-              controller: bgla,
+              keyboardType: TextInputType.number,
+              controller: d,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: AppLocalizations.of(context)!.paralNavDegree,
-                helperText: AppLocalizations.of(context)!.paralNavLonB,
+                labelText: 'distance',
+                helperText: AppLocalizations.of(context)!.distance,
               ),
             )),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
-              controller: bpla,
+              keyboardType: TextInputType.number,
+              controller: tc,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'PRIMI',
-                helperText: AppLocalizations.of(context)!.paralNavLatB,
+                labelText: 'TC',
+                helperText: 'True Course',
               ),
             )),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
-              controller: bglo,
+              keyboardType: TextInputType.number,
+              controller: gla,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: AppLocalizations.of(context)!.paralNavDegree,
-                helperText: AppLocalizations.of(context)!.paralNavLonB,
+                labelText: 'OPTIONAL',
+                helperText: 'latitude degree',
               ),
             )),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
             Expanded(
                 child: TextField(
-              controller: bplo,
+              keyboardType: TextInputType.number,
+              controller: pla,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                     borderSide:
                         BorderSide(color: Colors.blue.shade900, width: 3.0)),
-                labelText: 'PRIMI',
-                helperText: AppLocalizations.of(context)!.paralNavLonB,
+                labelText: 'OPTIONAL',
+                helperText: 'latitude first',
               ),
             )),
             Container(
                 width: MediaQuery.of(context).size.width * 0.04, height: 150),
           ],
         ),
-        Text(txt()),
       ])),
     );
   }
