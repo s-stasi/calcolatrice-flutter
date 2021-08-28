@@ -400,7 +400,7 @@ class Problems {
     blo = toDec(bglo, bplo);
     var la = toDec(gla, pla);
     var dL = bla - ala;
-    var all = dL * Math.cos(toRad(la));
+    //var all = dL * Math.cos(toRad(la));
   }
 
   void navMeridiani1() {

@@ -13,7 +13,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'Salita.dart';
 import 'Meri1.dart';
 import 'Paral1.dart';
-import 'paral2.dart';
 import 'problems.dart';
 import 'settings.dart';
 import 'explanations/explanations.dart';
@@ -73,7 +72,6 @@ class _MAState extends State<MyApp> {
             '/ImpPag': (context) => Impostazioni(),
             '/NavPar1': (context) => Paral1(),
             '/NavMer1': (context) => Meri1(),
-            '/NavPar2': (context) => Paral2(),
             '/Problems': (context) => Problems(),
             '/explanations': (context) => Explanations(),
             '/expMTK': (context) => ExpMTK()

@@ -78,7 +78,7 @@ class ImpostazioniState extends State<Impostazioni> {
                 tiles: [
                   SettingsTile.switchTile(
                     title: AppLocalizations.of(context)!.settingsInterfaceTheme,
-                    leading: Icon(Icons.mode_night),
+                    leading: Icon(Icons.nights_stay/*mode_night*/),
                     switchValue: isBlack,
                     onToggle: (bool isBlack) {
                       theme.changeMode();

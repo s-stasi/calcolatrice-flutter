@@ -9,7 +9,7 @@ class Explanations extends StatelessWidget {
   late List<String> titles;
   final List<Widget> expWidgets = [ExpMTK()];
   final List<Widget> solveWidgets = [ToDo()];
-  final icons = [Icons.mode_night];
+  final icons = [Icons.night_shelter/*mode_nigh*/];
 
   @override
   Widget build(BuildContext context) {
